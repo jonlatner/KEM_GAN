@@ -1,0 +1,2057 @@
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+Epoch 1, Loss G: -0.2604,Loss D: -0.0502
+Epoch 2, Loss G: -0.9760,Loss D:  0.1030
+Epoch 3, Loss G: -1.2664,Loss D: -0.0569
+Epoch 4, Loss G: -1.6795,Loss D:  0.0852
+Epoch 5, Loss G: -1.9440,Loss D: -0.0313
+Epoch 6, Loss G: -2.1909,Loss D:  0.0131
+Epoch 7, Loss G: -2.4002,Loss D:  0.1052
+Epoch 8, Loss G: -2.3927,Loss D: -0.0220
+Epoch 9, Loss G: -2.5250,Loss D: -0.0301
+Epoch 10, Loss G: -2.5171,Loss D: -0.0301
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 10
+number: 1
+batch size: 500
+duration: 351.14457607269287
+Epoch 1, Loss G: -0.2838,Loss D: -0.1087
+Epoch 2, Loss G: -0.6310,Loss D:  0.0670
+Epoch 3, Loss G: -0.8669,Loss D: -0.0767
+Epoch 4, Loss G: -0.9961,Loss D: -0.0875
+Epoch 5, Loss G: -1.3212,Loss D:  0.1399
+Epoch 6, Loss G: -1.4438,Loss D:  0.0124
+Epoch 7, Loss G: -1.5911,Loss D:  0.0895
+Epoch 8, Loss G: -1.8781,Loss D:  0.0847
+Epoch 9, Loss G: -1.8370,Loss D:  0.0183
+Epoch 10, Loss G: -1.9986,Loss D: -0.0436
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 10
+number: 1
+batch size: 1000
+duration: 647.4688560962677
+Epoch 1, Loss G: -0.1850,Loss D:  0.0183
+Epoch 2, Loss G: -0.4775,Loss D:  0.0877
+Epoch 3, Loss G: -0.5705,Loss D:  0.0783
+Epoch 4, Loss G: -0.3539,Loss D: -0.1626
+Epoch 5, Loss G: -0.2293,Loss D: -0.2212
+Epoch 6, Loss G: -0.6739,Loss D:  0.2435
+Epoch 7, Loss G: -0.6756,Loss D:  0.0522
+Epoch 8, Loss G: -0.7521,Loss D: -0.0023
+Epoch 9, Loss G: -0.9788,Loss D:  0.1434
+Epoch 10, Loss G: -0.8501,Loss D: -0.1383
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 10
+number: 1
+batch size: 5000
+duration: 605.750391960144
+Epoch 1, Loss G:  0.0254,Loss D: -0.0229
+Epoch 2, Loss G: -0.0778,Loss D: -0.0153
+Epoch 3, Loss G: -0.3184,Loss D:  0.0783
+Epoch 4, Loss G: -0.5921,Loss D:  0.2348
+Epoch 5, Loss G: -0.5942,Loss D:  0.1731
+Epoch 6, Loss G: -0.4633,Loss D:  0.0169
+Epoch 7, Loss G: -0.3228,Loss D: -0.1947
+Epoch 8, Loss G: -0.3230,Loss D: -0.2032
+Epoch 9, Loss G: -0.3844,Loss D: -0.1363
+Epoch 10, Loss G: -0.3936,Loss D: -0.1526
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 10
+number: 1
+batch size: 10000
+duration: 405.62450981140137
+Epoch 1, Loss G: -0.6552,Loss D:  0.1845
+Epoch 2, Loss G: -0.9907,Loss D: -0.1271
+Epoch 3, Loss G: -1.3767,Loss D:  0.0845
+Epoch 4, Loss G: -1.6625,Loss D:  0.1540
+Epoch 5, Loss G: -1.9592,Loss D:  0.0783
+Epoch 6, Loss G: -2.0804,Loss D: -0.0560
+Epoch 7, Loss G: -2.0566,Loss D: -0.0564
+Epoch 8, Loss G: -2.2073,Loss D:  0.0403
+Epoch 9, Loss G: -2.6535,Loss D:  0.1597
+Epoch 10, Loss G: -2.5736,Loss D:  0.0569
+Epoch 11, Loss G: -2.6705,Loss D:  0.0683
+Epoch 12, Loss G: -2.7453,Loss D:  0.0604
+Epoch 13, Loss G: -2.7506,Loss D: -0.0173
+Epoch 14, Loss G: -2.9066,Loss D: -0.0073
+Epoch 15, Loss G: -2.7796,Loss D: -0.0317
+Epoch 16, Loss G: -2.7231,Loss D: -0.0312
+Epoch 17, Loss G: -2.8163,Loss D:  0.0763
+Epoch 18, Loss G: -2.8976,Loss D: -0.0411
+Epoch 19, Loss G: -2.7749,Loss D: -0.0675
+Epoch 20, Loss G: -2.8957,Loss D:  0.0088
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 20
+number: 1
+batch size: 500
+duration: 600.9661250114441
+Epoch 1, Loss G: -0.3354,Loss D: -0.1260
+Epoch 2, Loss G: -0.6591,Loss D: -0.0187
+Epoch 3, Loss G: -0.9312,Loss D: -0.0218
+Epoch 4, Loss G: -1.1981,Loss D:  0.0300
+Epoch 5, Loss G: -1.2227,Loss D: -0.0512
+Epoch 6, Loss G: -1.5819,Loss D:  0.0753
+Epoch 7, Loss G: -1.7565,Loss D:  0.0661
+Epoch 8, Loss G: -1.9494,Loss D:  0.0576
+Epoch 9, Loss G: -1.9154,Loss D: -0.0676
+Epoch 10, Loss G: -2.0878,Loss D: -0.0140
+Epoch 11, Loss G: -2.1162,Loss D:  0.0762
+Epoch 12, Loss G: -2.1556,Loss D: -0.0795
+Epoch 13, Loss G: -2.3042,Loss D:  0.0432
+Epoch 14, Loss G: -2.5384,Loss D:  0.1120
+Epoch 15, Loss G: -2.3595,Loss D: -0.0674
+Epoch 16, Loss G: -2.4691,Loss D:  0.0030
+Epoch 17, Loss G: -2.6172,Loss D:  0.1287
+Epoch 18, Loss G: -2.6210,Loss D:  0.0466
+Epoch 19, Loss G: -2.6244,Loss D: -0.0188
+Epoch 20, Loss G: -2.6403,Loss D:  0.0642
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 20
+number: 1
+batch size: 1000
+duration: 487.93695402145386
+Epoch 1, Loss G: -0.1677,Loss D:  0.0035
+Epoch 2, Loss G: -0.6062,Loss D:  0.1978
+Epoch 3, Loss G: -0.2986,Loss D: -0.2069
+Epoch 4, Loss G: -0.4548,Loss D: -0.0346
+Epoch 5, Loss G: -0.5271,Loss D:  0.0746
+Epoch 6, Loss G: -0.3991,Loss D: -0.0730
+Epoch 7, Loss G: -0.7689,Loss D:  0.2388
+Epoch 8, Loss G: -0.6853,Loss D: -0.0010
+Epoch 9, Loss G: -0.7491,Loss D: -0.0555
+Epoch 10, Loss G: -0.9700,Loss D:  0.1266
+Epoch 11, Loss G: -0.8844,Loss D: -0.0417
+Epoch 12, Loss G: -1.1043,Loss D:  0.0862
+Epoch 13, Loss G: -1.0950,Loss D:  0.0791
+Epoch 14, Loss G: -0.8621,Loss D: -0.1289
+Epoch 15, Loss G: -1.2714,Loss D:  0.1900
+Epoch 16, Loss G: -1.1318,Loss D: -0.0320
+Epoch 17, Loss G: -1.1332,Loss D: -0.0223
+Epoch 18, Loss G: -1.3996,Loss D:  0.1564
+Epoch 19, Loss G: -1.0183,Loss D: -0.1779
+Epoch 20, Loss G: -1.3662,Loss D:  0.1683
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 20
+number: 1
+batch size: 5000
+duration: 621.0951390266418
+Epoch 1, Loss G:  0.0130,Loss D: -0.0031
+Epoch 2, Loss G: -0.1401,Loss D:  0.0446
+Epoch 3, Loss G: -0.4037,Loss D:  0.1766
+Epoch 4, Loss G: -0.5276,Loss D:  0.1693
+Epoch 5, Loss G: -0.4668,Loss D:  0.0113
+Epoch 6, Loss G: -0.4500,Loss D: -0.0574
+Epoch 7, Loss G: -0.4639,Loss D: -0.0144
+Epoch 8, Loss G: -0.3556,Loss D: -0.0969
+Epoch 9, Loss G: -0.2753,Loss D: -0.1945
+Epoch 10, Loss G: -0.2934,Loss D: -0.1040
+Epoch 11, Loss G: -0.3892,Loss D:  0.0447
+Epoch 12, Loss G: -0.4590,Loss D:  0.0867
+Epoch 13, Loss G: -0.4112,Loss D:  0.0314
+Epoch 14, Loss G: -0.4070,Loss D: -0.0478
+Epoch 15, Loss G: -0.5489,Loss D:  0.0266
+Epoch 16, Loss G: -0.7647,Loss D:  0.1398
+Epoch 17, Loss G: -0.9322,Loss D:  0.1962
+Epoch 18, Loss G: -0.9074,Loss D:  0.1017
+Epoch 19, Loss G: -0.8127,Loss D: -0.0609
+Epoch 20, Loss G: -0.7624,Loss D: -0.1641
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 20
+number: 1
+batch size: 10000
+duration: 110.26544427871704
+Epoch 1, Loss G: -0.6254,Loss D:  0.0358
+Epoch 2, Loss G: -0.9391,Loss D: -0.2119
+Epoch 3, Loss G: -1.4719,Loss D:  0.0414
+Epoch 4, Loss G: -1.6969,Loss D:  0.0692
+Epoch 5, Loss G: -2.0905,Loss D:  0.0388
+Epoch 6, Loss G: -2.0663,Loss D:  0.1023
+Epoch 7, Loss G: -2.2708,Loss D:  0.0044
+Epoch 8, Loss G: -2.2604,Loss D:  0.0299
+Epoch 9, Loss G: -2.4596,Loss D: -0.0010
+Epoch 10, Loss G: -2.6095,Loss D:  0.0903
+Epoch 11, Loss G: -2.5876,Loss D:  0.1394
+Epoch 12, Loss G: -2.6414,Loss D:  0.0294
+Epoch 13, Loss G: -2.5579,Loss D:  0.0246
+Epoch 14, Loss G: -2.8423,Loss D: -0.0581
+Epoch 15, Loss G: -2.8835,Loss D:  0.0361
+Epoch 16, Loss G: -2.7685,Loss D: -0.0280
+Epoch 17, Loss G: -2.7786,Loss D: -0.0294
+Epoch 18, Loss G: -2.7602,Loss D:  0.1249
+Epoch 19, Loss G: -2.7859,Loss D: -0.0456
+Epoch 20, Loss G: -2.9922,Loss D: -0.1049
+Epoch 21, Loss G: -2.8453,Loss D:  0.0208
+Epoch 22, Loss G: -2.8238,Loss D:  0.0025
+Epoch 23, Loss G: -2.9747,Loss D:  0.1136
+Epoch 24, Loss G: -2.9199,Loss D:  0.0409
+Epoch 25, Loss G: -2.9434,Loss D: -0.1033
+Epoch 26, Loss G: -3.0911,Loss D: -0.0231
+Epoch 27, Loss G: -2.9689,Loss D:  0.0454
+Epoch 28, Loss G: -3.0320,Loss D: -0.0154
+Epoch 29, Loss G: -2.9116,Loss D:  0.0715
+Epoch 30, Loss G: -2.9704,Loss D: -0.0328
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 30
+number: 1
+batch size: 500
+duration: 250.43274402618408
+Epoch 1, Loss G: -0.1331,Loss D: -0.3374
+Epoch 2, Loss G: -0.5643,Loss D: -0.0693
+Epoch 3, Loss G: -1.0317,Loss D:  0.1369
+Epoch 4, Loss G: -1.2748,Loss D:  0.0077
+Epoch 5, Loss G: -1.3864,Loss D:  0.0531
+Epoch 6, Loss G: -1.5011,Loss D: -0.0485
+Epoch 7, Loss G: -1.7457,Loss D: -0.0104
+Epoch 8, Loss G: -1.9750,Loss D:  0.2194
+Epoch 9, Loss G: -2.0645,Loss D:  0.0531
+Epoch 10, Loss G: -2.0706,Loss D:  0.0867
+Epoch 11, Loss G: -2.2240,Loss D:  0.0581
+Epoch 12, Loss G: -2.2440,Loss D:  0.0129
+Epoch 13, Loss G: -2.3529,Loss D:  0.0782
+Epoch 14, Loss G: -2.3865,Loss D:  0.0477
+Epoch 15, Loss G: -2.4818,Loss D:  0.0765
+Epoch 16, Loss G: -2.5485,Loss D:  0.0705
+Epoch 17, Loss G: -2.4756,Loss D:  0.0046
+Epoch 18, Loss G: -2.4051,Loss D: -0.0051
+Epoch 19, Loss G: -2.5510,Loss D:  0.0415
+Epoch 20, Loss G: -2.5643,Loss D:  0.0832
+Epoch 21, Loss G: -2.7537,Loss D:  0.0787
+Epoch 22, Loss G: -2.6801,Loss D:  0.0179
+Epoch 23, Loss G: -2.7069,Loss D: -0.0182
+Epoch 24, Loss G: -2.5993,Loss D: -0.0337
+Epoch 25, Loss G: -2.6641,Loss D: -0.0308
+Epoch 26, Loss G: -2.7340,Loss D:  0.0210
+Epoch 27, Loss G: -2.8173,Loss D:  0.0956
+Epoch 28, Loss G: -2.8855,Loss D:  0.0694
+Epoch 29, Loss G: -2.8646,Loss D:  0.1084
+Epoch 30, Loss G: -2.8637,Loss D: -0.0233
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 30
+number: 1
+batch size: 1000
+duration: 634.572242975235
+Epoch 1, Loss G: -0.1101,Loss D:  0.0119
+Epoch 2, Loss G: -0.3420,Loss D:  0.1530
+Epoch 3, Loss G: -0.2437,Loss D:  0.0034
+Epoch 4, Loss G:  0.0499,Loss D: -0.3374
+Epoch 5, Loss G: -0.3015,Loss D:  0.0692
+Epoch 6, Loss G: -0.1701,Loss D: -0.0776
+Epoch 7, Loss G: -0.6235,Loss D:  0.2660
+Epoch 8, Loss G: -0.6178,Loss D:  0.0887
+Epoch 9, Loss G: -0.5026,Loss D: -0.1518
+Epoch 10, Loss G: -0.8531,Loss D:  0.1296
+Epoch 11, Loss G: -0.6420,Loss D: -0.0604
+Epoch 12, Loss G: -0.8435,Loss D:  0.1326
+Epoch 13, Loss G: -0.8429,Loss D:  0.0294
+Epoch 14, Loss G: -0.7054,Loss D: -0.1264
+Epoch 15, Loss G: -1.1263,Loss D:  0.1812
+Epoch 16, Loss G: -0.7630,Loss D: -0.1754
+Epoch 17, Loss G: -1.0253,Loss D:  0.1974
+Epoch 18, Loss G: -0.9939,Loss D:  0.0508
+Epoch 19, Loss G: -0.9329,Loss D: -0.0425
+Epoch 20, Loss G: -1.0558,Loss D:  0.0226
+Epoch 21, Loss G: -1.1698,Loss D:  0.0635
+Epoch 22, Loss G: -1.1217,Loss D: -0.0277
+Epoch 23, Loss G: -1.2577,Loss D:  0.0272
+Epoch 24, Loss G: -1.2348,Loss D:  0.0090
+Epoch 25, Loss G: -1.2155,Loss D: -0.0514
+Epoch 26, Loss G: -1.4242,Loss D:  0.1396
+Epoch 27, Loss G: -1.3308,Loss D:  0.0532
+Epoch 28, Loss G: -1.3720,Loss D:  0.0369
+Epoch 29, Loss G: -1.4223,Loss D: -0.0176
+Epoch 30, Loss G: -1.6075,Loss D:  0.0415
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 30
+number: 1
+batch size: 5000
+duration: 480.66944885253906
+Epoch 1, Loss G: -0.0066,Loss D: -0.0026
+Epoch 2, Loss G: -0.0262,Loss D: -0.0204
+Epoch 3, Loss G: -0.1681,Loss D:  0.0412
+Epoch 4, Loss G: -0.3881,Loss D:  0.1954
+Epoch 5, Loss G: -0.3066,Loss D:  0.1308
+Epoch 6, Loss G: -0.1688,Loss D: -0.0411
+Epoch 7, Loss G: -0.1082,Loss D: -0.0816
+Epoch 8, Loss G: -0.0351,Loss D: -0.1852
+Epoch 9, Loss G:  0.0433,Loss D: -0.2770
+Epoch 10, Loss G: -0.0372,Loss D: -0.2019
+Epoch 11, Loss G: -0.2381,Loss D:  0.0014
+Epoch 12, Loss G: -0.3802,Loss D:  0.1162
+Epoch 13, Loss G: -0.4017,Loss D:  0.1465
+Epoch 14, Loss G: -0.4470,Loss D:  0.0878
+Epoch 15, Loss G: -0.5074,Loss D:  0.0875
+Epoch 16, Loss G: -0.6025,Loss D:  0.1001
+Epoch 17, Loss G: -0.5694,Loss D:  0.0034
+Epoch 18, Loss G: -0.5084,Loss D: -0.0976
+Epoch 19, Loss G: -0.5923,Loss D: -0.0935
+Epoch 20, Loss G: -0.8034,Loss D:  0.0703
+Epoch 21, Loss G: -0.9515,Loss D:  0.2031
+Epoch 22, Loss G: -0.8871,Loss D:  0.1110
+Epoch 23, Loss G: -0.7065,Loss D: -0.0582
+Epoch 24, Loss G: -0.6343,Loss D: -0.1153
+Epoch 25, Loss G: -0.7803,Loss D:  0.0431
+Epoch 26, Loss G: -0.9471,Loss D:  0.1762
+Epoch 27, Loss G: -0.9817,Loss D:  0.1248
+Epoch 28, Loss G: -0.8407,Loss D: -0.0248
+Epoch 29, Loss G: -0.7339,Loss D: -0.1155
+Epoch 30, Loss G: -0.8508,Loss D: -0.0059
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 30
+number: 1
+batch size: 10000
+duration: 619.6826112270355
+Epoch 1, Loss G: -0.6321,Loss D:  0.1195
+Epoch 2, Loss G: -1.0200,Loss D:  0.1797
+Epoch 3, Loss G: -1.2478,Loss D:  0.0827
+Epoch 4, Loss G: -1.6802,Loss D:  0.0500
+Epoch 5, Loss G: -2.0432,Loss D:  0.1536
+Epoch 6, Loss G: -2.2922,Loss D:  0.1041
+Epoch 7, Loss G: -2.2227,Loss D:  0.1081
+Epoch 8, Loss G: -2.4410,Loss D:  0.1320
+Epoch 9, Loss G: -2.4740,Loss D:  0.0807
+Epoch 10, Loss G: -2.5481,Loss D:  0.0464
+Epoch 11, Loss G: -2.5433,Loss D: -0.0003
+Epoch 12, Loss G: -2.6876,Loss D:  0.0369
+Epoch 13, Loss G: -2.8586,Loss D:  0.1208
+Epoch 14, Loss G: -2.7450,Loss D: -0.1255
+Epoch 15, Loss G: -2.8516,Loss D:  0.0137
+Epoch 16, Loss G: -2.8611,Loss D: -0.0611
+Epoch 17, Loss G: -2.9555,Loss D: -0.0401
+Epoch 18, Loss G: -2.8181,Loss D: -0.0046
+Epoch 19, Loss G: -2.9241,Loss D: -0.0069
+Epoch 20, Loss G: -2.9627,Loss D: -0.0528
+Epoch 21, Loss G: -2.9439,Loss D:  0.0559
+Epoch 22, Loss G: -2.8583,Loss D:  0.0054
+Epoch 23, Loss G: -2.8688,Loss D:  0.0659
+Epoch 24, Loss G: -3.0529,Loss D:  0.1161
+Epoch 25, Loss G: -3.0067,Loss D: -0.0698
+Epoch 26, Loss G: -2.9181,Loss D:  0.0398
+Epoch 27, Loss G: -2.9606,Loss D: -0.0315
+Epoch 28, Loss G: -2.8453,Loss D: -0.0467
+Epoch 29, Loss G: -3.0182,Loss D:  0.0299
+Epoch 30, Loss G: -3.0389,Loss D: -0.0178
+Epoch 31, Loss G: -3.0011,Loss D:  0.0438
+Epoch 32, Loss G: -3.0930,Loss D:  0.0153
+Epoch 33, Loss G: -3.0249,Loss D: -0.0237
+Epoch 34, Loss G: -3.0164,Loss D:  0.0852
+Epoch 35, Loss G: -3.0006,Loss D: -0.0353
+Epoch 36, Loss G: -3.1067,Loss D: -0.0935
+Epoch 37, Loss G: -2.9873,Loss D:  0.1302
+Epoch 38, Loss G: -3.0228,Loss D: -0.0728
+Epoch 39, Loss G: -3.0831,Loss D:  0.1448
+Epoch 40, Loss G: -3.1746,Loss D: -0.0097
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 40
+number: 1
+batch size: 500
+duration: 448.43726897239685
+Epoch 1, Loss G: -0.2762,Loss D: -0.1366
+Epoch 2, Loss G: -0.8554,Loss D:  0.1550
+Epoch 3, Loss G: -1.0964,Loss D:  0.0735
+Epoch 4, Loss G: -1.2992,Loss D:  0.2059
+Epoch 5, Loss G: -1.4393,Loss D:  0.0421
+Epoch 6, Loss G: -1.4689,Loss D: -0.1046
+Epoch 7, Loss G: -1.6499,Loss D: -0.0243
+Epoch 8, Loss G: -2.0795,Loss D:  0.0993
+Epoch 9, Loss G: -1.9677,Loss D:  0.0022
+Epoch 10, Loss G: -2.1494,Loss D:  0.0656
+Epoch 11, Loss G: -2.1406,Loss D: -0.0002
+Epoch 12, Loss G: -2.2234,Loss D: -0.0531
+Epoch 13, Loss G: -2.3390,Loss D:  0.0124
+Epoch 14, Loss G: -2.3406,Loss D:  0.0621
+Epoch 15, Loss G: -2.5373,Loss D:  0.1303
+Epoch 16, Loss G: -2.4384,Loss D: -0.0221
+Epoch 17, Loss G: -2.5344,Loss D: -0.0090
+Epoch 18, Loss G: -2.5733,Loss D: -0.0025
+Epoch 19, Loss G: -2.6249,Loss D: -0.0007
+Epoch 20, Loss G: -2.6236,Loss D:  0.0570
+Epoch 21, Loss G: -2.7056,Loss D: -0.0376
+Epoch 22, Loss G: -2.6540,Loss D:  0.0268
+Epoch 23, Loss G: -2.7750,Loss D: -0.0219
+Epoch 24, Loss G: -2.5998,Loss D: -0.0399
+Epoch 25, Loss G: -2.7707,Loss D:  0.0418
+Epoch 26, Loss G: -2.8060,Loss D:  0.0580
+Epoch 27, Loss G: -2.8251,Loss D:  0.0991
+Epoch 28, Loss G: -2.8694,Loss D: -0.0428
+Epoch 29, Loss G: -2.7672,Loss D:  0.0545
+Epoch 30, Loss G: -2.7987,Loss D:  0.0732
+Epoch 31, Loss G: -2.8682,Loss D:  0.0435
+Epoch 32, Loss G: -2.9245,Loss D:  0.0795
+Epoch 33, Loss G: -2.8731,Loss D: -0.0553
+Epoch 34, Loss G: -2.8230,Loss D:  0.0373
+Epoch 35, Loss G: -2.9341,Loss D: -0.0202
+Epoch 36, Loss G: -2.9399,Loss D:  0.0160
+Epoch 37, Loss G: -2.9536,Loss D:  0.0262
+Epoch 38, Loss G: -2.8858,Loss D:  0.0210
+Epoch 39, Loss G: -3.0301,Loss D:  0.0095
+Epoch 40, Loss G: -2.9700,Loss D: -0.0217
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 40
+number: 1
+batch size: 1000
+duration: 651.6574850082397
+Epoch 1, Loss G: -0.1281,Loss D: -0.0060
+Epoch 2, Loss G: -0.4438,Loss D:  0.0833
+Epoch 3, Loss G: -0.3245,Loss D: -0.1171
+Epoch 4, Loss G: -0.3343,Loss D: -0.0546
+Epoch 5, Loss G: -0.2454,Loss D: -0.1064
+Epoch 6, Loss G: -0.4399,Loss D:  0.0557
+Epoch 7, Loss G: -0.7225,Loss D:  0.2059
+Epoch 8, Loss G: -0.6033,Loss D: -0.0517
+Epoch 9, Loss G: -0.6531,Loss D: -0.0768
+Epoch 10, Loss G: -1.0143,Loss D:  0.2416
+Epoch 11, Loss G: -0.7805,Loss D: -0.0143
+Epoch 12, Loss G: -0.8107,Loss D: -0.0028
+Epoch 13, Loss G: -1.0015,Loss D:  0.1171
+Epoch 14, Loss G: -0.8013,Loss D: -0.1442
+Epoch 15, Loss G: -1.0384,Loss D:  0.1017
+Epoch 16, Loss G: -1.0157,Loss D:  0.0274
+Epoch 17, Loss G: -0.7978,Loss D: -0.0584
+Epoch 18, Loss G: -1.1757,Loss D:  0.1230
+Epoch 19, Loss G: -0.8569,Loss D: -0.1866
+Epoch 20, Loss G: -1.2424,Loss D:  0.2443
+Epoch 21, Loss G: -0.9330,Loss D: -0.0749
+Epoch 22, Loss G: -1.1046,Loss D:  0.0853
+Epoch 23, Loss G: -1.1010,Loss D: -0.0527
+Epoch 24, Loss G: -1.3171,Loss D:  0.1238
+Epoch 25, Loss G: -1.1770,Loss D: -0.0051
+Epoch 26, Loss G: -1.2474,Loss D:  0.0036
+Epoch 27, Loss G: -1.3483,Loss D:  0.0607
+Epoch 28, Loss G: -1.3445,Loss D:  0.0499
+Epoch 29, Loss G: -1.3205,Loss D: -0.0228
+Epoch 30, Loss G: -1.4123,Loss D:  0.0418
+Epoch 31, Loss G: -1.4615,Loss D:  0.0362
+Epoch 32, Loss G: -1.4030,Loss D: -0.0011
+Epoch 33, Loss G: -1.6055,Loss D:  0.1001
+Epoch 34, Loss G: -1.4553,Loss D: -0.0553
+Epoch 35, Loss G: -1.5567,Loss D:  0.0207
+Epoch 36, Loss G: -1.5947,Loss D:  0.0682
+Epoch 37, Loss G: -1.6107,Loss D:  0.0494
+Epoch 38, Loss G: -1.6786,Loss D:  0.0445
+Epoch 39, Loss G: -1.5745,Loss D: -0.0095
+Epoch 40, Loss G: -1.7021,Loss D:  0.0816
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 40
+number: 1
+batch size: 5000
+duration: 291.44462418556213
+Epoch 1, Loss G:  0.0255,Loss D:  0.0014
+Epoch 2, Loss G: -0.0267,Loss D:  0.0315
+Epoch 3, Loss G: -0.0676,Loss D:  0.0352
+Epoch 4, Loss G: -0.1451,Loss D:  0.0277
+Epoch 5, Loss G: -0.3008,Loss D:  0.1689
+Epoch 6, Loss G: -0.2669,Loss D:  0.1358
+Epoch 7, Loss G: -0.0317,Loss D: -0.0616
+Epoch 8, Loss G:  0.0744,Loss D: -0.2236
+Epoch 9, Loss G:  0.0254,Loss D: -0.1382
+Epoch 10, Loss G: -0.0889,Loss D: -0.0559
+Epoch 11, Loss G: -0.1230,Loss D: -0.0155
+Epoch 12, Loss G: -0.1218,Loss D: -0.0251
+Epoch 13, Loss G: -0.2053,Loss D:  0.0178
+Epoch 14, Loss G: -0.3513,Loss D:  0.1753
+Epoch 15, Loss G: -0.3932,Loss D:  0.1678
+Epoch 16, Loss G: -0.3031,Loss D:  0.0602
+Epoch 17, Loss G: -0.3174,Loss D: -0.0167
+Epoch 18, Loss G: -0.4813,Loss D:  0.0415
+Epoch 19, Loss G: -0.6731,Loss D:  0.0980
+Epoch 20, Loss G: -0.7031,Loss D:  0.0407
+Epoch 21, Loss G: -0.6454,Loss D: -0.1284
+Epoch 22, Loss G: -0.6537,Loss D: -0.0990
+Epoch 23, Loss G: -0.8504,Loss D:  0.0951
+Epoch 24, Loss G: -0.9961,Loss D:  0.2144
+Epoch 25, Loss G: -0.9242,Loss D:  0.0922
+Epoch 26, Loss G: -0.7203,Loss D: -0.0972
+Epoch 27, Loss G: -0.6639,Loss D: -0.1474
+Epoch 28, Loss G: -0.9319,Loss D:  0.1121
+Epoch 29, Loss G: -1.1437,Loss D:  0.2378
+Epoch 30, Loss G: -1.0346,Loss D:  0.0728
+Epoch 31, Loss G: -0.8000,Loss D: -0.1872
+Epoch 32, Loss G: -0.7895,Loss D: -0.2153
+Epoch 33, Loss G: -1.1011,Loss D:  0.0686
+Epoch 34, Loss G: -1.3026,Loss D:  0.2407
+Epoch 35, Loss G: -1.1560,Loss D:  0.1079
+Epoch 36, Loss G: -0.9383,Loss D: -0.0932
+Epoch 37, Loss G: -1.0720,Loss D: -0.0078
+Epoch 38, Loss G: -1.2724,Loss D:  0.1410
+Epoch 39, Loss G: -1.2060,Loss D:  0.0427
+Epoch 40, Loss G: -1.0597,Loss D: -0.1199
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 40
+number: 1
+batch size: 10000
+duration: 210.59601831436157
+Epoch 1, Loss G: -0.5195,Loss D:  0.0229
+Epoch 2, Loss G: -0.8658,Loss D:  0.0893
+Epoch 3, Loss G: -1.2885,Loss D:  0.0856
+Epoch 4, Loss G: -1.5879,Loss D: -0.0055
+Epoch 5, Loss G: -1.6584,Loss D: -0.1534
+Epoch 6, Loss G: -2.1323,Loss D: -0.0469
+Epoch 7, Loss G: -2.3185,Loss D:  0.0860
+Epoch 8, Loss G: -2.4869,Loss D:  0.1309
+Epoch 9, Loss G: -2.4306,Loss D: -0.0254
+Epoch 10, Loss G: -2.5389,Loss D: -0.1829
+Epoch 11, Loss G: -2.7677,Loss D: -0.0453
+Epoch 12, Loss G: -2.7669,Loss D: -0.0254
+Epoch 13, Loss G: -2.5874,Loss D: -0.0649
+Epoch 14, Loss G: -2.7066,Loss D:  0.0260
+Epoch 15, Loss G: -2.8619,Loss D:  0.0230
+Epoch 16, Loss G: -2.7826,Loss D: -0.0275
+Epoch 17, Loss G: -2.8552,Loss D: -0.0061
+Epoch 18, Loss G: -2.7899,Loss D: -0.0507
+Epoch 19, Loss G: -2.7508,Loss D: -0.0974
+Epoch 20, Loss G: -2.9262,Loss D: -0.0104
+Epoch 21, Loss G: -2.8742,Loss D:  0.0202
+Epoch 22, Loss G: -2.9035,Loss D: -0.0158
+Epoch 23, Loss G: -2.8582,Loss D: -0.1035
+Epoch 24, Loss G: -2.9869,Loss D: -0.0215
+Epoch 25, Loss G: -2.9388,Loss D:  0.1015
+Epoch 26, Loss G: -2.9434,Loss D:  0.0626
+Epoch 27, Loss G: -2.9733,Loss D: -0.1352
+Epoch 28, Loss G: -2.9309,Loss D:  0.0601
+Epoch 29, Loss G: -3.0577,Loss D:  0.0835
+Epoch 30, Loss G: -2.8983,Loss D:  0.0380
+Epoch 31, Loss G: -3.1093,Loss D: -0.0035
+Epoch 32, Loss G: -3.0071,Loss D: -0.0046
+Epoch 33, Loss G: -3.0740,Loss D: -0.0264
+Epoch 34, Loss G: -2.9917,Loss D: -0.0008
+Epoch 35, Loss G: -2.9983,Loss D: -0.0177
+Epoch 36, Loss G: -3.0510,Loss D:  0.0652
+Epoch 37, Loss G: -3.0098,Loss D:  0.0062
+Epoch 38, Loss G: -3.0603,Loss D: -0.0296
+Epoch 39, Loss G: -3.1738,Loss D:  0.0009
+Epoch 40, Loss G: -2.9726,Loss D:  0.0302
+Epoch 41, Loss G: -3.1406,Loss D: -0.1212
+Epoch 42, Loss G: -3.0526,Loss D:  0.1310
+Epoch 43, Loss G: -3.0326,Loss D: -0.0039
+Epoch 44, Loss G: -3.0420,Loss D:  0.1339
+Epoch 45, Loss G: -3.0866,Loss D:  0.1315
+Epoch 46, Loss G: -3.1385,Loss D:  0.0321
+Epoch 47, Loss G: -3.0684,Loss D: -0.0162
+Epoch 48, Loss G: -3.1814,Loss D:  0.1766
+Epoch 49, Loss G: -3.0375,Loss D:  0.0570
+Epoch 50, Loss G: -2.9912,Loss D:  0.1086
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 50
+number: 1
+batch size: 500
+duration: 654.7909061908722
+Epoch 1, Loss G: -0.0984,Loss D: -0.1958
+Epoch 2, Loss G: -0.4619,Loss D: -0.0110
+Epoch 3, Loss G: -0.9071,Loss D:  0.0695
+Epoch 4, Loss G: -1.1488,Loss D:  0.1568
+Epoch 5, Loss G: -1.3662,Loss D:  0.1711
+Epoch 6, Loss G: -1.3183,Loss D:  0.0484
+Epoch 7, Loss G: -1.4713,Loss D:  0.0072
+Epoch 8, Loss G: -1.6801,Loss D: -0.0557
+Epoch 9, Loss G: -1.8210,Loss D: -0.0534
+Epoch 10, Loss G: -1.9543,Loss D: -0.0895
+Epoch 11, Loss G: -2.0753,Loss D:  0.0404
+Epoch 12, Loss G: -2.2457,Loss D:  0.0874
+Epoch 13, Loss G: -2.1894,Loss D:  0.0773
+Epoch 14, Loss G: -2.3639,Loss D:  0.1150
+Epoch 15, Loss G: -2.4287,Loss D:  0.1017
+Epoch 16, Loss G: -2.2594,Loss D:  0.0599
+Epoch 17, Loss G: -2.5073,Loss D:  0.0504
+Epoch 18, Loss G: -2.4700,Loss D:  0.0611
+Epoch 19, Loss G: -2.5200,Loss D: -0.0839
+Epoch 20, Loss G: -2.6270,Loss D:  0.0723
+Epoch 21, Loss G: -2.6495,Loss D:  0.0662
+Epoch 22, Loss G: -2.5773,Loss D:  0.0260
+Epoch 23, Loss G: -2.7194,Loss D:  0.0399
+Epoch 24, Loss G: -2.6432,Loss D: -0.0793
+Epoch 25, Loss G: -2.7426,Loss D:  0.1193
+Epoch 26, Loss G: -2.6739,Loss D:  0.0514
+Epoch 27, Loss G: -2.6944,Loss D: -0.0226
+Epoch 28, Loss G: -2.7637,Loss D:  0.0292
+Epoch 29, Loss G: -2.8406,Loss D:  0.0247
+Epoch 30, Loss G: -2.8159,Loss D:  0.0758
+Epoch 31, Loss G: -2.8220,Loss D: -0.0060
+Epoch 32, Loss G: -2.8664,Loss D:  0.0167
+Epoch 33, Loss G: -2.7991,Loss D: -0.1394
+Epoch 34, Loss G: -2.9217,Loss D:  0.0496
+Epoch 35, Loss G: -2.9178,Loss D:  0.0524
+Epoch 36, Loss G: -2.9469,Loss D: -0.0090
+Epoch 37, Loss G: -2.9617,Loss D:  0.0126
+Epoch 38, Loss G: -2.8914,Loss D: -0.0160
+Epoch 39, Loss G: -2.7982,Loss D: -0.0129
+Epoch 40, Loss G: -2.9131,Loss D: -0.0900
+Epoch 41, Loss G: -2.8914,Loss D: -0.0209
+Epoch 42, Loss G: -2.8973,Loss D:  0.0142
+Epoch 43, Loss G: -2.9286,Loss D:  0.0237
+Epoch 44, Loss G: -2.9193,Loss D: -0.0289
+Epoch 45, Loss G: -3.0151,Loss D:  0.1153
+Epoch 46, Loss G: -3.0018,Loss D:  0.0129
+Epoch 47, Loss G: -2.8921,Loss D:  0.0248
+Epoch 48, Loss G: -3.0268,Loss D:  0.0935
+Epoch 49, Loss G: -3.0114,Loss D:  0.0544
+Epoch 50, Loss G: -3.0917,Loss D: -0.0441
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 50
+number: 1
+batch size: 1000
+duration: 416.6980390548706
+Epoch 1, Loss G: -0.0001,Loss D:  0.0099
+Epoch 2, Loss G: -0.1799,Loss D:  0.0615
+Epoch 3, Loss G: -0.1928,Loss D: -0.0321
+Epoch 4, Loss G: -0.1059,Loss D: -0.0960
+Epoch 5, Loss G: -0.1402,Loss D:  0.0128
+Epoch 6, Loss G: -0.1971,Loss D:  0.0786
+Epoch 7, Loss G: -0.2356,Loss D:  0.0143
+Epoch 8, Loss G: -0.3788,Loss D:  0.0534
+Epoch 9, Loss G: -0.3717,Loss D: -0.0292
+Epoch 10, Loss G: -0.5533,Loss D:  0.0775
+Epoch 11, Loss G: -0.7529,Loss D:  0.1293
+Epoch 12, Loss G: -0.7082,Loss D: -0.0560
+Epoch 13, Loss G: -0.7753,Loss D: -0.0729
+Epoch 14, Loss G: -0.9141,Loss D:  0.0134
+Epoch 15, Loss G: -0.8194,Loss D:  0.0164
+Epoch 16, Loss G: -0.8083,Loss D:  0.0946
+Epoch 17, Loss G: -0.8035,Loss D: -0.0356
+Epoch 18, Loss G: -0.8853,Loss D: -0.0282
+Epoch 19, Loss G: -1.1254,Loss D:  0.1784
+Epoch 20, Loss G: -0.8121,Loss D: -0.1724
+Epoch 21, Loss G: -1.1410,Loss D:  0.1257
+Epoch 22, Loss G: -1.1406,Loss D:  0.0511
+Epoch 23, Loss G: -1.0787,Loss D: -0.0172
+Epoch 24, Loss G: -1.2221,Loss D:  0.0468
+Epoch 25, Loss G: -1.0493,Loss D: -0.0908
+Epoch 26, Loss G: -1.3255,Loss D:  0.1495
+Epoch 27, Loss G: -1.1053,Loss D: -0.1240
+Epoch 28, Loss G: -1.3407,Loss D:  0.1182
+Epoch 29, Loss G: -1.2823,Loss D: -0.0072
+Epoch 30, Loss G: -1.2999,Loss D: -0.0126
+Epoch 31, Loss G: -1.4411,Loss D:  0.0416
+Epoch 32, Loss G: -1.4654,Loss D:  0.0441
+Epoch 33, Loss G: -1.4836,Loss D: -0.0035
+Epoch 34, Loss G: -1.5109,Loss D:  0.0437
+Epoch 35, Loss G: -1.4644,Loss D:  0.0050
+Epoch 36, Loss G: -1.5237,Loss D:  0.0121
+Epoch 37, Loss G: -1.6154,Loss D:  0.0874
+Epoch 38, Loss G: -1.6739,Loss D:  0.0419
+Epoch 39, Loss G: -1.6428,Loss D:  0.0040
+Epoch 40, Loss G: -1.6415,Loss D: -0.0280
+Epoch 41, Loss G: -1.8360,Loss D:  0.1259
+Epoch 42, Loss G: -1.7589,Loss D:  0.0450
+Epoch 43, Loss G: -1.7502,Loss D: -0.0554
+Epoch 44, Loss G: -1.8581,Loss D:  0.0192
+Epoch 45, Loss G: -1.8786,Loss D:  0.0546
+Epoch 46, Loss G: -1.9272,Loss D:  0.0230
+Epoch 47, Loss G: -1.8212,Loss D: -0.0288
+Epoch 48, Loss G: -1.9555,Loss D: -0.0168
+Epoch 49, Loss G: -2.0297,Loss D:  0.0604
+Epoch 50, Loss G: -2.0012,Loss D:  0.0324
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 50
+number: 1
+batch size: 5000
+duration: 691.4258251190186
+Epoch 1, Loss G: -0.0918,Loss D: -0.0146
+Epoch 2, Loss G: -0.1752,Loss D: -0.0023
+Epoch 3, Loss G: -0.3659,Loss D:  0.0932
+Epoch 4, Loss G: -0.5348,Loss D:  0.1593
+Epoch 5, Loss G: -0.4758,Loss D:  0.0425
+Epoch 6, Loss G: -0.4096,Loss D: -0.0728
+Epoch 7, Loss G: -0.4191,Loss D: -0.0687
+Epoch 8, Loss G: -0.3496,Loss D: -0.1412
+Epoch 9, Loss G: -0.2536,Loss D: -0.1901
+Epoch 10, Loss G: -0.2821,Loss D: -0.1392
+Epoch 11, Loss G: -0.4100,Loss D:  0.0735
+Epoch 12, Loss G: -0.5202,Loss D:  0.1671
+Epoch 13, Loss G: -0.5360,Loss D:  0.1383
+Epoch 14, Loss G: -0.5469,Loss D:  0.0228
+Epoch 15, Loss G: -0.6170,Loss D:  0.0236
+Epoch 16, Loss G: -0.7422,Loss D:  0.0515
+Epoch 17, Loss G: -0.8669,Loss D:  0.1140
+Epoch 18, Loss G: -0.8579,Loss D:  0.0277
+Epoch 19, Loss G: -0.7855,Loss D: -0.0581
+Epoch 20, Loss G: -0.7706,Loss D: -0.0696
+Epoch 21, Loss G: -0.8949,Loss D:  0.0200
+Epoch 22, Loss G: -1.0577,Loss D:  0.1650
+Epoch 23, Loss G: -1.1080,Loss D:  0.2078
+Epoch 24, Loss G: -1.0040,Loss D:  0.0652
+Epoch 25, Loss G: -0.8257,Loss D: -0.0806
+Epoch 26, Loss G: -0.7699,Loss D: -0.1190
+Epoch 27, Loss G: -0.9921,Loss D:  0.0550
+Epoch 28, Loss G: -1.2346,Loss D:  0.1799
+Epoch 29, Loss G: -1.1705,Loss D:  0.1118
+Epoch 30, Loss G: -0.9617,Loss D: -0.1032
+Epoch 31, Loss G: -0.8944,Loss D: -0.1353
+Epoch 32, Loss G: -1.1036,Loss D:  0.0566
+Epoch 33, Loss G: -1.3292,Loss D:  0.2371
+Epoch 34, Loss G: -1.2447,Loss D:  0.1301
+Epoch 35, Loss G: -0.9858,Loss D: -0.1156
+Epoch 36, Loss G: -0.9203,Loss D: -0.1331
+Epoch 37, Loss G: -1.2190,Loss D:  0.1160
+Epoch 38, Loss G: -1.3954,Loss D:  0.2015
+Epoch 39, Loss G: -1.2238,Loss D: -0.0029
+Epoch 40, Loss G: -1.0550,Loss D: -0.1572
+Epoch 41, Loss G: -1.2266,Loss D: -0.0243
+Epoch 42, Loss G: -1.3394,Loss D:  0.0650
+Epoch 43, Loss G: -1.2916,Loss D:  0.0396
+Epoch 44, Loss G: -1.3111,Loss D:  0.0537
+Epoch 45, Loss G: -1.3831,Loss D:  0.0590
+Epoch 46, Loss G: -1.2695,Loss D: -0.0583
+Epoch 47, Loss G: -1.2254,Loss D: -0.1086
+Epoch 48, Loss G: -1.4401,Loss D:  0.0812
+Epoch 49, Loss G: -1.5527,Loss D:  0.1764
+Epoch 50, Loss G: -1.4449,Loss D:  0.0596
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 50
+number: 1
+batch size: 10000
+duration: 381.2784640789032
+Epoch 1, Loss G: -0.7200,Loss D:  0.0037
+Epoch 2, Loss G: -1.3157,Loss D:  0.0094
+Epoch 3, Loss G: -1.4399,Loss D: -0.1055
+Epoch 4, Loss G: -1.8497,Loss D: -0.0146
+Epoch 5, Loss G: -2.2165,Loss D:  0.1643
+Epoch 6, Loss G: -2.2857,Loss D:  0.0141
+Epoch 7, Loss G: -2.3389,Loss D:  0.0294
+Epoch 8, Loss G: -2.3294,Loss D:  0.0995
+Epoch 9, Loss G: -2.5430,Loss D:  0.0132
+Epoch 10, Loss G: -2.5493,Loss D: -0.0226
+Epoch 11, Loss G: -2.4496,Loss D: -0.0762
+Epoch 12, Loss G: -2.6644,Loss D:  0.0612
+Epoch 13, Loss G: -2.7103,Loss D:  0.0440
+Epoch 14, Loss G: -2.7843,Loss D: -0.1044
+Epoch 15, Loss G: -2.7612,Loss D:  0.0659
+Epoch 16, Loss G: -2.7262,Loss D:  0.0301
+Epoch 17, Loss G: -2.8428,Loss D: -0.0332
+Epoch 18, Loss G: -2.8878,Loss D: -0.0415
+Epoch 19, Loss G: -2.9162,Loss D:  0.1354
+Epoch 20, Loss G: -2.8884,Loss D: -0.0150
+Epoch 21, Loss G: -2.9062,Loss D:  0.0933
+Epoch 22, Loss G: -3.0183,Loss D: -0.0953
+Epoch 23, Loss G: -2.8638,Loss D:  0.0137
+Epoch 24, Loss G: -2.9414,Loss D:  0.1230
+Epoch 25, Loss G: -2.9744,Loss D:  0.0473
+Epoch 26, Loss G: -2.8613,Loss D: -0.0495
+Epoch 27, Loss G: -2.9127,Loss D:  0.0237
+Epoch 28, Loss G: -3.0781,Loss D:  0.0239
+Epoch 29, Loss G: -2.9725,Loss D:  0.1328
+Epoch 30, Loss G: -2.9709,Loss D:  0.0232
+Epoch 31, Loss G: -3.1144,Loss D: -0.0081
+Epoch 32, Loss G: -2.9883,Loss D: -0.1018
+Epoch 33, Loss G: -2.9945,Loss D:  0.1463
+Epoch 34, Loss G: -3.1729,Loss D: -0.0945
+Epoch 35, Loss G: -3.0190,Loss D: -0.1821
+Epoch 36, Loss G: -3.0618,Loss D:  0.0925
+Epoch 37, Loss G: -3.1551,Loss D:  0.0534
+Epoch 38, Loss G: -3.0573,Loss D:  0.0454
+Epoch 39, Loss G: -3.1418,Loss D: -0.0223
+Epoch 40, Loss G: -3.0444,Loss D:  0.0580
+Epoch 41, Loss G: -2.9114,Loss D:  0.0613
+Epoch 42, Loss G: -2.9839,Loss D:  0.0429
+Epoch 43, Loss G: -3.0515,Loss D:  0.0546
+Epoch 44, Loss G: -3.1138,Loss D: -0.0607
+Epoch 45, Loss G: -3.0982,Loss D:  0.0343
+Epoch 46, Loss G: -3.1278,Loss D:  0.0025
+Epoch 47, Loss G: -3.1249,Loss D:  0.0359
+Epoch 48, Loss G: -3.2107,Loss D:  0.0076
+Epoch 49, Loss G: -3.0274,Loss D:  0.1000
+Epoch 50, Loss G: -3.1236,Loss D:  0.0157
+Epoch 51, Loss G: -3.0300,Loss D:  0.0636
+Epoch 52, Loss G: -3.0227,Loss D:  0.0154
+Epoch 53, Loss G: -3.0910,Loss D: -0.0003
+Epoch 54, Loss G: -3.0121,Loss D: -0.0023
+Epoch 55, Loss G: -3.1585,Loss D: -0.0761
+Epoch 56, Loss G: -3.1584,Loss D:  0.0667
+Epoch 57, Loss G: -3.0262,Loss D:  0.0129
+Epoch 58, Loss G: -3.0960,Loss D:  0.0014
+Epoch 59, Loss G: -3.0621,Loss D: -0.0066
+Epoch 60, Loss G: -3.1165,Loss D:  0.0800
+Epoch 61, Loss G: -3.1733,Loss D:  0.0411
+Epoch 62, Loss G: -3.1732,Loss D: -0.0563
+Epoch 63, Loss G: -3.0577,Loss D:  0.0178
+Epoch 64, Loss G: -3.1072,Loss D:  0.0700
+Epoch 65, Loss G: -3.1746,Loss D: -0.0213
+Epoch 66, Loss G: -3.1842,Loss D: -0.0204
+Epoch 67, Loss G: -3.1527,Loss D: -0.0977
+Epoch 68, Loss G: -3.0614,Loss D: -0.0790
+Epoch 69, Loss G: -3.1424,Loss D:  0.0789
+Epoch 70, Loss G: -3.1665,Loss D:  0.0396
+Epoch 71, Loss G: -3.1005,Loss D:  0.0238
+Epoch 72, Loss G: -3.1181,Loss D: -0.0378
+Epoch 73, Loss G: -3.0268,Loss D:  0.0388
+Epoch 74, Loss G: -3.1230,Loss D: -0.0507
+Epoch 75, Loss G: -3.1622,Loss D: -0.0062
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 75
+number: 1
+batch size: 500
+duration: 891.1518380641937
+Epoch 1, Loss G: -0.2243,Loss D: -0.1924
+Epoch 2, Loss G: -0.6046,Loss D:  0.0424
+Epoch 3, Loss G: -0.9604,Loss D: -0.0708
+Epoch 4, Loss G: -1.1252,Loss D: -0.1220
+Epoch 5, Loss G: -1.4116,Loss D:  0.0129
+Epoch 6, Loss G: -1.4755,Loss D: -0.0353
+Epoch 7, Loss G: -1.8185,Loss D:  0.0675
+Epoch 8, Loss G: -1.9842,Loss D:  0.0556
+Epoch 9, Loss G: -2.1573,Loss D:  0.1082
+Epoch 10, Loss G: -2.0802,Loss D:  0.0105
+Epoch 11, Loss G: -2.1410,Loss D: -0.1289
+Epoch 12, Loss G: -2.2808,Loss D: -0.0500
+Epoch 13, Loss G: -2.4221,Loss D:  0.0287
+Epoch 14, Loss G: -2.4601,Loss D: -0.0122
+Epoch 15, Loss G: -2.5084,Loss D:  0.0637
+Epoch 16, Loss G: -2.5803,Loss D:  0.0693
+Epoch 17, Loss G: -2.6650,Loss D: -0.0189
+Epoch 18, Loss G: -2.6800,Loss D: -0.0179
+Epoch 19, Loss G: -2.7607,Loss D:  0.0588
+Epoch 20, Loss G: -2.7805,Loss D: -0.0478
+Epoch 21, Loss G: -2.7002,Loss D: -0.0068
+Epoch 22, Loss G: -2.7689,Loss D:  0.0772
+Epoch 23, Loss G: -2.7801,Loss D: -0.0458
+Epoch 24, Loss G: -2.8768,Loss D:  0.0218
+Epoch 25, Loss G: -2.8536,Loss D:  0.0443
+Epoch 26, Loss G: -2.7755,Loss D: -0.0165
+Epoch 27, Loss G: -2.7769,Loss D: -0.0423
+Epoch 28, Loss G: -2.8804,Loss D:  0.0609
+Epoch 29, Loss G: -2.8692,Loss D: -0.0597
+Epoch 30, Loss G: -2.8204,Loss D:  0.1034
+Epoch 31, Loss G: -2.7445,Loss D:  0.0630
+Epoch 32, Loss G: -2.7903,Loss D:  0.0574
+Epoch 33, Loss G: -2.9366,Loss D:  0.0386
+Epoch 34, Loss G: -2.8775,Loss D:  0.0700
+Epoch 35, Loss G: -2.8045,Loss D: -0.0168
+Epoch 36, Loss G: -2.9432,Loss D: -0.0739
+Epoch 37, Loss G: -2.9587,Loss D: -0.0325
+Epoch 38, Loss G: -2.8923,Loss D:  0.0254
+Epoch 39, Loss G: -2.8663,Loss D: -0.0234
+Epoch 40, Loss G: -2.9102,Loss D:  0.0232
+Epoch 41, Loss G: -2.9431,Loss D: -0.0725
+Epoch 42, Loss G: -2.9559,Loss D:  0.0329
+Epoch 43, Loss G: -2.9986,Loss D: -0.0592
+Epoch 44, Loss G: -2.9697,Loss D:  0.0682
+Epoch 45, Loss G: -2.9618,Loss D:  0.0104
+Epoch 46, Loss G: -2.8764,Loss D: -0.0418
+Epoch 47, Loss G: -2.9989,Loss D: -0.0361
+Epoch 48, Loss G: -3.0002,Loss D:  0.0766
+Epoch 49, Loss G: -2.9734,Loss D: -0.0017
+Epoch 50, Loss G: -3.0493,Loss D:  0.0404
+Epoch 51, Loss G: -2.9554,Loss D:  0.0461
+Epoch 52, Loss G: -3.0647,Loss D:  0.0498
+Epoch 53, Loss G: -3.1101,Loss D: -0.0553
+Epoch 54, Loss G: -3.0907,Loss D: -0.0567
+Epoch 55, Loss G: -3.0092,Loss D: -0.0584
+Epoch 56, Loss G: -3.0327,Loss D:  0.0047
+Epoch 57, Loss G: -2.9838,Loss D: -0.0360
+Epoch 58, Loss G: -3.0360,Loss D:  0.0018
+Epoch 59, Loss G: -3.0249,Loss D:  0.0197
+Epoch 60, Loss G: -3.0372,Loss D: -0.0739
+Epoch 61, Loss G: -3.0248,Loss D: -0.0637
+Epoch 62, Loss G: -3.0507,Loss D:  0.0345
+Epoch 63, Loss G: -2.9531,Loss D: -0.0094
+Epoch 64, Loss G: -3.0292,Loss D: -0.0693
+Epoch 65, Loss G: -3.0474,Loss D: -0.0061
+Epoch 66, Loss G: -3.0663,Loss D: -0.0185
+Epoch 67, Loss G: -3.0816,Loss D: -0.0380
+Epoch 68, Loss G: -2.9751,Loss D:  0.0881
+Epoch 69, Loss G: -2.9971,Loss D: -0.0694
+Epoch 70, Loss G: -2.9917,Loss D: -0.0768
+Epoch 71, Loss G: -3.0726,Loss D: -0.0493
+Epoch 72, Loss G: -3.0509,Loss D:  0.0062
+Epoch 73, Loss G: -3.0268,Loss D: -0.0707
+Epoch 74, Loss G: -3.0120,Loss D:  0.0001
+Epoch 75, Loss G: -3.1025,Loss D:  0.0493
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 75
+number: 1
+batch size: 1000
+duration: 732.9094598293304
+Epoch 1, Loss G: -0.1769,Loss D: -0.0061
+Epoch 2, Loss G: -0.4998,Loss D:  0.1247
+Epoch 3, Loss G: -0.4419,Loss D:  0.0171
+Epoch 4, Loss G: -0.2102,Loss D: -0.2192
+Epoch 5, Loss G: -0.3393,Loss D: -0.1231
+Epoch 6, Loss G: -0.6026,Loss D:  0.1988
+Epoch 7, Loss G: -0.4681,Loss D: -0.0850
+Epoch 8, Loss G: -0.8231,Loss D:  0.1410
+Epoch 9, Loss G: -0.9520,Loss D:  0.0571
+Epoch 10, Loss G: -0.9642,Loss D: -0.0449
+Epoch 11, Loss G: -1.1667,Loss D:  0.1932
+Epoch 12, Loss G: -0.9612,Loss D: -0.0571
+Epoch 13, Loss G: -1.0631,Loss D: -0.0347
+Epoch 14, Loss G: -1.2496,Loss D:  0.1597
+Epoch 15, Loss G: -1.0271,Loss D: -0.1113
+Epoch 16, Loss G: -1.2424,Loss D:  0.0934
+Epoch 17, Loss G: -1.3385,Loss D:  0.0599
+Epoch 18, Loss G: -1.1221,Loss D: -0.1644
+Epoch 19, Loss G: -1.4671,Loss D:  0.2104
+Epoch 20, Loss G: -1.2599,Loss D: -0.0575
+Epoch 21, Loss G: -1.2825,Loss D:  0.0003
+Epoch 22, Loss G: -1.5552,Loss D:  0.1517
+Epoch 23, Loss G: -1.3519,Loss D: -0.0994
+Epoch 24, Loss G: -1.5986,Loss D:  0.0772
+Epoch 25, Loss G: -1.4975,Loss D: -0.0212
+Epoch 26, Loss G: -1.5376,Loss D:  0.0211
+Epoch 27, Loss G: -1.6573,Loss D:  0.0139
+Epoch 28, Loss G: -1.5856,Loss D: -0.0034
+Epoch 29, Loss G: -1.7720,Loss D:  0.0978
+Epoch 30, Loss G: -1.7134,Loss D: -0.0125
+Epoch 31, Loss G: -1.7170,Loss D: -0.0494
+Epoch 32, Loss G: -1.7708,Loss D:  0.0446
+Epoch 33, Loss G: -1.7780,Loss D:  0.0332
+Epoch 34, Loss G: -1.7539,Loss D: -0.0229
+Epoch 35, Loss G: -1.8629,Loss D:  0.0411
+Epoch 36, Loss G: -1.9314,Loss D:  0.0168
+Epoch 37, Loss G: -1.9601,Loss D:  0.0707
+Epoch 38, Loss G: -1.8137,Loss D: -0.0804
+Epoch 39, Loss G: -2.0121,Loss D:  0.0697
+Epoch 40, Loss G: -2.0373,Loss D:  0.0570
+Epoch 41, Loss G: -1.9778,Loss D: -0.0489
+Epoch 42, Loss G: -2.0705,Loss D:  0.0259
+Epoch 43, Loss G: -2.1123,Loss D:  0.0462
+Epoch 44, Loss G: -2.0014,Loss D: -0.0769
+Epoch 45, Loss G: -2.0312,Loss D: -0.0132
+Epoch 46, Loss G: -2.1438,Loss D:  0.1055
+Epoch 47, Loss G: -1.9722,Loss D: -0.1046
+Epoch 48, Loss G: -2.1197,Loss D:  0.0830
+Epoch 49, Loss G: -2.2047,Loss D:  0.0377
+Epoch 50, Loss G: -2.0342,Loss D: -0.0150
+Epoch 51, Loss G: -2.0565,Loss D:  0.0660
+Epoch 52, Loss G: -1.9897,Loss D: -0.0048
+Epoch 53, Loss G: -2.1349,Loss D: -0.0030
+Epoch 54, Loss G: -2.2006,Loss D:  0.0100
+Epoch 55, Loss G: -2.0782,Loss D: -0.0575
+Epoch 56, Loss G: -2.2672,Loss D:  0.1168
+Epoch 57, Loss G: -2.0669,Loss D: -0.0990
+Epoch 58, Loss G: -2.2417,Loss D:  0.0708
+Epoch 59, Loss G: -2.2209,Loss D:  0.0006
+Epoch 60, Loss G: -2.2550,Loss D: -0.0050
+Epoch 61, Loss G: -2.3622,Loss D:  0.0647
+Epoch 62, Loss G: -2.2092,Loss D: -0.0309
+Epoch 63, Loss G: -2.2847,Loss D:  0.0362
+Epoch 64, Loss G: -2.2077,Loss D: -0.0108
+Epoch 65, Loss G: -2.2657,Loss D:  0.0168
+Epoch 66, Loss G: -2.3380,Loss D:  0.0783
+Epoch 67, Loss G: -2.2654,Loss D: -0.0239
+Epoch 68, Loss G: -2.2880,Loss D: -0.0077
+Epoch 69, Loss G: -2.4700,Loss D:  0.0801
+Epoch 70, Loss G: -2.3408,Loss D: -0.0249
+Epoch 71, Loss G: -2.3925,Loss D:  0.0044
+Epoch 72, Loss G: -2.4673,Loss D:  0.1104
+Epoch 73, Loss G: -2.1812,Loss D: -0.0937
+Epoch 74, Loss G: -2.4377,Loss D:  0.0544
+Epoch 75, Loss G: -2.4846,Loss D:  0.0647
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 75
+number: 1
+batch size: 5000
+duration: 758.8687040805817
+Epoch 1, Loss G:  0.0183,Loss D: -0.0202
+Epoch 2, Loss G: -0.0665,Loss D: -0.0166
+Epoch 3, Loss G: -0.2440,Loss D:  0.0811
+Epoch 4, Loss G: -0.3740,Loss D:  0.1381
+Epoch 5, Loss G: -0.3563,Loss D:  0.1159
+Epoch 6, Loss G: -0.2472,Loss D:  0.0192
+Epoch 7, Loss G: -0.1680,Loss D: -0.1147
+Epoch 8, Loss G: -0.1242,Loss D: -0.1846
+Epoch 9, Loss G: -0.1559,Loss D: -0.1429
+Epoch 10, Loss G: -0.2513,Loss D: -0.0321
+Epoch 11, Loss G: -0.3374,Loss D:  0.0787
+Epoch 12, Loss G: -0.3533,Loss D:  0.0228
+Epoch 13, Loss G: -0.3059,Loss D: -0.0394
+Epoch 14, Loss G: -0.3735,Loss D: -0.0014
+Epoch 15, Loss G: -0.6021,Loss D:  0.1355
+Epoch 16, Loss G: -0.7534,Loss D:  0.1947
+Epoch 17, Loss G: -0.7506,Loss D:  0.0848
+Epoch 18, Loss G: -0.6585,Loss D: -0.0868
+Epoch 19, Loss G: -0.6493,Loss D: -0.1293
+Epoch 20, Loss G: -0.8332,Loss D:  0.0243
+Epoch 21, Loss G: -0.9882,Loss D:  0.1569
+Epoch 22, Loss G: -0.9374,Loss D:  0.0677
+Epoch 23, Loss G: -0.7356,Loss D: -0.1180
+Epoch 24, Loss G: -0.6450,Loss D: -0.1218
+Epoch 25, Loss G: -0.8162,Loss D:  0.0713
+Epoch 26, Loss G: -1.0513,Loss D:  0.2708
+Epoch 27, Loss G: -1.0857,Loss D:  0.2241
+Epoch 28, Loss G: -0.9515,Loss D:  0.0042
+Epoch 29, Loss G: -0.7458,Loss D: -0.1875
+Epoch 30, Loss G: -0.7917,Loss D: -0.1682
+Epoch 31, Loss G: -1.0833,Loss D:  0.0831
+Epoch 32, Loss G: -1.2919,Loss D:  0.2580
+Epoch 33, Loss G: -1.2096,Loss D:  0.1250
+Epoch 34, Loss G: -0.8649,Loss D: -0.1393
+Epoch 35, Loss G: -0.7131,Loss D: -0.2256
+Epoch 36, Loss G: -0.9660,Loss D:  0.0388
+Epoch 37, Loss G: -1.2963,Loss D:  0.2113
+Epoch 38, Loss G: -1.2633,Loss D:  0.1213
+Epoch 39, Loss G: -1.0720,Loss D: -0.1185
+Epoch 40, Loss G: -1.0856,Loss D: -0.0746
+Epoch 41, Loss G: -1.2788,Loss D:  0.0834
+Epoch 42, Loss G: -1.2260,Loss D:  0.0559
+Epoch 43, Loss G: -1.0703,Loss D: -0.0159
+Epoch 44, Loss G: -1.0827,Loss D: -0.0241
+Epoch 45, Loss G: -1.2246,Loss D:  0.0828
+Epoch 46, Loss G: -1.2545,Loss D:  0.0364
+Epoch 47, Loss G: -1.2976,Loss D:  0.0642
+Epoch 48, Loss G: -1.3730,Loss D:  0.0727
+Epoch 49, Loss G: -1.1923,Loss D: -0.0510
+Epoch 50, Loss G: -1.1623,Loss D: -0.0608
+Epoch 51, Loss G: -1.3460,Loss D:  0.0358
+Epoch 52, Loss G: -1.3907,Loss D:  0.0497
+Epoch 53, Loss G: -1.4217,Loss D:  0.0546
+Epoch 54, Loss G: -1.4018,Loss D:  0.0637
+Epoch 55, Loss G: -1.3199,Loss D: -0.0427
+Epoch 56, Loss G: -1.2452,Loss D: -0.0979
+Epoch 57, Loss G: -1.3693,Loss D:  0.0163
+Epoch 58, Loss G: -1.4938,Loss D:  0.1228
+Epoch 59, Loss G: -1.5346,Loss D:  0.1013
+Epoch 60, Loss G: -1.4671,Loss D:  0.0449
+Epoch 61, Loss G: -1.3523,Loss D: -0.0579
+Epoch 62, Loss G: -1.3239,Loss D: -0.0657
+Epoch 63, Loss G: -1.5120,Loss D:  0.0599
+Epoch 64, Loss G: -1.6322,Loss D:  0.1320
+Epoch 65, Loss G: -1.5654,Loss D:  0.0249
+Epoch 66, Loss G: -1.5161,Loss D: -0.0250
+Epoch 67, Loss G: -1.5594,Loss D: -0.0110
+Epoch 68, Loss G: -1.5496,Loss D: -0.0023
+Epoch 69, Loss G: -1.5769,Loss D:  0.0286
+Epoch 70, Loss G: -1.5601,Loss D:  0.0351
+Epoch 71, Loss G: -1.4701,Loss D: -0.0240
+Epoch 72, Loss G: -1.4882,Loss D: -0.0328
+Epoch 73, Loss G: -1.5912,Loss D:  0.0755
+Epoch 74, Loss G: -1.6635,Loss D:  0.1253
+Epoch 75, Loss G: -1.6705,Loss D:  0.0659
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 75
+number: 1
+batch size: 10000
+duration: 459.9937641620636
+Epoch 1, Loss G: -0.3406,Loss D:  0.0002
+Epoch 2, Loss G: -0.7472,Loss D: -0.1302
+Epoch 3, Loss G: -1.1714,Loss D:  0.0167
+Epoch 4, Loss G: -1.3704,Loss D:  0.0408
+Epoch 5, Loss G: -1.6411,Loss D:  0.1372
+Epoch 6, Loss G: -2.0082,Loss D:  0.0696
+Epoch 7, Loss G: -2.2025,Loss D:  0.1220
+Epoch 8, Loss G: -2.1473,Loss D: -0.0462
+Epoch 9, Loss G: -2.4678,Loss D:  0.1014
+Epoch 10, Loss G: -2.4428,Loss D:  0.0740
+Epoch 11, Loss G: -2.6838,Loss D: -0.0004
+Epoch 12, Loss G: -2.5851,Loss D:  0.0057
+Epoch 13, Loss G: -2.6534,Loss D: -0.0024
+Epoch 14, Loss G: -2.8168,Loss D: -0.0100
+Epoch 15, Loss G: -2.6816,Loss D:  0.0670
+Epoch 16, Loss G: -2.7459,Loss D:  0.1002
+Epoch 17, Loss G: -2.8548,Loss D: -0.0071
+Epoch 18, Loss G: -2.8231,Loss D: -0.0081
+Epoch 19, Loss G: -2.8333,Loss D: -0.0510
+Epoch 20, Loss G: -2.9559,Loss D:  0.0099
+Epoch 21, Loss G: -2.9655,Loss D:  0.0206
+Epoch 22, Loss G: -2.8848,Loss D: -0.0558
+Epoch 23, Loss G: -2.9339,Loss D:  0.0815
+Epoch 24, Loss G: -2.9950,Loss D:  0.0174
+Epoch 25, Loss G: -2.9576,Loss D: -0.0656
+Epoch 26, Loss G: -2.9716,Loss D: -0.0285
+Epoch 27, Loss G: -2.9253,Loss D: -0.1176
+Epoch 28, Loss G: -2.8352,Loss D:  0.0070
+Epoch 29, Loss G: -3.0298,Loss D: -0.0585
+Epoch 30, Loss G: -3.0599,Loss D: -0.0254
+Epoch 31, Loss G: -3.0558,Loss D: -0.0593
+Epoch 32, Loss G: -3.0321,Loss D: -0.0007
+Epoch 33, Loss G: -3.0414,Loss D: -0.0661
+Epoch 34, Loss G: -2.9300,Loss D: -0.0036
+Epoch 35, Loss G: -3.1075,Loss D:  0.0832
+Epoch 36, Loss G: -3.0392,Loss D: -0.0841
+Epoch 37, Loss G: -3.0147,Loss D:  0.0514
+Epoch 38, Loss G: -2.9943,Loss D: -0.0060
+Epoch 39, Loss G: -3.0541,Loss D: -0.0479
+Epoch 40, Loss G: -3.0633,Loss D:  0.1283
+Epoch 41, Loss G: -2.9903,Loss D:  0.0954
+Epoch 42, Loss G: -3.0936,Loss D:  0.0447
+Epoch 43, Loss G: -3.1502,Loss D:  0.0504
+Epoch 44, Loss G: -3.0646,Loss D:  0.0133
+Epoch 45, Loss G: -2.9902,Loss D:  0.0779
+Epoch 46, Loss G: -3.1002,Loss D:  0.0768
+Epoch 47, Loss G: -3.0671,Loss D: -0.0443
+Epoch 48, Loss G: -3.0462,Loss D: -0.0406
+Epoch 49, Loss G: -3.0605,Loss D:  0.1791
+Epoch 50, Loss G: -3.1186,Loss D: -0.0612
+Epoch 51, Loss G: -3.0342,Loss D:  0.0094
+Epoch 52, Loss G: -3.0876,Loss D: -0.0199
+Epoch 53, Loss G: -3.0739,Loss D: -0.0918
+Epoch 54, Loss G: -3.1669,Loss D:  0.0196
+Epoch 55, Loss G: -3.0173,Loss D: -0.0475
+Epoch 56, Loss G: -3.0001,Loss D: -0.0527
+Epoch 57, Loss G: -3.0946,Loss D: -0.0372
+Epoch 58, Loss G: -3.0979,Loss D:  0.0083
+Epoch 59, Loss G: -3.0054,Loss D: -0.0963
+Epoch 60, Loss G: -2.9515,Loss D:  0.0274
+Epoch 61, Loss G: -3.1810,Loss D:  0.0213
+Epoch 62, Loss G: -3.1452,Loss D:  0.1280
+Epoch 63, Loss G: -3.0716,Loss D: -0.0234
+Epoch 64, Loss G: -3.1733,Loss D: -0.0598
+Epoch 65, Loss G: -2.9975,Loss D:  0.0570
+Epoch 66, Loss G: -3.1653,Loss D: -0.1019
+Epoch 67, Loss G: -3.2336,Loss D:  0.0343
+Epoch 68, Loss G: -3.1509,Loss D: -0.0666
+Epoch 69, Loss G: -3.0649,Loss D:  0.1136
+Epoch 70, Loss G: -3.0806,Loss D: -0.0246
+Epoch 71, Loss G: -3.0080,Loss D:  0.0563
+Epoch 72, Loss G: -3.1164,Loss D: -0.0373
+Epoch 73, Loss G: -3.1387,Loss D:  0.0693
+Epoch 74, Loss G: -3.1307,Loss D:  0.0076
+Epoch 75, Loss G: -3.2158,Loss D:  0.1747
+Epoch 76, Loss G: -3.0964,Loss D:  0.2060
+Epoch 77, Loss G: -3.0089,Loss D:  0.1136
+Epoch 78, Loss G: -3.0629,Loss D:  0.0762
+Epoch 79, Loss G: -3.1305,Loss D:  0.0218
+Epoch 80, Loss G: -3.1157,Loss D: -0.0551
+Epoch 81, Loss G: -3.0734,Loss D: -0.0073
+Epoch 82, Loss G: -3.0496,Loss D: -0.0274
+Epoch 83, Loss G: -3.1650,Loss D:  0.0042
+Epoch 84, Loss G: -3.1166,Loss D: -0.0097
+Epoch 85, Loss G: -3.0288,Loss D:  0.0605
+Epoch 86, Loss G: -3.0390,Loss D:  0.0149
+Epoch 87, Loss G: -3.1561,Loss D: -0.0052
+Epoch 88, Loss G: -3.1040,Loss D:  0.0516
+Epoch 89, Loss G: -3.1620,Loss D: -0.0538
+Epoch 90, Loss G: -3.2083,Loss D:  0.0135
+Epoch 91, Loss G: -3.0786,Loss D:  0.0376
+Epoch 92, Loss G: -3.0780,Loss D: -0.1817
+Epoch 93, Loss G: -3.1329,Loss D: -0.0245
+Epoch 94, Loss G: -3.0973,Loss D:  0.0723
+Epoch 95, Loss G: -3.1539,Loss D: -0.0348
+Epoch 96, Loss G: -3.1709,Loss D: -0.0826
+Epoch 97, Loss G: -3.1448,Loss D:  0.0032
+Epoch 98, Loss G: -3.1702,Loss D:  0.1281
+Epoch 99, Loss G: -3.1405,Loss D:  0.0358
+Epoch 100, Loss G: -2.9755,Loss D: -0.0309
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 100
+number: 1
+batch size: 500
+duration: 1157.3554360866547
+Epoch 1, Loss G: -0.4258,Loss D: -0.1345
+Epoch 2, Loss G: -0.8301,Loss D:  0.1534
+Epoch 3, Loss G: -1.0181,Loss D:  0.1349
+Epoch 4, Loss G: -1.3400,Loss D:  0.1967
+Epoch 5, Loss G: -1.3171,Loss D:  0.0177
+Epoch 6, Loss G: -1.5376,Loss D:  0.0620
+Epoch 7, Loss G: -1.6780,Loss D:  0.0510
+Epoch 8, Loss G: -1.8327,Loss D:  0.0647
+Epoch 9, Loss G: -1.9605,Loss D: -0.0633
+Epoch 10, Loss G: -2.0180,Loss D:  0.0364
+Epoch 11, Loss G: -2.2844,Loss D:  0.1322
+Epoch 12, Loss G: -2.2610,Loss D: -0.0326
+Epoch 13, Loss G: -2.4030,Loss D:  0.1498
+Epoch 14, Loss G: -2.4862,Loss D:  0.0530
+Epoch 15, Loss G: -2.6515,Loss D:  0.0543
+Epoch 16, Loss G: -2.5048,Loss D: -0.0626
+Epoch 17, Loss G: -2.5635,Loss D: -0.0639
+Epoch 18, Loss G: -2.4773,Loss D: -0.1153
+Epoch 19, Loss G: -2.5904,Loss D:  0.0164
+Epoch 20, Loss G: -2.6499,Loss D:  0.0133
+Epoch 21, Loss G: -2.7211,Loss D:  0.0023
+Epoch 22, Loss G: -2.5068,Loss D: -0.0887
+Epoch 23, Loss G: -2.6785,Loss D: -0.0140
+Epoch 24, Loss G: -2.6631,Loss D:  0.0497
+Epoch 25, Loss G: -2.6630,Loss D:  0.0285
+Epoch 26, Loss G: -2.6805,Loss D:  0.0535
+Epoch 27, Loss G: -2.8090,Loss D: -0.0655
+Epoch 28, Loss G: -2.7948,Loss D: -0.0351
+Epoch 29, Loss G: -2.7439,Loss D:  0.1063
+Epoch 30, Loss G: -2.8147,Loss D: -0.0490
+Epoch 31, Loss G: -2.8485,Loss D:  0.0179
+Epoch 32, Loss G: -2.8603,Loss D:  0.0355
+Epoch 33, Loss G: -2.9000,Loss D:  0.1056
+Epoch 34, Loss G: -2.7944,Loss D: -0.0438
+Epoch 35, Loss G: -2.9558,Loss D:  0.0123
+Epoch 36, Loss G: -2.8727,Loss D:  0.0420
+Epoch 37, Loss G: -2.8791,Loss D: -0.0562
+Epoch 38, Loss G: -2.9832,Loss D: -0.0143
+Epoch 39, Loss G: -2.9449,Loss D: -0.0388
+Epoch 40, Loss G: -2.9455,Loss D:  0.0715
+Epoch 41, Loss G: -2.9999,Loss D:  0.0547
+Epoch 42, Loss G: -2.9296,Loss D:  0.0261
+Epoch 43, Loss G: -2.9073,Loss D:  0.0140
+Epoch 44, Loss G: -2.9378,Loss D: -0.0473
+Epoch 45, Loss G: -2.9931,Loss D: -0.0605
+Epoch 46, Loss G: -2.8839,Loss D:  0.0266
+Epoch 47, Loss G: -2.9523,Loss D: -0.0123
+Epoch 48, Loss G: -2.9519,Loss D:  0.0804
+Epoch 49, Loss G: -3.0171,Loss D: -0.0214
+Epoch 50, Loss G: -2.9832,Loss D: -0.0766
+Epoch 51, Loss G: -2.9651,Loss D:  0.0595
+Epoch 52, Loss G: -3.0254,Loss D: -0.0436
+Epoch 53, Loss G: -2.9894,Loss D:  0.0763
+Epoch 54, Loss G: -2.9414,Loss D:  0.0291
+Epoch 55, Loss G: -3.0492,Loss D:  0.0064
+Epoch 56, Loss G: -2.8448,Loss D:  0.0218
+Epoch 57, Loss G: -3.0274,Loss D:  0.0255
+Epoch 58, Loss G: -3.0230,Loss D: -0.0466
+Epoch 59, Loss G: -3.0307,Loss D:  0.0131
+Epoch 60, Loss G: -3.0740,Loss D: -0.0163
+Epoch 61, Loss G: -3.0383,Loss D:  0.0084
+Epoch 62, Loss G: -3.0383,Loss D:  0.0149
+Epoch 63, Loss G: -3.0255,Loss D:  0.0697
+Epoch 64, Loss G: -3.0828,Loss D: -0.0034
+Epoch 65, Loss G: -3.0067,Loss D:  0.0954
+Epoch 66, Loss G: -3.0393,Loss D:  0.0370
+Epoch 67, Loss G: -3.0450,Loss D:  0.0280
+Epoch 68, Loss G: -3.1040,Loss D:  0.0920
+Epoch 69, Loss G: -2.9560,Loss D:  0.0020
+Epoch 70, Loss G: -3.0785,Loss D:  0.0062
+Epoch 71, Loss G: -3.0564,Loss D: -0.0059
+Epoch 72, Loss G: -2.9972,Loss D:  0.0122
+Epoch 73, Loss G: -3.0835,Loss D:  0.0479
+Epoch 74, Loss G: -3.1210,Loss D: -0.0608
+Epoch 75, Loss G: -3.1258,Loss D: -0.0009
+Epoch 76, Loss G: -3.0690,Loss D:  0.0480
+Epoch 77, Loss G: -3.0496,Loss D:  0.0506
+Epoch 78, Loss G: -3.0556,Loss D:  0.0246
+Epoch 79, Loss G: -3.1289,Loss D:  0.0056
+Epoch 80, Loss G: -3.0266,Loss D:  0.0055
+Epoch 81, Loss G: -3.0422,Loss D:  0.0561
+Epoch 82, Loss G: -3.0753,Loss D:  0.0246
+Epoch 83, Loss G: -3.0070,Loss D:  0.0298
+Epoch 84, Loss G: -3.0961,Loss D:  0.0253
+Epoch 85, Loss G: -3.0961,Loss D:  0.0130
+Epoch 86, Loss G: -3.0792,Loss D: -0.0266
+Epoch 87, Loss G: -3.1061,Loss D: -0.0498
+Epoch 88, Loss G: -3.0563,Loss D:  0.0592
+Epoch 89, Loss G: -3.0878,Loss D:  0.0899
+Epoch 90, Loss G: -2.9964,Loss D:  0.0142
+Epoch 91, Loss G: -3.0590,Loss D:  0.1060
+Epoch 92, Loss G: -3.1762,Loss D: -0.0289
+Epoch 93, Loss G: -3.0061,Loss D:  0.0361
+Epoch 94, Loss G: -3.0999,Loss D:  0.0008
+Epoch 95, Loss G: -2.9887,Loss D:  0.1130
+Epoch 96, Loss G: -3.0791,Loss D:  0.0430
+Epoch 97, Loss G: -3.1051,Loss D:  0.0816
+Epoch 98, Loss G: -3.1012,Loss D: -0.0329
+Epoch 99, Loss G: -3.0978,Loss D: -0.0406
+Epoch 100, Loss G: -3.1327,Loss D:  0.0333
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 100
+number: 1
+batch size: 1000
+duration: 476.06225514411926
+Epoch 1, Loss G: -0.0322,Loss D:  0.0079
+Epoch 2, Loss G: -0.4632,Loss D:  0.2000
+Epoch 3, Loss G: -0.2857,Loss D: -0.0582
+Epoch 4, Loss G: -0.2171,Loss D: -0.2624
+Epoch 5, Loss G: -0.2773,Loss D: -0.1455
+Epoch 6, Loss G: -0.5372,Loss D:  0.1384
+Epoch 7, Loss G: -0.6966,Loss D:  0.1946
+Epoch 8, Loss G: -0.5447,Loss D: -0.1015
+Epoch 9, Loss G: -0.8106,Loss D:  0.1141
+Epoch 10, Loss G: -0.8318,Loss D:  0.0191
+Epoch 11, Loss G: -0.8088,Loss D: -0.1337
+Epoch 12, Loss G: -1.2322,Loss D:  0.2840
+Epoch 13, Loss G: -0.9353,Loss D: -0.0451
+Epoch 14, Loss G: -0.8252,Loss D: -0.0746
+Epoch 15, Loss G: -1.2307,Loss D:  0.2670
+Epoch 16, Loss G: -0.8759,Loss D: -0.1647
+Epoch 17, Loss G: -1.1152,Loss D:  0.0412
+Epoch 18, Loss G: -1.3347,Loss D:  0.1643
+Epoch 19, Loss G: -0.9692,Loss D: -0.1366
+Epoch 20, Loss G: -1.3227,Loss D:  0.1278
+Epoch 21, Loss G: -1.1581,Loss D: -0.0531
+Epoch 22, Loss G: -1.3548,Loss D:  0.0744
+Epoch 23, Loss G: -1.2687,Loss D: -0.0215
+Epoch 24, Loss G: -1.4265,Loss D:  0.0205
+Epoch 25, Loss G: -1.4183,Loss D:  0.0347
+Epoch 26, Loss G: -1.4866,Loss D:  0.0253
+Epoch 27, Loss G: -1.3674,Loss D: -0.0565
+Epoch 28, Loss G: -1.6754,Loss D:  0.2072
+Epoch 29, Loss G: -1.3740,Loss D: -0.1122
+Epoch 30, Loss G: -1.6187,Loss D:  0.1088
+Epoch 31, Loss G: -1.6839,Loss D:  0.1353
+Epoch 32, Loss G: -1.4862,Loss D: -0.0951
+Epoch 33, Loss G: -1.7400,Loss D:  0.1178
+Epoch 34, Loss G: -1.6683,Loss D: -0.0164
+Epoch 35, Loss G: -1.6797,Loss D:  0.0324
+Epoch 36, Loss G: -1.6497,Loss D:  0.0495
+Epoch 37, Loss G: -1.6817,Loss D:  0.0117
+Epoch 38, Loss G: -1.7841,Loss D:  0.1097
+Epoch 39, Loss G: -1.6519,Loss D: -0.0765
+Epoch 40, Loss G: -1.8420,Loss D:  0.0239
+Epoch 41, Loss G: -2.0141,Loss D:  0.1773
+Epoch 42, Loss G: -1.6945,Loss D: -0.1644
+Epoch 43, Loss G: -1.9543,Loss D:  0.1004
+Epoch 44, Loss G: -1.9210,Loss D:  0.0612
+Epoch 45, Loss G: -1.7816,Loss D: -0.0157
+Epoch 46, Loss G: -1.9440,Loss D:  0.0390
+Epoch 47, Loss G: -1.8095,Loss D: -0.0512
+Epoch 48, Loss G: -1.9769,Loss D:  0.0928
+Epoch 49, Loss G: -1.9128,Loss D: -0.0075
+Epoch 50, Loss G: -1.9160,Loss D: -0.0056
+Epoch 51, Loss G: -2.0447,Loss D:  0.0666
+Epoch 52, Loss G: -2.0294,Loss D:  0.0048
+Epoch 53, Loss G: -2.0860,Loss D:  0.0000
+Epoch 54, Loss G: -2.0684,Loss D:  0.0044
+Epoch 55, Loss G: -1.9903,Loss D: -0.0464
+Epoch 56, Loss G: -2.1325,Loss D:  0.0987
+Epoch 57, Loss G: -2.1477,Loss D:  0.0540
+Epoch 58, Loss G: -2.0713,Loss D: -0.0904
+Epoch 59, Loss G: -2.2194,Loss D:  0.0643
+Epoch 60, Loss G: -2.1577,Loss D:  0.0091
+Epoch 61, Loss G: -2.1739,Loss D:  0.0034
+Epoch 62, Loss G: -2.1613,Loss D: -0.0073
+Epoch 63, Loss G: -2.0602,Loss D: -0.0549
+Epoch 64, Loss G: -2.1665,Loss D:  0.0867
+Epoch 65, Loss G: -2.1852,Loss D:  0.0404
+Epoch 66, Loss G: -2.2190,Loss D:  0.0276
+Epoch 67, Loss G: -2.3046,Loss D:  0.0125
+Epoch 68, Loss G: -2.3628,Loss D:  0.0566
+Epoch 69, Loss G: -2.2595,Loss D:  0.0265
+Epoch 70, Loss G: -2.2645,Loss D:  0.0655
+Epoch 71, Loss G: -2.1932,Loss D: -0.0735
+Epoch 72, Loss G: -2.4140,Loss D:  0.0872
+Epoch 73, Loss G: -2.3173,Loss D: -0.0038
+Epoch 74, Loss G: -2.3644,Loss D: -0.0063
+Epoch 75, Loss G: -2.3918,Loss D:  0.0086
+Epoch 76, Loss G: -2.3580,Loss D:  0.0269
+Epoch 77, Loss G: -2.3432,Loss D: -0.0043
+Epoch 78, Loss G: -2.3402,Loss D: -0.0048
+Epoch 79, Loss G: -2.3529,Loss D:  0.0388
+Epoch 80, Loss G: -2.3938,Loss D: -0.0323
+Epoch 81, Loss G: -2.4700,Loss D:  0.0764
+Epoch 82, Loss G: -2.3406,Loss D: -0.0071
+Epoch 83, Loss G: -2.4310,Loss D:  0.0424
+Epoch 84, Loss G: -2.4394,Loss D:  0.0220
+Epoch 85, Loss G: -2.4006,Loss D: -0.0299
+Epoch 86, Loss G: -2.5200,Loss D:  0.0397
+Epoch 87, Loss G: -2.4049,Loss D: -0.0616
+Epoch 88, Loss G: -2.5514,Loss D:  0.0688
+Epoch 89, Loss G: -2.4524,Loss D: -0.0182
+Epoch 90, Loss G: -2.5637,Loss D:  0.0840
+Epoch 91, Loss G: -2.4720,Loss D: -0.0537
+Epoch 92, Loss G: -2.5243,Loss D:  0.0190
+Epoch 93, Loss G: -2.5353,Loss D:  0.0061
+Epoch 94, Loss G: -2.4926,Loss D:  0.0084
+Epoch 95, Loss G: -2.5919,Loss D:  0.0803
+Epoch 96, Loss G: -2.5001,Loss D: -0.0180
+Epoch 97, Loss G: -2.5785,Loss D:  0.0467
+Epoch 98, Loss G: -2.5565,Loss D: -0.0199
+Epoch 99, Loss G: -2.5933,Loss D:  0.0125
+Epoch 100, Loss G: -2.5529,Loss D: -0.0120
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+/Users/jonathanlatner/Library/Python/3.9/lib/python/site-packages/rdt/transformers/base.py:132: FutureWarning: Future versions of RDT will not support the 'model_missing_values' parameter. Please switch to using the 'missing_value_generation' parameter to select your strategy.
+  warnings.warn(
+rows: 50000
+cols: 10
+epochs: 100
+number: 1
+batch size: 5000
+duration: 452.9367711544037
+Epoch 1, Loss G: -0.1205,Loss D:  0.0008
+Epoch 2, Loss G: -0.2430,Loss D:  0.0305
+Epoch 3, Loss G: -0.4369,Loss D:  0.0966
+Epoch 4, Loss G: -0.5715,Loss D:  0.1073
+Epoch 5, Loss G: -0.6018,Loss D:  0.0973
+Epoch 6, Loss G: -0.5234,Loss D:  0.0095
+Epoch 7, Loss G: -0.2988,Loss D: -0.2637
+Epoch 8, Loss G: -0.2556,Loss D: -0.3098
+Epoch 9, Loss G: -0.3510,Loss D: -0.2231
+Epoch 10, Loss G: -0.4914,Loss D: -0.0971
+Epoch 11, Loss G: -0.6155,Loss D:  0.0234
+Epoch 12, Loss G: -0.7163,Loss D:  0.0768
+Epoch 13, Loss G: -0.8038,Loss D:  0.1592
+Epoch 14, Loss G: -0.8945,Loss D:  0.1343
+Epoch 15, Loss G: -0.9400,Loss D:  0.1138
+Epoch 16, Loss G: -0.9564,Loss D:  0.1093
+Epoch 17, Loss G: -0.9854,Loss D:  0.0372
+Epoch 18, Loss G: -0.9870,Loss D: -0.0052
+Epoch 19, Loss G: -1.0169,Loss D: -0.0060
+Epoch 20, Loss G: -1.0674,Loss D: -0.0207
+Epoch 21, Loss G: -1.1460,Loss D:  0.0144
+Epoch 22, Loss G: -1.1758,Loss D:  0.0167
+Epoch 23, Loss G: -1.2002,Loss D:  0.0268
+Epoch 24, Loss G: -1.2113,Loss D: -0.0138
+Epoch 25, Loss G: -1.2356,Loss D:  0.0499
+Epoch 26, Loss G: -1.2622,Loss D:  0.1001
+Epoch 27, Loss G: -1.2458,Loss D:  0.1003
+Epoch 28, Loss G: -1.1739,Loss D:  0.0858
+Epoch 29, Loss G: -1.1171,Loss D: -0.0144
+Epoch 30, Loss G: -1.1046,Loss D: -0.0325
+Epoch 31, Loss G: -1.1496,Loss D: -0.0145
+Epoch 32, Loss G: -1.2800,Loss D:  0.0262
+Epoch 33, Loss G: -1.3871,Loss D:  0.0692
+Epoch 34, Loss G: -1.4389,Loss D:  0.0918
+Epoch 35, Loss G: -1.4762,Loss D:  0.0652
+Epoch 36, Loss G: -1.3484,Loss D:  0.0276
+Epoch 37, Loss G: -1.2627,Loss D: -0.0634
+Epoch 38, Loss G: -1.2788,Loss D: -0.0402
+Epoch 39, Loss G: -1.3410,Loss D:  0.0599
+Epoch 40, Loss G: -1.3901,Loss D:  0.0970
+Epoch 41, Loss G: -1.3237,Loss D:  0.0215
+Epoch 42, Loss G: -1.2273,Loss D: -0.0459
+Epoch 43, Loss G: -1.2521,Loss D: -0.0203
+Epoch 44, Loss G: -1.3780,Loss D:  0.0648
+Epoch 45, Loss G: -1.4685,Loss D:  0.0550
+Epoch 46, Loss G: -1.4236,Loss D: -0.0396
+Epoch 47, Loss G: -1.3913,Loss D: -0.0877
+Epoch 48, Loss G: -1.4458,Loss D:  0.0117
+Epoch 49, Loss G: -1.5399,Loss D:  0.1497
+Epoch 50, Loss G: -1.4008,Loss D:  0.0483
+Epoch 51, Loss G: -1.1978,Loss D: -0.0856
+Epoch 52, Loss G: -1.2870,Loss D: -0.0112
+Epoch 53, Loss G: -1.5081,Loss D:  0.1143
+Epoch 54, Loss G: -1.4790,Loss D:  0.0186
+Epoch 55, Loss G: -1.4339,Loss D: -0.0775
+Epoch 56, Loss G: -1.5615,Loss D:  0.0107
+Epoch 57, Loss G: -1.5972,Loss D:  0.0903
+Epoch 58, Loss G: -1.3957,Loss D: -0.0822
+Epoch 59, Loss G: -1.4383,Loss D: -0.0183
+Epoch 60, Loss G: -1.5942,Loss D:  0.0864
+Epoch 61, Loss G: -1.5676,Loss D:  0.0191
+Epoch 62, Loss G: -1.5737,Loss D:  0.0107
+Epoch 63, Loss G: -1.5818,Loss D: -0.0078
+Epoch 64, Loss G: -1.4586,Loss D: -0.0474
+Epoch 65, Loss G: -1.5369,Loss D: -0.0394
+Epoch 66, Loss G: -1.6791,Loss D:  0.0502
+Epoch 67, Loss G: -1.7573,Loss D:  0.0828
+Epoch 68, Loss G: -1.7803,Loss D:  0.0596
+Epoch 69, Loss G: -1.7367,Loss D:  0.0308
+Epoch 70, Loss G: -1.7278,Loss D:  0.0168
+Epoch 71, Loss G: -1.6659,Loss D: -0.0463
+Epoch 72, Loss G: -1.6780,Loss D: -0.0326
+Epoch 73, Loss G: -1.6595,Loss D:  0.0086
+Epoch 74, Loss G: -1.7145,Loss D:  0.0793
+Epoch 75, Loss G: -1.8187,Loss D:  0.0863
+Epoch 76, Loss G: -1.7808,Loss D:  0.0382
+Epoch 77, Loss G: -1.7164,Loss D: -0.0347
+Epoch 78, Loss G: -1.7680,Loss D: -0.0273
+Epoch 79, Loss G: -1.8969,Loss D:  0.0547
+Epoch 80, Loss G: -1.9806,Loss D:  0.0845
+Epoch 81, Loss G: -1.9592,Loss D:  0.0494
+Epoch 82, Loss G: -1.8868,Loss D: -0.0472
+Epoch 83, Loss G: -1.8868,Loss D: -0.0110
+Epoch 84, Loss G: -1.9355,Loss D:  0.0125
+Epoch 85, Loss G: -1.9288,Loss D:  0.0576
+Epoch 86, Loss G: -1.9300,Loss D:  0.0816
+Epoch 87, Loss G: -1.9367,Loss D:  0.0992
+Epoch 88, Loss G: -1.8904,Loss D:  0.0305
+Epoch 89, Loss G: -1.8781,Loss D: -0.0579
+Epoch 90, Loss G: -1.9197,Loss D: -0.0477
+Epoch 91, Loss G: -1.9963,Loss D:  0.0014
+Epoch 92, Loss G: -2.1089,Loss D:  0.0915
+Epoch 93, Loss G: -2.0986,Loss D:  0.0996
+Epoch 94, Loss G: -2.0067,Loss D:  0.0351
+Epoch 95, Loss G: -1.9419,Loss D: -0.0302
+Epoch 96, Loss G: -1.8810,Loss D: -0.0914
+Epoch 97, Loss G: -1.9899,Loss D:  0.0029
+Epoch 98, Loss G: -2.0924,Loss D:  0.0844
+Epoch 99, Loss G: -2.0979,Loss D:  0.0554
+Epoch 100, Loss G: -2.0623,Loss D: -0.0078
+rows: 50000
+cols: 10
+epochs: 100
+number: 1
+batch size: 10000
+duration: 398.4250659942627
+     type   rows cols  n  duration epochs  batch_size
+0   ctgan  50000   10  1    351.14     10      500.00
+1   ctgan  50000   10  1    647.47     10     1000.00
+2   ctgan  50000   10  1    605.75     10     5000.00
+3   ctgan  50000   10  1    405.62     10    10000.00
+4   ctgan  50000   10  1    600.97     20      500.00
+5   ctgan  50000   10  1    487.94     20     1000.00
+6   ctgan  50000   10  1    621.10     20     5000.00
+7   ctgan  50000   10  1    110.27     20    10000.00
+8   ctgan  50000   10  1    250.43     30      500.00
+9   ctgan  50000   10  1    634.57     30     1000.00
+10  ctgan  50000   10  1    480.67     30     5000.00
+11  ctgan  50000   10  1    619.68     30    10000.00
+12  ctgan  50000   10  1    448.44     40      500.00
+13  ctgan  50000   10  1    651.66     40     1000.00
+14  ctgan  50000   10  1    291.44     40     5000.00
+15  ctgan  50000   10  1    210.60     40    10000.00
+16  ctgan  50000   10  1    654.79     50      500.00
+17  ctgan  50000   10  1    416.70     50     1000.00
+18  ctgan  50000   10  1    691.43     50     5000.00
+19  ctgan  50000   10  1    381.28     50    10000.00
+20  ctgan  50000   10  1    891.15     75      500.00
+21  ctgan  50000   10  1    732.91     75     1000.00
+22  ctgan  50000   10  1    758.87     75     5000.00
+23  ctgan  50000   10  1    459.99     75    10000.00
+24  ctgan  50000   10  1   1157.36    100      500.00
+25  ctgan  50000   10  1    476.06    100     1000.00
+26  ctgan  50000   10  1    452.94    100     5000.00
+27  ctgan  50000   10  1    398.43    100    10000.00

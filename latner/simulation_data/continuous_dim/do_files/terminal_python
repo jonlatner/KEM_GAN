@@ -1,0 +1,3 @@
+nohup python3 03_create_sds_ctgan_rows_200000_cols_10.py > rows_200000_cols_10.txt 2>&1 &
+
+nohup python3 03_create_sds_ctgan_rows_200000_cols_15.py > rows_200000_cols_15.txt 2>&1 &

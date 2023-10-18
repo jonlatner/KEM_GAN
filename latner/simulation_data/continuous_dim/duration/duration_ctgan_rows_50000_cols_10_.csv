@@ -1,0 +1,2 @@
+type,rows,cols,n,duration,epochs,batch_size
+ctgan,50000,10,1,417.18272519111633,50,1000.0

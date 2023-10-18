@@ -1,0 +1,181 @@
+
+R version 4.3.0 (2023-04-21) -- "Already Tomorrow"
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20 (64-bit)
+
+R ist freie Software und kommt OHNE JEGLICHE GARANTIE.
+Sie sind eingeladen, es unter bestimmten Bedingungen weiter zu verbreiten.
+Tippen Sie 'license()' or 'licence()' für Details dazu.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Tippen Sie 'demo()' für einige Demos, 'help()' für on-line Hilfe, oder
+'help.start()' für eine HTML Browserschnittstelle zur Hilfe.
+Tippen Sie 'q()', um R zu verlassen.
+
+> # Top commands ----
+> # Create empty R application (no figures, data frames, packages, etc.)
+> # Get a list of all loaded packages
+> packages <- search()[grepl("package:", search())]
+> # Unload each package
+> for (package in packages) {
++   unloadNamespace(package)
++ }
+> 
+> rm(list=ls(all=TRUE))
+> 
+> # load library
+> library(tidyverse)
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+> library(synthpop)
+Find out more at https://www.synthpop.org.uk/
+> 
+> # FOLDERS - ADAPT THIS PATHWAY
+> main_dir = "/Users/jonathanlatner/Documents/GitHub/IAB/simulation_data/continuous_dim/"
+> 
+> data_files = "data_files/"
+> original_data = "data_files/original/"
+> synthetic_data = "data_files/synthetic/synthpop/"
+> duration = "duration/"
+> 
+> setwd(main_dir)
+> 
+> 
+> # Synthesize data grid ----
+> 
+> # Dimensions
+> rows = c("50000","100000", "200000") # Rows/observations
+> cols = c(10, 15, 20) # Columns/variables
+> copies <- c(1)
+> 
+> my.seed = 1230
+> 
+> df_duration <- data.frame(
++   type = as.character(),
++   rows = as.numeric(),
++   cols = as.numeric(),
++   n = as.numeric(),
++   duration = as.numeric()
++ )
+> 
+> for (r in rows) {
++   for (c in cols) {
++     
++     print(paste(r, c, sep = ","))
++     
++     df_ods <- read.csv(paste0(original_data,"ods_rows_",r,"_cols_",c,".csv"))
++     my.seed <- my.seed + 1
++     
++     time_start <- proc.time()
++     
++     sds.default <- syn(df_ods,
++                        m = copies,
++                        seed = my.seed)
++     
++     time_end <- proc.time()
++     
++     time_duration <- as.numeric(time_end[1] - time_start[1])
++     
++     output = data.frame(type="synthpop",
++                         rows=r,
++                         cols=c,
++                         n=copies,
++                         duration=time_duration)
++     df_duration <- rbind(df_duration,output)
++ 
++     saveRDS(sds.default, paste0(data_files,"synthetic/synds_rows_",r,"_cols_",c,"_m_1.rds"))
++     
++     synthpop_df <- sds.default$syn
++     write.csv(synthpop_df, file = paste0(synthetic_data,"sds_synthpop_rows_",r,"_cols_",c,"_m_1.csv"), row.names = FALSE)
++ 
++   }
++ }
+[1] "50000,10"
+
+Synthesis
+-----------
+ normal_var1 normal_var2 normal_var3 normal_var4 normal_var5 left_skewed_var1 left_skewed_var2 left_skewed_var3 left_skewed_var4 left_skewed_var5
+
+[1] "50000,15"
+
+Synthesis
+-----------
+ normal_var1 normal_var2 normal_var3 normal_var4 normal_var5 left_skewed_var1 left_skewed_var2 left_skewed_var3 left_skewed_var4 left_skewed_var5
+ right_skewed_var1 right_skewed_var2 right_skewed_var3 right_skewed_var4 right_skewed_var5
+[1] "50000,20"
+
+Synthesis
+-----------
+ normal_var1 normal_var2 normal_var3 normal_var4 normal_var5 left_skewed_var1 left_skewed_var2 left_skewed_var3 left_skewed_var4 left_skewed_var5
+ right_skewed_var1 right_skewed_var2 right_skewed_var3 right_skewed_var4 right_skewed_var5 bimodal_var1 bimodal_var2 bimodal_var3 bimodal_var4 bimodal_var5
+
+[1] "100000,10"
+
+Synthesis
+-----------
+ normal_var1 normal_var2 normal_var3 normal_var4 normal_var5 left_skewed_var1 left_skewed_var2 left_skewed_var3 left_skewed_var4 left_skewed_var5
+
+[1] "100000,15"
+
+Synthesis
+-----------
+ normal_var1 normal_var2 normal_var3 normal_var4 normal_var5 left_skewed_var1 left_skewed_var2 left_skewed_var3 left_skewed_var4 left_skewed_var5
+ right_skewed_var1 right_skewed_var2 right_skewed_var3 right_skewed_var4 right_skewed_var5
+[1] "100000,20"
+
+Synthesis
+-----------
+ normal_var1 normal_var2 normal_var3 normal_var4 normal_var5 left_skewed_var1 left_skewed_var2 left_skewed_var3 left_skewed_var4 left_skewed_var5
+ right_skewed_var1 right_skewed_var2 right_skewed_var3 right_skewed_var4 right_skewed_var5 bimodal_var1 bimodal_var2 bimodal_var3 bimodal_var4 bimodal_var5
+
+[1] "200000,10"
+
+Synthesis
+-----------
+ normal_var1 normal_var2 normal_var3 normal_var4 normal_var5 left_skewed_var1 left_skewed_var2 left_skewed_var3 left_skewed_var4 left_skewed_var5
+
+[1] "200000,15"
+
+Synthesis
+-----------
+ normal_var1 normal_var2 normal_var3 normal_var4 normal_var5 left_skewed_var1 left_skewed_var2 left_skewed_var3 left_skewed_var4 left_skewed_var5
+ right_skewed_var1 right_skewed_var2 right_skewed_var3 right_skewed_var4 right_skewed_var5
+[1] "200000,20"
+
+Synthesis
+-----------
+ normal_var1 normal_var2 normal_var3 normal_var4 normal_var5 left_skewed_var1 left_skewed_var2 left_skewed_var3 left_skewed_var4 left_skewed_var5
+ right_skewed_var1 right_skewed_var2 right_skewed_var3 right_skewed_var4 right_skewed_var5 bimodal_var1 bimodal_var2 bimodal_var3 bimodal_var4 bimodal_var5
+
+> 
+> write.csv(df_duration, file = paste0(duration,"duration_synthpop.csv"), row.names = FALSE)
+> 
+> df_duration
+      type   rows cols n duration
+1 synthpop  50000   10 1   66.053
+2 synthpop  50000   15 1  111.077
+3 synthpop  50000   20 1  191.898
+4 synthpop 100000   10 1  253.656
+5 synthpop 100000   15 1  453.509
+6 synthpop 100000   20 1  599.157
+7 synthpop 200000   10 1  638.232
+8 synthpop 200000   15 1 1249.209
+9 synthpop 200000   20 1 1491.234
+> 
+> 
+> proc.time()
+       User      System verstrichen 
+   5083.208     168.245   12851.694 
