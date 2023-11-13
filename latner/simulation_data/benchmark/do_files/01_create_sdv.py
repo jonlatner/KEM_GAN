@@ -22,10 +22,12 @@ os.chdir(main_dir)
 LOAD DATA
 '''
 
+# https://docs.sdv.dev/sdv/multi-table-data/data-preparation/loading-data#get_available_demos
 get_available_demos(modality='single_table')
 
+# i select a few small datasets
 data = ["grid","gridr", #Simulated data
-        "adult","census"] # Real data
+        "census"] # Real data
 
 for d in data:
 

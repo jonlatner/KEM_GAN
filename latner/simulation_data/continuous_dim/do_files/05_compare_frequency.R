@@ -17,8 +17,7 @@ library(janitor)
 library(ggh4x) # facet_nested
 
 # FOLDERS - ADAPT THIS PATHWAY
-# main_dir = "N:/Ablagen/D01700-KEM/Latner/little_etal_2021/"
-main_dir = "/Users/jonathanlatner/Documents/GitHub/IAB/simulation_data/continuous_dim/"
+main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/simulation_data/continuous_dim/"
 
 data_files = "data_files/"
 original_data = "data_files/original/"

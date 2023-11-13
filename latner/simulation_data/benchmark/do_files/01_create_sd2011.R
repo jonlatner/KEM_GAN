@@ -12,9 +12,9 @@ rm(list=ls(all=TRUE))
 
 # load library
 library(synthpop)
+library(tidyverse)
 
 # FOLDERS - ADAPT THIS PATHWAY
-# main_dir = "N:/Ablagen/D01700-KEM/Latner/little_etal_2021/"
 main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/simulation_data/benchmark/"
 
 data_files = "data_files/"
@@ -28,14 +28,10 @@ options(scipen=999)
 
 # Create fake synthetic data ----
 
-copies <- c(1)
-data <- c("adult","census","grid","gridr")
-for (d in data) {
-  print(d)
-  df_ods <- read.csv(paste0(original_data,d,".csv"))
-  for (c in copies) {
-    df_synds <- syn(df_ods, m = c)
-    saveRDS(df_synds, paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
-  }
-}
+ods <- SD2011
+ods <- select(ods,sex,age,income,edu)
+write.csv(ods, paste0(original_data,"sd2011_small.csv"), row.names = FALSE)
+
+ods <- SD2011
+write.csv(ods, paste0(original_data,"sd2011.csv"), row.names = FALSE)
 

@@ -2,7 +2,9 @@
 TOP COMMANDS
 '''
 
-from ucimlrepo import fetch_ucirepo 
+from ucimlrepo import fetch_ucirepo, list_available_datasets
+import os
+import pandas as pd
 
 # file paths - adapt main_dir pathway
 main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/simulation_data/benchmark/"
@@ -23,9 +25,14 @@ pd.set_option('display.float_format', '{:.2f}'.format)
 # Set the random seed
 my_seed = 1234
 
+  
 '''
 LOAD DATA
 '''
+
+# check which datasets can be imported
+# https://archive.ics.uci.edu/datasets
+list_available_datasets()
 
 # fetch dataset 
 adult = fetch_ucirepo(id=2) 
@@ -39,8 +46,3 @@ print(adult.metadata)
   
 # variable information 
 print(adult.variables) 
-
-# Create a unique filename based on the values
-filename = f"ods_rows_{r}_cols_{c}_vals_{v}.csv"
-    
-df_ods.to_csv(os.path.join(original_data, filename), index=False)
