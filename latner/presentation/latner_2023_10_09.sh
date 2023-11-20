@@ -31,4 +31,5 @@ rm *.nav
 rm *.out
 rm *.snm
 rm *.toc
+rm *.vrb
 
