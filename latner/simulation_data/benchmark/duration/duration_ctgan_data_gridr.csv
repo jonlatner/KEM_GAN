@@ -1,7 +1,0 @@
-type,data,epochs,copies,j,duration
-ctgan,gridr,50,1,1,20.43721318244934
-ctgan,gridr,50,5,1,20.427589178085327
-ctgan,gridr,50,5,2,20.260953187942505
-ctgan,gridr,50,5,3,20.73729109764099
-ctgan,gridr,50,5,4,20.67958092689514
-ctgan,gridr,50,5,5,25.729111909866333

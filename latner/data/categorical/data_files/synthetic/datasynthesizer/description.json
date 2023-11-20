@@ -1,0 +1,182 @@
+{
+    "meta": {
+        "num_tuples": 1000,
+        "num_attributes": 4,
+        "num_attributes_in_BN": 4,
+        "all_attributes": [
+            "var_1",
+            "var_2",
+            "var_3",
+            "var_4"
+        ],
+        "candidate_keys": [],
+        "non_categorical_string_attributes": [],
+        "attributes_in_BN": [
+            "var_1",
+            "var_2",
+            "var_3",
+            "var_4"
+        ]
+    },
+    "attribute_description": {
+        "var_1": {
+            "name": "var_1",
+            "data_type": "String",
+            "is_categorical": true,
+            "is_candidate_key": false,
+            "min": 1,
+            "max": 1,
+            "missing_rate": 0.0,
+            "distribution_bins": [
+                "A",
+                "B"
+            ],
+            "distribution_probabilities": [
+                0.47426382906676157,
+                0.5257361709332383
+            ]
+        },
+        "var_2": {
+            "name": "var_2",
+            "data_type": "String",
+            "is_categorical": true,
+            "is_candidate_key": false,
+            "min": 1,
+            "max": 1,
+            "missing_rate": 0.0,
+            "distribution_bins": [
+                "A",
+                "B"
+            ],
+            "distribution_probabilities": [
+                0.48755320880960545,
+                0.5124467911903946
+            ]
+        },
+        "var_3": {
+            "name": "var_3",
+            "data_type": "String",
+            "is_categorical": true,
+            "is_candidate_key": false,
+            "min": 1,
+            "max": 1,
+            "missing_rate": 0.0,
+            "distribution_bins": [
+                "A",
+                "B"
+            ],
+            "distribution_probabilities": [
+                0.5082041217235502,
+                0.4917958782764499
+            ]
+        },
+        "var_4": {
+            "name": "var_4",
+            "data_type": "String",
+            "is_categorical": true,
+            "is_candidate_key": false,
+            "min": 1,
+            "max": 1,
+            "missing_rate": 0.0,
+            "distribution_bins": [
+                "A",
+                "B"
+            ],
+            "distribution_probabilities": [
+                0.5051508162159035,
+                0.49484918378409654
+            ]
+        }
+    },
+    "bayesian_network": [
+        [
+            "var_1",
+            [
+                "var_2"
+            ]
+        ],
+        [
+            "var_3",
+            [
+                "var_1",
+                "var_2"
+            ]
+        ],
+        [
+            "var_4",
+            [
+                "var_1",
+                "var_3",
+                "var_2"
+            ]
+        ]
+    ],
+    "conditional_probabilities": {
+        "var_2": [
+            0.4876610256794485,
+            0.5123389743205514
+        ],
+        "var_1": {
+            "[(0,)]": [
+                0.481201561801832,
+                0.518798438198168
+            ],
+            "[(1,)]": [
+                0.4669179660167698,
+                0.5330820339832302
+            ]
+        },
+        "var_3": {
+            "[0, 0]": [
+                0.47633041662587733,
+                0.5236695833741226
+            ],
+            "[0, 1]": [
+                0.5148932471808373,
+                0.48510675281916266
+            ],
+            "[1, 0]": [
+                0.5300439345088592,
+                0.4699560654911408
+            ],
+            "[1, 1]": [
+                0.5094166710104681,
+                0.49058332898953205
+            ]
+        },
+        "var_4": {
+            "[0, 0, 0]": [
+                0.5181289991034352,
+                0.48187100089656476
+            ],
+            "[0, 0, 1]": [
+                0.4798289550588674,
+                0.5201710449411325
+            ],
+            "[0, 1, 0]": [
+                0.5216168341923165,
+                0.4783831658076834
+            ],
+            "[0, 1, 1]": [
+                0.526366230196202,
+                0.4736337698037979
+            ],
+            "[1, 0, 0]": [
+                0.4473052652193296,
+                0.5526947347806704
+            ],
+            "[1, 0, 1]": [
+                0.4604693623814066,
+                0.5395306376185934
+            ],
+            "[1, 1, 0]": [
+                0.5886136412221185,
+                0.41138635877788154
+            ],
+            "[1, 1, 1]": [
+                0.5147969454138391,
+                0.4852030545861608
+            ]
+        }
+    }
+}

@@ -1,0 +1,9 @@
+epochs,loss_type,value,data,copes,j
+0,Generator Loss,1.9633309841156006,sd2011,2,1
+1,Generator Loss,1.8892744779586792,sd2011,2,1
+0,Discriminator Loss,-0.9709821939468384,sd2011,2,1
+1,Discriminator Loss,-2.0090270042419434,sd2011,2,1
+0,Generator Loss,1.8932242393493652,sd2011,2,2
+1,Generator Loss,1.6734206676483154,sd2011,2,2
+0,Discriminator Loss,-1.060410499572754,sd2011,2,2
+1,Discriminator Loss,-2.19400954246521,sd2011,2,2

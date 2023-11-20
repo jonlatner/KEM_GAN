@@ -1,0 +1,110 @@
+
+R version 4.3.0 (2023-04-21) -- "Already Tomorrow"
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20 (64-bit)
+
+R ist freie Software und kommt OHNE JEGLICHE GARANTIE.
+Sie sind eingeladen, es unter bestimmten Bedingungen weiter zu verbreiten.
+Tippen Sie 'license()' or 'licence()' für Details dazu.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Tippen Sie 'demo()' für einige Demos, 'help()' für on-line Hilfe, oder
+'help.start()' für eine HTML Browserschnittstelle zur Hilfe.
+Tippen Sie 'q()', um R zu verlassen.
+
+> # Top commands ----
+> 
+> # Create empty R application (no figures, data frames, packages, etc.)
+> # Get a list of all loaded packages
+> packages <- search()[grepl("package:", search())]
+> # Unload each package
+> for (package in packages) {
++   unloadNamespace(package)
++ }
+> 
+> rm(list=ls(all=TRUE))
+> 
+> # load library
+> library(tidyverse)
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+> library(synthpop)
+Find out more at https://www.synthpop.org.uk/
+> library(ggh4x) # facet_nested
+> 
+> # FOLDERS - ADAPT THIS PATHWAY
+> # main_dir = "N:/Ablagen/D01700-KEM/Latner/little_etal_2021/"
+> main_dir = "/Users/jonathanlatner/Documents/GitHub/IAB/simulation_data/continuous_dim/"
+> 
+> data_files = "data_files/"
+> original_data = "data_files/original/"
+> synthetic_data = "data_files/synthetic/"
+> graphs = "graphs/"
+> tables = "tables/synthpop/"
+> 
+> setwd(main_dir)
+> 
+> 
+> # compare ----
+> 
+> df_specks <- data.frame(data = as.character(),
++                         rows = as.numeric(),
++                         cols = as.numeric(),
++                         specks = as.numeric())
+> 
+> rows = c("200000") # Rows/observations
+> cols = c(10, 15, 20) # Columns/variables
+> data = c("synthpop")
+> 
+> for (r in rows) {
++   for (c in cols) {
++     for (d in data) {
++       print(paste(r, c, sep = ","))
++       df_ods <- read.csv(paste0(original_data,"ods_rows_",r,"_cols_",c,".csv"))
++       df_sds <- read.csv(paste0(synthetic_data,d,"/sds_",d,"_rows_",r,"_cols_",c,"_m_1.csv"))
++       df_synds <- readRDS(paste0(data_files,"synthetic/synds_rows_",r,"_cols_",c,"_m_1.rds"))
++       df_synds$syn <- df_sds
++       
++       utility_measure <- utility.gen(df_synds$syn, df_ods, print.stats = "SPECKS", nperms = 3)
++       
++       specks <- data.frame(data = d,
++                            rows = r,
++                            cols = c,
++                            specks = as.numeric(utility_measure$SPECKS[1]))
++       df_specks <- rbind(df_specks,specks)
++     }
++   }
++ }
+[1] "200000,10"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,15"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,20"
+Running 3 permutations to get NULL utilities.
+synthesis > 
+> df_specks
+      data   rows cols   specks
+1 synthpop 200000   10 0.006070
+2 synthpop 200000   15 0.003025
+3 synthpop 200000   20 0.006310
+> 
+> write.csv(df_specks, paste0(tables,"utility_synthpop_specks_200000.csv"), row.names=FALSE)
+> 
+>   
+> 
+> proc.time()
+       User      System verstrichen 
+    784.899       3.068     885.008 

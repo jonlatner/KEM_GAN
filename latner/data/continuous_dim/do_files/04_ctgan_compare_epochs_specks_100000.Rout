@@ -1,0 +1,367 @@
+
+R version 4.3.0 (2023-04-21) -- "Already Tomorrow"
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20 (64-bit)
+
+R ist freie Software und kommt OHNE JEGLICHE GARANTIE.
+Sie sind eingeladen, es unter bestimmten Bedingungen weiter zu verbreiten.
+Tippen Sie 'license()' or 'licence()' für Details dazu.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Tippen Sie 'demo()' für einige Demos, 'help()' für on-line Hilfe, oder
+'help.start()' für eine HTML Browserschnittstelle zur Hilfe.
+Tippen Sie 'q()', um R zu verlassen.
+
+> # Top commands ----
+> 
+> # Create empty R application (no figures, data frames, packages, etc.)
+> # Get a list of all loaded packages
+> packages <- search()[grepl("package:", search())]
+> # Unload each package
+> for (package in packages) {
++   unloadNamespace(package)
++ }
+> 
+> rm(list=ls(all=TRUE))
+> 
+> # load library
+> library(tidyverse)
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+> library(synthpop)
+Find out more at https://www.synthpop.org.uk/
+> library(ggh4x) # facet_nested
+> 
+> # FOLDERS - ADAPT THIS PATHWAY
+> # main_dir = "N:/Ablagen/D01700-KEM/Latner/little_etal_2021/"
+> main_dir = "/Users/jonathanlatner/Documents/GitHub/IAB/simulation_data/continuous_dim/"
+> 
+> data_files = "data_files/"
+> original_data = "data_files/original/"
+> synthetic_data = "data_files/synthetic/"
+> graphs = "graphs/"
+> tables = "tables/ctgan/"
+> 
+> setwd(main_dir)
+> 
+> # compare ----
+> 
+> df_specks <- data.frame(epochs = as.numeric(),
++                         rows = as.numeric(),
++                         cols = as.numeric(),
++                         batch = as.numeric(),
++                         specks = as.numeric())
+> 
+> rows = c("100000") # Rows/observations
+> cols = c(10, 15, 20) # Columns/variables
+> epochs = c(10, 20, 30, 40, 50, 75, 100)
+> batch = c(500, 1000, 5000, "10000")
+> 
+> for (r in rows) {
++   for (c in cols) {
++     for (e in epochs) {
++       for (b in batch) {
++         
++         print(paste(r, c, e, b, sep =","))
++         
++         #load original data
++         df_ods <- read.csv(paste0(original_data,"ods_rows_",r,"_cols_",c,".csv"))
++         
++         #load synds object
++         df_synds <- readRDS(paste0(data_files,"synthetic/synds_rows_",r,"_cols_",c,"_m_1.rds"))
++ 
++         #load synthetic data
++         sds <- read.csv(paste0(synthetic_data,"ctgan/sds_ctgan_rows_",r,"_cols_",c,"_n_1_epochs_",e,"_batch_",b,".csv"))
++ 
++         #replace synds object with synthetic data
++         df_synds$syn <- sds
++ 
++         #compare
++         utility_measure <- utility.gen(df_synds$syn, df_ods, print.stats = "SPECKS", nperms = 3)
++         
++         specks <- data.frame(epochs = e,
++                              rows = r,
++                              cols = c,
++                              batch = b,
++                              specks = as.numeric(utility_measure$SPECKS[1]))
++         df_specks <- rbind(df_specks,specks)
++       }
++     }
++   }
++ }
+[1] "100000,10,10,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,10,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,10,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,10,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,20,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,20,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,20,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,20,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,30,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,30,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,30,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,30,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,40,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,40,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,40,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,40,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,50,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,50,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,50,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,50,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,75,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,75,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,75,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,75,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,100,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,100,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,100,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,10,100,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,10,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,10,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,10,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,10,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,20,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,20,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,20,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,20,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,30,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,30,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,30,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,30,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,40,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,40,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,40,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,40,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,50,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,50,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,50,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,50,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,75,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,75,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,75,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,75,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,100,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,100,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,100,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,15,100,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,10,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,10,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,10,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,10,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,20,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,20,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,20,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,20,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,30,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,30,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,30,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,30,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,40,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,40,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,40,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,40,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,50,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,50,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,50,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,50,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,75,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,75,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,75,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,75,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,100,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,100,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,100,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "100000,20,100,10000"
+Running 3 permutations to get NULL utilities.
+synthesis > 
+> df_specks %>% arrange(batch, epochs)
+   epochs   rows cols batch  specks
+1      10 100000   10  1000 0.36172
+2      10 100000   15  1000 0.36216
+3      10 100000   20  1000 0.47977
+4      20 100000   10  1000 0.27599
+5      20 100000   15  1000 0.39111
+6      20 100000   20  1000 0.44677
+7      30 100000   10  1000 0.35249
+8      30 100000   15  1000 0.43997
+9      30 100000   20  1000 0.42742
+10     40 100000   10  1000 0.42270
+11     40 100000   15  1000 0.38786
+12     40 100000   20  1000 0.42215
+13     50 100000   10  1000 0.39349
+14     50 100000   15  1000 0.43483
+15     50 100000   20  1000 0.42309
+16     75 100000   10  1000 0.34839
+17     75 100000   15  1000 0.40002
+18     75 100000   20  1000 0.44687
+19    100 100000   10  1000 0.35969
+20    100 100000   15  1000 0.51955
+21    100 100000   20  1000 0.46401
+22     10 100000   10 10000 0.40406
+23     10 100000   15 10000 0.46097
+24     10 100000   20 10000 0.49549
+25     20 100000   10 10000 0.32795
+26     20 100000   15 10000 0.33189
+27     20 100000   20 10000 0.32907
+28     30 100000   10 10000 0.43108
+29     30 100000   15 10000 0.39491
+30     30 100000   20 10000 0.43674
+31     40 100000   10 10000 0.42022
+32     40 100000   15 10000 0.44958
+33     40 100000   20 10000 0.44638
+34     50 100000   10 10000 0.36272
+35     50 100000   15 10000 0.48722
+36     50 100000   20 10000 0.43637
+37     75 100000   10 10000 0.36296
+38     75 100000   15 10000 0.34166
+39     75 100000   20 10000 0.50722
+40    100 100000   10 10000 0.36405
+41    100 100000   15 10000 0.39307
+42    100 100000   20 10000 0.41660
+43     10 100000   10   500 0.31605
+44     10 100000   15   500 0.45182
+45     10 100000   20   500 0.46431
+46     20 100000   10   500 0.31401
+47     20 100000   15   500 0.45320
+48     20 100000   20   500 0.45829
+49     30 100000   10   500 0.33092
+50     30 100000   15   500 0.36310
+51     30 100000   20   500 0.47660
+52     40 100000   10   500 0.36059
+53     40 100000   15   500 0.51380
+54     40 100000   20   500 0.53970
+55     50 100000   10   500 0.39567
+56     50 100000   15   500 0.54802
+57     50 100000   20   500 0.45077
+58     75 100000   10   500 0.36679
+59     75 100000   15   500 0.40559
+60     75 100000   20   500 0.45208
+61    100 100000   10   500 0.38956
+62    100 100000   15   500 0.44047
+63    100 100000   20   500 0.47293
+64     10 100000   10  5000 0.33263
+65     10 100000   15  5000 0.34607
+66     10 100000   20  5000 0.27888
+67     20 100000   10  5000 0.32983
+68     20 100000   15  5000 0.45954
+69     20 100000   20  5000 0.34676
+70     30 100000   10  5000 0.33777
+71     30 100000   15  5000 0.47579
+72     30 100000   20  5000 0.45057
+73     40 100000   10  5000 0.33878
+74     40 100000   15  5000 0.41478
+75     40 100000   20  5000 0.43650
+76     50 100000   10  5000 0.35493
+77     50 100000   15  5000 0.41368
+78     50 100000   20  5000 0.37009
+79     75 100000   10  5000 0.32406
+80     75 100000   15  5000 0.41752
+81     75 100000   20  5000 0.48044
+82    100 100000   10  5000 0.34541
+83    100 100000   15  5000 0.37141
+84    100 100000   20  5000 0.35227
+> 
+> write.csv(df_specks, paste0(tables,"utility_ctgan_specks_rows_100000.csv"), row.names=FALSE)
+> 
+>   
+> 
+> proc.time()
+       User      System verstrichen 
+   9567.527      90.297   12696.571 

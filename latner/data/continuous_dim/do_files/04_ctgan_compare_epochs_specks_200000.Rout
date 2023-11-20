@@ -1,0 +1,146 @@
+
+R version 4.3.0 (2023-04-21) -- "Already Tomorrow"
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20 (64-bit)
+
+R ist freie Software und kommt OHNE JEGLICHE GARANTIE.
+Sie sind eingeladen, es unter bestimmten Bedingungen weiter zu verbreiten.
+Tippen Sie 'license()' or 'licence()' für Details dazu.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Tippen Sie 'demo()' für einige Demos, 'help()' für on-line Hilfe, oder
+'help.start()' für eine HTML Browserschnittstelle zur Hilfe.
+Tippen Sie 'q()', um R zu verlassen.
+
+> # Top commands ----
+> 
+> # Create empty R application (no figures, data frames, packages, etc.)
+> # Get a list of all loaded packages
+> packages <- search()[grepl("package:", search())]
+> # Unload each package
+> for (package in packages) {
++   unloadNamespace(package)
++ }
+> 
+> rm(list=ls(all=TRUE))
+> 
+> # load library
+> library(tidyverse)
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+> library(synthpop)
+Find out more at https://www.synthpop.org.uk/
+> library(ggh4x) # facet_nested
+> 
+> # FOLDERS - ADAPT THIS PATHWAY
+> # main_dir = "N:/Ablagen/D01700-KEM/Latner/little_etal_2021/"
+> main_dir = "/Users/jonathanlatner/Documents/GitHub/IAB/simulation_data/continuous_dim/"
+> 
+> data_files = "data_files/"
+> original_data = "data_files/original/"
+> synthetic_data = "data_files/synthetic/"
+> graphs = "graphs/"
+> tables = "tables/ctgan/"
+> 
+> setwd(main_dir)
+> 
+> # compare ----
+> 
+> df_specks <- data.frame(epochs = as.numeric(),
++                         rows = as.numeric(),
++                         cols = as.numeric(),
++                         batch = as.numeric(),
++                         specks = as.numeric())
+> 
+> rows = c("200000") # Rows/observations
+> cols = c(10, 15) # Columns/variables
+> epochs = c(10, 20, 30, 40, 50, 75, 100)
+> batch = c(500, 1000, 5000, "10000")
+> 
+> 
+> for (r in rows) {
++   for (c in cols) {
++     for (e in epochs) {
++       for (b in batch) {
++         
++         print(paste(r, c, e, b, sep =","))
++         
++         #load original data
++         df_ods <- read.csv(paste0(original_data,"ods_rows_",r,"_cols_",c,".csv"))
++         
++         #load synds object
++         df_synds <- readRDS(paste0(data_files,"synthetic/synds_rows_",r,"_cols_",c,"_m_1.rds"))
++ 
++         #load synthetic data
++         sds <- read.csv(paste0(synthetic_data,"ctgan/sds_ctgan_rows_",r,"_cols_",c,"_n_1_epochs_",e,"_batch_",b,".csv"))
++ 
++         #replace synds object with synthetic data
++         df_synds$syn <- sds
++ 
++         #compare
++         utility_measure <- utility.gen(df_synds$syn, df_ods, print.stats = "SPECKS", nperms = 3)
++         
++         specks <- data.frame(epochs = e,
++                              rows = r,
++                              cols = c,
++                              batch = b,
++                              specks = as.numeric(utility_measure$SPECKS[1]))
++         df_specks <- rbind(df_specks,specks)
++       }
++     }
++   }
++ }
+[1] "200000,10,10,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,10,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,10,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,10,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,20,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,20,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,20,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,20,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,30,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,30,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,30,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,30,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,40,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,40,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,40,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,40,10000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,50,500"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,50,1000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,50,5000"
+Running 3 permutations to get NULL utilities.
+synthesis [1] "200000,10,50,10000"
+Running 3 permutations to get NULL utilities.
+synthesis 
