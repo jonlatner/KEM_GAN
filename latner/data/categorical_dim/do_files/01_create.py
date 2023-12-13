@@ -10,7 +10,7 @@ import random
 import string
 
 # file paths - adapt main_dir pathway
-main_dir = "/Users/jonathanlatner/Documents/GitHub/IAB/simulation_data/categorical_dim/"
+main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/data/categorical_dim/"
 
 data_files = "data_files/"
 original_data = "data_files/original/"
@@ -29,16 +29,21 @@ Create data
 '''
 
 # Dimensions
-rows = [50000] # Rows/observations
-cols = [2] # Columns/variables
-vals = [15]  # Number of possible options for each character
+rows = [100000] # Rows/observations
+cols = [10,15,20] # Columns/variables
+vals = [5,10]  # Number of possible options for each character
 
 df_output = pd.DataFrame()
 df_sds = pd.DataFrame()
 
+# Set the random seed
+my_seed = 1233
+
 for r in rows:
     for c in cols:
         for v in vals:
+            
+            my_seed = my_seed + 1
             
             # Create an empty dictionary to store the data
             data = {}

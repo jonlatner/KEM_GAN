@@ -16,7 +16,7 @@ library(synthpop)
 library(ggh4x)
 
 # FOLDERS - ADAPT THIS PATHWAY
-main_dir = "/Users/jonathanlatner/Documents/GitHub/IAB/simulation_data/categorical_dim/"
+main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/data/categorical_dim//"
 
 data_files = "data_files/"
 duration = "duration/"
@@ -26,9 +26,16 @@ setwd(main_dir)
 
 # Load data ----
 
-df_ctgan <- read.csv(paste0(duration,"duration_ctgan_0.csv")) 
+# df_ctgan <- read.csv(paste0(duration,"duration_ctgan_0.csv")) 
 df_synthpop <- read.csv(paste0(duration,"duration_synthpop_0.csv")) 
 df_datasynthesizer <- read.csv(paste0(duration,"duration_datasynthesizer_0.csv")) 
+
+df_ctgan <- read.csv(paste0(duration,"duration_ctgan_compare_epochs.csv")) %>%
+  filter(epochs==300) %>%
+  select(-epochs)
+
+# df_ctgan <- read.csv(paste0(duration,"duration_ctgan_0.csv"))
+
 
 df_merge <- rbind(df_ctgan,df_synthpop,df_datasynthesizer)
 
@@ -52,5 +59,5 @@ df_graph <- ggplot(df_merge, aes(x = rows, y = duration, fill = type)) +
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"graph_compare_duration.pdf"), height = 6, width = 10)
+# ggsave(plot = df_graph, paste0(graphs,"graph_compare_duration.pdf"), height = 6, width = 10)
 

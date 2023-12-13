@@ -16,7 +16,7 @@ library(synthpop)
 library(ggh4x)
 
 # FOLDERS - ADAPT THIS PATHWAY
-main_dir = "/Users/jonathanlatner/Documents/GitHub/IAB/simulation_data/continuous_dim/"
+main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/data/continuous_dim/"
 
 data_files = "data_files/"
 duration = "duration/"
@@ -28,6 +28,9 @@ setwd(main_dir)
 
 df_synthpop <- read.csv(paste0(duration,"duration_synthpop_0.csv")) 
 df_datasynthesizer <- read.csv(paste0(duration,"duration_datasynthesizer_0.csv")) 
+df_ctgan_baseline <- read.csv(paste0(duration,"duration_ctgan_baseline.csv"))  %>%
+  select(type, rows, cols, n, duration) %>%
+  mutate(type = "CTGAN (300 epochs)")
 
 # Load CTGAN duration data ----
 
@@ -46,16 +49,17 @@ duration_ctgan_rows_200000_cols_20 <- read.csv(paste0(duration,"duration_ctgan_r
 df_ctgan <- rbind(duration_ctgan_rows_50000_cols_10,duration_ctgan_rows_50000_cols_15,duration_ctgan_rows_50000_cols_20,
                      duration_ctgan_rows_100000_cols_10,duration_ctgan_rows_100000_cols_15,duration_ctgan_rows_100000_cols_20,
                      duration_ctgan_rows_200000_cols_10,duration_ctgan_rows_200000_cols_15,duration_ctgan_rows_200000_cols_20
-) 
+)
 
-df_ctgan <- df_ctgan %>%
+df_ctgan_50 <- df_ctgan %>%
   filter(epochs == 50,
-         batch_size == 1000) %>%
-  select(type, rows, cols, n, duration)
+         batch_size == 500) %>%
+  select(type, rows, cols, n, duration) %>%
+  mutate(type = "CTGAN (50 epochs)")
 
 # Merge ----
 
-df_merge <- rbind(df_synthpop,df_datasynthesizer,df_ctgan)
+df_merge <- rbind(df_synthpop,df_datasynthesizer,df_ctgan_baseline,df_ctgan_50)
 
 df_merge$rows <- as.factor(df_merge$rows)
 df_merge

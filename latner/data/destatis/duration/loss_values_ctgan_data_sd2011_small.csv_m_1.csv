@@ -1,0 +1,21 @@
+epochs,loss_type,value,data,copes,j
+0,Generator Loss,1.269511342048645,sd2011_small.csv,1,1
+1,Generator Loss,1.251375675201416,sd2011_small.csv,1,1
+2,Generator Loss,1.1960898637771606,sd2011_small.csv,1,1
+3,Generator Loss,1.273630142211914,sd2011_small.csv,1,1
+4,Generator Loss,0.978335976600647,sd2011_small.csv,1,1
+5,Generator Loss,0.9585148692131042,sd2011_small.csv,1,1
+6,Generator Loss,1.051954746246338,sd2011_small.csv,1,1
+7,Generator Loss,1.2255353927612305,sd2011_small.csv,1,1
+8,Generator Loss,0.8148266673088074,sd2011_small.csv,1,1
+9,Generator Loss,0.9168332815170288,sd2011_small.csv,1,1
+0,Discriminator Loss,-0.017303794622421265,sd2011_small.csv,1,1
+1,Discriminator Loss,-0.02029988169670105,sd2011_small.csv,1,1
+2,Discriminator Loss,-0.06900733709335327,sd2011_small.csv,1,1
+3,Discriminator Loss,-0.08576805144548416,sd2011_small.csv,1,1
+4,Discriminator Loss,-0.05692815035581589,sd2011_small.csv,1,1
+5,Discriminator Loss,0.070675790309906,sd2011_small.csv,1,1
+6,Discriminator Loss,-0.03789776563644409,sd2011_small.csv,1,1
+7,Discriminator Loss,-0.14068569242954254,sd2011_small.csv,1,1
+8,Discriminator Loss,0.05629175156354904,sd2011_small.csv,1,1
+9,Discriminator Loss,-0.00377635657787323,sd2011_small.csv,1,1

@@ -55,9 +55,10 @@ for (d in data) {
                              duration=time_duration)
     write.csv(df_duration, file = paste0(duration,"duration_synthpop_data_",d,".csv"), row.names = FALSE)
     
+
     # save RDS file for future use with synthpop package (i.e. utility measures)
-    saveRDS(df_synds, paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
-    
+    saveRDS(df_synds, paste0(data_files,"synthetic/df_synds_rows_",r,"_cols_",c,"_vals_",v,".rds"))
+
     # save csv file
     for (j in 1:c) {
       synthpop_df <- df_synds$syn
