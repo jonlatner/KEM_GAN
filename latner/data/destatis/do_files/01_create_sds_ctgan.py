@@ -1,9 +1,5 @@
 '''
 TOP COMMANDS
-Create data for:
-https://arxiv.org/abs/1907.00503
-Modeling Tabular Data using Conditional GAN
-Xu et al., 2019
 '''
 
 # load libraries
@@ -33,7 +29,7 @@ my_seed = 1233
 LOAD DATA
 '''
 
-data = ["sd2011_small.csv"] # Real data
+data = ["sd2011_small"] # Real data
 epochs = [10]
 copies = [1]
 
@@ -56,7 +52,7 @@ for d in data:
                 random.seed(my_seed)
 
                 # Create a unique filename based on the values
-                filename_ods = f"{d}"
+                filename_ods = f"{d}.csv"
                 df_ods = pd.read_csv(os.path.join(original_data, filename_ods))
             
                 # synthesize data
@@ -92,35 +88,12 @@ for d in data:
                 # Step 4: Save synthetic data set (sds)
                 sds.to_csv(os.path.join(synthetic_data, filename_sds), index=False)
         
-                # access loss values from the ML model directly
-                # https://github.com/sdv-dev/SDV/issues/1671
-                loss_values = synthesizer._model.loss_values
-                
-                loss_values_long = pd.melt(
-                    loss_values,
-                    id_vars=['Epoch'],
-                    var_name='Loss Type',
-                    value_name='Value'
-                )
-                loss_values_long['Value'] = loss_values_long['Value'].astype(str).astype(float)
-                loss_values_long['data']=d
-                loss_values_long['m']=m
-                loss_values_long['j']=j
-                loss_values_long = pd.DataFrame(loss_values_long)
-                df_loss_values = pd.concat([df_loss_values,loss_values_long], ignore_index=True)
-                
                 print("")
                 print("data:",d)
                 print("epochs:",e)
                 print("copes:",m)
                 print("number:",j)
 
-        # save loss values by data set and copy
-        df_loss_values_out = pd.DataFrame(df_loss_values)
-        df_loss_values_out.columns = ['epochs', 'loss_type', 'value', "data", "copes", "j"]    
-        filename_loss_values = f"loss_values_ctgan_data_{d}_m_{m}.csv"
-        df_loss_values_out.to_csv(os.path.join(duration, filename_loss_values), index=False)
-    
     # save duration by data set
     df_duration_out = pd.DataFrame(df_duration)
     df_duration_out.columns = ['type', 'data', 'epochs', "copies", "j", "duration"]    

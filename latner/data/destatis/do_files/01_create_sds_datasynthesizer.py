@@ -32,7 +32,7 @@ my_seed = 1233
 LOAD DATA
 '''
 
-data = ["sd2011_small.csv"] 
+data = ["sd2011_small"] 
 copies = [1]
 
 for d in data:
@@ -49,7 +49,7 @@ for d in data:
             random.seed(my_seed)
 
             # Create a unique filename based on the values
-            filename_ods = f"{d}"
+            filename_ods = f"{d}.csv"
             description = 'description.json'
                 
             filename_path = os.path.join(original_data, filename_ods)
