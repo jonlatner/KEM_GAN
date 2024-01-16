@@ -27,6 +27,8 @@ setwd(main_dir)
 # Load duration data from CTGAN (based on optimized parameterization) ----
 
 data <- c("adult","grid","gridr","sd2011_small","sd2011")
+data <- c("sd2011_small","sd2011")
+data <- c("sd2011_small")
 type <- c("ctgan")
 
 df_duration <- data.frame()
@@ -34,7 +36,7 @@ for (d in data) {
   for (t in type) {
     output <- read.csv(paste0(duration,"duration_",t,"_data_",d,".csv")) %>%
       filter(epochs == 50 & copies == 1 & j == 1) %>%
-      select(-epochs, -copies, -j)
+      select(type, data, duration)
     df_duration <- rbind(df_duration,output)
   }
 }
@@ -44,14 +46,14 @@ for (d in data) {
 type <- c("datasynthesizer")
 for (d in data) {
   for (t in type) {
-    output <- read.csv(paste0(duration,"duration_",t,"_data_",d,".csv")) %>%
-      filter(copies == 1 & j == 1) %>%
-      select(-copies, -j)
+    correlated <- read.csv(paste0(duration,"duration_",t,"_correlated_data_",d,".csv")) 
+    independent <- read.csv(paste0(duration,"duration_",t,"_independent_data_",d,".csv")) 
+    output <- rbind(correlated, independent) %>%
+      filter(parents == 1 & epsilon == 0 & copies == 1 & j == 1) %>%
+      select(type, data, duration)
     df_duration <- rbind(df_duration,output)
   }
 }
-
-df_duration
 
 # Load duration data from synthpop ----
 
@@ -63,7 +65,7 @@ for (d in data) {
   }
 }
 
-df_duration
+df_duration$ratio
 
 # Graph data ----
 
@@ -84,5 +86,5 @@ df_graph <- ggplot(df_duration, aes(x = type, y = duration)) +
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"graph_compare_duration.pdf"), height = 4, width = 8)
+# ggsave(plot = df_graph, paste0(graphs,"graph_compare_duration.pdf"), height = 4, width = 8)
 
