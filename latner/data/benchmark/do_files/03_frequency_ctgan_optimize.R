@@ -29,7 +29,7 @@ setwd(main_dir)
 # Load original data ----
 
 data <- c("adult","grid","gridr","sd2011_small")
-data <- c("sd2011")
+data <- c("sd2011_duration_w_missing")
 for (d in data) {
   df_ods <- read.csv(paste0(original_data,d,".csv"))
 }

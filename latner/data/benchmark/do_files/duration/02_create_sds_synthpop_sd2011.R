@@ -29,18 +29,7 @@ options(scipen=999)
 
 # Create fake synthetic data with 1 copy (and time duration) ----
 
-df_ods <- read.csv(paste0(original_data,"SD2011.csv"))
-df_ods[df_ods == ""] <- NA
-df_ods <- df_ods %>%
-  mutate_if(is.character, as.factor)
-# Count the number of levels for each column
-num_levels <- sapply(df_ods, function(x) length(levels(x)))
-
-# Reorder columns based on the number of levels
-df_ods <- df_ods[, order(-num_levels)]
-
-# Save
-write.csv(df_ods, paste0(original_data,"sd2011_ordered.csv"), row.names = FALSE)
+df_ods <- read.csv(paste0(original_data,"SD2011_ordered.csv"))
 
 maximum_factors <- c(10,17,18,30)
 for (f in maximum_factors) {

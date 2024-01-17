@@ -45,7 +45,7 @@ Find out more at https://www.synthpop.org.uk/
 ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 > 
 > # FOLDERS - ADAPT THIS PATHWAY
-> main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/simulation_data/benchmark/"
+> main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/data/benchmark/"
 > 
 > data_files = "data_files/"
 > original_data = "data_files/original/"
@@ -60,8 +60,8 @@ Find out more at https://www.synthpop.org.uk/
 > # Create fake synthetic data with 1 copy (and time duration) ----
 > 
 > copies <- c(1)
-> data <- c("adult","grid","gridr","sd2011_small")
-> data <- c("sd2011")
+> data <- c("adult","grid","gridr","sd2011_small","sd2011")
+> data <- c("sd2011_duration_wo_missing","sd2011_duration_w_missing")
 > for (d in data) {
 +   print(d)
 +   df_ods <- read.csv(paste0(original_data,d,".csv"))
@@ -83,8 +83,9 @@ Find out more at https://www.synthpop.org.uk/
 +     df_duration = data.frame(type="synthpop",
 +                              data=d,
 +                              duration=time_duration)
-+     write.csv(df_duration, file = paste0(duration,"duration_synthpop_",d,".csv"), row.names = FALSE)
++     write.csv(df_duration, file = paste0(duration,"duration_synthpop_data_",d,".csv"), row.names = FALSE)
 +     
++ 
 +     # save RDS file for future use with synthpop package (i.e. utility measures)
 +     saveRDS(df_synds, paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
 +     
@@ -95,14 +96,16 @@ Find out more at https://www.synthpop.org.uk/
 +     }
 +   }
 + }
-[1] "sd2011"
+[1] "sd2011_duration_wo_missing"
 
 Synthesis
 -----------
- sex age agegr placesize region edu eduspec socprof unempdur income
- marital mmarr ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh
- sport nofriend smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur
- emcc englang height weight bmi
+ age eduspec sex alcabuse
+[1] "sd2011_duration_w_missing"
+
+Synthesis
+-----------
+ age eduspec sex alcabuse
 > 
 > # Create fake synthetic data with m copies ----
 > 
@@ -128,9 +131,50 @@ Synthesis
 +     }
 +   }
 + }
-[1] "sd2011"
+[1] "sd2011_duration_wo_missing"
 
 Synthesis number 1
 --------------------
- sex age agegr placesize region edu eduspec socprof unempdur income
- marital mmarr ymarr msepdiv ysepdiv ls depress trust
+ age eduspec sex alcabuse
+
+Synthesis number 2
+--------------------
+ age eduspec sex alcabuse
+
+Synthesis number 3
+--------------------
+ age eduspec sex alcabuse
+
+Synthesis number 4
+--------------------
+ age eduspec sex alcabuse
+
+Synthesis number 5
+--------------------
+ age eduspec sex alcabuse
+[1] "sd2011_duration_w_missing"
+
+Synthesis number 1
+--------------------
+ age eduspec sex alcabuse
+
+Synthesis number 2
+--------------------
+ age eduspec sex alcabuse
+
+Synthesis number 3
+--------------------
+ age eduspec sex alcabuse
+
+Synthesis number 4
+--------------------
+ age eduspec sex alcabuse
+
+Synthesis number 5
+--------------------
+ age eduspec sex alcabuse
+> 
+> 
+> proc.time()
+       User      System verstrichen 
+    362.179       0.206     364.496 

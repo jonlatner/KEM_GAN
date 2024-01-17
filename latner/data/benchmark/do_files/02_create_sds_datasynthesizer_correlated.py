@@ -51,7 +51,7 @@ Experiments were performed using XX parameters:
 
 data = ["grid","gridr", # Simulated data
         "sd2011_small","adult"] # Real data
-data = ["sd2011"] # Real data
+data = ["sd2011_duration_w_missing","sd2011_duration_wo_missing"] # Real data
 copies = [1,5]
 parents = [1,2]
 epsilon = [0,.1,1]
@@ -83,7 +83,7 @@ for d in data:
                         
                     # An attribute is categorical if its domain size is less than this threshold.
                     # Here modify the threshold to adapt to the domain size of "education" (which is 14 in input dataset).
-                    threshold_value = 25
+                    threshold_value = 30
                         
                     # location of two output files
                     description_file = os.path.join(synthetic_data, description)

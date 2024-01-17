@@ -38,20 +38,24 @@ df_ctgan <- df_ctgan %>%
   filter(best_fit == 1) %>%
   ungroup() %>%
   mutate(synthesizer = "ctgan") %>%
-  select(-epochs,-best_fit)
+  select(data,copies, pmse, spmse, specks, synthesizer)
 df_ctgan
-  
+
+# Load and optimize datasynthesizer utility data ----
+
+df_synthpop <- read.csv(paste0(tables,"synthpop/utility_output.csv"))
+df_synthpop <- df_synthpop %>%
+  group_by(data,copies) %>%
+  mutate(best_fit = ifelse(specks==min(specks),yes=1,no=0)) %>%
+  filter(best_fit == 1) %>%
+  ungroup() %>%
+  mutate(synthesizer = "synthpop") %>%
+  select(data,copies, pmse, spmse, specks, synthesizer)
+df_synthpop
+
 # Load utility data from other synthesizers ----
 
-type <- c("synthpop", "datasynthesizer")
-df_utility <- data.frame()
-for (t in type) {
-  output <- read.csv(paste0(tables,t,"/utility_output.csv"))
-  output$synthesizer <- t
-  df_utility <- rbind(df_utility,output)
-}
-
-df_utility <- rbind(df_utility,df_ctgan) %>% 
+df_utility <- rbind(df_ctgan,df_datasynthesizer,df_synthpop) %>% 
   arrange(data,synthesizer) %>%
   filter(copies == 5) %>%
   select(-copies)

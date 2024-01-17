@@ -21,7 +21,7 @@ main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/data/benchmark
 data_files = "data_files/"
 original_data = "data_files/original/"
 synthetic_data = "data_files/synthetic/datasynthesizer/"
-graphs = "graphs/"
+graphs = "graphs/datasynthesizer/"
 tables = "tables/datasynthesizer/"
 
 setwd(main_dir)
@@ -29,7 +29,7 @@ setwd(main_dir)
 # Load original data ----
 
 data <- c("adult","grid","gridr","sd2011_small")
-data <- c("sd2011_small")
+data <- c("sd2011_duration_w_missing")
 for (d in data) {
   df_ods <- read.csv(paste0(original_data,d,".csv"))
 }
@@ -37,7 +37,7 @@ for (d in data) {
 # Load synthetic data ----
 
 parents = c(0, 1, 2)
-epsilon = c(0, .1, 1)
+privacy = c(0, .1, 1)
 copies = c(1)
 
 df_comparison <- data.frame()
@@ -47,7 +47,8 @@ df_utility <- data.frame()
 for (c in copies) {
   for (d in data) {
     sds_list <- readRDS(paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
-    for (e in epsilon) {
+
+    for (e in privacy) {
       for (k in parents) {
         for (j in 1:c) {
           sds <- read.csv(paste0(synthetic_data,"sds_datasynthesizer_",d,"_k_",k,"_e_",e,"_m_",c,"_n_",j,".csv"))
@@ -75,18 +76,13 @@ for (c in copies) {
           rename(value=value_new) %>%
           mutate(value = ifelse(value=="miss.NA", yes = "NA", no = value))
         df_compare$parents = k
-        df_compare$epsilon = e
+        df_compare$privacy = e
         
         df_comparison <- rbind(df_comparison,df_compare)
       }
     }
   }
 }
-
-utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 3)
-utility_measure
-
-# compare(sds_list, df_ods) 
 
 # Graph ----
 
@@ -99,7 +95,7 @@ df_graph <- ggplot(df_comparison, aes(x = value, y = pct, fill = data, color = d
   # geom_line(data = subset(df_compare, data!="observed")) +
   # geom_line() +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
-  facet_nested(parents+epsilon ~ variables, scales = "free", labeller = labeller(.rows = label_both)) +
+  facet_nested(parents+privacy ~ variables, scales = "free", labeller = labeller(.rows = label_both)) +
   xlab("") +
   ylab("") +
   theme_bw() +

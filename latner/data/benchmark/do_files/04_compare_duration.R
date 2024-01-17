@@ -28,7 +28,7 @@ setwd(main_dir)
 
 data <- c("adult","grid","gridr","sd2011_small","sd2011")
 data <- c("sd2011_small","sd2011")
-data <- c("sd2011_small")
+data <- c("sd2011_duration_wo_missing","sd2011_duration_w_missing")
 type <- c("ctgan")
 
 df_duration <- data.frame()
@@ -86,5 +86,5 @@ df_graph <- ggplot(df_duration, aes(x = type, y = duration)) +
 
 df_graph
 
-# ggsave(plot = df_graph, paste0(graphs,"graph_compare_duration.pdf"), height = 4, width = 8)
+ggsave(plot = df_graph, paste0(graphs,"graph_compare_duration.pdf"), height = 4, width = 8)
 

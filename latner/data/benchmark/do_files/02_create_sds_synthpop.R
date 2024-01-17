@@ -13,9 +13,10 @@ rm(list=ls(all=TRUE))
 # load library
 library(synthpop)
 library(tidyverse)
+library(rpart)
 
 # FOLDERS - ADAPT THIS PATHWAY
-main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/simulation_data/benchmark/"
+main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/data/benchmark/"
 
 data_files = "data_files/"
 original_data = "data_files/original/"
@@ -31,7 +32,7 @@ options(scipen=999)
 
 copies <- c(1)
 data <- c("adult","grid","gridr","sd2011_small","sd2011")
-data <- c("sd2011_small")
+data <- c("sd2011_duration_wo_missing","sd2011_duration_w_missing")
 for (d in data) {
   print(d)
   df_ods <- read.csv(paste0(original_data,d,".csv"))
@@ -57,8 +58,8 @@ for (d in data) {
     
 
     # save RDS file for future use with synthpop package (i.e. utility measures)
-    saveRDS(df_synds, paste0(data_files,"synthetic/df_synds_rows_",r,"_cols_",c,"_vals_",v,".rds"))
-
+    saveRDS(df_synds, paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
+    
     # save csv file
     for (j in 1:c) {
       synthpop_df <- df_synds$syn

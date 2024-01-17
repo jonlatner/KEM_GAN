@@ -18,7 +18,7 @@ from sdv.metadata import SingleTableMetadata
 
 
 # file paths - adapt main_dir pathway
-main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/simulation_data/benchmark/"
+main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/data/benchmark/"
 data_files = "data_files/"
 original_data = "data_files/original/"
 synthetic_data = "data_files/synthetic/ctgan/"
@@ -35,7 +35,7 @@ LOAD DATA
 
 data = ["grid","gridr", # Simulated data
         "adult","sd2011_small"] # Real data
-data = ["sd2011"] # Real data
+data = ["sd2011_duration_w_missing","sd2011_duration_wo_missing"] # Real data
 epochs = [25,50,75,100]
 copies = [1,5]
 

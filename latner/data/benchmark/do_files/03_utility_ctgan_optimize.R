@@ -16,12 +16,12 @@ library(synthpop)
 library(ggh4x) # facet_nested
 
 # FOLDERS - ADAPT THIS PATHWAY
-main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/simulation_data/benchmark/"
+main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/data/benchmark/"
 
 data_files = "data_files/"
 original_data = "data_files/original/"
 synthetic_data = "data_files/synthetic/ctgan/"
-graphs = "graphs/"
+graphs = "graphs/ctgan/"
 tables = "tables/ctgan/"
 
 setwd(main_dir)
@@ -30,7 +30,7 @@ setwd(main_dir)
 
 epochs = c(25, 50, 75, 100)
 data <- c("adult","grid","gridr","sd2011_small","sd2011")
-data <- c("sd2011")
+data <- c("sd2011_duration_wo_missing","sd2011_duration_w_missing")
 
 # 1 copy
 copies = c(1)
@@ -64,7 +64,7 @@ for (c in copies) {
 
 # multiple copies
 copies = c(5)
-epochs = c(50) # the idea is that you already optimized epochs
+# epochs = c(50) # the idea is that you already optimized epochs
 df_comparison_multiple <- data.frame()
 for (c in copies) {
   for (d in data) {
@@ -103,11 +103,6 @@ utility_measure
 # Graph ----
 
 df_comparison <- read.csv(paste0(tables,"utility_output.csv"))
-
-df_comparison %>%
-  group_by(data) %>%
-  mutate(best_fit = ifelse(specks==min(specks),yes=epochs,no=NA))
-
 df_comparison$epochs <- factor(as.character(df_comparison$epochs), levels = str_sort(unique(df_comparison$epochs), numeric = TRUE))
 
 df_graph <- ggplot(df_comparison, aes(x = epochs, y = specks)) +
@@ -125,3 +120,6 @@ df_graph <- ggplot(df_comparison, aes(x = epochs, y = specks)) +
   )
 
 df_graph
+
+ggsave(plot = df_graph, paste0(graphs,"ctgan_optimize_utility.pdf"), height = 4, width = 6)
+

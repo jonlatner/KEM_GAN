@@ -23,7 +23,7 @@ setwd(main_dir)
 data_files = "data_files/"
 original_data = "data_files/original/"
 synthetic_data = "data_files/synthpop/"
-graphs = "graphs/"
+graphs = "graphs/synthpop/"
 tables = "tables/synthpop/"
 
 #functions
@@ -33,7 +33,7 @@ options(scipen=999)
 
 copies <- c(1,5)
 data <- c("adult","grid","gridr","sd2011_small","sd2011")
-type <- c("synthpop")
+data <- c("sd2011_duration_wo_missing","sd2011_duration_w_missing")
 
 df_comparison <- data.frame()
 
@@ -76,3 +76,4 @@ df_graph <- ggplot(df_comparison, aes(x = copies, y = specks)) +
 
 df_graph
 
+ggsave(plot = df_graph, paste0(graphs,"synthpop_optimize_utility.pdf"), height = 4, width = 6)

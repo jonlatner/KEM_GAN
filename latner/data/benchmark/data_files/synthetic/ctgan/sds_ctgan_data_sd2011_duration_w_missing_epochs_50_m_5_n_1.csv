@@ -1,0 +1,5001 @@
+age,eduspec,sex,alcabuse
+51,no specialisation,FEMALE,NO
+27,technical science,MALE,NO
+56,"agriculture, forestry, fishing",MALE,YES
+26,healthcare,FEMALE,YES
+43,physical sciences,FEMALE,
+56,economy and administration,FEMALE,NO
+49,technical science,MALE,NO
+25,no specialisation,FEMALE,NO
+59,journalism and information,FEMALE,NO
+30,social sciences,FEMALE,NO
+24,no specialisation,FEMALE,NO
+59,services for the population and transport services,MALE,YES
+48,no specialisation,FEMALE,NO
+43,production and processing,FEMALE,YES
+44,other,MALE,YES
+19,"agriculture, forestry, fishing",FEMALE,YES
+62,technical science,MALE,NO
+39,art,FEMALE,
+57,no specialisation,MALE,NO
+45,physical sciences,FEMALE,NO
+16,not applicable,MALE,NO
+69,production and processing,MALE,YES
+21,no specialisation,FEMALE,NO
+32,technical science,FEMALE,YES
+39,technical science,MALE,NO
+16,no specialisation,MALE,NO
+48,no specialisation,FEMALE,NO
+46,other,MALE,NO
+72,environmental protection,MALE,YES
+56,pedagogics,MALE,NO
+16,other,MALE,
+55,technical science,MALE,NO
+33,technical science,MALE,YES
+20,social sciences,MALE,YES
+59,economy and administration,MALE,NO
+65,no specialisation,FEMALE,NO
+38,pedagogics,MALE,NO
+47,technical science,FEMALE,YES
+61,law,FEMALE,YES
+43,public health,FEMALE,NO
+45,technical science,MALE,NO
+16,social sciences,FEMALE,NO
+22,law,MALE,YES
+54,no specialisation,MALE,NO
+60,no specialisation,MALE,NO
+22,no specialisation,MALE,NO
+19,pedagogics,FEMALE,NO
+51,other,FEMALE,NO
+52,law,FEMALE,NO
+66,computer science,FEMALE,NO
+59,services for the population and transport services,MALE,NO
+46,services for the population and transport services,FEMALE,NO
+57,social sciences,FEMALE,NO
+64,services for the population and transport services,FEMALE,NO
+39,pedagogics,MALE,NO
+28,services for the population and transport services,FEMALE,NO
+57,production and processing,MALE,NO
+43,social sciences,FEMALE,NO
+40,no specialisation,FEMALE,NO
+47,social sciences,FEMALE,NO
+62,social sciences,FEMALE,NO
+34,liberal arts,FEMALE,NO
+46,not applicable,MALE,NO
+16,no specialisation,MALE,NO
+49,armed forces and country protection,FEMALE,NO
+31,production and processing,FEMALE,NO
+52,technical science,MALE,YES
+45,production and processing,FEMALE,NO
+76,technical science,MALE,NO
+54,pedagogics,MALE,NO
+20,,FEMALE,NO
+52,"agriculture, forestry, fishing",FEMALE,NO
+68,architecture and construction,FEMALE,NO
+37,"agriculture, forestry, fishing",FEMALE,NO
+22,no specialisation,FEMALE,NO
+32,technical science,MALE,NO
+62,"agriculture, forestry, fishing",MALE,YES
+28,law,FEMALE,NO
+48,technical science,MALE,YES
+16,technical science,MALE,NO
+45,technical science,MALE,NO
+43,technical science,FEMALE,NO
+30,law,FEMALE,NO
+52,law,MALE,NO
+56,social sciences,FEMALE,NO
+76,architecture and construction,FEMALE,NO
+19,armed forces and country protection,MALE,NO
+68,armed forces and country protection,FEMALE,NO
+81,no specialisation,FEMALE,NO
+52,social sciences,FEMALE,NO
+18,technical science,MALE,NO
+68,architecture and construction,MALE,YES
+36,no specialisation,MALE,NO
+19,armed forces and country protection,MALE,NO
+33,no specialisation,MALE,NO
+51,no specialisation,MALE,YES
+67,law,MALE,NO
+38,"agriculture, forestry, fishing",MALE,NO
+46,pedagogics,FEMALE,NO
+54,production and processing,MALE,YES
+26,pedagogics,FEMALE,NO
+47,technical science,FEMALE,NO
+61,"agriculture, forestry, fishing",FEMALE,NO
+48,services for the population and transport services,FEMALE,NO
+57,no specialisation,FEMALE,NO
+39,no specialisation,MALE,YES
+89,environmental protection,FEMALE,NO
+16,technical science,MALE,NO
+46,technical science,MALE,YES
+49,environmental protection,FEMALE,NO
+40,biological sciences,MALE,NO
+53,social sciences,FEMALE,NO
+52,economy and administration,FEMALE,NO
+42,liberal arts,FEMALE,NO
+16,services for the population and transport services,FEMALE,NO
+56,law,MALE,NO
+18,architecture and construction,FEMALE,NO
+59,lack of data,FEMALE,NO
+32,no specialisation,MALE,NO
+16,no specialisation,MALE,NO
+19,healthcare,MALE,NO
+74,production and processing,MALE,YES
+49,technical science,MALE,NO
+57,mathematics and statistics,MALE,NO
+41,technical science,MALE,NO
+50,technical science,MALE,YES
+41,services for the population and transport services,MALE,NO
+39,pedagogics,MALE,NO
+56,technical science,MALE,NO
+37,services for the population and transport services,MALE,YES
+44,liberal arts,FEMALE,YES
+20,armed forces and country protection,MALE,NO
+44,social sciences,FEMALE,NO
+51,"agriculture, forestry, fishing",MALE,NO
+45,production and processing,MALE,YES
+77,technical science,MALE,NO
+45,public health,FEMALE,NO
+41,social sciences,FEMALE,NO
+43,economy and administration,FEMALE,NO
+42,social sciences,FEMALE,NO
+42,healthcare,FEMALE,NO
+44,no specialisation,FEMALE,NO
+39,production and processing,MALE,YES
+47,"agriculture, forestry, fishing",FEMALE,NO
+42,technical science,MALE,NO
+23,no specialisation,FEMALE,NO
+22,technical science,MALE,NO
+73,services for the population and transport services,MALE,NO
+37,no specialisation,MALE,NO
+48,services for the population and transport services,FEMALE,NO
+45,no specialisation,FEMALE,NO
+16,no specialisation,MALE,NO
+52,production and processing,FEMALE,NO
+55,no specialisation,FEMALE,NO
+50,protection and safety,MALE,NO
+32,social sciences,FEMALE,NO
+46,no specialisation,FEMALE,NO
+36,services for the population and transport services,MALE,NO
+61,no specialisation,MALE,NO
+51,social sciences,FEMALE,NO
+40,"agriculture, forestry, fishing",FEMALE,YES
+19,biological sciences,MALE,YES
+51,services for the population and transport services,FEMALE,NO
+48,technical science,MALE,YES
+72,technical science,MALE,NO
+28,liberal arts,FEMALE,NO
+25,production and processing,FEMALE,
+56,computer science,MALE,NO
+50,no specialisation,MALE,NO
+61,social sciences,FEMALE,NO
+51,law,FEMALE,NO
+47,social sciences,FEMALE,NO
+45,environmental protection,MALE,NO
+21,law,MALE,NO
+38,social sciences,MALE,NO
+67,law,MALE,NO
+62,"agriculture, forestry, fishing",MALE,YES
+22,technical science,MALE,YES
+22,biological sciences,FEMALE,YES
+46,no specialisation,FEMALE,NO
+58,no specialisation,FEMALE,NO
+42,not applicable,MALE,NO
+66,technical science,FEMALE,YES
+52,social sciences,FEMALE,NO
+26,computer science,MALE,NO
+31,economy and administration,FEMALE,NO
+51,technical science,MALE,NO
+61,biological sciences,MALE,YES
+47,technical science,MALE,NO
+48,no specialisation,MALE,NO
+30,no specialisation,MALE,NO
+48,art,MALE,NO
+48,veterinary medicine,FEMALE,NO
+16,technical science,MALE,YES
+28,production and processing,FEMALE,NO
+56,technical science,MALE,NO
+22,social sciences,FEMALE,NO
+50,technical science,MALE,NO
+57,economy and administration,FEMALE,NO
+56,no specialisation,FEMALE,NO
+30,no specialisation,MALE,NO
+54,pedagogics,MALE,YES
+25,"agriculture, forestry, fishing",MALE,NO
+43,no specialisation,MALE,NO
+49,no specialisation,FEMALE,NO
+30,production and processing,MALE,YES
+55,no specialisation,FEMALE,NO
+24,architecture and construction,FEMALE,NO
+52,physical sciences,MALE,YES
+50,technical science,MALE,NO
+30,"agriculture, forestry, fishing",MALE,YES
+33,technical science,MALE,YES
+66,veterinary medicine,MALE,NO
+30,no specialisation,MALE,NO
+28,technical science,FEMALE,NO
+50,pedagogics,MALE,NO
+53,architecture and construction,FEMALE,NO
+36,environmental protection,MALE,NO
+65,production and processing,MALE,NO
+20,services for the population and transport services,FEMALE,
+66,physical sciences,MALE,YES
+21,technical science,MALE,YES
+69,technical science,MALE,NO
+26,healthcare,MALE,NO
+58,no specialisation,FEMALE,NO
+57,physical sciences,FEMALE,YES
+17,art,MALE,NO
+25,technical science,MALE,NO
+40,production and processing,MALE,YES
+70,no specialisation,MALE,NO
+30,social sciences,FEMALE,NO
+16,no specialisation,FEMALE,NO
+47,technical science,MALE,NO
+46,no specialisation,FEMALE,NO
+18,no specialisation,MALE,NO
+51,law,MALE,NO
+63,services for the population and transport services,MALE,
+48,not applicable,FEMALE,NO
+52,production and processing,MALE,YES
+31,environmental protection,MALE,NO
+51,art,MALE,NO
+56,healthcare,MALE,
+34,social sciences,FEMALE,NO
+38,no specialisation,FEMALE,NO
+64,"agriculture, forestry, fishing",FEMALE,NO
+40,architecture and construction,MALE,NO
+26,production and processing,MALE,YES
+30,art,FEMALE,NO
+39,no specialisation,FEMALE,NO
+27,"agriculture, forestry, fishing",FEMALE,NO
+19,"agriculture, forestry, fishing",FEMALE,NO
+40,technical science,MALE,YES
+25,environmental protection,FEMALE,NO
+31,technical science,MALE,NO
+16,environmental protection,MALE,NO
+40,production and processing,FEMALE,NO
+71,"agriculture, forestry, fishing",FEMALE,YES
+60,production and processing,FEMALE,YES
+54,technical science,FEMALE,NO
+29,production and processing,MALE,YES
+21,art,MALE,NO
+57,technical science,MALE,NO
+69,liberal arts,MALE,
+68,technical science,FEMALE,NO
+61,services for the population and transport services,FEMALE,NO
+27,no specialisation,FEMALE,NO
+73,social sciences,MALE,NO
+22,law,MALE,NO
+67,art,FEMALE,NO
+51,services for the population and transport services,FEMALE,NO
+58,"agriculture, forestry, fishing",MALE,NO
+44,"agriculture, forestry, fishing",FEMALE,NO
+56,economy and administration,FEMALE,NO
+53,technical science,FEMALE,
+52,no specialisation,MALE,NO
+49,social sciences,FEMALE,NO
+19,no specialisation,FEMALE,NO
+31,technical science,MALE,NO
+46,technical science,MALE,NO
+21,technical science,FEMALE,YES
+74,social sciences,MALE,NO
+16,pedagogics,MALE,NO
+38,technical science,MALE,NO
+53,veterinary medicine,FEMALE,
+59,technical science,FEMALE,NO
+49,computer science,FEMALE,NO
+30,technical science,FEMALE,NO
+23,services for the population and transport services,MALE,NO
+50,no specialisation,MALE,YES
+48,no specialisation,MALE,NO
+70,services for the population and transport services,FEMALE,YES
+49,social sciences,FEMALE,NO
+28,no specialisation,MALE,NO
+47,veterinary medicine,MALE,NO
+42,environmental protection,FEMALE,
+64,pedagogics,FEMALE,YES
+76,other,FEMALE,NO
+49,healthcare,MALE,NO
+48,social sciences,FEMALE,NO
+51,physical sciences,FEMALE,NO
+53,social sciences,FEMALE,NO
+36,social sciences,FEMALE,NO
+36,no specialisation,MALE,NO
+38,no specialisation,FEMALE,NO
+21,technical science,MALE,YES
+83,technical science,MALE,YES
+45,no specialisation,FEMALE,NO
+16,technical science,FEMALE,YES
+20,veterinary medicine,FEMALE,NO
+35,computer science,MALE,YES
+26,social sciences,MALE,YES
+72,,MALE,NO
+29,social sciences,MALE,NO
+65,veterinary medicine,MALE,NO
+48,law,FEMALE,NO
+58,technical science,FEMALE,NO
+24,pedagogics,MALE,NO
+31,no specialisation,FEMALE,NO
+20,technical science,MALE,NO
+59,lack of data,FEMALE,NO
+27,pedagogics,MALE,NO
+71,no specialisation,FEMALE,NO
+48,no specialisation,MALE,NO
+16,services for the population and transport services,MALE,NO
+21,mathematics and statistics,MALE,YES
+45,no specialisation,FEMALE,NO
+60,,MALE,NO
+48,social sciences,FEMALE,NO
+27,social sciences,FEMALE,NO
+41,economy and administration,MALE,NO
+16,technical science,MALE,NO
+53,no specialisation,FEMALE,NO
+62,pedagogics,MALE,YES
+97,,FEMALE,
+16,production and processing,MALE,YES
+31,technical science,MALE,NO
+82,no specialisation,MALE,NO
+48,technical science,MALE,NO
+25,services for the population and transport services,MALE,YES
+50,no specialisation,MALE,NO
+29,no specialisation,FEMALE,NO
+45,no specialisation,FEMALE,NO
+42,technical science,MALE,YES
+42,law,FEMALE,NO
+16,no specialisation,MALE,NO
+52,technical science,MALE,NO
+50,no specialisation,FEMALE,NO
+50,social sciences,FEMALE,NO
+16,no specialisation,MALE,NO
+45,protection and safety,FEMALE,NO
+21,no specialisation,FEMALE,NO
+52,"agriculture, forestry, fishing",FEMALE,NO
+57,production and processing,MALE,YES
+54,technical science,MALE,YES
+16,no specialisation,MALE,NO
+33,technical science,FEMALE,NO
+71,pedagogics,MALE,NO
+19,no specialisation,FEMALE,NO
+51,services for the population and transport services,FEMALE,NO
+43,"agriculture, forestry, fishing",MALE,NO
+23,other,MALE,NO
+51,no specialisation,FEMALE,NO
+20,technical science,MALE,NO
+61,pedagogics,FEMALE,NO
+22,technical science,FEMALE,NO
+16,production and processing,MALE,YES
+47,no specialisation,FEMALE,NO
+73,social sciences,FEMALE,
+45,technical science,FEMALE,
+65,no specialisation,FEMALE,NO
+52,no specialisation,FEMALE,YES
+67,public health,FEMALE,NO
+57,technical science,MALE,NO
+30,no specialisation,MALE,YES
+36,social sciences,FEMALE,NO
+21,technical science,MALE,NO
+29,technical science,FEMALE,NO
+26,no specialisation,MALE,NO
+51,no specialisation,FEMALE,NO
+74,law,FEMALE,NO
+16,law,MALE,YES
+47,art,FEMALE,
+16,armed forces and country protection,FEMALE,
+76,no specialisation,FEMALE,YES
+20,protection and safety,FEMALE,NO
+59,no specialisation,FEMALE,
+58,"agriculture, forestry, fishing",MALE,NO
+29,technical science,MALE,NO
+50,liberal arts,FEMALE,NO
+51,no specialisation,MALE,NO
+47,no specialisation,MALE,NO
+45,technical science,MALE,NO
+56,no specialisation,MALE,NO
+46,art,FEMALE,NO
+65,no specialisation,MALE,NO
+37,public health,FEMALE,NO
+23,services for the population and transport services,FEMALE,NO
+75,economy and administration,FEMALE,NO
+16,production and processing,MALE,YES
+16,production and processing,FEMALE,NO
+64,"agriculture, forestry, fishing",FEMALE,NO
+54,production and processing,FEMALE,YES
+44,no specialisation,FEMALE,NO
+62,mathematics and statistics,FEMALE,NO
+79,technical science,MALE,NO
+22,art,FEMALE,NO
+79,social sciences,MALE,YES
+32,services for the population and transport services,FEMALE,NO
+51,no specialisation,MALE,NO
+42,no specialisation,FEMALE,NO
+27,biological sciences,FEMALE,NO
+16,liberal arts,FEMALE,NO
+43,no specialisation,MALE,NO
+48,technical science,FEMALE,NO
+62,social sciences,FEMALE,NO
+53,no specialisation,FEMALE,
+57,no specialisation,FEMALE,NO
+64,social sciences,FEMALE,NO
+34,no specialisation,FEMALE,NO
+53,no specialisation,FEMALE,NO
+38,no specialisation,FEMALE,NO
+55,no specialisation,MALE,NO
+43,no specialisation,MALE,NO
+50,liberal arts,FEMALE,YES
+20,no specialisation,MALE,NO
+16,no specialisation,MALE,NO
+55,economy and administration,FEMALE,NO
+55,production and processing,MALE,YES
+47,liberal arts,MALE,YES
+23,social sciences,FEMALE,NO
+42,no specialisation,FEMALE,NO
+57,"agriculture, forestry, fishing",MALE,NO
+39,biological sciences,MALE,YES
+33,technical science,FEMALE,YES
+46,no specialisation,MALE,NO
+17,"agriculture, forestry, fishing",FEMALE,NO
+51,no specialisation,FEMALE,NO
+33,technical science,MALE,NO
+54,no specialisation,FEMALE,NO
+49,protection and safety,MALE,NO
+46,pedagogics,MALE,NO
+55,economy and administration,MALE,NO
+67,liberal arts,FEMALE,NO
+48,social sciences,FEMALE,
+58,no specialisation,FEMALE,NO
+25,production and processing,MALE,YES
+16,pedagogics,MALE,NO
+75,technical science,FEMALE,YES
+60,no specialisation,FEMALE,NO
+27,no specialisation,MALE,NO
+27,no specialisation,MALE,NO
+43,mathematics and statistics,MALE,NO
+31,social sciences,FEMALE,NO
+19,pedagogics,MALE,NO
+52,"agriculture, forestry, fishing",FEMALE,YES
+49,no specialisation,FEMALE,NO
+59,pedagogics,FEMALE,
+16,biological sciences,FEMALE,NO
+75,"agriculture, forestry, fishing",FEMALE,NO
+77,no specialisation,FEMALE,NO
+49,other,FEMALE,NO
+57,computer science,MALE,NO
+65,"agriculture, forestry, fishing",FEMALE,NO
+59,no specialisation,MALE,NO
+18,no specialisation,MALE,NO
+18,not applicable,MALE,
+32,"agriculture, forestry, fishing",FEMALE,NO
+16,no specialisation,FEMALE,NO
+31,"agriculture, forestry, fishing",FEMALE,YES
+36,services for the population and transport services,MALE,
+21,technical science,MALE,NO
+37,architecture and construction,FEMALE,NO
+74,technical science,MALE,NO
+20,pedagogics,MALE,NO
+49,social sciences,FEMALE,NO
+70,healthcare,FEMALE,NO
+36,pedagogics,MALE,YES
+26,law,MALE,NO
+24,no specialisation,FEMALE,NO
+45,not applicable,FEMALE,NO
+58,technical science,MALE,NO
+64,no specialisation,FEMALE,NO
+54,no specialisation,MALE,NO
+50,computer science,FEMALE,NO
+44,"agriculture, forestry, fishing",FEMALE,NO
+59,law,FEMALE,NO
+63,no specialisation,FEMALE,NO
+22,services for the population and transport services,MALE,NO
+83,social sciences,MALE,NO
+20,technical science,MALE,NO
+20,no specialisation,MALE,NO
+37,no specialisation,FEMALE,NO
+56,technical science,FEMALE,NO
+16,environmental protection,FEMALE,
+37,no specialisation,MALE,NO
+16,no specialisation,FEMALE,NO
+45,services for the population and transport services,FEMALE,NO
+39,services for the population and transport services,MALE,YES
+64,"agriculture, forestry, fishing",FEMALE,NO
+63,no specialisation,FEMALE,NO
+50,architecture and construction,FEMALE,NO
+18,services for the population and transport services,MALE,YES
+47,no specialisation,FEMALE,NO
+51,biological sciences,FEMALE,YES
+41,social sciences,MALE,YES
+26,production and processing,MALE,YES
+39,no specialisation,MALE,NO
+67,no specialisation,FEMALE,NO
+32,services for the population and transport services,MALE,YES
+59,social sciences,FEMALE,NO
+52,pedagogics,FEMALE,NO
+30,no specialisation,MALE,NO
+40,biological sciences,FEMALE,NO
+64,art,FEMALE,NO
+33,no specialisation,FEMALE,YES
+64,pedagogics,FEMALE,YES
+56,not applicable,MALE,NO
+51,journalism and information,FEMALE,NO
+16,technical science,MALE,NO
+35,technical science,FEMALE,NO
+32,technical science,MALE,NO
+60,technical science,FEMALE,NO
+67,not applicable,FEMALE,NO
+49,"agriculture, forestry, fishing",MALE,NO
+40,services for the population and transport services,FEMALE,NO
+45,technical science,FEMALE,NO
+16,not applicable,FEMALE,
+60,biological sciences,FEMALE,NO
+16,economy and administration,MALE,NO
+18,no specialisation,FEMALE,NO
+17,social welfare,MALE,YES
+37,no specialisation,MALE,NO
+62,social sciences,MALE,NO
+44,production and processing,MALE,YES
+59,social sciences,FEMALE,
+46,services for the population and transport services,MALE,NO
+47,production and processing,MALE,NO
+45,services for the population and transport services,FEMALE,YES
+59,technical science,MALE,NO
+63,architecture and construction,FEMALE,NO
+33,no specialisation,FEMALE,NO
+40,no specialisation,FEMALE,NO
+16,services for the population and transport services,FEMALE,NO
+50,no specialisation,MALE,NO
+62,social sciences,FEMALE,NO
+57,no specialisation,MALE,NO
+78,art,FEMALE,NO
+55,no specialisation,MALE,NO
+52,no specialisation,MALE,NO
+53,pedagogics,MALE,NO
+32,no specialisation,MALE,NO
+57,social sciences,FEMALE,NO
+24,technical science,FEMALE,YES
+55,production and processing,FEMALE,NO
+16,technical science,FEMALE,NO
+41,technical science,MALE,NO
+62,law,FEMALE,NO
+45,production and processing,FEMALE,NO
+62,"agriculture, forestry, fishing",FEMALE,NO
+16,no specialisation,MALE,NO
+54,production and processing,MALE,NO
+68,economy and administration,FEMALE,NO
+16,technical science,MALE,NO
+46,environmental protection,FEMALE,NO
+66,production and processing,MALE,YES
+45,pedagogics,MALE,YES
+45,no specialisation,FEMALE,NO
+32,no specialisation,MALE,NO
+50,physical sciences,MALE,NO
+40,technical science,MALE,NO
+50,no specialisation,FEMALE,NO
+79,services for the population and transport services,FEMALE,NO
+35,social sciences,MALE,NO
+55,technical science,FEMALE,NO
+29,"agriculture, forestry, fishing",FEMALE,NO
+31,technical science,MALE,NO
+50,architecture and construction,MALE,NO
+52,architecture and construction,MALE,NO
+36,pedagogics,MALE,NO
+48,technical science,MALE,YES
+20,technical science,FEMALE,NO
+43,production and processing,MALE,NO
+17,technical science,FEMALE,NO
+61,no specialisation,FEMALE,NO
+37,social sciences,FEMALE,NO
+61,architecture and construction,FEMALE,
+41,technical science,FEMALE,YES
+38,biological sciences,MALE,NO
+42,production and processing,MALE,YES
+52,other,FEMALE,
+43,economy and administration,FEMALE,NO
+77,"agriculture, forestry, fishing",MALE,NO
+51,"agriculture, forestry, fishing",FEMALE,NO
+67,pedagogics,FEMALE,NO
+20,"agriculture, forestry, fishing",MALE,YES
+17,no specialisation,MALE,NO
+44,no specialisation,MALE,NO
+17,technical science,MALE,NO
+45,services for the population and transport services,FEMALE,NO
+21,services for the population and transport services,FEMALE,NO
+17,technical science,MALE,YES
+44,technical science,MALE,NO
+74,production and processing,MALE,NO
+48,no specialisation,FEMALE,NO
+42,law,MALE,YES
+69,technical science,MALE,NO
+38,technical science,MALE,NO
+61,other,MALE,YES
+88,production and processing,FEMALE,NO
+16,no specialisation,MALE,NO
+57,economy and administration,FEMALE,NO
+64,no specialisation,FEMALE,NO
+16,"agriculture, forestry, fishing",MALE,NO
+47,technical science,FEMALE,NO
+51,technical science,FEMALE,
+47,technical science,FEMALE,NO
+64,art,MALE,NO
+16,protection and safety,MALE,NO
+47,services for the population and transport services,FEMALE,NO
+43,armed forces and country protection,FEMALE,NO
+47,technical science,MALE,YES
+33,services for the population and transport services,FEMALE,NO
+62,"agriculture, forestry, fishing",FEMALE,YES
+41,economy and administration,FEMALE,NO
+49,law,FEMALE,
+18,technical science,MALE,NO
+42,biological sciences,MALE,YES
+66,"agriculture, forestry, fishing",MALE,NO
+63,production and processing,MALE,YES
+52,economy and administration,FEMALE,NO
+38,social sciences,FEMALE,NO
+52,no specialisation,MALE,NO
+79,liberal arts,FEMALE,NO
+46,healthcare,MALE,YES
+69,"agriculture, forestry, fishing",FEMALE,NO
+58,services for the population and transport services,MALE,YES
+19,no specialisation,MALE,NO
+26,no specialisation,FEMALE,NO
+16,"agriculture, forestry, fishing",MALE,NO
+41,technical science,MALE,NO
+60,pedagogics,MALE,NO
+40,technical science,FEMALE,NO
+38,no specialisation,FEMALE,NO
+23,technical science,MALE,YES
+32,,FEMALE,NO
+16,technical science,MALE,NO
+32,economy and administration,FEMALE,
+59,veterinary medicine,FEMALE,NO
+16,technical science,FEMALE,NO
+42,no specialisation,MALE,NO
+69,biological sciences,FEMALE,YES
+22,economy and administration,FEMALE,YES
+33,pedagogics,FEMALE,YES
+26,economy and administration,MALE,NO
+16,veterinary medicine,MALE,NO
+81,"agriculture, forestry, fishing",MALE,YES
+45,biological sciences,MALE,NO
+19,services for the population and transport services,FEMALE,NO
+22,services for the population and transport services,FEMALE,NO
+47,technical science,FEMALE,NO
+47,art,FEMALE,NO
+35,no specialisation,FEMALE,NO
+34,no specialisation,MALE,NO
+30,no specialisation,MALE,NO
+60,social sciences,FEMALE,NO
+44,"agriculture, forestry, fishing",FEMALE,NO
+48,social sciences,FEMALE,NO
+28,services for the population and transport services,FEMALE,NO
+52,"agriculture, forestry, fishing",FEMALE,NO
+68,production and processing,FEMALE,YES
+54,technical science,MALE,NO
+93,production and processing,MALE,YES
+32,no specialisation,MALE,NO
+57,environmental protection,FEMALE,
+16,services for the population and transport services,FEMALE,NO
+44,technical science,MALE,NO
+58,no specialisation,MALE,NO
+16,pedagogics,MALE,NO
+24,production and processing,FEMALE,YES
+46,veterinary medicine,FEMALE,NO
+39,services for the population and transport services,FEMALE,
+34,law,MALE,NO
+29,no specialisation,MALE,NO
+50,social welfare,MALE,NO
+59,services for the population and transport services,MALE,NO
+30,services for the population and transport services,MALE,NO
+60,social sciences,FEMALE,
+22,architecture and construction,MALE,YES
+48,environmental protection,FEMALE,
+41,law,MALE,NO
+20,law,MALE,NO
+33,liberal arts,MALE,YES
+33,no specialisation,FEMALE,NO
+18,law,FEMALE,NO
+30,computer science,MALE,YES
+48,no specialisation,FEMALE,NO
+24,other,FEMALE,NO
+28,no specialisation,FEMALE,NO
+16,social welfare,MALE,
+52,no specialisation,FEMALE,NO
+49,services for the population and transport services,MALE,NO
+64,services for the population and transport services,FEMALE,NO
+60,no specialisation,FEMALE,NO
+39,no specialisation,FEMALE,NO
+50,no specialisation,MALE,NO
+55,pedagogics,FEMALE,NO
+34,law,MALE,NO
+45,pedagogics,MALE,NO
+52,"agriculture, forestry, fishing",MALE,NO
+40,not applicable,FEMALE,
+56,"agriculture, forestry, fishing",MALE,YES
+24,protection and safety,FEMALE,
+70,economy and administration,MALE,NO
+46,law,FEMALE,NO
+26,production and processing,FEMALE,YES
+44,"agriculture, forestry, fishing",MALE,NO
+56,"agriculture, forestry, fishing",FEMALE,NO
+28,technical science,MALE,NO
+47,no specialisation,FEMALE,NO
+37,other,FEMALE,NO
+65,production and processing,MALE,YES
+36,"agriculture, forestry, fishing",MALE,NO
+42,pedagogics,FEMALE,NO
+62,law,MALE,NO
+48,services for the population and transport services,MALE,
+47,technical science,MALE,NO
+72,no specialisation,MALE,NO
+25,no specialisation,FEMALE,NO
+35,"agriculture, forestry, fishing",MALE,YES
+65,,MALE,YES
+58,no specialisation,FEMALE,NO
+48,"agriculture, forestry, fishing",FEMALE,YES
+90,pedagogics,FEMALE,NO
+16,no specialisation,MALE,NO
+69,public health,MALE,NO
+56,social sciences,MALE,NO
+66,no specialisation,MALE,YES
+52,no specialisation,FEMALE,NO
+18,technical science,MALE,NO
+43,technical science,FEMALE,YES
+16,services for the population and transport services,FEMALE,NO
+19,technical science,MALE,NO
+16,technical science,MALE,NO
+57,no specialisation,FEMALE,NO
+16,public health,FEMALE,YES
+32,services for the population and transport services,MALE,YES
+46,technical science,FEMALE,YES
+68,technical science,MALE,YES
+16,pedagogics,MALE,NO
+44,technical science,MALE,
+63,,FEMALE,
+35,no specialisation,FEMALE,NO
+46,technical science,FEMALE,
+58,no specialisation,FEMALE,NO
+41,social welfare,FEMALE,YES
+40,no specialisation,MALE,NO
+30,technical science,MALE,NO
+57,no specialisation,MALE,NO
+32,architecture and construction,MALE,NO
+28,,FEMALE,NO
+45,no specialisation,MALE,YES
+24,no specialisation,MALE,NO
+38,,MALE,NO
+27,"agriculture, forestry, fishing",FEMALE,NO
+63,art,FEMALE,NO
+39,"agriculture, forestry, fishing",MALE,YES
+58,no specialisation,FEMALE,NO
+33,technical science,MALE,NO
+52,social sciences,FEMALE,NO
+58,production and processing,MALE,NO
+39,services for the population and transport services,FEMALE,NO
+39,technical science,MALE,NO
+48,no specialisation,FEMALE,NO
+23,"agriculture, forestry, fishing",MALE,NO
+49,"agriculture, forestry, fishing",FEMALE,NO
+52,technical science,FEMALE,NO
+16,other,FEMALE,
+22,"agriculture, forestry, fishing",FEMALE,NO
+38,technical science,MALE,NO
+19,"agriculture, forestry, fishing",FEMALE,NO
+16,no specialisation,FEMALE,NO
+21,services for the population and transport services,MALE,YES
+18,production and processing,FEMALE,NO
+29,technical science,MALE,NO
+46,architecture and construction,MALE,YES
+19,economy and administration,MALE,NO
+82,law,FEMALE,NO
+51,social sciences,FEMALE,NO
+47,"agriculture, forestry, fishing",FEMALE,NO
+64,no specialisation,MALE,NO
+30,production and processing,MALE,YES
+42,technical science,MALE,NO
+49,art,MALE,NO
+47,,FEMALE,NO
+45,technical science,FEMALE,
+36,pedagogics,MALE,NO
+30,pedagogics,FEMALE,NO
+43,technical science,FEMALE,NO
+25,"agriculture, forestry, fishing",MALE,NO
+40,no specialisation,MALE,NO
+48,liberal arts,MALE,YES
+36,technical science,MALE,NO
+50,"agriculture, forestry, fishing",FEMALE,NO
+16,pedagogics,MALE,NO
+57,biological sciences,FEMALE,
+66,no specialisation,FEMALE,NO
+16,no specialisation,MALE,NO
+29,services for the population and transport services,FEMALE,NO
+58,no specialisation,MALE,NO
+18,pedagogics,MALE,NO
+16,no specialisation,FEMALE,NO
+71,production and processing,FEMALE,YES
+71,social sciences,MALE,
+25,technical science,MALE,
+50,healthcare,FEMALE,NO
+29,no specialisation,MALE,NO
+50,liberal arts,MALE,
+26,production and processing,MALE,
+52,technical science,MALE,NO
+27,technical science,MALE,NO
+34,no specialisation,MALE,NO
+85,no specialisation,FEMALE,NO
+26,production and processing,MALE,YES
+34,services for the population and transport services,FEMALE,
+42,environmental protection,FEMALE,NO
+52,social sciences,FEMALE,NO
+67,biological sciences,FEMALE,YES
+50,services for the population and transport services,FEMALE,NO
+51,no specialisation,FEMALE,NO
+53,"agriculture, forestry, fishing",FEMALE,NO
+62,no specialisation,MALE,NO
+63,services for the population and transport services,FEMALE,NO
+40,no specialisation,MALE,NO
+33,no specialisation,MALE,NO
+48,social welfare,MALE,YES
+20,no specialisation,FEMALE,NO
+29,no specialisation,MALE,NO
+37,production and processing,MALE,YES
+52,technical science,MALE,NO
+56,technical science,MALE,NO
+51,no specialisation,FEMALE,NO
+28,services for the population and transport services,FEMALE,NO
+45,no specialisation,FEMALE,NO
+43,biological sciences,MALE,NO
+25,no specialisation,FEMALE,
+16,law,MALE,NO
+74,"agriculture, forestry, fishing",MALE,YES
+18,no specialisation,FEMALE,NO
+68,no specialisation,FEMALE,YES
+27,"agriculture, forestry, fishing",FEMALE,NO
+41,technical science,MALE,NO
+55,economy and administration,FEMALE,NO
+18,pedagogics,MALE,NO
+24,"agriculture, forestry, fishing",FEMALE,NO
+24,"agriculture, forestry, fishing",FEMALE,NO
+17,pedagogics,MALE,NO
+24,economy and administration,FEMALE,NO
+16,technical science,MALE,NO
+46,no specialisation,FEMALE,NO
+65,technical science,FEMALE,NO
+27,production and processing,FEMALE,YES
+34,social sciences,FEMALE,NO
+30,computer science,MALE,NO
+46,architecture and construction,FEMALE,YES
+24,no specialisation,FEMALE,NO
+27,social sciences,MALE,NO
+72,pedagogics,FEMALE,NO
+62,law,MALE,NO
+18,production and processing,MALE,YES
+51,"agriculture, forestry, fishing",MALE,NO
+56,services for the population and transport services,MALE,NO
+61,technical science,MALE,NO
+67,no specialisation,FEMALE,NO
+57,"agriculture, forestry, fishing",FEMALE,NO
+70,pedagogics,MALE,NO
+58,"agriculture, forestry, fishing",MALE,NO
+29,technical science,MALE,YES
+70,physical sciences,FEMALE,
+48,production and processing,MALE,YES
+49,mathematics and statistics,MALE,
+56,mathematics and statistics,FEMALE,YES
+71,"agriculture, forestry, fishing",FEMALE,YES
+40,law,MALE,NO
+43,armed forces and country protection,MALE,NO
+37,technical science,MALE,NO
+33,services for the population and transport services,MALE,NO
+24,services for the population and transport services,FEMALE,NO
+74,computer science,MALE,NO
+45,law,FEMALE,NO
+46,no specialisation,MALE,NO
+51,computer science,MALE,NO
+21,liberal arts,MALE,YES
+74,law,FEMALE,NO
+78,services for the population and transport services,FEMALE,NO
+49,journalism and information,FEMALE,
+43,technical science,FEMALE,NO
+31,art,MALE,NO
+64,art,FEMALE,NO
+43,social welfare,MALE,YES
+16,production and processing,FEMALE,YES
+58,"agriculture, forestry, fishing",FEMALE,NO
+86,technical science,MALE,YES
+39,liberal arts,MALE,YES
+68,"agriculture, forestry, fishing",MALE,NO
+68,"agriculture, forestry, fishing",MALE,YES
+45,technical science,FEMALE,YES
+70,liberal arts,FEMALE,NO
+60,no specialisation,FEMALE,NO
+52,computer science,MALE,
+29,economy and administration,MALE,NO
+50,technical science,FEMALE,YES
+63,economy and administration,FEMALE,NO
+42,no specialisation,MALE,NO
+55,"agriculture, forestry, fishing",FEMALE,YES
+41,"agriculture, forestry, fishing",FEMALE,YES
+38,technical science,MALE,NO
+50,no specialisation,FEMALE,NO
+46,physical sciences,FEMALE,NO
+37,armed forces and country protection,FEMALE,
+58,healthcare,FEMALE,NO
+61,services for the population and transport services,MALE,NO
+41,public health,FEMALE,NO
+32,technical science,MALE,NO
+82,services for the population and transport services,FEMALE,NO
+23,production and processing,MALE,YES
+27,liberal arts,MALE,YES
+58,technical science,MALE,YES
+30,social sciences,FEMALE,NO
+67,economy and administration,MALE,YES
+65,no specialisation,MALE,NO
+28,no specialisation,MALE,
+74,social sciences,FEMALE,NO
+29,no specialisation,MALE,NO
+39,technical science,MALE,NO
+53,services for the population and transport services,FEMALE,NO
+51,"agriculture, forestry, fishing",MALE,YES
+59,no specialisation,FEMALE,NO
+47,production and processing,MALE,YES
+16,no specialisation,FEMALE,NO
+34,technical science,MALE,NO
+38,pedagogics,MALE,YES
+49,services for the population and transport services,FEMALE,NO
+65,"agriculture, forestry, fishing",MALE,
+64,architecture and construction,MALE,YES
+50,economy and administration,MALE,YES
+22,no specialisation,FEMALE,NO
+57,social sciences,MALE,NO
+33,no specialisation,MALE,NO
+39,no specialisation,FEMALE,NO
+54,production and processing,FEMALE,YES
+39,no specialisation,MALE,NO
+41,production and processing,FEMALE,NO
+16,social sciences,FEMALE,NO
+16,no specialisation,MALE,NO
+31,no specialisation,MALE,NO
+25,technical science,MALE,YES
+16,social welfare,FEMALE,NO
+34,law,FEMALE,NO
+58,production and processing,FEMALE,NO
+16,no specialisation,MALE,NO
+73,production and processing,MALE,YES
+38,technical science,MALE,NO
+59,no specialisation,FEMALE,NO
+81,services for the population and transport services,FEMALE,NO
+57,technical science,FEMALE,NO
+67,no specialisation,FEMALE,NO
+50,veterinary medicine,FEMALE,NO
+20,architecture and construction,MALE,NO
+55,pedagogics,MALE,YES
+42,technical science,MALE,NO
+65,healthcare,MALE,
+74,no specialisation,MALE,
+51,pedagogics,FEMALE,NO
+46,technical science,MALE,NO
+49,services for the population and transport services,MALE,NO
+48,healthcare,MALE,NO
+47,environmental protection,MALE,NO
+61,architecture and construction,MALE,NO
+55,no specialisation,MALE,NO
+31,no specialisation,MALE,NO
+72,services for the population and transport services,FEMALE,NO
+39,"agriculture, forestry, fishing",FEMALE,NO
+30,no specialisation,FEMALE,NO
+58,mathematics and statistics,FEMALE,NO
+33,"agriculture, forestry, fishing",FEMALE,NO
+44,"agriculture, forestry, fishing",MALE,
+16,no specialisation,FEMALE,NO
+16,technical science,FEMALE,NO
+18,pedagogics,MALE,NO
+43,technical science,MALE,NO
+17,technical science,MALE,NO
+52,healthcare,FEMALE,NO
+26,technical science,FEMALE,NO
+73,production and processing,FEMALE,YES
+16,mathematics and statistics,FEMALE,NO
+32,protection and safety,FEMALE,YES
+18,healthcare,MALE,NO
+34,no specialisation,MALE,NO
+68,no specialisation,MALE,YES
+21,services for the population and transport services,FEMALE,NO
+40,technical science,FEMALE,NO
+68,environmental protection,MALE,YES
+57,not applicable,MALE,YES
+71,social sciences,FEMALE,NO
+19,not applicable,FEMALE,NO
+29,technical science,MALE,NO
+27,social sciences,FEMALE,NO
+79,technical science,MALE,NO
+66,social welfare,MALE,NO
+43,no specialisation,MALE,NO
+43,no specialisation,FEMALE,YES
+46,computer science,MALE,YES
+59,no specialisation,MALE,NO
+69,pedagogics,FEMALE,NO
+81,journalism and information,FEMALE,NO
+49,architecture and construction,MALE,NO
+62,no specialisation,FEMALE,NO
+31,not applicable,MALE,NO
+31,no specialisation,MALE,NO
+51,law,FEMALE,NO
+38,technical science,MALE,NO
+39,art,MALE,NO
+53,services for the population and transport services,FEMALE,YES
+39,pedagogics,FEMALE,NO
+51,technical science,MALE,NO
+51,pedagogics,MALE,NO
+46,liberal arts,FEMALE,NO
+16,services for the population and transport services,FEMALE,NO
+30,physical sciences,MALE,NO
+61,computer science,FEMALE,YES
+29,technical science,FEMALE,NO
+51,no specialisation,FEMALE,NO
+51,mathematics and statistics,FEMALE,
+38,,FEMALE,NO
+35,"agriculture, forestry, fishing",FEMALE,NO
+29,technical science,MALE,YES
+67,social sciences,FEMALE,NO
+36,healthcare,FEMALE,NO
+25,no specialisation,MALE,NO
+43,no specialisation,MALE,YES
+23,armed forces and country protection,MALE,YES
+19,no specialisation,FEMALE,NO
+87,no specialisation,FEMALE,NO
+59,protection and safety,FEMALE,NO
+41,environmental protection,FEMALE,NO
+30,journalism and information,MALE,NO
+54,public health,MALE,NO
+18,no specialisation,FEMALE,
+16,physical sciences,MALE,NO
+42,healthcare,MALE,NO
+42,no specialisation,FEMALE,NO
+47,no specialisation,FEMALE,NO
+31,architecture and construction,MALE,NO
+44,technical science,FEMALE,NO
+42,liberal arts,MALE,YES
+45,services for the population and transport services,FEMALE,NO
+65,services for the population and transport services,FEMALE,NO
+50,services for the population and transport services,MALE,NO
+30,social sciences,MALE,NO
+46,healthcare,FEMALE,YES
+58,services for the population and transport services,FEMALE,NO
+45,no specialisation,FEMALE,NO
+33,technical science,MALE,NO
+34,,FEMALE,YES
+53,economy and administration,FEMALE,NO
+60,services for the population and transport services,MALE,NO
+58,services for the population and transport services,FEMALE,NO
+16,no specialisation,MALE,NO
+19,technical science,MALE,NO
+30,social sciences,FEMALE,NO
+50,technical science,MALE,YES
+28,"agriculture, forestry, fishing",FEMALE,
+46,liberal arts,FEMALE,YES
+50,technical science,MALE,NO
+58,architecture and construction,FEMALE,NO
+50,no specialisation,MALE,NO
+57,"agriculture, forestry, fishing",MALE,YES
+78,no specialisation,FEMALE,NO
+78,technical science,FEMALE,NO
+16,technical science,MALE,NO
+16,no specialisation,MALE,NO
+36,no specialisation,FEMALE,YES
+33,social sciences,MALE,NO
+43,public health,FEMALE,NO
+45,pedagogics,MALE,YES
+56,services for the population and transport services,FEMALE,NO
+57,no specialisation,MALE,NO
+32,liberal arts,MALE,NO
+35,"agriculture, forestry, fishing",FEMALE,NO
+44,no specialisation,MALE,NO
+61,services for the population and transport services,MALE,NO
+49,"agriculture, forestry, fishing",FEMALE,NO
+38,no specialisation,MALE,NO
+47,law,MALE,NO
+38,no specialisation,MALE,NO
+55,no specialisation,FEMALE,NO
+42,no specialisation,FEMALE,NO
+62,law,FEMALE,NO
+39,no specialisation,FEMALE,NO
+22,environmental protection,MALE,NO
+21,no specialisation,FEMALE,NO
+52,armed forces and country protection,MALE,NO
+64,services for the population and transport services,MALE,NO
+93,technical science,MALE,NO
+24,services for the population and transport services,MALE,
+50,economy and administration,FEMALE,NO
+22,no specialisation,MALE,YES
+62,,FEMALE,NO
+60,law,FEMALE,NO
+59,"agriculture, forestry, fishing",MALE,NO
+70,social sciences,FEMALE,NO
+56,economy and administration,MALE,
+33,social sciences,MALE,NO
+34,"agriculture, forestry, fishing",MALE,NO
+17,"agriculture, forestry, fishing",FEMALE,NO
+17,social sciences,FEMALE,NO
+46,"agriculture, forestry, fishing",MALE,NO
+72,armed forces and country protection,MALE,YES
+49,"agriculture, forestry, fishing",MALE,NO
+18,biological sciences,MALE,NO
+50,technical science,FEMALE,NO
+46,technical science,MALE,NO
+47,biological sciences,MALE,NO
+36,technical science,MALE,YES
+48,pedagogics,MALE,NO
+25,services for the population and transport services,FEMALE,
+41,social sciences,FEMALE,NO
+45,pedagogics,MALE,YES
+25,pedagogics,MALE,NO
+35,production and processing,FEMALE,YES
+50,"agriculture, forestry, fishing",MALE,NO
+23,"agriculture, forestry, fishing",FEMALE,NO
+72,social sciences,MALE,YES
+33,computer science,FEMALE,NO
+20,mathematics and statistics,FEMALE,
+36,services for the population and transport services,MALE,NO
+35,no specialisation,FEMALE,NO
+84,"agriculture, forestry, fishing",FEMALE,NO
+54,production and processing,MALE,YES
+46,pedagogics,FEMALE,NO
+51,art,MALE,YES
+36,no specialisation,MALE,NO
+45,pedagogics,MALE,NO
+24,no specialisation,MALE,NO
+75,no specialisation,MALE,
+16,production and processing,MALE,YES
+16,social sciences,FEMALE,NO
+60,social sciences,FEMALE,NO
+41,art,FEMALE,NO
+41,technical science,MALE,NO
+49,liberal arts,FEMALE,NO
+63,healthcare,MALE,NO
+69,technical science,FEMALE,NO
+90,environmental protection,FEMALE,YES
+39,technical science,FEMALE,NO
+42,production and processing,MALE,NO
+74,technical science,MALE,NO
+81,technical science,MALE,YES
+69,healthcare,FEMALE,NO
+70,computer science,FEMALE,NO
+42,biological sciences,FEMALE,NO
+66,biological sciences,MALE,YES
+27,no specialisation,MALE,NO
+16,production and processing,MALE,YES
+37,no specialisation,MALE,NO
+60,no specialisation,FEMALE,NO
+35,other,FEMALE,NO
+75,"agriculture, forestry, fishing",MALE,NO
+46,technical science,MALE,NO
+52,environmental protection,MALE,NO
+16,no specialisation,FEMALE,NO
+35,"agriculture, forestry, fishing",MALE,NO
+62,technical science,MALE,NO
+18,no specialisation,FEMALE,YES
+51,art,MALE,NO
+56,no specialisation,MALE,NO
+52,pedagogics,FEMALE,NO
+58,"agriculture, forestry, fishing",MALE,NO
+52,technical science,MALE,NO
+19,,MALE,NO
+53,pedagogics,MALE,NO
+42,healthcare,FEMALE,NO
+38,technical science,FEMALE,NO
+45,no specialisation,MALE,NO
+69,no specialisation,FEMALE,NO
+23,no specialisation,FEMALE,NO
+58,economy and administration,FEMALE,NO
+59,technical science,FEMALE,NO
+30,journalism and information,MALE,NO
+52,"agriculture, forestry, fishing",FEMALE,NO
+24,art,MALE,YES
+49,social sciences,MALE,YES
+86,production and processing,FEMALE,YES
+43,no specialisation,FEMALE,NO
+16,"agriculture, forestry, fishing",MALE,NO
+61,social sciences,FEMALE,NO
+39,no specialisation,FEMALE,NO
+17,production and processing,FEMALE,NO
+17,social sciences,FEMALE,NO
+16,technical science,FEMALE,NO
+39,social sciences,FEMALE,NO
+40,environmental protection,MALE,YES
+44,journalism and information,FEMALE,NO
+50,no specialisation,FEMALE,NO
+28,"agriculture, forestry, fishing",FEMALE,NO
+66,technical science,FEMALE,NO
+61,no specialisation,FEMALE,NO
+96,no specialisation,FEMALE,NO
+35,pedagogics,MALE,NO
+40,architecture and construction,FEMALE,YES
+16,no specialisation,MALE,NO
+66,computer science,MALE,NO
+38,other,FEMALE,NO
+24,technical science,FEMALE,NO
+28,no specialisation,FEMALE,NO
+41,production and processing,MALE,YES
+45,"agriculture, forestry, fishing",MALE,NO
+27,law,FEMALE,NO
+28,technical science,MALE,NO
+60,architecture and construction,MALE,YES
+66,services for the population and transport services,FEMALE,NO
+48,law,FEMALE,NO
+24,no specialisation,FEMALE,NO
+16,technical science,MALE,NO
+64,no specialisation,MALE,NO
+56,no specialisation,MALE,NO
+50,no specialisation,MALE,NO
+49,no specialisation,MALE,NO
+44,services for the population and transport services,FEMALE,NO
+64,veterinary medicine,MALE,NO
+67,no specialisation,FEMALE,NO
+20,no specialisation,MALE,NO
+57,physical sciences,MALE,NO
+26,law,FEMALE,NO
+42,mathematics and statistics,FEMALE,NO
+53,no specialisation,MALE,NO
+32,public health,MALE,YES
+35,social sciences,FEMALE,NO
+40,technical science,MALE,NO
+37,"agriculture, forestry, fishing",FEMALE,NO
+64,no specialisation,MALE,NO
+44,production and processing,MALE,YES
+21,liberal arts,MALE,NO
+17,"agriculture, forestry, fishing",FEMALE,NO
+64,physical sciences,MALE,YES
+53,technical science,FEMALE,NO
+51,economy and administration,FEMALE,NO
+44,mathematics and statistics,MALE,NO
+57,law,FEMALE,NO
+16,technical science,MALE,NO
+56,no specialisation,MALE,NO
+33,law,MALE,NO
+64,production and processing,FEMALE,YES
+52,pedagogics,FEMALE,NO
+22,mathematics and statistics,MALE,NO
+47,no specialisation,FEMALE,NO
+28,services for the population and transport services,FEMALE,NO
+26,services for the population and transport services,MALE,NO
+48,technical science,MALE,YES
+33,no specialisation,FEMALE,NO
+42,services for the population and transport services,MALE,
+57,services for the population and transport services,FEMALE,NO
+36,technical science,MALE,NO
+20,social sciences,FEMALE,NO
+72,no specialisation,FEMALE,NO
+29,art,MALE,YES
+29,technical science,MALE,NO
+46,"agriculture, forestry, fishing",MALE,NO
+58,"agriculture, forestry, fishing",MALE,NO
+60,social sciences,FEMALE,NO
+16,no specialisation,FEMALE,NO
+71,no specialisation,FEMALE,NO
+16,no specialisation,MALE,NO
+52,social sciences,FEMALE,NO
+33,computer science,MALE,YES
+55,production and processing,MALE,YES
+58,healthcare,FEMALE,NO
+20,no specialisation,FEMALE,NO
+18,lack of data,MALE,YES
+41,environmental protection,FEMALE,
+38,law,FEMALE,NO
+16,technical science,MALE,NO
+24,technical science,MALE,YES
+16,production and processing,FEMALE,NO
+72,"agriculture, forestry, fishing",FEMALE,NO
+16,social sciences,MALE,NO
+16,protection and safety,MALE,NO
+51,technical science,FEMALE,NO
+22,liberal arts,MALE,YES
+63,services for the population and transport services,FEMALE,NO
+16,technical science,MALE,NO
+66,social sciences,FEMALE,NO
+34,services for the population and transport services,FEMALE,NO
+40,technical science,MALE,YES
+47,pedagogics,MALE,NO
+33,technical science,MALE,NO
+36,liberal arts,MALE,NO
+55,no specialisation,MALE,NO
+86,architecture and construction,FEMALE,NO
+56,technical science,FEMALE,
+54,technical science,MALE,YES
+50,lack of data,MALE,NO
+56,architecture and construction,MALE,YES
+45,no specialisation,MALE,NO
+44,"agriculture, forestry, fishing",MALE,YES
+37,pedagogics,FEMALE,NO
+16,liberal arts,FEMALE,NO
+75,other,FEMALE,
+24,no specialisation,FEMALE,NO
+65,economy and administration,MALE,NO
+67,no specialisation,FEMALE,NO
+23,"agriculture, forestry, fishing",FEMALE,NO
+21,no specialisation,MALE,NO
+46,social sciences,FEMALE,
+62,pedagogics,MALE,NO
+90,production and processing,MALE,YES
+16,pedagogics,FEMALE,NO
+55,architecture and construction,FEMALE,NO
+39,no specialisation,FEMALE,NO
+52,technical science,MALE,NO
+49,production and processing,FEMALE,YES
+60,production and processing,FEMALE,NO
+16,technical science,MALE,NO
+49,social sciences,FEMALE,NO
+41,no specialisation,FEMALE,NO
+50,social welfare,MALE,YES
+36,production and processing,FEMALE,NO
+27,economy and administration,FEMALE,YES
+41,no specialisation,FEMALE,NO
+21,no specialisation,FEMALE,NO
+38,physical sciences,MALE,NO
+39,technical science,FEMALE,NO
+69,production and processing,MALE,YES
+65,"agriculture, forestry, fishing",FEMALE,YES
+32,pedagogics,MALE,NO
+47,"agriculture, forestry, fishing",FEMALE,NO
+32,no specialisation,MALE,NO
+38,technical science,MALE,YES
+46,environmental protection,FEMALE,NO
+20,no specialisation,MALE,NO
+28,other,MALE,NO
+21,economy and administration,FEMALE,NO
+80,computer science,MALE,
+19,technical science,MALE,NO
+54,services for the population and transport services,MALE,NO
+23,production and processing,MALE,YES
+64,environmental protection,FEMALE,NO
+68,technical science,FEMALE,NO
+45,"agriculture, forestry, fishing",MALE,
+16,social sciences,FEMALE,NO
+57,production and processing,FEMALE,NO
+93,pedagogics,MALE,YES
+51,technical science,MALE,NO
+63,no specialisation,MALE,YES
+50,production and processing,MALE,YES
+16,no specialisation,MALE,NO
+46,pedagogics,FEMALE,YES
+52,no specialisation,FEMALE,NO
+52,production and processing,MALE,YES
+45,technical science,FEMALE,NO
+40,healthcare,FEMALE,NO
+49,no specialisation,FEMALE,NO
+61,architecture and construction,MALE,YES
+34,liberal arts,MALE,NO
+38,"agriculture, forestry, fishing",MALE,NO
+29,technical science,MALE,YES
+62,journalism and information,FEMALE,NO
+38,no specialisation,MALE,NO
+51,liberal arts,FEMALE,NO
+69,production and processing,FEMALE,NO
+48,no specialisation,FEMALE,NO
+59,mathematics and statistics,MALE,NO
+64,production and processing,MALE,YES
+52,other,FEMALE,NO
+61,technical science,MALE,NO
+52,technical science,MALE,NO
+45,technical science,FEMALE,NO
+43,no specialisation,MALE,NO
+76,production and processing,MALE,YES
+21,no specialisation,FEMALE,NO
+68,,MALE,YES
+74,physical sciences,FEMALE,NO
+45,art,MALE,YES
+19,no specialisation,MALE,NO
+54,economy and administration,MALE,NO
+69,physical sciences,FEMALE,NO
+17,no specialisation,FEMALE,NO
+46,no specialisation,FEMALE,NO
+19,social sciences,FEMALE,NO
+31,no specialisation,FEMALE,NO
+37,no specialisation,FEMALE,NO
+57,no specialisation,MALE,NO
+20,pedagogics,MALE,NO
+26,production and processing,MALE,YES
+16,liberal arts,MALE,NO
+33,liberal arts,MALE,NO
+72,computer science,FEMALE,NO
+61,services for the population and transport services,FEMALE,NO
+33,technical science,FEMALE,NO
+53,services for the population and transport services,FEMALE,NO
+29,"agriculture, forestry, fishing",MALE,YES
+49,"agriculture, forestry, fishing",FEMALE,NO
+24,no specialisation,MALE,NO
+16,pedagogics,MALE,NO
+59,art,FEMALE,YES
+16,liberal arts,MALE,
+58,art,FEMALE,NO
+47,social welfare,MALE,NO
+17,production and processing,MALE,NO
+64,services for the population and transport services,FEMALE,NO
+16,technical science,MALE,NO
+45,pedagogics,FEMALE,YES
+20,no specialisation,MALE,NO
+94,production and processing,MALE,YES
+16,armed forces and country protection,FEMALE,NO
+29,public health,MALE,NO
+27,no specialisation,FEMALE,NO
+57,technical science,MALE,NO
+57,journalism and information,MALE,YES
+46,social sciences,MALE,NO
+59,"agriculture, forestry, fishing",FEMALE,NO
+16,no specialisation,MALE,NO
+48,technical science,FEMALE,YES
+80,no specialisation,MALE,NO
+16,production and processing,FEMALE,YES
+74,"agriculture, forestry, fishing",FEMALE,NO
+22,no specialisation,FEMALE,NO
+28,pedagogics,FEMALE,NO
+69,pedagogics,MALE,NO
+53,pedagogics,FEMALE,YES
+16,social sciences,FEMALE,NO
+28,technical science,FEMALE,YES
+62,no specialisation,MALE,NO
+54,no specialisation,MALE,NO
+51,technical science,MALE,NO
+67,pedagogics,MALE,NO
+59,environmental protection,MALE,
+44,no specialisation,MALE,NO
+97,"agriculture, forestry, fishing",FEMALE,YES
+45,no specialisation,MALE,NO
+61,services for the population and transport services,FEMALE,NO
+40,no specialisation,MALE,NO
+66,no specialisation,MALE,NO
+33,social sciences,FEMALE,NO
+33,pedagogics,FEMALE,NO
+40,technical science,MALE,NO
+66,"agriculture, forestry, fishing",MALE,NO
+63,services for the population and transport services,MALE,NO
+69,production and processing,FEMALE,YES
+48,pedagogics,FEMALE,NO
+45,services for the population and transport services,MALE,NO
+18,social sciences,FEMALE,NO
+19,computer science,MALE,NO
+67,technical science,MALE,NO
+40,computer science,FEMALE,YES
+64,technical science,MALE,YES
+53,no specialisation,MALE,NO
+57,services for the population and transport services,FEMALE,NO
+53,no specialisation,MALE,NO
+46,services for the population and transport services,FEMALE,NO
+39,not applicable,FEMALE,NO
+46,lack of data,MALE,
+27,no specialisation,MALE,NO
+16,technical science,MALE,NO
+43,physical sciences,MALE,NO
+42,technical science,FEMALE,NO
+53,no specialisation,MALE,NO
+28,no specialisation,MALE,NO
+44,social sciences,FEMALE,NO
+36,no specialisation,FEMALE,NO
+81,services for the population and transport services,MALE,NO
+61,technical science,FEMALE,
+22,no specialisation,FEMALE,NO
+51,no specialisation,FEMALE,NO
+82,no specialisation,MALE,NO
+48,technical science,MALE,NO
+47,technical science,MALE,NO
+19,technical science,MALE,NO
+59,production and processing,MALE,YES
+36,social sciences,FEMALE,NO
+58,technical science,MALE,NO
+16,social sciences,FEMALE,NO
+62,no specialisation,FEMALE,NO
+31,production and processing,MALE,NO
+62,technical science,MALE,YES
+16,no specialisation,FEMALE,NO
+16,no specialisation,FEMALE,NO
+42,technical science,MALE,NO
+24,pedagogics,FEMALE,
+56,social sciences,FEMALE,NO
+40,economy and administration,FEMALE,NO
+66,other,FEMALE,NO
+38,technical science,MALE,NO
+40,journalism and information,FEMALE,
+28,technical science,MALE,NO
+42,technical science,FEMALE,
+32,services for the population and transport services,FEMALE,NO
+61,no specialisation,FEMALE,NO
+20,no specialisation,FEMALE,NO
+28,social sciences,FEMALE,NO
+46,computer science,FEMALE,NO
+49,architecture and construction,FEMALE,
+47,no specialisation,MALE,NO
+62,social sciences,FEMALE,NO
+30,mathematics and statistics,MALE,NO
+16,liberal arts,FEMALE,NO
+32,pedagogics,FEMALE,NO
+51,"agriculture, forestry, fishing",MALE,NO
+57,pedagogics,FEMALE,NO
+58,law,FEMALE,NO
+49,"agriculture, forestry, fishing",FEMALE,NO
+17,economy and administration,FEMALE,NO
+47,pedagogics,MALE,NO
+26,journalism and information,FEMALE,NO
+45,no specialisation,MALE,NO
+45,no specialisation,FEMALE,NO
+48,social welfare,MALE,NO
+29,no specialisation,MALE,NO
+40,architecture and construction,FEMALE,YES
+76,technical science,MALE,NO
+43,no specialisation,FEMALE,NO
+36,physical sciences,FEMALE,YES
+59,no specialisation,MALE,NO
+52,economy and administration,FEMALE,NO
+45,services for the population and transport services,FEMALE,
+63,production and processing,MALE,YES
+86,no specialisation,FEMALE,NO
+33,technical science,MALE,NO
+27,production and processing,MALE,YES
+56,production and processing,FEMALE,
+22,technical science,FEMALE,
+17,no specialisation,FEMALE,NO
+16,,MALE,NO
+61,technical science,MALE,NO
+36,no specialisation,MALE,NO
+41,no specialisation,MALE,NO
+29,lack of data,MALE,YES
+48,"agriculture, forestry, fishing",FEMALE,NO
+55,technical science,MALE,NO
+46,technical science,MALE,YES
+31,production and processing,MALE,YES
+61,"agriculture, forestry, fishing",MALE,YES
+96,economy and administration,MALE,NO
+53,production and processing,MALE,YES
+19,other,MALE,YES
+52,not applicable,FEMALE,
+36,no specialisation,MALE,NO
+30,no specialisation,MALE,NO
+52,services for the population and transport services,MALE,NO
+53,mathematics and statistics,MALE,NO
+28,no specialisation,MALE,NO
+63,"agriculture, forestry, fishing",FEMALE,NO
+23,"agriculture, forestry, fishing",FEMALE,NO
+44,biological sciences,FEMALE,
+56,no specialisation,MALE,NO
+64,biological sciences,MALE,NO
+71,"agriculture, forestry, fishing",FEMALE,NO
+45,technical science,MALE,NO
+39,public health,MALE,NO
+16,no specialisation,MALE,NO
+59,production and processing,FEMALE,YES
+18,not applicable,FEMALE,
+45,no specialisation,MALE,NO
+21,protection and safety,FEMALE,NO
+38,"agriculture, forestry, fishing",FEMALE,NO
+78,production and processing,MALE,YES
+46,economy and administration,FEMALE,NO
+47,services for the population and transport services,FEMALE,NO
+40,no specialisation,MALE,NO
+73,"agriculture, forestry, fishing",FEMALE,NO
+16,no specialisation,FEMALE,NO
+16,no specialisation,FEMALE,NO
+82,"agriculture, forestry, fishing",FEMALE,NO
+63,social welfare,MALE,
+28,no specialisation,FEMALE,NO
+30,no specialisation,FEMALE,NO
+49,production and processing,MALE,YES
+46,economy and administration,FEMALE,NO
+41,biological sciences,FEMALE,NO
+47,"agriculture, forestry, fishing",MALE,NO
+23,no specialisation,MALE,NO
+66,no specialisation,MALE,NO
+21,environmental protection,FEMALE,NO
+27,technical science,MALE,NO
+28,no specialisation,MALE,NO
+30,"agriculture, forestry, fishing",MALE,NO
+72,economy and administration,FEMALE,NO
+58,pedagogics,FEMALE,NO
+48,social sciences,FEMALE,NO
+44,no specialisation,MALE,NO
+36,no specialisation,FEMALE,NO
+28,pedagogics,MALE,YES
+68,technical science,FEMALE,YES
+31,social welfare,FEMALE,NO
+34,services for the population and transport services,FEMALE,NO
+59,economy and administration,FEMALE,NO
+59,no specialisation,MALE,NO
+46,art,FEMALE,NO
+17,"agriculture, forestry, fishing",MALE,NO
+31,technical science,MALE,NO
+45,no specialisation,MALE,NO
+18,services for the population and transport services,FEMALE,NO
+42,no specialisation,MALE,NO
+44,mathematics and statistics,MALE,NO
+45,computer science,FEMALE,NO
+46,law,FEMALE,
+41,no specialisation,FEMALE,NO
+59,production and processing,MALE,YES
+44,social sciences,MALE,NO
+16,computer science,FEMALE,NO
+27,"agriculture, forestry, fishing",FEMALE,NO
+39,technical science,FEMALE,NO
+45,social sciences,FEMALE,NO
+41,mathematics and statistics,MALE,YES
+70,no specialisation,FEMALE,NO
+29,services for the population and transport services,MALE,NO
+48,technical science,MALE,NO
+95,"agriculture, forestry, fishing",MALE,NO
+77,law,FEMALE,NO
+51,technical science,MALE,NO
+64,no specialisation,MALE,NO
+26,art,FEMALE,YES
+18,no specialisation,MALE,NO
+16,technical science,FEMALE,YES
+53,"agriculture, forestry, fishing",FEMALE,NO
+63,healthcare,FEMALE,NO
+36,no specialisation,FEMALE,NO
+56,law,MALE,NO
+19,no specialisation,MALE,NO
+50,no specialisation,MALE,NO
+28,"agriculture, forestry, fishing",FEMALE,NO
+29,no specialisation,FEMALE,NO
+16,healthcare,MALE,NO
+45,no specialisation,FEMALE,NO
+20,biological sciences,FEMALE,
+63,technical science,MALE,
+51,production and processing,FEMALE,
+18,no specialisation,FEMALE,NO
+59,not applicable,MALE,NO
+16,technical science,FEMALE,NO
+39,technical science,MALE,NO
+63,no specialisation,MALE,NO
+16,social sciences,FEMALE,NO
+36,no specialisation,FEMALE,NO
+65,liberal arts,FEMALE,YES
+18,services for the population and transport services,FEMALE,
+44,services for the population and transport services,MALE,YES
+41,"agriculture, forestry, fishing",FEMALE,NO
+16,technical science,MALE,NO
+35,no specialisation,MALE,NO
+16,services for the population and transport services,MALE,NO
+27,,FEMALE,NO
+52,law,MALE,NO
+25,no specialisation,MALE,NO
+23,"agriculture, forestry, fishing",MALE,NO
+22,social sciences,FEMALE,NO
+58,no specialisation,MALE,NO
+37,other,MALE,YES
+58,technical science,MALE,NO
+29,production and processing,FEMALE,NO
+45,social sciences,FEMALE,NO
+56,not applicable,FEMALE,NO
+47,social sciences,FEMALE,NO
+16,services for the population and transport services,MALE,NO
+51,services for the population and transport services,MALE,NO
+61,production and processing,FEMALE,YES
+67,technical science,MALE,NO
+52,social welfare,MALE,NO
+24,computer science,MALE,NO
+39,no specialisation,FEMALE,NO
+58,production and processing,FEMALE,YES
+44,architecture and construction,FEMALE,NO
+41,technical science,MALE,NO
+52,services for the population and transport services,FEMALE,NO
+56,pedagogics,FEMALE,NO
+77,social sciences,FEMALE,NO
+41,physical sciences,FEMALE,YES
+49,technical science,MALE,NO
+64,"agriculture, forestry, fishing",FEMALE,NO
+63,social sciences,FEMALE,
+31,no specialisation,MALE,NO
+58,"agriculture, forestry, fishing",FEMALE,NO
+44,technical science,MALE,NO
+62,technical science,FEMALE,NO
+56,technical science,MALE,NO
+49,journalism and information,FEMALE,NO
+46,economy and administration,FEMALE,NO
+59,no specialisation,MALE,NO
+44,no specialisation,FEMALE,NO
+62,no specialisation,FEMALE,NO
+57,technical science,MALE,NO
+19,no specialisation,FEMALE,NO
+54,computer science,MALE,NO
+22,biological sciences,FEMALE,NO
+16,public health,MALE,
+40,architecture and construction,FEMALE,YES
+73,services for the population and transport services,MALE,NO
+55,no specialisation,MALE,NO
+43,no specialisation,FEMALE,NO
+34,services for the population and transport services,MALE,NO
+44,no specialisation,MALE,NO
+53,services for the population and transport services,MALE,NO
+50,services for the population and transport services,FEMALE,NO
+52,architecture and construction,FEMALE,YES
+69,technical science,FEMALE,
+47,"agriculture, forestry, fishing",FEMALE,NO
+24,art,FEMALE,NO
+36,technical science,MALE,NO
+49,no specialisation,FEMALE,NO
+56,no specialisation,FEMALE,NO
+41,technical science,MALE,NO
+37,no specialisation,FEMALE,NO
+17,social sciences,FEMALE,NO
+16,no specialisation,MALE,NO
+35,no specialisation,MALE,NO
+46,no specialisation,MALE,NO
+82,art,FEMALE,NO
+59,social sciences,FEMALE,NO
+19,liberal arts,FEMALE,
+24,pedagogics,FEMALE,NO
+54,physical sciences,FEMALE,NO
+58,technical science,FEMALE,NO
+35,technical science,MALE,NO
+42,pedagogics,FEMALE,NO
+42,no specialisation,MALE,NO
+53,liberal arts,FEMALE,YES
+28,law,MALE,NO
+39,technical science,FEMALE,NO
+30,no specialisation,MALE,NO
+32,mathematics and statistics,FEMALE,NO
+22,no specialisation,FEMALE,NO
+41,liberal arts,MALE,NO
+54,physical sciences,FEMALE,NO
+62,technical science,MALE,NO
+37,technical science,MALE,NO
+67,architecture and construction,MALE,NO
+42,technical science,FEMALE,NO
+71,production and processing,MALE,YES
+39,technical science,MALE,NO
+26,no specialisation,FEMALE,NO
+51,economy and administration,FEMALE,NO
+40,public health,FEMALE,NO
+45,no specialisation,MALE,NO
+47,social sciences,FEMALE,NO
+25,law,MALE,YES
+16,no specialisation,MALE,NO
+86,physical sciences,FEMALE,
+46,no specialisation,FEMALE,NO
+47,art,FEMALE,NO
+21,no specialisation,MALE,NO
+18,healthcare,MALE,YES
+47,production and processing,FEMALE,YES
+34,no specialisation,MALE,NO
+17,social sciences,FEMALE,
+63,production and processing,MALE,YES
+25,,MALE,YES
+47,no specialisation,MALE,NO
+31,liberal arts,FEMALE,
+62,"agriculture, forestry, fishing",FEMALE,NO
+65,pedagogics,MALE,NO
+66,production and processing,MALE,YES
+50,technical science,FEMALE,NO
+24,social welfare,MALE,NO
+37,physical sciences,MALE,YES
+51,technical science,MALE,NO
+79,other,MALE,NO
+43,law,MALE,NO
+21,other,FEMALE,YES
+66,pedagogics,MALE,YES
+49,no specialisation,FEMALE,
+49,biological sciences,MALE,NO
+50,"agriculture, forestry, fishing",MALE,NO
+63,pedagogics,FEMALE,NO
+55,no specialisation,FEMALE,
+65,technical science,MALE,NO
+55,no specialisation,FEMALE,NO
+63,technical science,MALE,NO
+55,no specialisation,FEMALE,NO
+42,"agriculture, forestry, fishing",MALE,NO
+58,technical science,FEMALE,NO
+28,technical science,FEMALE,NO
+58,architecture and construction,MALE,NO
+48,services for the population and transport services,MALE,NO
+63,technical science,MALE,NO
+56,"agriculture, forestry, fishing",MALE,NO
+16,no specialisation,FEMALE,
+32,,FEMALE,
+53,liberal arts,FEMALE,NO
+19,physical sciences,MALE,NO
+18,architecture and construction,FEMALE,NO
+46,economy and administration,FEMALE,NO
+59,no specialisation,FEMALE,NO
+63,healthcare,FEMALE,YES
+44,no specialisation,FEMALE,NO
+47,social sciences,MALE,NO
+30,veterinary medicine,FEMALE,NO
+23,technical science,MALE,YES
+43,"agriculture, forestry, fishing",FEMALE,NO
+17,no specialisation,FEMALE,NO
+75,production and processing,MALE,YES
+38,pedagogics,MALE,NO
+30,architecture and construction,MALE,
+61,"agriculture, forestry, fishing",MALE,NO
+60,no specialisation,FEMALE,NO
+36,"agriculture, forestry, fishing",FEMALE,NO
+67,no specialisation,FEMALE,NO
+83,pedagogics,MALE,
+44,not applicable,MALE,NO
+50,"agriculture, forestry, fishing",MALE,NO
+43,,FEMALE,NO
+62,no specialisation,FEMALE,NO
+38,services for the population and transport services,MALE,NO
+44,technical science,MALE,NO
+45,technical science,MALE,YES
+60,"agriculture, forestry, fishing",MALE,NO
+46,no specialisation,MALE,NO
+32,pedagogics,FEMALE,NO
+42,no specialisation,MALE,NO
+89,"agriculture, forestry, fishing",MALE,YES
+34,no specialisation,FEMALE,NO
+20,technical science,FEMALE,YES
+87,pedagogics,MALE,NO
+41,biological sciences,MALE,NO
+43,law,MALE,YES
+69,technical science,MALE,NO
+45,social sciences,FEMALE,NO
+66,,FEMALE,NO
+55,no specialisation,FEMALE,NO
+43,technical science,MALE,NO
+87,services for the population and transport services,FEMALE,NO
+43,technical science,MALE,NO
+67,social sciences,FEMALE,NO
+52,no specialisation,MALE,NO
+40,physical sciences,FEMALE,NO
+56,"agriculture, forestry, fishing",FEMALE,NO
+16,no specialisation,FEMALE,NO
+48,no specialisation,MALE,NO
+39,biological sciences,MALE,NO
+40,technical science,FEMALE,NO
+34,social sciences,FEMALE,NO
+47,production and processing,MALE,YES
+16,architecture and construction,MALE,NO
+56,"agriculture, forestry, fishing",FEMALE,NO
+45,law,FEMALE,NO
+32,production and processing,FEMALE,NO
+36,"agriculture, forestry, fishing",FEMALE,NO
+32,pedagogics,MALE,YES
+41,no specialisation,FEMALE,NO
+56,economy and administration,FEMALE,NO
+25,social sciences,FEMALE,NO
+34,healthcare,FEMALE,NO
+43,"agriculture, forestry, fishing",FEMALE,NO
+53,"agriculture, forestry, fishing",MALE,NO
+53,art,MALE,YES
+74,services for the population and transport services,MALE,NO
+54,biological sciences,FEMALE,NO
+25,social sciences,FEMALE,NO
+22,no specialisation,MALE,YES
+18,no specialisation,FEMALE,NO
+43,technical science,MALE,NO
+20,public health,MALE,YES
+16,no specialisation,FEMALE,NO
+28,"agriculture, forestry, fishing",MALE,YES
+51,"agriculture, forestry, fishing",FEMALE,NO
+55,no specialisation,MALE,NO
+71,public health,MALE,NO
+28,liberal arts,FEMALE,NO
+54,"agriculture, forestry, fishing",FEMALE,NO
+82,services for the population and transport services,MALE,YES
+29,pedagogics,FEMALE,
+49,production and processing,MALE,NO
+46,technical science,MALE,YES
+31,protection and safety,FEMALE,NO
+44,pedagogics,MALE,NO
+55,social sciences,FEMALE,NO
+52,technical science,FEMALE,NO
+65,no specialisation,FEMALE,
+31,art,MALE,YES
+34,"agriculture, forestry, fishing",FEMALE,NO
+42,no specialisation,MALE,NO
+72,no specialisation,FEMALE,YES
+42,technical science,MALE,YES
+52,not applicable,MALE,YES
+53,mathematics and statistics,FEMALE,NO
+45,architecture and construction,FEMALE,NO
+18,production and processing,FEMALE,YES
+45,no specialisation,FEMALE,NO
+58,"agriculture, forestry, fishing",MALE,NO
+54,architecture and construction,FEMALE,NO
+32,no specialisation,MALE,NO
+54,no specialisation,MALE,NO
+26,no specialisation,FEMALE,NO
+49,"agriculture, forestry, fishing",MALE,NO
+60,no specialisation,FEMALE,YES
+55,law,MALE,NO
+68,technical science,MALE,YES
+42,no specialisation,MALE,NO
+16,technical science,MALE,NO
+52,technical science,MALE,NO
+41,technical science,MALE,NO
+24,art,FEMALE,NO
+53,social sciences,FEMALE,NO
+24,no specialisation,MALE,NO
+16,no specialisation,FEMALE,NO
+45,no specialisation,MALE,NO
+17,economy and administration,MALE,NO
+46,no specialisation,MALE,NO
+42,social sciences,FEMALE,NO
+52,social sciences,FEMALE,NO
+60,"agriculture, forestry, fishing",FEMALE,NO
+54,no specialisation,FEMALE,NO
+55,services for the population and transport services,FEMALE,NO
+54,art,MALE,NO
+41,"agriculture, forestry, fishing",FEMALE,NO
+56,production and processing,MALE,YES
+20,production and processing,MALE,YES
+53,technical science,MALE,NO
+47,production and processing,MALE,YES
+42,"agriculture, forestry, fishing",MALE,YES
+61,"agriculture, forestry, fishing",MALE,NO
+42,technical science,FEMALE,NO
+29,no specialisation,FEMALE,NO
+21,economy and administration,MALE,NO
+26,law,MALE,NO
+49,technical science,FEMALE,NO
+64,pedagogics,FEMALE,YES
+51,no specialisation,MALE,NO
+45,social sciences,FEMALE,NO
+47,no specialisation,MALE,NO
+79,other,FEMALE,NO
+51,no specialisation,MALE,NO
+26,healthcare,MALE,NO
+73,no specialisation,FEMALE,NO
+64,journalism and information,MALE,YES
+66,economy and administration,FEMALE,NO
+43,social sciences,MALE,NO
+29,services for the population and transport services,MALE,NO
+46,"agriculture, forestry, fishing",MALE,NO
+31,no specialisation,MALE,NO
+67,computer science,MALE,YES
+33,computer science,MALE,
+28,production and processing,FEMALE,YES
+20,"agriculture, forestry, fishing",FEMALE,NO
+22,"agriculture, forestry, fishing",MALE,NO
+55,no specialisation,FEMALE,NO
+65,computer science,FEMALE,NO
+58,"agriculture, forestry, fishing",FEMALE,NO
+24,social sciences,MALE,NO
+23,social sciences,FEMALE,NO
+51,technical science,MALE,NO
+72,no specialisation,FEMALE,YES
+42,social sciences,MALE,YES
+44,no specialisation,FEMALE,NO
+85,"agriculture, forestry, fishing",FEMALE,YES
+67,biological sciences,FEMALE,NO
+16,technical science,MALE,
+17,services for the population and transport services,FEMALE,NO
+34,social sciences,FEMALE,NO
+36,technical science,MALE,
+17,no specialisation,MALE,NO
+68,physical sciences,MALE,YES
+21,technical science,MALE,NO
+16,technical science,MALE,NO
+35,production and processing,MALE,YES
+54,no specialisation,MALE,NO
+48,production and processing,MALE,YES
+34,mathematics and statistics,FEMALE,
+42,no specialisation,FEMALE,NO
+52,computer science,MALE,NO
+52,"agriculture, forestry, fishing",MALE,NO
+66,no specialisation,MALE,NO
+43,technical science,MALE,NO
+73,no specialisation,FEMALE,NO
+46,no specialisation,FEMALE,NO
+66,no specialisation,FEMALE,NO
+48,pedagogics,MALE,NO
+72,pedagogics,MALE,NO
+38,healthcare,FEMALE,NO
+63,technical science,MALE,NO
+42,technical science,MALE,NO
+62,production and processing,MALE,YES
+42,"agriculture, forestry, fishing",MALE,NO
+16,pedagogics,FEMALE,NO
+60,social sciences,MALE,YES
+52,architecture and construction,FEMALE,YES
+16,pedagogics,MALE,NO
+40,no specialisation,FEMALE,NO
+67,other,MALE,YES
+92,law,MALE,NO
+42,technical science,MALE,NO
+55,public health,FEMALE,YES
+64,no specialisation,FEMALE,NO
+66,production and processing,MALE,YES
+41,law,MALE,NO
+43,pedagogics,FEMALE,NO
+16,technical science,MALE,NO
+58,technical science,FEMALE,YES
+39,public health,FEMALE,NO
+40,economy and administration,FEMALE,
+69,social sciences,FEMALE,NO
+50,no specialisation,MALE,NO
+26,no specialisation,FEMALE,NO
+16,technical science,MALE,NO
+47,"agriculture, forestry, fishing",FEMALE,NO
+63,technical science,MALE,NO
+47,no specialisation,MALE,NO
+16,healthcare,MALE,NO
+65,not applicable,FEMALE,NO
+40,services for the population and transport services,MALE,NO
+51,technical science,FEMALE,
+42,"agriculture, forestry, fishing",MALE,NO
+31,no specialisation,MALE,NO
+68,social sciences,FEMALE,NO
+47,no specialisation,MALE,NO
+67,healthcare,MALE,YES
+75,environmental protection,FEMALE,NO
+38,public health,FEMALE,
+47,technical science,MALE,NO
+30,liberal arts,FEMALE,YES
+82,production and processing,MALE,YES
+48,technical science,MALE,YES
+23,law,FEMALE,NO
+66,"agriculture, forestry, fishing",MALE,YES
+60,social sciences,FEMALE,NO
+47,production and processing,FEMALE,NO
+31,production and processing,FEMALE,NO
+39,technical science,FEMALE,NO
+59,production and processing,MALE,NO
+50,no specialisation,FEMALE,NO
+48,production and processing,FEMALE,NO
+74,physical sciences,MALE,NO
+44,technical science,FEMALE,NO
+47,economy and administration,MALE,NO
+42,production and processing,FEMALE,YES
+40,pedagogics,FEMALE,YES
+24,pedagogics,MALE,NO
+17,"agriculture, forestry, fishing",FEMALE,NO
+16,no specialisation,FEMALE,NO
+55,technical science,MALE,NO
+16,computer science,FEMALE,NO
+19,mathematics and statistics,MALE,NO
+25,technical science,FEMALE,YES
+51,architecture and construction,FEMALE,
+43,no specialisation,FEMALE,NO
+20,services for the population and transport services,FEMALE,NO
+36,biological sciences,MALE,YES
+59,"agriculture, forestry, fishing",FEMALE,NO
+82,production and processing,FEMALE,YES
+48,technical science,MALE,NO
+51,technical science,MALE,NO
+53,technical science,FEMALE,NO
+16,pedagogics,FEMALE,NO
+38,services for the population and transport services,MALE,NO
+39,no specialisation,FEMALE,NO
+48,social sciences,FEMALE,
+48,no specialisation,MALE,NO
+42,no specialisation,MALE,NO
+61,liberal arts,MALE,NO
+42,technical science,FEMALE,NO
+40,healthcare,FEMALE,NO
+63,"agriculture, forestry, fishing",MALE,NO
+51,no specialisation,FEMALE,NO
+18,biological sciences,MALE,YES
+52,"agriculture, forestry, fishing",FEMALE,NO
+50,art,MALE,NO
+35,technical science,FEMALE,YES
+60,no specialisation,MALE,YES
+53,production and processing,MALE,YES
+48,no specialisation,MALE,NO
+34,social sciences,FEMALE,NO
+35,law,FEMALE,NO
+26,services for the population and transport services,MALE,NO
+46,no specialisation,FEMALE,NO
+31,social sciences,FEMALE,YES
+31,production and processing,FEMALE,YES
+58,"agriculture, forestry, fishing",FEMALE,YES
+72,technical science,MALE,NO
+20,no specialisation,FEMALE,NO
+58,social sciences,FEMALE,NO
+20,"agriculture, forestry, fishing",FEMALE,NO
+18,technical science,MALE,NO
+39,pedagogics,FEMALE,NO
+39,liberal arts,FEMALE,NO
+53,computer science,MALE,YES
+53,technical science,MALE,NO
+59,services for the population and transport services,FEMALE,NO
+18,no specialisation,FEMALE,NO
+83,no specialisation,FEMALE,NO
+44,services for the population and transport services,FEMALE,
+63,no specialisation,FEMALE,NO
+81,no specialisation,FEMALE,NO
+16,protection and safety,FEMALE,NO
+19,no specialisation,MALE,NO
+62,technical science,MALE,NO
+19,economy and administration,MALE,YES
+76,social sciences,FEMALE,NO
+49,pedagogics,MALE,NO
+17,no specialisation,MALE,NO
+35,no specialisation,FEMALE,NO
+26,no specialisation,MALE,YES
+61,"agriculture, forestry, fishing",FEMALE,NO
+23,production and processing,MALE,NO
+47,public health,MALE,YES
+37,art,MALE,NO
+42,no specialisation,FEMALE,NO
+45,biological sciences,FEMALE,NO
+24,environmental protection,FEMALE,NO
+65,services for the population and transport services,MALE,NO
+47,services for the population and transport services,FEMALE,YES
+35,"agriculture, forestry, fishing",FEMALE,
+53,environmental protection,MALE,YES
+47,no specialisation,MALE,NO
+42,technical science,FEMALE,
+49,,FEMALE,NO
+47,technical science,MALE,NO
+53,no specialisation,FEMALE,NO
+20,economy and administration,FEMALE,NO
+31,no specialisation,MALE,NO
+16,no specialisation,MALE,NO
+82,production and processing,MALE,NO
+30,pedagogics,MALE,NO
+46,no specialisation,FEMALE,NO
+71,social sciences,FEMALE,NO
+18,production and processing,MALE,NO
+59,no specialisation,MALE,NO
+26,no specialisation,MALE,NO
+22,no specialisation,MALE,NO
+42,no specialisation,MALE,NO
+40,"agriculture, forestry, fishing",FEMALE,NO
+66,no specialisation,FEMALE,NO
+37,,FEMALE,
+16,social sciences,FEMALE,NO
+38,no specialisation,FEMALE,NO
+22,computer science,FEMALE,NO
+31,no specialisation,FEMALE,NO
+36,technical science,MALE,YES
+36,technical science,MALE,NO
+64,no specialisation,FEMALE,NO
+30,art,FEMALE,NO
+53,technical science,FEMALE,NO
+35,architecture and construction,MALE,NO
+33,liberal arts,FEMALE,NO
+60,public health,FEMALE,NO
+24,technical science,FEMALE,NO
+16,no specialisation,FEMALE,NO
+36,pedagogics,MALE,NO
+69,art,MALE,YES
+54,production and processing,MALE,YES
+44,"agriculture, forestry, fishing",FEMALE,NO
+34,economy and administration,FEMALE,NO
+46,no specialisation,MALE,NO
+57,art,FEMALE,YES
+56,social sciences,MALE,
+44,not applicable,MALE,NO
+57,computer science,MALE,NO
+58,art,FEMALE,NO
+38,technical science,MALE,NO
+61,art,MALE,NO
+28,biological sciences,FEMALE,NO
+57,social sciences,FEMALE,NO
+61,social sciences,FEMALE,NO
+52,"agriculture, forestry, fishing",MALE,YES
+66,architecture and construction,MALE,NO
+51,other,FEMALE,YES
+55,production and processing,MALE,NO
+22,"agriculture, forestry, fishing",FEMALE,NO
+43,production and processing,MALE,YES
+43,protection and safety,MALE,NO
+37,services for the population and transport services,MALE,NO
+16,no specialisation,MALE,NO
+36,technical science,MALE,YES
+44,no specialisation,MALE,NO
+16,law,FEMALE,NO
+63,"agriculture, forestry, fishing",MALE,NO
+43,pedagogics,MALE,NO
+40,technical science,MALE,YES
+38,technical science,MALE,NO
+53,no specialisation,MALE,NO
+16,technical science,MALE,NO
+16,pedagogics,MALE,NO
+77,no specialisation,MALE,NO
+36,no specialisation,FEMALE,NO
+64,economy and administration,FEMALE,NO
+42,"agriculture, forestry, fishing",FEMALE,NO
+71,public health,MALE,NO
+48,biological sciences,MALE,NO
+53,technical science,MALE,NO
+54,no specialisation,FEMALE,NO
+46,,FEMALE,NO
+47,technical science,MALE,NO
+16,pedagogics,FEMALE,NO
+56,production and processing,MALE,NO
+16,no specialisation,MALE,NO
+32,environmental protection,FEMALE,YES
+49,protection and safety,MALE,YES
+28,"agriculture, forestry, fishing",FEMALE,NO
+16,technical science,MALE,NO
+69,technical science,MALE,NO
+34,technical science,FEMALE,NO
+26,production and processing,MALE,YES
+50,economy and administration,MALE,NO
+74,services for the population and transport services,MALE,
+20,economy and administration,FEMALE,NO
+20,no specialisation,FEMALE,NO
+70,no specialisation,MALE,YES
+20,pedagogics,FEMALE,NO
+60,no specialisation,MALE,NO
+26,technical science,FEMALE,
+77,services for the population and transport services,MALE,NO
+56,technical science,MALE,NO
+56,no specialisation,MALE,NO
+39,technical science,MALE,YES
+57,social sciences,FEMALE,NO
+16,economy and administration,FEMALE,NO
+86,social sciences,FEMALE,NO
+40,economy and administration,FEMALE,NO
+16,technical science,MALE,NO
+45,technical science,MALE,NO
+41,no specialisation,MALE,NO
+32,technical science,MALE,NO
+49,,MALE,
+16,technical science,MALE,NO
+67,services for the population and transport services,FEMALE,NO
+54,mathematics and statistics,MALE,NO
+64,technical science,MALE,NO
+61,technical science,FEMALE,YES
+45,production and processing,FEMALE,NO
+23,technical science,MALE,NO
+29,technical science,MALE,NO
+43,physical sciences,MALE,YES
+60,pedagogics,FEMALE,NO
+62,technical science,MALE,NO
+34,mathematics and statistics,MALE,NO
+55,armed forces and country protection,MALE,NO
+54,healthcare,FEMALE,NO
+29,services for the population and transport services,MALE,NO
+31,no specialisation,MALE,NO
+53,technical science,MALE,NO
+21,technical science,MALE,YES
+64,technical science,MALE,NO
+49,lack of data,FEMALE,NO
+67,no specialisation,FEMALE,NO
+17,no specialisation,MALE,NO
+23,art,FEMALE,YES
+40,no specialisation,MALE,NO
+45,technical science,MALE,NO
+63,social sciences,FEMALE,NO
+66,technical science,MALE,NO
+16,social sciences,FEMALE,NO
+52,no specialisation,MALE,NO
+18,not applicable,MALE,NO
+58,technical science,MALE,YES
+41,production and processing,MALE,YES
+29,no specialisation,FEMALE,NO
+19,"agriculture, forestry, fishing",MALE,NO
+38,production and processing,FEMALE,NO
+50,veterinary medicine,FEMALE,
+51,pedagogics,FEMALE,NO
+51,services for the population and transport services,FEMALE,NO
+37,technical science,MALE,NO
+36,other,MALE,NO
+16,technical science,MALE,NO
+16,architecture and construction,FEMALE,NO
+53,no specialisation,MALE,NO
+47,social sciences,FEMALE,NO
+32,no specialisation,FEMALE,NO
+29,physical sciences,FEMALE,YES
+59,architecture and construction,MALE,NO
+50,healthcare,MALE,NO
+16,no specialisation,MALE,NO
+70,biological sciences,MALE,NO
+94,pedagogics,FEMALE,NO
+39,public health,MALE,NO
+54,law,MALE,NO
+26,biological sciences,FEMALE,NO
+40,pedagogics,MALE,
+60,technical science,FEMALE,NO
+30,law,FEMALE,NO
+69,social sciences,FEMALE,NO
+24,liberal arts,MALE,NO
+55,economy and administration,FEMALE,NO
+19,other,MALE,YES
+32,services for the population and transport services,FEMALE,NO
+42,no specialisation,MALE,NO
+19,social sciences,FEMALE,NO
+37,services for the population and transport services,FEMALE,NO
+40,no specialisation,MALE,NO
+43,social welfare,FEMALE,NO
+71,no specialisation,FEMALE,NO
+93,healthcare,FEMALE,NO
+57,production and processing,FEMALE,
+75,no specialisation,FEMALE,NO
+52,"agriculture, forestry, fishing",FEMALE,YES
+31,computer science,FEMALE,NO
+18,pedagogics,MALE,NO
+43,no specialisation,FEMALE,NO
+44,technical science,MALE,NO
+16,technical science,MALE,YES
+29,pedagogics,MALE,YES
+22,technical science,MALE,YES
+82,other,FEMALE,NO
+31,no specialisation,MALE,NO
+57,services for the population and transport services,FEMALE,NO
+53,no specialisation,FEMALE,NO
+50,technical science,MALE,NO
+50,no specialisation,MALE,NO
+32,no specialisation,FEMALE,NO
+48,physical sciences,FEMALE,YES
+16,technical science,MALE,NO
+34,no specialisation,MALE,NO
+35,services for the population and transport services,FEMALE,NO
+22,no specialisation,MALE,NO
+43,"agriculture, forestry, fishing",MALE,
+67,"agriculture, forestry, fishing",FEMALE,NO
+52,no specialisation,FEMALE,NO
+65,physical sciences,FEMALE,YES
+43,"agriculture, forestry, fishing",MALE,NO
+26,pedagogics,MALE,NO
+30,no specialisation,MALE,NO
+47,no specialisation,MALE,YES
+45,social sciences,MALE,NO
+16,other,FEMALE,
+45,"agriculture, forestry, fishing",MALE,NO
+56,computer science,FEMALE,NO
+52,technical science,MALE,NO
+59,no specialisation,MALE,NO
+37,law,MALE,NO
+47,services for the population and transport services,FEMALE,NO
+38,healthcare,MALE,YES
+54,technical science,MALE,NO
+75,pedagogics,MALE,YES
+57,social sciences,MALE,NO
+56,"agriculture, forestry, fishing",FEMALE,NO
+30,architecture and construction,FEMALE,
+48,no specialisation,MALE,NO
+31,journalism and information,FEMALE,NO
+19,no specialisation,FEMALE,NO
+39,production and processing,MALE,YES
+70,"agriculture, forestry, fishing",FEMALE,YES
+33,services for the population and transport services,FEMALE,NO
+55,no specialisation,MALE,NO
+37,services for the population and transport services,MALE,YES
+33,technical science,MALE,NO
+48,veterinary medicine,FEMALE,NO
+31,pedagogics,MALE,YES
+60,social sciences,FEMALE,NO
+52,public health,FEMALE,NO
+32,no specialisation,MALE,NO
+65,technical science,MALE,NO
+64,no specialisation,FEMALE,NO
+64,services for the population and transport services,MALE,YES
+59,technical science,MALE,NO
+20,technical science,FEMALE,NO
+56,no specialisation,MALE,YES
+50,technical science,MALE,NO
+33,no specialisation,FEMALE,NO
+18,technical science,FEMALE,NO
+39,no specialisation,MALE,NO
+38,public health,MALE,YES
+37,social sciences,FEMALE,NO
+32,no specialisation,FEMALE,NO
+48,technical science,FEMALE,NO
+41,technical science,FEMALE,NO
+71,production and processing,MALE,YES
+21,social sciences,FEMALE,NO
+58,technical science,MALE,
+38,technical science,FEMALE,NO
+47,production and processing,MALE,YES
+56,economy and administration,FEMALE,YES
+16,protection and safety,FEMALE,NO
+59,environmental protection,MALE,NO
+17,no specialisation,FEMALE,NO
+84,art,FEMALE,NO
+36,no specialisation,MALE,NO
+16,journalism and information,MALE,YES
+31,no specialisation,MALE,NO
+16,no specialisation,MALE,YES
+26,services for the population and transport services,MALE,NO
+94,armed forces and country protection,MALE,NO
+50,technical science,MALE,NO
+33,,FEMALE,NO
+16,services for the population and transport services,MALE,NO
+24,architecture and construction,FEMALE,NO
+72,"agriculture, forestry, fishing",MALE,NO
+47,technical science,MALE,NO
+16,healthcare,FEMALE,
+36,technical science,MALE,NO
+38,no specialisation,FEMALE,NO
+34,,FEMALE,YES
+31,biological sciences,FEMALE,YES
+45,no specialisation,MALE,NO
+17,production and processing,FEMALE,YES
+55,no specialisation,MALE,NO
+43,liberal arts,MALE,NO
+54,law,FEMALE,NO
+35,not applicable,FEMALE,NO
+51,pedagogics,FEMALE,
+54,technical science,FEMALE,NO
+42,not applicable,MALE,YES
+54,production and processing,MALE,YES
+43,technical science,MALE,NO
+42,no specialisation,MALE,NO
+67,technical science,FEMALE,YES
+17,pedagogics,MALE,NO
+61,no specialisation,MALE,NO
+88,production and processing,FEMALE,YES
+53,no specialisation,FEMALE,NO
+49,pedagogics,FEMALE,NO
+55,services for the population and transport services,MALE,YES
+54,technical science,FEMALE,NO
+57,no specialisation,FEMALE,NO
+68,technical science,FEMALE,NO
+47,services for the population and transport services,FEMALE,NO
+20,no specialisation,MALE,NO
+16,no specialisation,MALE,NO
+47,social sciences,MALE,NO
+45,no specialisation,MALE,NO
+46,no specialisation,FEMALE,NO
+59,technical science,FEMALE,
+50,"agriculture, forestry, fishing",MALE,YES
+44,no specialisation,MALE,NO
+62,pedagogics,FEMALE,
+18,"agriculture, forestry, fishing",FEMALE,NO
+46,"agriculture, forestry, fishing",FEMALE,NO
+17,technical science,MALE,NO
+48,social sciences,FEMALE,YES
+32,technical science,MALE,NO
+44,pedagogics,MALE,YES
+70,social sciences,MALE,NO
+25,technical science,MALE,YES
+25,"agriculture, forestry, fishing",FEMALE,NO
+61,"agriculture, forestry, fishing",FEMALE,NO
+30,healthcare,FEMALE,NO
+18,production and processing,FEMALE,YES
+44,law,MALE,NO
+59,computer science,FEMALE,
+16,social sciences,FEMALE,NO
+64,"agriculture, forestry, fishing",FEMALE,NO
+64,no specialisation,MALE,NO
+54,liberal arts,FEMALE,
+28,technical science,MALE,NO
+48,technical science,MALE,NO
+55,no specialisation,MALE,NO
+55,technical science,MALE,YES
+58,technical science,FEMALE,NO
+54,no specialisation,MALE,NO
+16,social sciences,FEMALE,NO
+52,"agriculture, forestry, fishing",FEMALE,NO
+57,"agriculture, forestry, fishing",FEMALE,YES
+16,no specialisation,FEMALE,NO
+50,economy and administration,FEMALE,NO
+63,technical science,MALE,NO
+52,no specialisation,FEMALE,NO
+56,technical science,MALE,
+48,pedagogics,MALE,YES
+64,law,FEMALE,NO
+22,social sciences,FEMALE,
+40,technical science,FEMALE,NO
+16,technical science,MALE,NO
+24,technical science,MALE,YES
+48,technical science,MALE,NO
+27,technical science,FEMALE,NO
+45,social sciences,MALE,NO
+16,technical science,FEMALE,NO
+39,pedagogics,FEMALE,NO
+56,"agriculture, forestry, fishing",FEMALE,NO
+49,no specialisation,MALE,NO
+57,environmental protection,MALE,
+24,"agriculture, forestry, fishing",FEMALE,NO
+27,liberal arts,FEMALE,NO
+30,no specialisation,MALE,NO
+66,technical science,FEMALE,NO
+43,technical science,FEMALE,
+51,pedagogics,MALE,YES
+42,no specialisation,MALE,NO
+56,no specialisation,FEMALE,
+84,technical science,MALE,YES
+16,production and processing,FEMALE,NO
+58,not applicable,FEMALE,NO
+16,"agriculture, forestry, fishing",FEMALE,NO
+34,services for the population and transport services,FEMALE,NO
+88,economy and administration,FEMALE,NO
+67,no specialisation,FEMALE,NO
+31,healthcare,FEMALE,NO
+45,production and processing,MALE,YES
+33,liberal arts,MALE,NO
+30,environmental protection,MALE,NO
+18,architecture and construction,FEMALE,NO
+16,law,FEMALE,NO
+39,no specialisation,MALE,NO
+58,no specialisation,MALE,NO
+16,technical science,FEMALE,NO
+46,technical science,MALE,NO
+66,no specialisation,FEMALE,NO
+28,technical science,MALE,NO
+41,no specialisation,MALE,NO
+35,no specialisation,MALE,NO
+49,no specialisation,FEMALE,NO
+73,technical science,FEMALE,NO
+39,technical science,MALE,NO
+49,liberal arts,FEMALE,NO
+37,art,MALE,NO
+44,mathematics and statistics,MALE,NO
+31,law,FEMALE,NO
+68,liberal arts,MALE,NO
+43,technical science,MALE,NO
+33,production and processing,MALE,YES
+58,healthcare,MALE,NO
+46,no specialisation,MALE,NO
+42,production and processing,MALE,YES
+54,no specialisation,MALE,NO
+20,physical sciences,MALE,NO
+49,services for the population and transport services,FEMALE,NO
+16,technical science,MALE,NO
+39,no specialisation,MALE,NO
+56,production and processing,FEMALE,YES
+61,technical science,FEMALE,NO
+57,economy and administration,FEMALE,NO
+16,technical science,MALE,NO
+16,other,FEMALE,NO
+53,"agriculture, forestry, fishing",FEMALE,NO
+16,art,FEMALE,NO
+40,no specialisation,MALE,YES
+25,social sciences,FEMALE,NO
+53,technical science,MALE,YES
+58,no specialisation,MALE,NO
+52,technical science,MALE,NO
+45,law,FEMALE,NO
+47,protection and safety,MALE,NO
+22,"agriculture, forestry, fishing",MALE,YES
+23,,MALE,NO
+21,technical science,FEMALE,NO
+40,services for the population and transport services,FEMALE,NO
+19,economy and administration,MALE,NO
+54,services for the population and transport services,FEMALE,NO
+26,healthcare,FEMALE,NO
+33,production and processing,FEMALE,YES
+27,no specialisation,FEMALE,NO
+58,no specialisation,FEMALE,NO
+62,services for the population and transport services,FEMALE,NO
+63,no specialisation,MALE,NO
+87,no specialisation,FEMALE,NO
+45,technical science,MALE,NO
+58,"agriculture, forestry, fishing",MALE,YES
+16,technical science,MALE,NO
+41,no specialisation,FEMALE,NO
+48,social sciences,MALE,NO
+67,environmental protection,FEMALE,
+48,social sciences,MALE,NO
+55,architecture and construction,MALE,NO
+70,no specialisation,MALE,NO
+69,no specialisation,MALE,NO
+16,armed forces and country protection,MALE,
+44,economy and administration,FEMALE,NO
+47,law,MALE,YES
+59,social sciences,FEMALE,NO
+37,no specialisation,MALE,NO
+58,physical sciences,MALE,NO
+48,technical science,FEMALE,NO
+63,biological sciences,MALE,NO
+84,journalism and information,MALE,NO
+46,no specialisation,MALE,NO
+70,no specialisation,FEMALE,NO
+23,technical science,MALE,YES
+47,technical science,MALE,NO
+39,"agriculture, forestry, fishing",MALE,YES
+48,no specialisation,FEMALE,NO
+42,no specialisation,MALE,NO
+44,production and processing,MALE,NO
+29,technical science,MALE,NO
+66,no specialisation,FEMALE,NO
+28,protection and safety,MALE,YES
+50,no specialisation,FEMALE,NO
+47,lack of data,MALE,NO
+60,no specialisation,MALE,NO
+45,no specialisation,MALE,NO
+36,technical science,FEMALE,
+34,not applicable,MALE,NO
+44,technical science,FEMALE,YES
+33,technical science,MALE,YES
+57,no specialisation,MALE,NO
+70,"agriculture, forestry, fishing",FEMALE,NO
+57,services for the population and transport services,MALE,
+42,economy and administration,MALE,NO
+29,no specialisation,FEMALE,NO
+32,no specialisation,FEMALE,NO
+56,pedagogics,FEMALE,NO
+42,no specialisation,FEMALE,NO
+27,lack of data,MALE,YES
+49,"agriculture, forestry, fishing",FEMALE,NO
+41,no specialisation,MALE,NO
+47,art,MALE,NO
+80,technical science,MALE,YES
+36,production and processing,FEMALE,
+42,"agriculture, forestry, fishing",FEMALE,NO
+42,technical science,FEMALE,NO
+21,no specialisation,MALE,YES
+50,social sciences,MALE,
+46,technical science,MALE,NO
+49,technical science,MALE,YES
+53,"agriculture, forestry, fishing",FEMALE,
+53,protection and safety,MALE,NO
+27,social sciences,FEMALE,NO
+39,technical science,MALE,NO
+19,production and processing,MALE,YES
+47,no specialisation,FEMALE,NO
+54,other,FEMALE,
+63,mathematics and statistics,MALE,YES
+36,services for the population and transport services,FEMALE,NO
+59,services for the population and transport services,MALE,NO
+44,no specialisation,FEMALE,NO
+48,production and processing,MALE,YES
+67,mathematics and statistics,FEMALE,
+31,computer science,MALE,NO
+51,technical science,FEMALE,NO
+84,,MALE,NO
+16,other,MALE,NO
+25,services for the population and transport services,FEMALE,NO
+58,no specialisation,MALE,YES
+16,healthcare,FEMALE,NO
+43,technical science,MALE,NO
+16,no specialisation,MALE,NO
+38,services for the population and transport services,FEMALE,NO
+42,"agriculture, forestry, fishing",FEMALE,NO
+68,no specialisation,FEMALE,NO
+51,no specialisation,MALE,NO
+45,"agriculture, forestry, fishing",MALE,NO
+17,mathematics and statistics,FEMALE,NO
+52,"agriculture, forestry, fishing",MALE,YES
+16,no specialisation,FEMALE,
+77,"agriculture, forestry, fishing",FEMALE,NO
+47,technical science,MALE,NO
+39,technical science,FEMALE,NO
+46,no specialisation,MALE,NO
+38,no specialisation,MALE,NO
+21,technical science,MALE,NO
+25,economy and administration,MALE,NO
+52,technical science,MALE,NO
+22,no specialisation,FEMALE,NO
+24,no specialisation,MALE,NO
+23,no specialisation,MALE,NO
+66,services for the population and transport services,FEMALE,NO
+49,"agriculture, forestry, fishing",FEMALE,NO
+16,art,FEMALE,NO
+42,public health,FEMALE,NO
+19,services for the population and transport services,FEMALE,NO
+32,no specialisation,MALE,NO
+16,production and processing,MALE,YES
+60,services for the population and transport services,FEMALE,NO
+21,"agriculture, forestry, fishing",MALE,NO
+23,economy and administration,FEMALE,NO
+18,social sciences,FEMALE,NO
+34,technical science,FEMALE,NO
+40,no specialisation,FEMALE,NO
+51,no specialisation,FEMALE,NO
+48,production and processing,MALE,YES
+70,production and processing,FEMALE,NO
+57,no specialisation,FEMALE,NO
+41,mathematics and statistics,MALE,YES
+17,no specialisation,MALE,NO
+49,no specialisation,MALE,NO
+61,technical science,FEMALE,
+25,services for the population and transport services,MALE,NO
+22,no specialisation,MALE,NO
+41,services for the population and transport services,MALE,NO
+43,no specialisation,FEMALE,NO
+44,services for the population and transport services,MALE,YES
+51,armed forces and country protection,FEMALE,NO
+53,liberal arts,MALE,NO
+50,law,MALE,NO
+16,"agriculture, forestry, fishing",MALE,NO
+55,no specialisation,FEMALE,NO
+55,healthcare,FEMALE,YES
+35,services for the population and transport services,MALE,NO
+65,"agriculture, forestry, fishing",FEMALE,NO
+41,protection and safety,MALE,YES
+47,healthcare,MALE,NO
+57,services for the population and transport services,MALE,NO
+83,no specialisation,FEMALE,NO
+16,technical science,MALE,NO
+16,social sciences,FEMALE,NO
+45,no specialisation,MALE,NO
+16,art,MALE,NO
+45,lack of data,MALE,
+65,production and processing,MALE,NO
+22,architecture and construction,MALE,NO
+16,technical science,MALE,
+68,law,FEMALE,NO
+48,services for the population and transport services,MALE,YES
+16,no specialisation,MALE,NO
+62,no specialisation,FEMALE,NO
+37,law,FEMALE,NO
+52,economy and administration,FEMALE,YES
+37,no specialisation,MALE,NO
+16,production and processing,FEMALE,YES
+73,other,FEMALE,NO
+34,no specialisation,FEMALE,NO
+30,no specialisation,FEMALE,NO
+25,"agriculture, forestry, fishing",MALE,NO
+46,production and processing,MALE,YES
+69,no specialisation,MALE,NO
+39,"agriculture, forestry, fishing",FEMALE,YES
+16,social sciences,MALE,YES
+32,no specialisation,MALE,NO
+60,liberal arts,MALE,YES
+39,no specialisation,MALE,NO
+44,production and processing,MALE,YES
+28,law,MALE,YES
+23,"agriculture, forestry, fishing",MALE,NO
+50,social sciences,FEMALE,NO
+74,liberal arts,FEMALE,NO
+32,technical science,FEMALE,NO
+56,art,FEMALE,YES
+80,not applicable,FEMALE,NO
+16,pedagogics,FEMALE,NO
+50,technical science,FEMALE,
+67,lack of data,MALE,
+19,no specialisation,MALE,NO
+55,technical science,FEMALE,NO
+16,no specialisation,MALE,NO
+74,"agriculture, forestry, fishing",FEMALE,NO
+45,not applicable,FEMALE,NO
+20,public health,FEMALE,NO
+30,production and processing,FEMALE,NO
+23,technical science,MALE,NO
+46,physical sciences,MALE,YES
+41,no specialisation,MALE,YES
+43,production and processing,FEMALE,YES
+53,no specialisation,MALE,NO
+51,pedagogics,MALE,NO
+35,technical science,MALE,NO
+32,,MALE,NO
+48,production and processing,MALE,YES
+16,no specialisation,FEMALE,NO
+62,no specialisation,MALE,NO
+31,services for the population and transport services,MALE,YES
+52,technical science,FEMALE,YES
+47,services for the population and transport services,MALE,
+61,services for the population and transport services,MALE,NO
+44,technical science,MALE,YES
+30,pedagogics,MALE,NO
+35,law,FEMALE,NO
+16,healthcare,MALE,NO
+25,social sciences,FEMALE,
+65,no specialisation,MALE,NO
+61,physical sciences,MALE,NO
+41,public health,MALE,YES
+41,technical science,MALE,NO
+53,services for the population and transport services,MALE,NO
+17,production and processing,MALE,YES
+52,no specialisation,FEMALE,NO
+20,technical science,FEMALE,
+16,no specialisation,MALE,NO
+37,services for the population and transport services,FEMALE,NO
+45,journalism and information,FEMALE,NO
+62,no specialisation,FEMALE,NO
+43,architecture and construction,MALE,NO
+57,no specialisation,FEMALE,NO
+63,"agriculture, forestry, fishing",FEMALE,NO
+57,art,MALE,NO
+47,no specialisation,MALE,NO
+26,healthcare,MALE,YES
+56,social welfare,MALE,YES
+37,no specialisation,FEMALE,NO
+50,no specialisation,FEMALE,NO
+20,"agriculture, forestry, fishing",FEMALE,NO
+71,social sciences,FEMALE,NO
+60,art,FEMALE,NO
+23,"agriculture, forestry, fishing",FEMALE,NO
+49,no specialisation,FEMALE,NO
+39,no specialisation,FEMALE,NO
+50,no specialisation,MALE,NO
+52,technical science,FEMALE,NO
+24,no specialisation,MALE,NO
+63,production and processing,MALE,YES
+37,journalism and information,FEMALE,NO
+31,production and processing,MALE,YES
+47,"agriculture, forestry, fishing",MALE,NO
+58,law,FEMALE,NO
+46,technical science,MALE,
+32,no specialisation,FEMALE,NO
+56,social welfare,FEMALE,
+37,social sciences,FEMALE,NO
+36,production and processing,MALE,YES
+54,no specialisation,FEMALE,NO
+17,no specialisation,FEMALE,NO
+38,no specialisation,FEMALE,NO
+72,pedagogics,MALE,NO
+44,computer science,MALE,NO
+30,production and processing,FEMALE,
+42,"agriculture, forestry, fishing",FEMALE,NO
+55,technical science,FEMALE,NO
+16,economy and administration,FEMALE,NO
+44,no specialisation,MALE,NO
+40,art,MALE,NO
+74,services for the population and transport services,MALE,YES
+39,"agriculture, forestry, fishing",FEMALE,NO
+26,economy and administration,FEMALE,NO
+60,social sciences,FEMALE,NO
+46,technical science,MALE,NO
+54,pedagogics,FEMALE,NO
+26,no specialisation,MALE,NO
+27,services for the population and transport services,FEMALE,NO
+56,no specialisation,FEMALE,NO
+77,social sciences,FEMALE,
+48,"agriculture, forestry, fishing",MALE,NO
+67,technical science,MALE,NO
+29,technical science,FEMALE,NO
+52,pedagogics,MALE,NO
+46,pedagogics,MALE,NO
+48,"agriculture, forestry, fishing",MALE,NO
+45,no specialisation,FEMALE,NO
+61,no specialisation,MALE,NO
+45,services for the population and transport services,FEMALE,NO
+21,production and processing,MALE,NO
+47,mathematics and statistics,MALE,NO
+31,"agriculture, forestry, fishing",MALE,NO
+35,"agriculture, forestry, fishing",FEMALE,NO
+16,no specialisation,MALE,NO
+55,no specialisation,MALE,NO
+96,protection and safety,MALE,YES
+58,healthcare,MALE,YES
+33,technical science,MALE,NO
+53,pedagogics,MALE,NO
+35,environmental protection,FEMALE,
+50,social sciences,MALE,YES
+36,no specialisation,MALE,NO
+35,social sciences,FEMALE,
+29,social sciences,FEMALE,NO
+45,social welfare,MALE,YES
+43,no specialisation,FEMALE,NO
+58,art,MALE,NO
+59,"agriculture, forestry, fishing",FEMALE,NO
+24,technical science,MALE,NO
+35,physical sciences,MALE,
+34,technical science,MALE,NO
+45,services for the population and transport services,FEMALE,NO
+28,not applicable,MALE,NO
+68,other,MALE,NO
+47,no specialisation,MALE,NO
+23,law,FEMALE,NO
+21,production and processing,FEMALE,YES
+37,no specialisation,FEMALE,NO
+55,technical science,MALE,YES
+46,social sciences,MALE,NO
+35,economy and administration,FEMALE,NO
+75,technical science,FEMALE,NO
+52,"agriculture, forestry, fishing",FEMALE,NO
+33,armed forces and country protection,MALE,NO
+53,services for the population and transport services,FEMALE,NO
+76,"agriculture, forestry, fishing",FEMALE,
+32,technical science,FEMALE,NO
+48,social sciences,MALE,NO
+66,"agriculture, forestry, fishing",FEMALE,NO
+50,technical science,MALE,NO
+16,pedagogics,MALE,NO
+65,public health,MALE,NO
+39,technical science,MALE,YES
+21,technical science,MALE,NO
+60,no specialisation,FEMALE,NO
+59,technical science,MALE,YES
+49,law,FEMALE,NO
+25,no specialisation,FEMALE,NO
+43,social welfare,MALE,YES
+64,"agriculture, forestry, fishing",FEMALE,NO
+38,"agriculture, forestry, fishing",FEMALE,NO
+47,no specialisation,MALE,NO
+67,technical science,MALE,NO
+59,no specialisation,MALE,NO
+34,technical science,MALE,NO
+21,computer science,FEMALE,
+26,"agriculture, forestry, fishing",MALE,NO
+20,no specialisation,FEMALE,NO
+49,social sciences,FEMALE,NO
+31,social sciences,FEMALE,NO
+28,art,FEMALE,YES
+32,production and processing,FEMALE,
+44,armed forces and country protection,FEMALE,NO
+19,no specialisation,MALE,NO
+58,technical science,MALE,NO
+60,environmental protection,MALE,
+58,social sciences,FEMALE,YES
+47,law,MALE,NO
+58,law,FEMALE,NO
+40,no specialisation,MALE,NO
+51,law,MALE,NO
+72,architecture and construction,FEMALE,YES
+64,no specialisation,MALE,NO
+45,no specialisation,FEMALE,NO
+59,economy and administration,MALE,NO
+43,services for the population and transport services,MALE,YES
+53,biological sciences,FEMALE,NO
+52,pedagogics,MALE,
+42,no specialisation,MALE,NO
+68,no specialisation,MALE,NO
+60,pedagogics,MALE,NO
+42,no specialisation,FEMALE,NO
+45,no specialisation,FEMALE,NO
+16,no specialisation,FEMALE,NO
+60,technical science,MALE,NO
+25,no specialisation,FEMALE,NO
+62,computer science,FEMALE,YES
+43,technical science,FEMALE,NO
+53,production and processing,FEMALE,NO
+22,production and processing,MALE,YES
+47,no specialisation,FEMALE,NO
+18,,FEMALE,
+16,technical science,FEMALE,YES
+23,production and processing,FEMALE,YES
+42,healthcare,MALE,YES
+35,not applicable,MALE,YES
+28,no specialisation,MALE,NO
+71,no specialisation,MALE,NO
+16,no specialisation,MALE,NO
+43,pedagogics,MALE,YES
+71,public health,FEMALE,NO
+23,architecture and construction,FEMALE,NO
+17,mathematics and statistics,MALE,NO
+21,law,MALE,NO
+57,technical science,FEMALE,NO
+43,technical science,MALE,NO
+36,economy and administration,FEMALE,NO
+47,social sciences,FEMALE,
+52,healthcare,MALE,YES
+67,pedagogics,FEMALE,NO
+19,social sciences,FEMALE,NO
+32,no specialisation,FEMALE,NO
+43,pedagogics,FEMALE,NO
+48,pedagogics,MALE,YES
+32,services for the population and transport services,MALE,NO
+62,art,MALE,NO
+33,law,FEMALE,YES
+21,architecture and construction,FEMALE,
+59,technical science,MALE,NO
+19,"agriculture, forestry, fishing",MALE,NO
+38,technical science,MALE,YES
+30,"agriculture, forestry, fishing",MALE,NO
+21,technical science,MALE,NO
+25,services for the population and transport services,FEMALE,NO
+18,"agriculture, forestry, fishing",MALE,NO
+24,production and processing,MALE,YES
+26,"agriculture, forestry, fishing",MALE,YES
+16,technical science,MALE,NO
+87,no specialisation,FEMALE,NO
+25,mathematics and statistics,MALE,NO
+29,technical science,MALE,NO
+55,social sciences,FEMALE,NO
+60,no specialisation,FEMALE,NO
+26,production and processing,FEMALE,YES
+16,technical science,MALE,NO
+43,computer science,FEMALE,NO
+47,social welfare,MALE,YES
+52,production and processing,MALE,YES
+38,no specialisation,MALE,NO
+49,no specialisation,MALE,NO
+16,technical science,MALE,NO
+47,technical science,MALE,NO
+66,"agriculture, forestry, fishing",FEMALE,NO
+60,technical science,MALE,YES
+40,services for the population and transport services,FEMALE,NO
+64,no specialisation,MALE,NO
+46,no specialisation,FEMALE,NO
+44,production and processing,MALE,YES
+16,no specialisation,MALE,NO
+58,no specialisation,MALE,NO
+24,physical sciences,MALE,NO
+66,mathematics and statistics,MALE,YES
+90,social welfare,MALE,
+53,physical sciences,MALE,NO
+47,no specialisation,MALE,NO
+16,pedagogics,MALE,NO
+68,services for the population and transport services,MALE,NO
+51,"agriculture, forestry, fishing",FEMALE,YES
+51,law,MALE,NO
+42,pedagogics,MALE,NO
+61,public health,FEMALE,NO
+32,technical science,MALE,NO
+34,production and processing,MALE,NO
+52,technical science,MALE,
+58,social welfare,FEMALE,YES
+25,no specialisation,MALE,NO
+47,"agriculture, forestry, fishing",FEMALE,YES
+50,no specialisation,MALE,NO
+25,no specialisation,MALE,NO
+47,"agriculture, forestry, fishing",FEMALE,NO
+66,biological sciences,FEMALE,NO
+30,no specialisation,MALE,NO
+61,production and processing,FEMALE,NO
+55,technical science,MALE,NO
+56,social sciences,FEMALE,NO
+23,production and processing,MALE,NO
+16,"agriculture, forestry, fishing",FEMALE,NO
+29,law,MALE,NO
+53,no specialisation,MALE,NO
+55,pedagogics,FEMALE,NO
+73,no specialisation,MALE,NO
+19,social sciences,MALE,NO
+20,journalism and information,MALE,YES
+23,no specialisation,FEMALE,NO
+60,no specialisation,FEMALE,
+56,no specialisation,MALE,NO
+32,technical science,MALE,NO
+41,no specialisation,FEMALE,NO
+68,no specialisation,FEMALE,NO
+20,no specialisation,FEMALE,NO
+24,no specialisation,FEMALE,NO
+56,art,FEMALE,NO
+20,physical sciences,FEMALE,NO
+68,no specialisation,MALE,NO
+39,pedagogics,MALE,NO
+16,no specialisation,MALE,NO
+47,other,MALE,NO
+46,no specialisation,MALE,NO
+59,technical science,MALE,NO
+50,"agriculture, forestry, fishing",FEMALE,YES
+61,no specialisation,MALE,NO
+22,production and processing,MALE,YES
+67,"agriculture, forestry, fishing",MALE,NO
+28,no specialisation,FEMALE,NO
+24,no specialisation,MALE,NO
+40,healthcare,FEMALE,NO
+28,technical science,MALE,YES
+32,environmental protection,MALE,NO
+17,social sciences,MALE,
+29,no specialisation,MALE,
+16,lack of data,FEMALE,NO
+59,technical science,MALE,YES
+46,"agriculture, forestry, fishing",MALE,NO
+24,liberal arts,MALE,NO
+46,mathematics and statistics,MALE,NO
+29,production and processing,MALE,YES
+53,architecture and construction,MALE,YES
+28,"agriculture, forestry, fishing",MALE,NO
+23,technical science,MALE,NO
+44,other,FEMALE,
+47,technical science,MALE,NO
+66,no specialisation,MALE,NO
+59,pedagogics,FEMALE,
+21,"agriculture, forestry, fishing",FEMALE,YES
+43,technical science,MALE,NO
+71,production and processing,FEMALE,NO
+51,social welfare,MALE,NO
+46,technical science,FEMALE,NO
+46,no specialisation,MALE,NO
+26,liberal arts,MALE,NO
+40,no specialisation,FEMALE,NO
+47,production and processing,MALE,YES
+65,services for the population and transport services,MALE,NO
+49,social sciences,FEMALE,NO
+22,not applicable,MALE,NO
+20,social sciences,MALE,NO
+27,technical science,FEMALE,NO
+58,no specialisation,MALE,NO
+40,no specialisation,MALE,NO
+24,art,FEMALE,NO
+44,no specialisation,FEMALE,NO
+33,no specialisation,MALE,NO
+17,armed forces and country protection,MALE,NO
+58,mathematics and statistics,FEMALE,YES
+21,physical sciences,MALE,YES
+39,no specialisation,FEMALE,NO
+42,other,MALE,YES
+56,production and processing,MALE,YES
+32,not applicable,MALE,NO
+19,no specialisation,FEMALE,NO
+24,liberal arts,MALE,YES
+40,no specialisation,FEMALE,NO
+44,no specialisation,MALE,NO
+40,services for the population and transport services,MALE,NO
+38,no specialisation,FEMALE,NO
+31,no specialisation,FEMALE,NO
+55,social sciences,FEMALE,NO
+18,art,MALE,NO
+24,healthcare,MALE,NO
+36,"agriculture, forestry, fishing",FEMALE,
+68,no specialisation,MALE,YES
+55,social sciences,FEMALE,NO
+16,social sciences,FEMALE,YES
+16,technical science,FEMALE,NO
+60,services for the population and transport services,MALE,NO
+29,no specialisation,MALE,NO
+19,technical science,MALE,NO
+37,lack of data,MALE,NO
+60,no specialisation,FEMALE,NO
+59,technical science,FEMALE,NO
+16,production and processing,MALE,NO
+42,pedagogics,MALE,NO
+21,law,FEMALE,YES
+29,"agriculture, forestry, fishing",MALE,NO
+52,pedagogics,FEMALE,NO
+38,armed forces and country protection,FEMALE,NO
+28,no specialisation,MALE,NO
+17,environmental protection,MALE,NO
+22,no specialisation,MALE,NO
+16,production and processing,FEMALE,
+31,armed forces and country protection,FEMALE,
+16,technical science,MALE,NO
+59,healthcare,MALE,YES
+65,economy and administration,FEMALE,NO
+36,law,FEMALE,NO
+27,liberal arts,FEMALE,NO
+73,technical science,MALE,YES
+46,no specialisation,MALE,NO
+55,"agriculture, forestry, fishing",FEMALE,NO
+19,technical science,MALE,NO
+67,no specialisation,FEMALE,NO
+20,no specialisation,MALE,NO
+16,computer science,MALE,NO
+36,"agriculture, forestry, fishing",FEMALE,NO
+16,no specialisation,MALE,NO
+66,"agriculture, forestry, fishing",FEMALE,NO
+24,"agriculture, forestry, fishing",FEMALE,NO
+38,no specialisation,MALE,NO
+53,"agriculture, forestry, fishing",FEMALE,NO
+49,not applicable,FEMALE,YES
+57,,MALE,NO
+58,services for the population and transport services,FEMALE,NO
+24,no specialisation,MALE,YES
+29,no specialisation,MALE,NO
+47,pedagogics,FEMALE,NO
+40,"agriculture, forestry, fishing",MALE,YES
+38,no specialisation,MALE,NO
+73,mathematics and statistics,MALE,NO
+66,no specialisation,MALE,NO
+28,social sciences,FEMALE,NO
+47,social sciences,FEMALE,
+72,law,FEMALE,NO
+54,no specialisation,FEMALE,
+57,technical science,MALE,NO
+47,no specialisation,FEMALE,YES
+46,technical science,FEMALE,NO
+42,law,FEMALE,NO
+64,production and processing,MALE,YES
+22,technical science,MALE,YES
+16,no specialisation,MALE,NO
+55,"agriculture, forestry, fishing",FEMALE,NO
+23,no specialisation,MALE,NO
+74,technical science,MALE,YES
+47,no specialisation,MALE,NO
+56,liberal arts,MALE,YES
+45,protection and safety,FEMALE,NO
+23,technical science,FEMALE,
+36,social sciences,FEMALE,NO
+52,no specialisation,FEMALE,NO
+45,social sciences,FEMALE,NO
+62,technical science,MALE,NO
+16,no specialisation,FEMALE,NO
+42,"agriculture, forestry, fishing",FEMALE,NO
+62,social sciences,MALE,NO
+83,no specialisation,FEMALE,NO
+23,"agriculture, forestry, fishing",MALE,
+49,economy and administration,MALE,NO
+16,healthcare,FEMALE,NO
+61,veterinary medicine,MALE,
+51,no specialisation,FEMALE,NO
+33,no specialisation,MALE,NO
+55,production and processing,FEMALE,NO
+67,no specialisation,MALE,NO
+65,no specialisation,FEMALE,NO
+23,armed forces and country protection,FEMALE,YES
+35,no specialisation,MALE,NO
+39,no specialisation,MALE,NO
+67,production and processing,MALE,YES
+17,liberal arts,MALE,NO
+39,liberal arts,MALE,YES
+50,production and processing,FEMALE,NO
+54,services for the population and transport services,FEMALE,NO
+19,social sciences,FEMALE,NO
+47,pedagogics,MALE,
+35,services for the population and transport services,FEMALE,NO
+50,services for the population and transport services,FEMALE,NO
+44,no specialisation,FEMALE,NO
+51,art,MALE,NO
+58,services for the population and transport services,MALE,YES
+23,technical science,FEMALE,NO
+27,pedagogics,MALE,NO
+40,no specialisation,MALE,NO
+52,other,FEMALE,NO
+20,services for the population and transport services,FEMALE,NO
+92,services for the population and transport services,FEMALE,YES
+59,armed forces and country protection,FEMALE,
+61,economy and administration,FEMALE,NO
+59,environmental protection,FEMALE,NO
+39,healthcare,MALE,
+54,public health,FEMALE,YES
+46,no specialisation,MALE,NO
+43,computer science,FEMALE,
+49,no specialisation,MALE,NO
+21,technical science,MALE,NO
+47,pedagogics,MALE,YES
+25,law,FEMALE,NO
+35,art,FEMALE,YES
+65,journalism and information,MALE,YES
+27,technical science,MALE,YES
+43,no specialisation,FEMALE,NO
+59,"agriculture, forestry, fishing",FEMALE,NO
+71,no specialisation,MALE,NO
+34,no specialisation,FEMALE,NO
+40,no specialisation,FEMALE,NO
+25,services for the population and transport services,FEMALE,NO
+23,production and processing,FEMALE,YES
+57,law,MALE,NO
+32,no specialisation,FEMALE,NO
+16,production and processing,MALE,YES
+35,technical science,MALE,NO
+29,no specialisation,FEMALE,NO
+61,social sciences,MALE,YES
+43,art,MALE,YES
+27,art,FEMALE,NO
+52,technical science,FEMALE,NO
+48,no specialisation,FEMALE,NO
+20,computer science,MALE,YES
+26,computer science,MALE,NO
+21,law,FEMALE,YES
+53,no specialisation,MALE,NO
+72,"agriculture, forestry, fishing",FEMALE,NO
+40,production and processing,MALE,NO
+16,services for the population and transport services,FEMALE,NO
+39,no specialisation,MALE,NO
+52,no specialisation,MALE,NO
+76,"agriculture, forestry, fishing",FEMALE,NO
+25,no specialisation,MALE,NO
+38,production and processing,MALE,NO
+54,technical science,FEMALE,NO
+57,technical science,MALE,NO
+50,no specialisation,MALE,NO
+16,technical science,MALE,NO
+35,no specialisation,MALE,NO
+44,biological sciences,MALE,NO
+16,"agriculture, forestry, fishing",FEMALE,NO
+16,economy and administration,FEMALE,NO
+51,"agriculture, forestry, fishing",FEMALE,YES
+33,social sciences,FEMALE,NO
+33,no specialisation,MALE,NO
+42,liberal arts,MALE,NO
+59,technical science,MALE,NO
+18,production and processing,MALE,YES
+37,services for the population and transport services,FEMALE,NO
+48,technical science,MALE,NO
+52,protection and safety,FEMALE,NO
+57,economy and administration,FEMALE,YES
+62,"agriculture, forestry, fishing",FEMALE,
+45,services for the population and transport services,MALE,NO
+53,art,FEMALE,NO
+45,"agriculture, forestry, fishing",FEMALE,YES
+22,no specialisation,MALE,NO
+70,computer science,FEMALE,NO
+64,,FEMALE,NO
+16,no specialisation,FEMALE,NO
+44,no specialisation,MALE,NO
+46,technical science,FEMALE,NO
+60,liberal arts,MALE,NO
+71,pedagogics,MALE,NO
+42,no specialisation,FEMALE,NO
+29,social welfare,MALE,NO
+19,"agriculture, forestry, fishing",FEMALE,NO
+27,"agriculture, forestry, fishing",FEMALE,NO
+63,technical science,MALE,NO
+43,architecture and construction,FEMALE,YES
+16,social sciences,FEMALE,NO
+31,biological sciences,MALE,NO
+34,"agriculture, forestry, fishing",FEMALE,
+54,other,FEMALE,NO
+50,no specialisation,MALE,NO
+53,technical science,MALE,NO
+62,armed forces and country protection,FEMALE,NO
+39,pedagogics,MALE,YES
+34,production and processing,FEMALE,YES
+18,technical science,MALE,YES
+33,pedagogics,MALE,NO
+45,lack of data,FEMALE,NO
+47,"agriculture, forestry, fishing",FEMALE,
+45,"agriculture, forestry, fishing",FEMALE,NO
+73,no specialisation,FEMALE,NO
+29,no specialisation,FEMALE,NO
+47,services for the population and transport services,FEMALE,NO
+35,other,FEMALE,NO
+40,no specialisation,FEMALE,NO
+18,"agriculture, forestry, fishing",FEMALE,NO
+50,art,MALE,YES
+46,computer science,FEMALE,NO
+16,technical science,FEMALE,NO
+56,no specialisation,FEMALE,NO
+46,"agriculture, forestry, fishing",FEMALE,YES
+45,no specialisation,MALE,NO
+42,"agriculture, forestry, fishing",FEMALE,
+39,liberal arts,MALE,NO
+37,other,MALE,NO
+21,technical science,FEMALE,NO
+16,services for the population and transport services,FEMALE,NO
+54,technical science,MALE,NO
+36,production and processing,MALE,YES
+49,production and processing,MALE,
+17,production and processing,MALE,YES
+60,technical science,MALE,NO
+34,economy and administration,FEMALE,NO
+52,social sciences,FEMALE,NO
+56,law,FEMALE,NO
+16,economy and administration,FEMALE,YES
+54,"agriculture, forestry, fishing",FEMALE,NO
+53,technical science,MALE,NO
+40,technical science,MALE,NO
+61,social welfare,FEMALE,YES
+52,social sciences,FEMALE,
+37,no specialisation,FEMALE,NO
+52,technical science,MALE,NO
+59,no specialisation,MALE,NO
+39,no specialisation,FEMALE,NO
+30,"agriculture, forestry, fishing",FEMALE,NO
+42,architecture and construction,MALE,NO
+69,pedagogics,MALE,
+43,pedagogics,FEMALE,NO
+16,physical sciences,FEMALE,YES
+47,no specialisation,MALE,NO
+32,no specialisation,FEMALE,NO
+17,no specialisation,MALE,NO
+41,technical science,MALE,NO
+69,law,FEMALE,NO
+68,social sciences,FEMALE,NO
+53,production and processing,MALE,YES
+54,economy and administration,FEMALE,NO
+83,social sciences,MALE,NO
+16,art,FEMALE,NO
+29,no specialisation,MALE,NO
+16,technical science,MALE,NO
+19,production and processing,MALE,YES
+59,services for the population and transport services,FEMALE,NO
+62,no specialisation,MALE,NO
+34,technical science,MALE,NO
+43,law,FEMALE,NO
+16,social sciences,FEMALE,NO
+30,no specialisation,FEMALE,NO
+41,services for the population and transport services,MALE,YES
+17,no specialisation,MALE,NO
+60,no specialisation,FEMALE,NO
+16,not applicable,FEMALE,NO
+57,technical science,FEMALE,NO
+16,technical science,MALE,NO
+51,no specialisation,FEMALE,NO
+56,no specialisation,FEMALE,NO
+40,pedagogics,FEMALE,NO
+26,no specialisation,MALE,NO
+58,no specialisation,MALE,NO
+55,production and processing,MALE,NO
+54,"agriculture, forestry, fishing",MALE,YES
+26,law,FEMALE,NO
+30,computer science,MALE,
+57,no specialisation,MALE,NO
+70,no specialisation,MALE,NO
+69,social sciences,FEMALE,NO
+62,"agriculture, forestry, fishing",MALE,NO
+29,no specialisation,FEMALE,NO
+27,architecture and construction,MALE,YES
+34,pedagogics,FEMALE,NO
+29,pedagogics,MALE,NO
+26,biological sciences,MALE,
+19,"agriculture, forestry, fishing",FEMALE,NO
+61,services for the population and transport services,FEMALE,NO
+64,physical sciences,MALE,YES
+49,protection and safety,FEMALE,NO
+52,technical science,MALE,NO
+37,veterinary medicine,FEMALE,YES
+48,social sciences,FEMALE,YES
+59,production and processing,MALE,YES
+58,liberal arts,FEMALE,NO
+38,law,MALE,NO
+50,no specialisation,FEMALE,YES
+94,technical science,FEMALE,NO
+28,art,FEMALE,NO
+63,other,FEMALE,
+43,pedagogics,MALE,NO
+61,social sciences,FEMALE,NO
+47,no specialisation,FEMALE,NO
+59,production and processing,MALE,YES
+43,technical science,FEMALE,NO
+41,technical science,MALE,NO
+38,"agriculture, forestry, fishing",FEMALE,NO
+22,computer science,MALE,NO
+50,journalism and information,FEMALE,NO
+51,law,MALE,YES
+27,no specialisation,MALE,NO
+43,healthcare,MALE,NO
+32,computer science,MALE,YES
+61,"agriculture, forestry, fishing",MALE,
+45,technical science,MALE,NO
+16,no specialisation,MALE,NO
+52,technical science,MALE,NO
+23,no specialisation,FEMALE,NO
+58,no specialisation,MALE,NO
+64,no specialisation,FEMALE,NO
+45,no specialisation,FEMALE,NO
+25,social sciences,FEMALE,NO
+59,technical science,MALE,NO
+72,production and processing,MALE,NO
+42,armed forces and country protection,FEMALE,NO
+22,social sciences,FEMALE,
+64,technical science,FEMALE,YES
+47,pedagogics,FEMALE,NO
+16,social sciences,FEMALE,NO
+29,biological sciences,MALE,NO
+62,no specialisation,FEMALE,NO
+47,social sciences,MALE,YES
+27,services for the population and transport services,FEMALE,NO
+16,pedagogics,FEMALE,NO
+29,architecture and construction,FEMALE,NO
+16,computer science,FEMALE,NO
+59,no specialisation,FEMALE,NO
+59,services for the population and transport services,MALE,YES
+68,social sciences,FEMALE,NO
+71,no specialisation,FEMALE,NO
+44,pedagogics,MALE,NO
+53,no specialisation,MALE,NO
+41,technical science,MALE,NO
+27,services for the population and transport services,FEMALE,NO
+46,no specialisation,FEMALE,NO
+61,"agriculture, forestry, fishing",FEMALE,NO
+41,no specialisation,MALE,NO
+81,healthcare,MALE,YES
+69,"agriculture, forestry, fishing",FEMALE,
+27,"agriculture, forestry, fishing",FEMALE,NO
+44,public health,MALE,YES
+21,social sciences,FEMALE,NO
+19,,MALE,NO
+61,"agriculture, forestry, fishing",FEMALE,NO
+28,"agriculture, forestry, fishing",FEMALE,
+92,technical science,MALE,NO
+59,social sciences,FEMALE,NO
+44,pedagogics,FEMALE,
+33,other,FEMALE,NO
+44,services for the population and transport services,FEMALE,NO
+57,social sciences,FEMALE,NO
+34,no specialisation,MALE,NO
+26,social sciences,FEMALE,NO
+22,law,FEMALE,NO
+18,pedagogics,FEMALE,NO
+63,no specialisation,MALE,NO
+55,social sciences,FEMALE,NO
+32,architecture and construction,MALE,NO
+16,no specialisation,FEMALE,NO
+51,biological sciences,FEMALE,YES
+25,no specialisation,MALE,
+33,biological sciences,FEMALE,YES
+50,art,MALE,YES
+16,production and processing,MALE,NO
+16,technical science,FEMALE,NO
+46,technical science,FEMALE,NO
+30,no specialisation,MALE,NO
+56,technical science,MALE,NO
+45,"agriculture, forestry, fishing",FEMALE,NO
+18,social sciences,FEMALE,NO
+19,other,MALE,NO
+46,healthcare,FEMALE,NO
+57,no specialisation,FEMALE,NO
+47,,FEMALE,NO
+17,no specialisation,MALE,YES
+93,production and processing,MALE,YES
+44,"agriculture, forestry, fishing",MALE,YES
+45,law,FEMALE,YES
+49,services for the population and transport services,MALE,NO
+29,no specialisation,MALE,NO
+45,,FEMALE,NO
+45,no specialisation,MALE,NO
+43,no specialisation,MALE,NO
+29,pedagogics,MALE,YES
+36,production and processing,MALE,YES
+24,production and processing,MALE,NO
+16,technical science,MALE,NO
+42,no specialisation,FEMALE,NO
+16,pedagogics,FEMALE,YES
+40,technical science,MALE,NO
+68,not applicable,MALE,
+43,no specialisation,FEMALE,NO
+62,public health,MALE,NO
+73,pedagogics,FEMALE,NO
+57,no specialisation,FEMALE,NO
+80,"agriculture, forestry, fishing",MALE,
+20,"agriculture, forestry, fishing",FEMALE,NO
+58,production and processing,MALE,YES
+52,production and processing,FEMALE,NO
+51,services for the population and transport services,MALE,
+20,no specialisation,FEMALE,NO
+51,healthcare,FEMALE,YES
+55,pedagogics,FEMALE,YES
+16,no specialisation,MALE,NO
+56,no specialisation,FEMALE,NO
+18,technical science,MALE,NO
+16,no specialisation,MALE,NO
+49,no specialisation,MALE,NO
+46,armed forces and country protection,MALE,YES
+53,pedagogics,MALE,NO
+69,pedagogics,FEMALE,
+66,"agriculture, forestry, fishing",FEMALE,NO
+53,technical science,MALE,NO
+42,economy and administration,FEMALE,NO
+51,environmental protection,MALE,NO
+18,no specialisation,FEMALE,NO
+27,services for the population and transport services,MALE,NO
+42,armed forces and country protection,MALE,YES
+19,technical science,MALE,NO
+51,technical science,MALE,NO
+24,technical science,MALE,NO
+71,art,FEMALE,NO
+43,technical science,FEMALE,YES
+22,law,MALE,NO
+49,"agriculture, forestry, fishing",FEMALE,YES
+43,technical science,MALE,NO
+50,law,MALE,NO
+43,pedagogics,MALE,YES
+31,environmental protection,FEMALE,NO
+75,computer science,MALE,YES
+68,"agriculture, forestry, fishing",MALE,YES
+56,no specialisation,FEMALE,NO
+43,no specialisation,FEMALE,NO
+36,no specialisation,FEMALE,NO
+43,"agriculture, forestry, fishing",FEMALE,NO
+41,"agriculture, forestry, fishing",FEMALE,NO
+41,no specialisation,MALE,NO
+26,technical science,MALE,NO
+47,no specialisation,FEMALE,NO
+45,liberal arts,MALE,NO
+27,social sciences,FEMALE,NO
+59,physical sciences,MALE,NO
+22,pedagogics,MALE,NO
+73,production and processing,FEMALE,NO
+51,production and processing,MALE,YES
+40,technical science,MALE,YES
+38,services for the population and transport services,FEMALE,NO
+19,technical science,MALE,NO
+19,no specialisation,MALE,NO
+21,healthcare,FEMALE,NO
+59,mathematics and statistics,MALE,NO
+30,social sciences,FEMALE,NO
+38,economy and administration,MALE,NO
+60,no specialisation,MALE,NO
+46,architecture and construction,MALE,
+43,social sciences,MALE,NO
+41,technical science,MALE,NO
+68,veterinary medicine,FEMALE,NO
+36,social sciences,FEMALE,NO
+52,computer science,MALE,YES
+16,no specialisation,MALE,NO
+21,"agriculture, forestry, fishing",FEMALE,NO
+23,computer science,MALE,NO
+46,technical science,FEMALE,NO
+38,not applicable,MALE,NO
+22,other,FEMALE,NO
+55,public health,FEMALE,
+44,protection and safety,MALE,NO
+82,social sciences,FEMALE,NO
+42,protection and safety,FEMALE,NO
+28,technical science,MALE,NO
+16,social sciences,MALE,NO
+43,physical sciences,MALE,
+51,lack of data,MALE,NO
+57,production and processing,FEMALE,YES
+71,no specialisation,FEMALE,NO
+37,no specialisation,FEMALE,NO
+21,"agriculture, forestry, fishing",FEMALE,NO
+50,no specialisation,MALE,NO
+51,no specialisation,FEMALE,NO
+59,services for the population and transport services,FEMALE,NO
+16,law,MALE,NO
+51,"agriculture, forestry, fishing",FEMALE,
+57,services for the population and transport services,FEMALE,NO
+46,services for the population and transport services,MALE,
+60,technical science,MALE,NO
+56,production and processing,MALE,YES
+51,social sciences,MALE,YES
+54,technical science,FEMALE,YES
+64,technical science,MALE,NO
+61,pedagogics,FEMALE,NO
+50,social sciences,FEMALE,NO
+24,no specialisation,FEMALE,NO
+67,"agriculture, forestry, fishing",FEMALE,NO
+97,law,MALE,NO
+47,no specialisation,MALE,NO
+76,"agriculture, forestry, fishing",MALE,NO
+36,technical science,MALE,NO
+54,healthcare,MALE,YES
+55,no specialisation,FEMALE,NO
+26,architecture and construction,FEMALE,NO
+55,economy and administration,MALE,YES
+16,protection and safety,MALE,NO
+42,production and processing,MALE,YES
+16,technical science,MALE,NO
+49,"agriculture, forestry, fishing",FEMALE,NO
+50,"agriculture, forestry, fishing",FEMALE,NO
+55,no specialisation,MALE,NO
+32,pedagogics,MALE,NO
+58,technical science,FEMALE,NO
+53,no specialisation,MALE,NO
+63,law,FEMALE,
+82,computer science,FEMALE,NO
+80,,FEMALE,NO
+35,technical science,FEMALE,NO
+65,social sciences,FEMALE,NO
+29,"agriculture, forestry, fishing",FEMALE,NO
+60,production and processing,FEMALE,NO
+54,services for the population and transport services,MALE,NO
+16,no specialisation,FEMALE,NO
+17,architecture and construction,MALE,YES
+70,"agriculture, forestry, fishing",FEMALE,NO
+29,not applicable,FEMALE,NO
+50,no specialisation,MALE,NO
+16,no specialisation,MALE,NO
+26,no specialisation,FEMALE,NO
+52,production and processing,FEMALE,NO
+48,no specialisation,FEMALE,NO
+37,"agriculture, forestry, fishing",FEMALE,NO
+51,no specialisation,MALE,NO
+37,economy and administration,FEMALE,NO
+45,technical science,MALE,NO
+54,economy and administration,MALE,NO
+40,social sciences,FEMALE,NO
+52,economy and administration,MALE,NO
+61,no specialisation,MALE,NO
+49,lack of data,MALE,NO
+54,"agriculture, forestry, fishing",MALE,NO
+17,services for the population and transport services,MALE,YES
+28,mathematics and statistics,MALE,NO
+53,services for the population and transport services,MALE,NO
+50,healthcare,FEMALE,NO
+30,services for the population and transport services,FEMALE,NO
+22,production and processing,FEMALE,YES
+65,"agriculture, forestry, fishing",FEMALE,NO
+62,social sciences,MALE,
+36,technical science,FEMALE,NO
+63,social sciences,FEMALE,NO
+31,production and processing,MALE,NO
+21,pedagogics,FEMALE,NO
+44,no specialisation,MALE,NO
+35,technical science,MALE,NO
+85,"agriculture, forestry, fishing",FEMALE,NO
+50,technical science,MALE,
+28,social sciences,FEMALE,NO
+34,production and processing,FEMALE,NO
+38,protection and safety,MALE,YES
+76,no specialisation,MALE,NO
+44,no specialisation,FEMALE,NO
+21,technical science,MALE,NO
+22,no specialisation,FEMALE,NO
+25,production and processing,MALE,YES
+27,production and processing,MALE,YES
+27,"agriculture, forestry, fishing",FEMALE,NO
+20,public health,FEMALE,NO
+33,no specialisation,FEMALE,NO
+46,technical science,MALE,NO
+40,mathematics and statistics,MALE,YES
+31,economy and administration,MALE,NO
+32,pedagogics,FEMALE,NO
+58,technical science,FEMALE,NO
+61,technical science,MALE,NO
+61,environmental protection,MALE,NO
+50,healthcare,FEMALE,
+53,biological sciences,FEMALE,NO
+48,technical science,FEMALE,NO
+47,,FEMALE,NO
+51,technical science,MALE,NO
+26,social sciences,FEMALE,NO
+41,environmental protection,FEMALE,NO
+52,architecture and construction,MALE,NO
+55,no specialisation,MALE,NO
+44,environmental protection,MALE,NO
+76,no specialisation,MALE,NO
+23,no specialisation,MALE,NO
+55,no specialisation,MALE,NO
+40,production and processing,MALE,YES
+41,no specialisation,MALE,NO
+54,technical science,MALE,NO
+27,technical science,MALE,NO
+30,pedagogics,MALE,NO
+30,technical science,MALE,NO
+71,not applicable,MALE,YES
+18,no specialisation,FEMALE,NO
+32,social sciences,FEMALE,NO
+43,economy and administration,FEMALE,NO
+16,production and processing,MALE,NO
+52,public health,FEMALE,NO
+37,no specialisation,FEMALE,NO
+20,healthcare,FEMALE,YES
+20,no specialisation,MALE,NO
+22,art,MALE,YES
+68,mathematics and statistics,FEMALE,NO
+45,"agriculture, forestry, fishing",FEMALE,NO
+39,not applicable,MALE,NO
+66,pedagogics,FEMALE,NO
+48,pedagogics,FEMALE,NO
+40,social sciences,FEMALE,NO
+71,liberal arts,FEMALE,NO
+64,"agriculture, forestry, fishing",MALE,YES
+59,social sciences,FEMALE,NO
+56,services for the population and transport services,MALE,YES
+65,production and processing,MALE,YES
+58,economy and administration,MALE,NO
+55,no specialisation,MALE,YES
+66,physical sciences,FEMALE,NO
+18,technical science,FEMALE,NO
+64,"agriculture, forestry, fishing",MALE,NO
+16,social sciences,FEMALE,NO
+34,no specialisation,MALE,NO
+50,no specialisation,FEMALE,NO
+46,physical sciences,FEMALE,NO
+47,no specialisation,FEMALE,NO
+16,technical science,MALE,NO
+45,"agriculture, forestry, fishing",MALE,NO
+38,no specialisation,MALE,NO
+46,services for the population and transport services,FEMALE,NO
+55,no specialisation,FEMALE,NO
+66,services for the population and transport services,MALE,NO
+51,no specialisation,FEMALE,NO
+38,no specialisation,FEMALE,NO
+42,technical science,MALE,NO
+16,technical science,MALE,NO
+68,law,MALE,NO
+57,liberal arts,MALE,NO
+53,no specialisation,MALE,NO
+62,healthcare,FEMALE,NO
+16,social sciences,FEMALE,
+16,no specialisation,MALE,NO
+50,social welfare,MALE,YES
+35,technical science,FEMALE,
+43,no specialisation,MALE,NO
+40,no specialisation,FEMALE,NO
+41,pedagogics,MALE,NO
+32,no specialisation,MALE,NO
+31,no specialisation,MALE,NO
+49,services for the population and transport services,FEMALE,NO
+42,"agriculture, forestry, fishing",FEMALE,NO
+57,pedagogics,FEMALE,NO
+69,services for the population and transport services,FEMALE,NO
+60,social sciences,FEMALE,NO
+95,no specialisation,FEMALE,NO
+45,healthcare,FEMALE,YES
+63,technical science,MALE,YES
+50,services for the population and transport services,FEMALE,NO
+67,physical sciences,MALE,
+68,no specialisation,MALE,NO
+52,architecture and construction,FEMALE,NO
+49,production and processing,MALE,YES
+16,pedagogics,FEMALE,NO
+72,social sciences,FEMALE,NO
+59,healthcare,MALE,NO
+36,"agriculture, forestry, fishing",MALE,NO
+69,production and processing,MALE,YES
+59,not applicable,FEMALE,
+70,biological sciences,MALE,NO
+20,"agriculture, forestry, fishing",FEMALE,YES
+18,no specialisation,FEMALE,NO
+28,no specialisation,MALE,NO
+50,"agriculture, forestry, fishing",FEMALE,NO
+56,pedagogics,FEMALE,
+42,no specialisation,MALE,NO
+85,services for the population and transport services,MALE,YES
+24,no specialisation,FEMALE,NO
+40,services for the population and transport services,FEMALE,
+61,social sciences,FEMALE,NO
+45,no specialisation,FEMALE,NO
+28,services for the population and transport services,FEMALE,NO
+62,architecture and construction,FEMALE,YES
+41,economy and administration,MALE,NO
+41,no specialisation,MALE,NO
+16,no specialisation,MALE,NO
+41,no specialisation,MALE,NO
+41,production and processing,MALE,NO
+53,not applicable,FEMALE,NO
+60,"agriculture, forestry, fishing",FEMALE,YES
+17,technical science,MALE,NO
+43,no specialisation,MALE,NO
+22,production and processing,MALE,YES
+62,no specialisation,FEMALE,NO
+42,physical sciences,MALE,NO
+63,no specialisation,MALE,NO
+57,technical science,FEMALE,YES
+16,pedagogics,FEMALE,NO
+19,other,FEMALE,NO
+67,services for the population and transport services,FEMALE,
+51,production and processing,MALE,YES
+58,technical science,MALE,YES
+19,services for the population and transport services,FEMALE,NO
+25,no specialisation,FEMALE,NO
+16,technical science,FEMALE,NO
+39,technical science,MALE,NO
+32,biological sciences,FEMALE,NO
+16,"agriculture, forestry, fishing",MALE,NO
+64,"agriculture, forestry, fishing",MALE,NO
+70,lack of data,FEMALE,YES
+84,social sciences,MALE,NO
+50,social sciences,FEMALE,
+64,no specialisation,FEMALE,NO
+67,"agriculture, forestry, fishing",MALE,NO
+48,pedagogics,MALE,NO
+20,public health,MALE,YES
+56,social sciences,FEMALE,NO
+50,mathematics and statistics,FEMALE,YES
+41,services for the population and transport services,FEMALE,NO
+55,production and processing,MALE,YES
+39,no specialisation,MALE,NO
+52,services for the population and transport services,MALE,NO
+42,technical science,MALE,NO
+41,technical science,MALE,NO
+18,no specialisation,FEMALE,NO
+46,not applicable,FEMALE,NO
+42,social sciences,FEMALE,NO
+16,"agriculture, forestry, fishing",MALE,NO
+52,economy and administration,MALE,NO
+37,computer science,MALE,YES
+34,no specialisation,FEMALE,NO
+57,"agriculture, forestry, fishing",FEMALE,NO
+19,technical science,MALE,YES
+32,healthcare,MALE,NO
+16,"agriculture, forestry, fishing",MALE,YES
+22,social sciences,FEMALE,NO
+23,no specialisation,MALE,NO
+47,no specialisation,MALE,NO
+56,"agriculture, forestry, fishing",MALE,NO
+72,economy and administration,MALE,NO
+40,physical sciences,MALE,YES
+40,liberal arts,MALE,NO
+52,no specialisation,FEMALE,NO
+19,"agriculture, forestry, fishing",FEMALE,NO
+38,no specialisation,MALE,NO
+43,healthcare,MALE,NO
+50,technical science,MALE,NO
+56,no specialisation,FEMALE,NO
+45,no specialisation,FEMALE,NO
+58,social welfare,MALE,NO
+26,economy and administration,FEMALE,
+57,architecture and construction,MALE,YES
+49,no specialisation,FEMALE,NO
+30,no specialisation,MALE,NO
+66,no specialisation,FEMALE,NO
+46,healthcare,MALE,NO
+97,technical science,FEMALE,
+16,no specialisation,MALE,NO
+58,no specialisation,FEMALE,NO
+23,social sciences,MALE,NO
+52,economy and administration,MALE,NO
+40,pedagogics,FEMALE,NO
+53,healthcare,MALE,NO
+23,"agriculture, forestry, fishing",MALE,YES
+16,"agriculture, forestry, fishing",FEMALE,NO
+42,production and processing,FEMALE,
+76,production and processing,FEMALE,YES
+52,lack of data,FEMALE,NO
+50,law,MALE,NO
+31,law,FEMALE,NO
+67,pedagogics,MALE,NO
+24,no specialisation,MALE,NO
+45,art,MALE,NO
+47,services for the population and transport services,MALE,YES
+22,production and processing,MALE,NO
+52,technical science,FEMALE,NO
+88,services for the population and transport services,FEMALE,
+35,,MALE,NO
+46,no specialisation,MALE,NO
+16,production and processing,MALE,YES
+58,no specialisation,MALE,NO
+67,biological sciences,MALE,NO
+16,production and processing,MALE,NO
+16,"agriculture, forestry, fishing",FEMALE,NO
+83,healthcare,FEMALE,YES
+73,"agriculture, forestry, fishing",FEMALE,NO
+47,pedagogics,MALE,NO
+21,,MALE,
+19,no specialisation,MALE,NO
+52,pedagogics,MALE,NO
+50,services for the population and transport services,MALE,YES
+61,environmental protection,FEMALE,NO
+65,services for the population and transport services,MALE,NO
+26,no specialisation,MALE,NO
+54,pedagogics,MALE,NO
+35,"agriculture, forestry, fishing",MALE,NO
+20,economy and administration,MALE,NO
+36,healthcare,FEMALE,YES
+57,no specialisation,MALE,NO
+45,no specialisation,MALE,NO
+52,"agriculture, forestry, fishing",FEMALE,NO
+56,no specialisation,FEMALE,NO
+24,journalism and information,MALE,NO
+39,technical science,MALE,NO
+41,no specialisation,MALE,NO
+50,no specialisation,MALE,NO
+24,no specialisation,MALE,NO
+37,technical science,MALE,NO
+51,no specialisation,MALE,NO
+37,no specialisation,MALE,NO
+27,no specialisation,FEMALE,NO
+39,technical science,MALE,NO
+28,no specialisation,MALE,NO
+35,"agriculture, forestry, fishing",FEMALE,NO
+47,economy and administration,FEMALE,YES
+57,technical science,MALE,YES
+50,law,FEMALE,NO
+44,no specialisation,FEMALE,
+55,social sciences,MALE,YES
+45,"agriculture, forestry, fishing",FEMALE,NO
+63,,FEMALE,NO
+37,not applicable,FEMALE,
+61,no specialisation,FEMALE,NO
+21,pedagogics,MALE,YES
+55,production and processing,FEMALE,YES
+46,,MALE,NO
+53,no specialisation,FEMALE,NO
+25,no specialisation,FEMALE,NO
+31,technical science,MALE,NO
+74,economy and administration,FEMALE,NO
+40,production and processing,FEMALE,YES
+78,pedagogics,MALE,NO
+53,protection and safety,FEMALE,NO
+50,physical sciences,FEMALE,NO
+40,pedagogics,FEMALE,NO
+23,,MALE,NO
+54,technical science,MALE,NO
+46,no specialisation,FEMALE,NO
+43,"agriculture, forestry, fishing",MALE,YES
+37,no specialisation,FEMALE,NO
+47,"agriculture, forestry, fishing",FEMALE,NO
+16,services for the population and transport services,FEMALE,NO
+22,computer science,MALE,NO
+56,technical science,FEMALE,NO
+16,no specialisation,MALE,NO
+67,pedagogics,FEMALE,NO
+28,technical science,MALE,NO
+16,no specialisation,MALE,NO
+46,technical science,FEMALE,NO
+20,technical science,MALE,NO
+51,"agriculture, forestry, fishing",MALE,NO
+29,armed forces and country protection,FEMALE,NO
+81,"agriculture, forestry, fishing",FEMALE,YES
+45,social sciences,MALE,NO
+16,production and processing,MALE,NO
+17,social sciences,FEMALE,NO
+46,no specialisation,FEMALE,NO
+72,production and processing,MALE,YES
+31,pedagogics,FEMALE,NO
+43,pedagogics,MALE,NO
+39,services for the population and transport services,FEMALE,NO
+57,production and processing,MALE,YES
+23,law,MALE,NO
+57,technical science,MALE,YES
+43,no specialisation,MALE,NO
+54,"agriculture, forestry, fishing",MALE,YES
+49,"agriculture, forestry, fishing",MALE,YES
+48,social sciences,FEMALE,NO
+41,liberal arts,MALE,YES
+45,lack of data,MALE,NO
+33,"agriculture, forestry, fishing",FEMALE,NO
+17,no specialisation,MALE,NO
+46,no specialisation,MALE,NO
+49,pedagogics,MALE,NO
+19,services for the population and transport services,FEMALE,NO
+55,law,MALE,NO
+16,law,MALE,NO
+19,technical science,MALE,NO
+42,protection and safety,FEMALE,NO
+16,no specialisation,MALE,NO
+48,no specialisation,MALE,NO
+49,"agriculture, forestry, fishing",MALE,YES
+46,no specialisation,FEMALE,NO
+64,no specialisation,MALE,NO
+42,"agriculture, forestry, fishing",FEMALE,YES
+28,"agriculture, forestry, fishing",FEMALE,NO
+67,no specialisation,MALE,NO
+38,environmental protection,FEMALE,NO
+20,no specialisation,MALE,NO
+62,healthcare,MALE,NO
+26,architecture and construction,FEMALE,YES
+41,production and processing,MALE,YES
+16,production and processing,MALE,YES
+57,no specialisation,FEMALE,NO
+51,public health,MALE,NO
+66,art,FEMALE,NO
+25,social sciences,FEMALE,NO
+57,services for the population and transport services,MALE,NO
+42,production and processing,MALE,NO
+34,no specialisation,MALE,NO
+21,"agriculture, forestry, fishing",MALE,NO
+63,no specialisation,MALE,NO
+53,technical science,MALE,NO
+16,no specialisation,MALE,NO
+16,"agriculture, forestry, fishing",FEMALE,NO
+45,"agriculture, forestry, fishing",FEMALE,NO
+26,technical science,MALE,NO
+24,production and processing,MALE,NO
+46,technical science,MALE,YES
+71,social sciences,FEMALE,NO
+32,biological sciences,FEMALE,NO
+43,,MALE,YES
+49,no specialisation,FEMALE,NO
+54,mathematics and statistics,MALE,NO
+23,technical science,MALE,YES
+46,technical science,MALE,NO
+24,pedagogics,FEMALE,NO
+27,no specialisation,MALE,NO
+20,"agriculture, forestry, fishing",FEMALE,NO
+56,economy and administration,FEMALE,NO
+28,no specialisation,MALE,NO
+45,no specialisation,FEMALE,NO
+33,no specialisation,FEMALE,NO
+63,no specialisation,FEMALE,NO
+16,"agriculture, forestry, fishing",FEMALE,NO
+24,pedagogics,FEMALE,YES
+65,armed forces and country protection,FEMALE,NO
+65,healthcare,FEMALE,
+23,no specialisation,FEMALE,NO
+19,no specialisation,FEMALE,NO
+42,"agriculture, forestry, fishing",FEMALE,NO
+47,art,MALE,NO
+43,"agriculture, forestry, fishing",MALE,NO
+71,environmental protection,MALE,NO
+16,no specialisation,MALE,NO
+19,no specialisation,FEMALE,NO
+33,pedagogics,FEMALE,YES
+32,physical sciences,FEMALE,NO
+53,"agriculture, forestry, fishing",FEMALE,NO
+45,"agriculture, forestry, fishing",FEMALE,NO
+73,art,MALE,YES
+26,no specialisation,FEMALE,NO
+38,production and processing,MALE,YES
+97,production and processing,FEMALE,YES
+24,mathematics and statistics,MALE,NO
+93,services for the population and transport services,FEMALE,NO
+60,other,FEMALE,NO
+42,technical science,MALE,NO
+43,production and processing,FEMALE,NO
+51,pedagogics,FEMALE,NO
+18,healthcare,FEMALE,NO
+41,economy and administration,FEMALE,NO
+31,mathematics and statistics,FEMALE,NO
+32,no specialisation,MALE,NO
+59,no specialisation,MALE,NO
+46,"agriculture, forestry, fishing",FEMALE,YES
+16,technical science,MALE,
+46,no specialisation,FEMALE,NO
+77,no specialisation,MALE,NO
+16,computer science,FEMALE,NO
+52,architecture and construction,MALE,NO
+39,no specialisation,FEMALE,NO
+51,production and processing,FEMALE,YES
+43,"agriculture, forestry, fishing",FEMALE,NO
+51,technical science,FEMALE,NO
+84,art,MALE,NO
+73,environmental protection,FEMALE,
+46,social sciences,FEMALE,NO
+68,social sciences,FEMALE,NO
+16,armed forces and country protection,FEMALE,NO
+16,no specialisation,MALE,NO
+33,production and processing,MALE,NO
+55,social sciences,FEMALE,YES
+51,"agriculture, forestry, fishing",MALE,NO
+71,technical science,MALE,NO
+24,no specialisation,MALE,NO
+16,law,FEMALE,NO
+65,no specialisation,MALE,NO
+52,pedagogics,MALE,NO
+46,other,FEMALE,NO
+49,technical science,FEMALE,NO
+60,"agriculture, forestry, fishing",MALE,NO
+49,no specialisation,MALE,NO
+25,economy and administration,MALE,NO
+17,technical science,FEMALE,NO
+57,"agriculture, forestry, fishing",FEMALE,YES
+44,biological sciences,FEMALE,NO
+16,no specialisation,MALE,NO
+36,no specialisation,FEMALE,NO
+39,no specialisation,MALE,NO
+48,services for the population and transport services,FEMALE,NO
+33,no specialisation,MALE,NO
+41,social sciences,MALE,
+57,social sciences,FEMALE,NO
+51,law,FEMALE,YES
+51,no specialisation,FEMALE,NO
+19,no specialisation,MALE,NO
+51,"agriculture, forestry, fishing",FEMALE,NO
+22,pedagogics,MALE,YES
+71,no specialisation,FEMALE,NO
+67,no specialisation,MALE,NO
+64,technical science,MALE,NO
+50,pedagogics,MALE,
+43,"agriculture, forestry, fishing",MALE,NO
+35,services for the population and transport services,MALE,NO
+16,environmental protection,FEMALE,NO
+68,computer science,MALE,YES
+24,"agriculture, forestry, fishing",MALE,YES
+20,environmental protection,MALE,NO
+16,technical science,MALE,NO
+37,technical science,MALE,NO
+75,"agriculture, forestry, fishing",FEMALE,NO
+54,services for the population and transport services,FEMALE,NO
+82,social sciences,FEMALE,NO
+65,technical science,MALE,NO
+44,technical science,FEMALE,NO
+16,no specialisation,MALE,NO
+49,no specialisation,MALE,NO
+54,no specialisation,MALE,NO
+30,computer science,FEMALE,NO
+39,services for the population and transport services,FEMALE,NO
+47,social welfare,MALE,NO
+43,technical science,MALE,NO
+44,no specialisation,MALE,
+63,art,MALE,NO
+16,"agriculture, forestry, fishing",MALE,NO
+55,pedagogics,MALE,NO
+58,technical science,FEMALE,NO
+39,technical science,MALE,NO
+21,protection and safety,FEMALE,NO
+44,technical science,FEMALE,YES
+27,technical science,MALE,NO
+36,computer science,MALE,NO
+52,physical sciences,FEMALE,NO
+41,law,MALE,NO
+37,services for the population and transport services,FEMALE,NO
+62,technical science,FEMALE,YES
+50,"agriculture, forestry, fishing",MALE,NO
+49,public health,MALE,YES
+49,economy and administration,MALE,NO
+46,computer science,FEMALE,
+88,architecture and construction,FEMALE,YES
+42,technical science,MALE,NO
+52,no specialisation,FEMALE,NO
+42,public health,MALE,
+34,no specialisation,MALE,NO
+54,production and processing,FEMALE,YES
+46,no specialisation,MALE,NO
+46,"agriculture, forestry, fishing",MALE,NO
+19,production and processing,FEMALE,NO
+20,social sciences,FEMALE,NO
+57,"agriculture, forestry, fishing",MALE,YES
+90,"agriculture, forestry, fishing",FEMALE,
+56,technical science,MALE,YES
+45,computer science,FEMALE,YES
+73,social welfare,MALE,YES
+58,biological sciences,FEMALE,NO
+47,pedagogics,FEMALE,
+81,technical science,MALE,YES
+80,other,MALE,YES
+61,art,FEMALE,NO
+51,no specialisation,FEMALE,NO
+20,technical science,MALE,NO
+46,technical science,MALE,YES
+39,pedagogics,MALE,NO
+79,services for the population and transport services,FEMALE,NO
+25,"agriculture, forestry, fishing",FEMALE,NO
+70,no specialisation,MALE,NO
+34,no specialisation,MALE,NO
+55,services for the population and transport services,MALE,NO
+17,,FEMALE,NO
+46,healthcare,MALE,NO
+51,"agriculture, forestry, fishing",FEMALE,NO
+64,public health,FEMALE,
+59,technical science,MALE,NO
+19,no specialisation,FEMALE,NO
+50,liberal arts,FEMALE,NO
+31,healthcare,MALE,NO
+19,"agriculture, forestry, fishing",MALE,NO
+44,"agriculture, forestry, fishing",FEMALE,NO
+25,services for the population and transport services,FEMALE,NO
+34,physical sciences,FEMALE,NO
+45,no specialisation,FEMALE,NO
+52,social sciences,FEMALE,YES
+47,healthcare,MALE,
+53,no specialisation,FEMALE,NO
+52,"agriculture, forestry, fishing",MALE,NO
+48,"agriculture, forestry, fishing",MALE,YES
+62,art,MALE,NO
+53,no specialisation,MALE,NO
+45,no specialisation,FEMALE,NO
+47,no specialisation,FEMALE,NO
+54,production and processing,MALE,YES
+37,no specialisation,FEMALE,NO
+68,biological sciences,MALE,NO
+40,pedagogics,MALE,NO
+56,technical science,MALE,NO
+24,no specialisation,FEMALE,NO
+63,technical science,MALE,YES
+80,other,FEMALE,
+58,no specialisation,FEMALE,NO
+45,social sciences,FEMALE,NO
+18,pedagogics,FEMALE,YES
+61,technical science,MALE,NO
+20,economy and administration,MALE,NO
+66,technical science,MALE,NO
+31,architecture and construction,FEMALE,
+43,no specialisation,FEMALE,NO
+20,technical science,MALE,NO
+16,production and processing,MALE,YES
+45,technical science,MALE,NO
+43,no specialisation,FEMALE,NO
+42,technical science,MALE,NO
+45,production and processing,FEMALE,NO
+59,production and processing,MALE,YES
+39,services for the population and transport services,MALE,NO
+37,pedagogics,MALE,YES
+48,production and processing,MALE,NO
+54,technical science,FEMALE,YES
+61,economy and administration,FEMALE,NO
+53,no specialisation,FEMALE,NO
+40,"agriculture, forestry, fishing",MALE,NO
+43,services for the population and transport services,MALE,
+71,public health,MALE,NO
+47,services for the population and transport services,FEMALE,NO
+43,no specialisation,MALE,NO
+43,social sciences,FEMALE,NO
+20,social sciences,FEMALE,NO
+56,no specialisation,FEMALE,NO
+55,no specialisation,MALE,YES
+39,no specialisation,MALE,NO
+42,social sciences,FEMALE,NO
+64,economy and administration,FEMALE,NO
+89,no specialisation,MALE,NO
+45,pedagogics,MALE,YES
+60,environmental protection,MALE,NO
+36,physical sciences,MALE,YES
+57,no specialisation,MALE,NO
+21,pedagogics,MALE,NO
+21,architecture and construction,FEMALE,NO
+60,physical sciences,MALE,
+69,mathematics and statistics,MALE,NO
+70,services for the population and transport services,MALE,YES
+17,services for the population and transport services,FEMALE,NO
+55,services for the population and transport services,MALE,YES
+70,no specialisation,FEMALE,NO
+16,no specialisation,FEMALE,NO
+33,computer science,FEMALE,NO
+16,no specialisation,MALE,NO
+54,mathematics and statistics,MALE,NO
+43,social sciences,MALE,NO
+67,economy and administration,FEMALE,
+53,art,FEMALE,NO
+32,technical science,FEMALE,YES
+51,"agriculture, forestry, fishing",FEMALE,NO
+46,not applicable,MALE,NO
+57,social sciences,FEMALE,NO
+61,architecture and construction,MALE,YES
+40,economy and administration,MALE,NO
+46,"agriculture, forestry, fishing",MALE,NO
+72,environmental protection,MALE,NO
+41,no specialisation,MALE,NO
+74,no specialisation,MALE,NO
+25,no specialisation,FEMALE,NO
+18,technical science,MALE,NO
+30,no specialisation,FEMALE,NO
+38,law,FEMALE,NO
+16,no specialisation,FEMALE,NO
+50,technical science,MALE,NO
+61,technical science,MALE,YES
+18,technical science,MALE,NO
+53,technical science,MALE,NO
+46,technical science,FEMALE,NO
+82,technical science,FEMALE,YES
+79,social sciences,MALE,
+27,no specialisation,FEMALE,NO
+60,pedagogics,FEMALE,NO
+42,no specialisation,FEMALE,NO
+17,"agriculture, forestry, fishing",MALE,NO
+46,economy and administration,MALE,NO
+60,,MALE,NO
+71,no specialisation,MALE,NO
+30,no specialisation,MALE,
+67,public health,FEMALE,NO
+36,economy and administration,FEMALE,NO
+24,no specialisation,MALE,NO
+21,services for the population and transport services,FEMALE,NO
+42,mathematics and statistics,FEMALE,YES
+23,pedagogics,MALE,NO
+16,"agriculture, forestry, fishing",FEMALE,NO
+21,technical science,FEMALE,NO
+49,no specialisation,FEMALE,NO
+45,services for the population and transport services,FEMALE,NO
+55,pedagogics,MALE,NO
+21,no specialisation,FEMALE,NO
+29,art,FEMALE,
+41,services for the population and transport services,MALE,NO
+25,technical science,MALE,NO
+55,technical science,MALE,
+47,"agriculture, forestry, fishing",MALE,NO
+59,economy and administration,MALE,NO
+16,technical science,FEMALE,YES
+50,liberal arts,MALE,NO
+45,no specialisation,FEMALE,NO
+36,no specialisation,MALE,NO
+22,technical science,MALE,NO
+50,physical sciences,MALE,NO
+55,services for the population and transport services,FEMALE,NO
+82,services for the population and transport services,FEMALE,YES
+38,law,MALE,NO
+49,technical science,MALE,NO
+32,technical science,MALE,NO
+31,mathematics and statistics,MALE,NO
+16,services for the population and transport services,FEMALE,NO
+52,no specialisation,FEMALE,NO
+50,social sciences,MALE,NO
+45,no specialisation,FEMALE,NO
+17,services for the population and transport services,FEMALE,NO
+37,no specialisation,FEMALE,NO
+22,economy and administration,MALE,
+52,social sciences,FEMALE,NO
+37,healthcare,FEMALE,NO
+40,services for the population and transport services,FEMALE,YES
+37,no specialisation,FEMALE,NO
+49,no specialisation,FEMALE,NO
+39,veterinary medicine,MALE,NO
+32,no specialisation,FEMALE,NO
+45,technical science,MALE,NO
+61,law,FEMALE,NO
+49,technical science,MALE,NO
+47,no specialisation,FEMALE,YES
+43,no specialisation,FEMALE,NO
+66,public health,FEMALE,NO
+41,technical science,MALE,NO
+41,no specialisation,FEMALE,NO
+72,economy and administration,FEMALE,NO
+57,mathematics and statistics,FEMALE,NO
+31,no specialisation,MALE,NO
+49,social sciences,FEMALE,NO
+83,technical science,MALE,NO
+21,no specialisation,MALE,NO
+37,economy and administration,FEMALE,NO
+50,no specialisation,MALE,NO
+39,pedagogics,FEMALE,NO
+57,healthcare,FEMALE,YES
+57,computer science,MALE,
+35,no specialisation,FEMALE,NO
+59,production and processing,MALE,YES
+74,technical science,FEMALE,YES
+35,social sciences,FEMALE,NO
+50,production and processing,FEMALE,YES
+70,"agriculture, forestry, fishing",FEMALE,NO
+20,technical science,FEMALE,NO
+19,economy and administration,MALE,NO
+62,pedagogics,FEMALE,NO
+81,technical science,MALE,NO
+54,no specialisation,MALE,NO
+16,no specialisation,FEMALE,NO
+17,no specialisation,MALE,NO
+16,production and processing,FEMALE,NO
+57,technical science,MALE,NO
+66,public health,MALE,NO
+56,technical science,MALE,NO
+43,services for the population and transport services,FEMALE,NO
+47,pedagogics,FEMALE,NO
+35,pedagogics,MALE,NO
+16,"agriculture, forestry, fishing",MALE,NO
+24,no specialisation,FEMALE,NO
+51,no specialisation,FEMALE,NO
+41,,MALE,NO
+38,other,MALE,
+16,protection and safety,FEMALE,
+38,pedagogics,MALE,NO
+37,technical science,MALE,NO
+49,healthcare,MALE,YES
+53,production and processing,MALE,YES
+25,economy and administration,FEMALE,NO
+56,technical science,FEMALE,YES
+18,not applicable,MALE,NO
+57,technical science,FEMALE,NO
+84,economy and administration,MALE,YES
+16,lack of data,FEMALE,NO
+27,no specialisation,MALE,NO
+29,armed forces and country protection,FEMALE,NO
+54,no specialisation,MALE,NO
+49,biological sciences,MALE,NO
+35,social sciences,FEMALE,NO
+46,art,FEMALE,NO
+16,"agriculture, forestry, fishing",FEMALE,
+50,no specialisation,FEMALE,NO
+69,pedagogics,FEMALE,NO
+60,architecture and construction,MALE,NO
+28,no specialisation,FEMALE,NO
+47,environmental protection,MALE,NO
+34,"agriculture, forestry, fishing",MALE,NO
+31,liberal arts,FEMALE,YES
+29,social sciences,FEMALE,
+55,art,FEMALE,NO
+69,"agriculture, forestry, fishing",MALE,YES
+38,technical science,MALE,NO
+49,no specialisation,MALE,NO
+60,technical science,FEMALE,NO
+46,no specialisation,MALE,NO
+54,mathematics and statistics,FEMALE,NO
+56,economy and administration,FEMALE,NO
+83,not applicable,FEMALE,NO
+62,no specialisation,MALE,NO
+69,technical science,FEMALE,NO
+49,services for the population and transport services,MALE,YES
+41,law,FEMALE,NO
+36,no specialisation,FEMALE,NO
+58,technical science,MALE,YES
+35,technical science,MALE,NO
+42,architecture and construction,MALE,NO
+29,services for the population and transport services,MALE,YES
+18,social sciences,FEMALE,NO
+43,no specialisation,MALE,NO
+51,technical science,MALE,YES
+40,art,MALE,NO
+40,no specialisation,MALE,NO
+83,biological sciences,MALE,NO
+62,public health,MALE,NO
+67,no specialisation,MALE,NO
+45,services for the population and transport services,MALE,NO
+62,no specialisation,MALE,NO
+57,technical science,MALE,NO
+46,no specialisation,MALE,NO
+31,economy and administration,FEMALE,YES
+16,environmental protection,FEMALE,
+26,services for the population and transport services,FEMALE,NO
+47,technical science,MALE,NO
+30,economy and administration,MALE,NO
+62,services for the population and transport services,FEMALE,NO
+35,technical science,MALE,NO
+48,services for the population and transport services,FEMALE,NO
+36,no specialisation,FEMALE,NO
+60,technical science,FEMALE,NO
+67,law,FEMALE,YES
+77,public health,FEMALE,
+23,social sciences,FEMALE,NO
+30,no specialisation,FEMALE,NO
+30,technical science,FEMALE,NO
+31,production and processing,FEMALE,YES
+70,"agriculture, forestry, fishing",FEMALE,NO
+40,social sciences,MALE,YES
+54,services for the population and transport services,FEMALE,NO
+61,social sciences,FEMALE,NO
+37,art,MALE,NO
+29,physical sciences,MALE,YES
+27,social sciences,FEMALE,
+65,social sciences,FEMALE,NO
+16,protection and safety,FEMALE,NO
+27,public health,FEMALE,NO
+53,no specialisation,MALE,NO
+66,"agriculture, forestry, fishing",MALE,YES
+18,pedagogics,FEMALE,NO
+36,services for the population and transport services,FEMALE,YES
+32,technical science,MALE,NO
+53,"agriculture, forestry, fishing",FEMALE,NO
+17,technical science,MALE,NO
+49,production and processing,FEMALE,YES
+18,technical science,MALE,YES
+32,social sciences,MALE,NO
+60,art,FEMALE,NO
+28,architecture and construction,MALE,YES
+56,social sciences,FEMALE,
+49,armed forces and country protection,MALE,NO
+16,no specialisation,MALE,NO
+16,no specialisation,MALE,NO
+46,no specialisation,FEMALE,YES
+45,protection and safety,FEMALE,NO
+27,not applicable,MALE,YES
+58,veterinary medicine,MALE,YES
+52,technical science,MALE,NO
+72,public health,MALE,NO
+25,no specialisation,FEMALE,NO
+68,no specialisation,MALE,NO
+41,no specialisation,MALE,NO
+16,"agriculture, forestry, fishing",MALE,NO
+57,"agriculture, forestry, fishing",MALE,NO
+20,"agriculture, forestry, fishing",FEMALE,NO
+63,services for the population and transport services,FEMALE,NO
+69,services for the population and transport services,MALE,YES
+29,law,FEMALE,YES
+33,no specialisation,FEMALE,NO
+34,services for the population and transport services,FEMALE,NO
+44,social sciences,FEMALE,
+28,social sciences,FEMALE,NO
+86,protection and safety,MALE,YES
+71,law,MALE,NO
+32,"agriculture, forestry, fishing",FEMALE,NO
+42,no specialisation,MALE,NO
+16,social sciences,FEMALE,NO
+49,"agriculture, forestry, fishing",MALE,NO
+49,production and processing,FEMALE,NO
+65,services for the population and transport services,MALE,NO
+67,art,MALE,YES
+29,no specialisation,FEMALE,NO
+32,services for the population and transport services,MALE,YES
+50,no specialisation,FEMALE,NO
+62,social sciences,MALE,NO
+63,social sciences,MALE,NO
+40,no specialisation,MALE,NO
+16,pedagogics,MALE,NO
+24,computer science,MALE,NO
+17,protection and safety,MALE,YES
+36,environmental protection,FEMALE,NO
+38,law,FEMALE,NO
+46,social welfare,MALE,
+54,pedagogics,MALE,NO
+65,computer science,FEMALE,
+36,technical science,MALE,NO
+24,social sciences,FEMALE,NO
+68,services for the population and transport services,FEMALE,NO
+47,no specialisation,FEMALE,NO
+57,no specialisation,FEMALE,NO
+33,technical science,MALE,NO
+16,no specialisation,FEMALE,NO
+24,"agriculture, forestry, fishing",FEMALE,NO
+21,pedagogics,MALE,NO
+32,technical science,MALE,NO
+25,social sciences,FEMALE,NO
+61,art,FEMALE,NO
+56,no specialisation,MALE,NO
+33,services for the population and transport services,FEMALE,NO
+54,no specialisation,MALE,NO
+51,physical sciences,FEMALE,YES
+45,no specialisation,MALE,NO
+18,public health,MALE,NO
+77,no specialisation,FEMALE,NO
+22,law,MALE,NO
+48,no specialisation,MALE,NO
+51,no specialisation,FEMALE,NO
+33,production and processing,MALE,YES
+53,healthcare,MALE,
+46,technical science,MALE,NO
+39,law,MALE,YES
+51,"agriculture, forestry, fishing",FEMALE,NO
+23,,FEMALE,NO
+51,other,MALE,NO
+80,mathematics and statistics,FEMALE,
+23,technical science,MALE,NO
+48,technical science,MALE,NO
+42,production and processing,MALE,YES
+65,computer science,FEMALE,YES
+27,production and processing,MALE,YES
+16,technical science,FEMALE,
+93,production and processing,MALE,YES
+27,social sciences,FEMALE,NO
+46,law,MALE,NO
+53,no specialisation,MALE,NO
+22,no specialisation,FEMALE,NO
+66,public health,FEMALE,NO
+57,production and processing,MALE,YES
+32,social sciences,FEMALE,NO
+68,services for the population and transport services,FEMALE,NO
+20,no specialisation,MALE,NO
+60,healthcare,MALE,NO
+29,no specialisation,MALE,NO
+55,armed forces and country protection,MALE,
+33,technical science,MALE,NO
+56,services for the population and transport services,MALE,NO
+27,technical science,MALE,NO
+48,economy and administration,FEMALE,NO
+22,technical science,MALE,NO
+38,services for the population and transport services,FEMALE,NO
+24,law,FEMALE,NO
+50,production and processing,MALE,NO
+62,computer science,MALE,NO
+73,technical science,FEMALE,NO
+62,no specialisation,MALE,NO
+59,no specialisation,FEMALE,NO
+64,environmental protection,FEMALE,NO
+30,production and processing,MALE,YES
+69,no specialisation,FEMALE,NO
+41,no specialisation,MALE,NO
+51,social sciences,FEMALE,NO
+20,technical science,FEMALE,NO
+22,armed forces and country protection,FEMALE,NO
+35,no specialisation,MALE,NO
+42,architecture and construction,FEMALE,NO
+33,"agriculture, forestry, fishing",MALE,NO
+70,technical science,MALE,YES
+51,services for the population and transport services,FEMALE,NO
+57,"agriculture, forestry, fishing",MALE,YES
+67,no specialisation,MALE,NO
+41,no specialisation,MALE,NO
+52,technical science,FEMALE,NO
+52,technical science,FEMALE,NO
+65,economy and administration,MALE,NO
+44,environmental protection,FEMALE,
+48,"agriculture, forestry, fishing",MALE,YES
+60,no specialisation,MALE,NO
+56,technical science,MALE,NO
+53,technical science,MALE,NO
+48,no specialisation,FEMALE,NO
+43,pedagogics,FEMALE,NO
+40,technical science,MALE,NO
+75,not applicable,MALE,NO
+39,not applicable,MALE,NO
+24,pedagogics,MALE,NO
+70,technical science,MALE,NO
+18,no specialisation,MALE,NO
+16,technical science,MALE,NO
+59,law,FEMALE,NO
+27,no specialisation,FEMALE,NO
+16,pedagogics,MALE,NO
+33,no specialisation,FEMALE,NO
+48,protection and safety,FEMALE,NO
+16,law,FEMALE,NO
+68,no specialisation,FEMALE,NO
+16,"agriculture, forestry, fishing",MALE,NO
+18,no specialisation,FEMALE,NO
+52,architecture and construction,FEMALE,NO
+62,liberal arts,FEMALE,NO
+45,technical science,MALE,NO
+41,no specialisation,MALE,NO
+59,no specialisation,MALE,NO
+16,no specialisation,MALE,NO
+39,social sciences,FEMALE,NO
+35,art,FEMALE,NO
+28,services for the population and transport services,FEMALE,NO
+69,no specialisation,FEMALE,NO
+22,social welfare,FEMALE,NO
+45,social sciences,FEMALE,NO
+31,technical science,MALE,NO
+19,other,FEMALE,
+78,social sciences,MALE,YES
+48,pedagogics,MALE,NO
+44,"agriculture, forestry, fishing",MALE,YES
+41,social sciences,FEMALE,NO
+51,no specialisation,MALE,NO
+59,technical science,FEMALE,NO
+17,technical science,MALE,NO
+29,technical science,MALE,NO
+66,social sciences,MALE,NO
+25,protection and safety,MALE,NO
+79,"agriculture, forestry, fishing",FEMALE,NO
+50,social sciences,MALE,NO
+16,technical science,MALE,NO
+44,technical science,MALE,NO
+61,"agriculture, forestry, fishing",FEMALE,NO
+47,biological sciences,FEMALE,NO
+16,"agriculture, forestry, fishing",MALE,NO
+32,technical science,MALE,NO
+20,social sciences,FEMALE,NO
+37,biological sciences,MALE,NO
+31,production and processing,FEMALE,YES
+52,services for the population and transport services,MALE,YES
+36,production and processing,MALE,YES
+59,"agriculture, forestry, fishing",FEMALE,NO
+16,social welfare,FEMALE,NO
+54,no specialisation,FEMALE,NO
+59,social welfare,FEMALE,YES
+73,pedagogics,FEMALE,NO
+61,social sciences,MALE,NO
+16,technical science,FEMALE,NO
+16,services for the population and transport services,FEMALE,NO
+41,no specialisation,MALE,NO
+50,technical science,MALE,NO
+16,social sciences,FEMALE,NO
+46,no specialisation,MALE,NO
+66,other,FEMALE,NO
+28,technical science,MALE,NO
+29,social welfare,FEMALE,NO
+38,pedagogics,FEMALE,NO
+67,technical science,MALE,NO
+57,"agriculture, forestry, fishing",MALE,NO
+56,social sciences,FEMALE,NO
+24,production and processing,MALE,NO
+43,social sciences,FEMALE,NO
+28,liberal arts,MALE,YES
+23,pedagogics,FEMALE,NO
+63,no specialisation,FEMALE,NO
+49,pedagogics,MALE,NO
+30,art,FEMALE,NO
+41,social sciences,FEMALE,
+56,no specialisation,MALE,NO
+36,art,FEMALE,NO
+16,liberal arts,MALE,YES
+19,art,FEMALE,NO
+70,,FEMALE,NO
+45,technical science,FEMALE,NO
+28,economy and administration,MALE,NO
+23,technical science,FEMALE,NO
+64,technical science,MALE,NO
+66,architecture and construction,MALE,NO
+51,no specialisation,MALE,NO
+36,other,FEMALE,
+61,technical science,FEMALE,NO
+38,social sciences,FEMALE,NO
+40,production and processing,FEMALE,NO
+39,technical science,FEMALE,NO
+37,"agriculture, forestry, fishing",MALE,NO
+37,production and processing,MALE,NO
+38,not applicable,MALE,NO
+39,production and processing,FEMALE,NO
+46,no specialisation,MALE,NO
+44,healthcare,MALE,NO
+45,environmental protection,MALE,NO
+51,services for the population and transport services,FEMALE,NO
+83,no specialisation,MALE,NO
+62,no specialisation,MALE,NO
+56,art,FEMALE,YES
+16,mathematics and statistics,MALE,NO
+49,production and processing,FEMALE,YES
+66,production and processing,MALE,YES
+23,technical science,FEMALE,NO
+59,production and processing,MALE,YES
+74,social sciences,FEMALE,NO
+32,technical science,MALE,YES
+37,,MALE,NO
+45,technical science,MALE,NO
+59,"agriculture, forestry, fishing",MALE,NO
+48,no specialisation,MALE,NO
+41,journalism and information,FEMALE,YES
+24,"agriculture, forestry, fishing",FEMALE,
+53,no specialisation,FEMALE,NO
+16,social sciences,FEMALE,NO
+32,pedagogics,MALE,NO
+36,"agriculture, forestry, fishing",MALE,NO
+63,production and processing,MALE,YES
+21,other,FEMALE,NO
+17,no specialisation,FEMALE,NO
+40,pedagogics,FEMALE,NO
+50,production and processing,MALE,YES
+42,"agriculture, forestry, fishing",FEMALE,NO
+23,economy and administration,MALE,NO
+62,no specialisation,MALE,YES
+66,services for the population and transport services,FEMALE,NO
+32,no specialisation,MALE,NO
+59,social sciences,FEMALE,NO
+36,production and processing,FEMALE,YES
+80,no specialisation,FEMALE,NO
+20,social sciences,FEMALE,NO
+26,veterinary medicine,FEMALE,NO
+39,"agriculture, forestry, fishing",FEMALE,NO
+60,"agriculture, forestry, fishing",FEMALE,NO
+77,production and processing,MALE,NO
+56,biological sciences,FEMALE,YES
+24,healthcare,MALE,NO
+64,technical science,FEMALE,YES
+34,services for the population and transport services,FEMALE,
+39,other,FEMALE,
+52,no specialisation,MALE,NO
+26,armed forces and country protection,MALE,
+16,no specialisation,MALE,NO
+23,no specialisation,MALE,NO
+59,protection and safety,MALE,YES
+18,technical science,MALE,NO
+71,social sciences,FEMALE,NO
+54,liberal arts,FEMALE,NO
+47,pedagogics,MALE,NO
+48,pedagogics,MALE,NO
+16,"agriculture, forestry, fishing",MALE,NO
+29,services for the population and transport services,FEMALE,NO
+79,"agriculture, forestry, fishing",FEMALE,YES
+64,services for the population and transport services,MALE,YES
+16,technical science,FEMALE,
+40,healthcare,MALE,
+33,other,FEMALE,YES
+49,no specialisation,MALE,NO
+59,technical science,MALE,NO
+66,law,FEMALE,NO
+30,no specialisation,FEMALE,NO
+53,armed forces and country protection,FEMALE,YES
+28,services for the population and transport services,MALE,
+42,technical science,MALE,YES
+44,services for the population and transport services,FEMALE,NO
+81,"agriculture, forestry, fishing",MALE,NO
+61,"agriculture, forestry, fishing",FEMALE,NO
+58,no specialisation,FEMALE,NO
+43,technical science,MALE,NO
+20,technical science,MALE,NO
+28,technical science,MALE,NO
+53,technical science,MALE,NO
+59,mathematics and statistics,FEMALE,NO
+64,law,FEMALE,NO
+61,environmental protection,FEMALE,NO
+72,social sciences,MALE,YES
+34,no specialisation,MALE,NO
+28,no specialisation,FEMALE,NO
+57,technical science,FEMALE,NO
+55,no specialisation,MALE,NO
+68,no specialisation,FEMALE,NO
+39,production and processing,FEMALE,YES
+17,no specialisation,FEMALE,NO
+61,journalism and information,FEMALE,NO
+29,technical science,MALE,NO
+40,architecture and construction,MALE,NO
+43,no specialisation,FEMALE,NO
+48,technical science,FEMALE,NO
+41,services for the population and transport services,MALE,NO
+21,healthcare,MALE,YES
+40,technical science,MALE,
+67,economy and administration,MALE,NO
+16,"agriculture, forestry, fishing",FEMALE,NO
+47,lack of data,MALE,NO
+58,law,FEMALE,NO
+73,technical science,MALE,NO
+45,no specialisation,MALE,NO
+73,"agriculture, forestry, fishing",FEMALE,NO
+48,healthcare,MALE,NO
+16,no specialisation,MALE,NO
+27,technical science,FEMALE,NO
+56,production and processing,FEMALE,YES
+16,no specialisation,MALE,NO
+58,production and processing,MALE,YES
+67,healthcare,FEMALE,
+18,no specialisation,FEMALE,NO
+16,no specialisation,MALE,NO
+42,services for the population and transport services,MALE,NO
+16,no specialisation,MALE,NO
+17,social sciences,FEMALE,NO
+59,not applicable,FEMALE,
+50,law,MALE,NO
+16,services for the population and transport services,FEMALE,NO
+25,computer science,MALE,NO
+62,biological sciences,MALE,YES
+16,technical science,MALE,NO
+32,no specialisation,MALE,NO
+61,mathematics and statistics,MALE,NO
+19,no specialisation,MALE,NO
+18,no specialisation,MALE,NO
+46,healthcare,FEMALE,NO
+34,biological sciences,MALE,NO
+74,"agriculture, forestry, fishing",MALE,NO
+34,production and processing,MALE,YES
+22,no specialisation,MALE,NO
+59,technical science,FEMALE,
+16,public health,MALE,NO
+48,"agriculture, forestry, fishing",FEMALE,NO
+52,architecture and construction,MALE,YES
+69,technical science,FEMALE,NO
+75,production and processing,FEMALE,YES
+54,no specialisation,MALE,NO
+47,technical science,MALE,NO
+45,no specialisation,MALE,NO
+52,art,FEMALE,NO
+97,"agriculture, forestry, fishing",MALE,NO
+62,"agriculture, forestry, fishing",MALE,YES
+32,no specialisation,FEMALE,NO
+63,"agriculture, forestry, fishing",FEMALE,NO
+83,liberal arts,MALE,NO
+68,no specialisation,MALE,NO
+16,biological sciences,FEMALE,NO
+70,social sciences,FEMALE,NO
+47,economy and administration,FEMALE,NO
+56,pedagogics,MALE,NO
+42,no specialisation,FEMALE,NO
+51,armed forces and country protection,MALE,NO
+30,technical science,MALE,NO
+22,no specialisation,MALE,NO
+75,"agriculture, forestry, fishing",MALE,NO
+46,not applicable,FEMALE,NO
+37,technical science,MALE,NO
+40,liberal arts,MALE,NO
+84,social sciences,FEMALE,NO
+51,no specialisation,MALE,NO
+39,pedagogics,MALE,NO
+72,not applicable,FEMALE,YES
+47,no specialisation,FEMALE,NO
+47,technical science,MALE,YES
+47,"agriculture, forestry, fishing",MALE,NO
+49,technical science,MALE,YES
+64,"agriculture, forestry, fishing",FEMALE,NO
+16,pedagogics,FEMALE,NO
+68,technical science,MALE,NO
+50,no specialisation,FEMALE,NO
+51,technical science,FEMALE,YES
+43,architecture and construction,MALE,NO
+52,"agriculture, forestry, fishing",FEMALE,YES
+51,technical science,FEMALE,NO
+44,services for the population and transport services,FEMALE,NO
+52,architecture and construction,MALE,YES
+38,production and processing,FEMALE,NO
+39,technical science,FEMALE,YES
+21,technical science,MALE,NO
+25,no specialisation,FEMALE,NO
+61,no specialisation,FEMALE,NO
+38,no specialisation,MALE,NO
+50,services for the population and transport services,FEMALE,NO
+48,no specialisation,MALE,NO
+44,no specialisation,FEMALE,
+61,liberal arts,FEMALE,NO
+55,public health,FEMALE,NO
+66,no specialisation,FEMALE,NO
+30,pedagogics,MALE,NO
+66,no specialisation,MALE,NO
+19,not applicable,FEMALE,NO
+75,services for the population and transport services,FEMALE,NO
+56,no specialisation,MALE,NO
+48,journalism and information,FEMALE,NO
+44,no specialisation,MALE,NO
+56,no specialisation,MALE,NO
+22,no specialisation,MALE,NO
+34,"agriculture, forestry, fishing",MALE,YES
+47,social sciences,FEMALE,NO
+31,pedagogics,FEMALE,NO
+77,"agriculture, forestry, fishing",MALE,NO
+70,technical science,MALE,NO
+47,biological sciences,FEMALE,NO
+21,no specialisation,MALE,NO
+54,technical science,MALE,NO
+69,services for the population and transport services,FEMALE,NO
+46,no specialisation,FEMALE,NO
+16,computer science,MALE,
+22,production and processing,FEMALE,NO
+64,technical science,MALE,NO
+25,computer science,MALE,NO
+45,technical science,FEMALE,YES
+44,technical science,MALE,NO
+46,architecture and construction,FEMALE,
+50,architecture and construction,FEMALE,NO
+73,no specialisation,FEMALE,NO
+46,technical science,MALE,NO
+59,services for the population and transport services,FEMALE,NO
+53,economy and administration,MALE,NO
+46,pedagogics,FEMALE,NO
+16,pedagogics,MALE,NO
+20,healthcare,MALE,YES
+54,no specialisation,MALE,NO
+23,"agriculture, forestry, fishing",FEMALE,NO
+47,pedagogics,FEMALE,YES
+65,no specialisation,MALE,NO
+19,production and processing,MALE,YES
+40,no specialisation,FEMALE,NO
+47,no specialisation,FEMALE,NO
+38,social sciences,FEMALE,NO
+61,no specialisation,FEMALE,NO
+16,computer science,FEMALE,NO
+55,economy and administration,FEMALE,NO
+71,mathematics and statistics,MALE,NO
+51,public health,MALE,NO
+49,social sciences,MALE,NO
+42,social sciences,FEMALE,NO
+49,social sciences,FEMALE,NO
+16,lack of data,MALE,NO
+25,economy and administration,FEMALE,NO
+17,liberal arts,FEMALE,NO
+73,technical science,MALE,NO
+44,no specialisation,FEMALE,NO
+56,technical science,FEMALE,NO
+55,architecture and construction,MALE,
+51,technical science,MALE,NO
+47,no specialisation,MALE,NO
+52,services for the population and transport services,FEMALE,NO
+60,technical science,MALE,YES
+63,production and processing,FEMALE,
+36,services for the population and transport services,FEMALE,NO
+41,no specialisation,FEMALE,NO
+76,services for the population and transport services,FEMALE,NO
+32,services for the population and transport services,FEMALE,YES
+59,no specialisation,MALE,NO
+50,"agriculture, forestry, fishing",FEMALE,NO
+43,other,FEMALE,
+16,no specialisation,FEMALE,NO
+51,services for the population and transport services,FEMALE,NO
+68,no specialisation,MALE,NO
+39,technical science,MALE,NO
+49,no specialisation,FEMALE,NO
+16,,MALE,NO
+16,technical science,FEMALE,NO
+16,biological sciences,MALE,NO
+25,economy and administration,FEMALE,NO
+21,public health,FEMALE,NO
+56,production and processing,MALE,YES
+47,social welfare,MALE,YES
+22,production and processing,FEMALE,NO
+84,services for the population and transport services,MALE,YES
+54,law,FEMALE,NO
+70,computer science,FEMALE,NO
+25,no specialisation,MALE,NO
+72,no specialisation,FEMALE,NO
+44,no specialisation,MALE,NO
+62,"agriculture, forestry, fishing",FEMALE,NO
+40,lack of data,MALE,NO
+62,production and processing,FEMALE,YES
+41,no specialisation,MALE,NO
+24,technical science,MALE,YES
+35,no specialisation,MALE,NO
+26,no specialisation,FEMALE,NO
+39,pedagogics,FEMALE,NO
+58,production and processing,MALE,YES
+47,"agriculture, forestry, fishing",MALE,NO
+69,production and processing,FEMALE,NO
+63,economy and administration,FEMALE,
+62,technical science,MALE,NO
+57,pedagogics,FEMALE,NO
+41,pedagogics,FEMALE,NO
+64,no specialisation,MALE,NO
+54,law,FEMALE,YES
+47,"agriculture, forestry, fishing",FEMALE,NO
+21,"agriculture, forestry, fishing",FEMALE,
+66,no specialisation,FEMALE,NO
+58,law,MALE,
+23,services for the population and transport services,MALE,YES
+16,other,FEMALE,
+30,economy and administration,FEMALE,YES
+48,technical science,MALE,NO
+43,protection and safety,MALE,NO
+57,social sciences,FEMALE,NO
+40,art,FEMALE,NO
+16,no specialisation,FEMALE,NO
+48,technical science,MALE,NO
+53,services for the population and transport services,FEMALE,NO
+41,services for the population and transport services,FEMALE,NO
+24,technical science,MALE,NO
+53,,FEMALE,NO
+26,technical science,MALE,
+23,,FEMALE,NO
+65,public health,MALE,YES
+16,"agriculture, forestry, fishing",FEMALE,NO
+28,law,FEMALE,NO
+36,no specialisation,MALE,NO
+16,technical science,MALE,NO
+68,technical science,MALE,NO
+49,no specialisation,MALE,YES
+29,healthcare,MALE,YES
+29,technical science,FEMALE,NO
+58,computer science,FEMALE,NO
+22,technical science,MALE,NO
+40,liberal arts,FEMALE,
+16,technical science,MALE,
