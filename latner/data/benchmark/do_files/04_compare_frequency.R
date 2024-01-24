@@ -26,7 +26,7 @@ graphs = "graphs/"
 setwd(main_dir)
 
 data <- c("adult","grid","gridr","sd2011_small")
-data <- c("sd2011_duration_wo_missing","sd2011_duration_w_missing")
+data <- c("sd2011")
 
 # Load synthetic data from CTGAN (based on optimized parameterization) ----
 
@@ -200,7 +200,35 @@ df_comparison$value <- fct_rev(df_comparison$value)
 df_graph <- ggplot(df_comparison, aes(x = pct, y = value, shape = type, color = type, group = type)) +
   geom_point(data = subset(df_comparison, type!="observed"), position = position_dodge(width = .9), size = 2) +
   geom_bar(data = subset(df_comparison, type=="observed"), stat = "identity", alpha = .2) +
-  facet_grid(variables ~ data, scales = "free") +
+  facet_wrap( ~ variables, scales = "free") +
+  xlab("") +
+  ylab("") +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        legend.key.width=unit(1, "cm"),
+        axis.text.x = element_text(angle = 90, hjust = 1),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+df_graph
+
+# Graph (test) ----
+
+df_test <- df_comparison %>%
+  filter(variables == "wkabdur") %>%
+  filter(value!="-10")
+
+df_test
+
+df_test %>% 
+  pivot_wider(values_from = pct,names_from = type)
+
+
+df_graph <- ggplot(df_test, aes(x = value, y = pct, fill = type)) +
+  geom_bar(stat = "identity", position = position_dodge(.9)) +
+  facet_wrap( ~ variables, scales = "free") +
   xlab("") +
   ylab("") +
   theme_bw() +

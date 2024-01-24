@@ -41,6 +41,18 @@ df_ctgan <- df_ctgan %>%
   select(data,copies, pmse, spmse, specks, synthesizer)
 df_ctgan
 
+
+# Load and optimize df_datasynthesizer utility data ----
+
+df_datasynthesizer <- read.csv(paste0(tables,"datasynthesizer/utility_output.csv"))
+df_datasynthesizer <- df_datasynthesizer %>%
+  group_by(data,copies) %>%
+  filter(privacy == 0 & parents == 2) %>%
+  ungroup() %>%
+  mutate(synthesizer = "datasynthesizer") %>%
+  select(data,copies, pmse, spmse, specks, synthesizer)
+df_datasynthesizer
+
 # Load and optimize datasynthesizer utility data ----
 
 df_synthpop <- read.csv(paste0(tables,"synthpop/utility_output.csv"))
@@ -57,24 +69,26 @@ df_synthpop
 
 df_utility <- rbind(df_ctgan,df_datasynthesizer,df_synthpop) %>% 
   arrange(data,synthesizer) %>%
-  filter(copies == 5) %>%
+  filter(copies == 1) %>%
   select(-copies)
 
 # Graph ----
 
 df_data <- df_utility %>% 
+  filter(data == "sd2011") %>%
   pivot_longer(!c(data,synthesizer), names_to = "utility", values_to = "values")
 
 df_graph <- ggplot(df_data, aes(x = synthesizer, y = values)) +
   geom_bar(stat="identity",position = position_dodge2()) +
-  facet_grid(utility ~ data, labeller = labeller(.rows = label_both, .cols = label_both), scales = "free") +
+  facet_wrap( ~ utility, labeller = labeller(.cols = label_both), scales = "free") +
   theme_bw() +
+  xlab("") +
   geom_text(aes(label = round(values,2)), vjust = -0.3) +  # Adding labels
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
-        legend.title = element_blank(), 
+        legend.title = element_blank(),
         legend.key.width=unit(1, "cm"),
-        axis.text.x = element_text(angle = 75, hjust = 1),
+        # axis.text.x = element_text(angle = 75, hjust = 1),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )

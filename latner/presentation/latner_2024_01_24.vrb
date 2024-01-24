@@ -1,0 +1,31 @@
+\frametitle{Kolmogorov-Smirnov statistic for each variable}
+
+DataSynthesizer
+\begin{lstlisting}[firstnumber=1, label=glabels, xleftmargin=10pt,frame=single]
+> df_compare$tab.utility[,4]
+       sex        age      agegr  placesize     region        edu    eduspec    socprof
+    0.0022     0.0220     0.0172     0.0040     0.0268     0.0088     0.0216     0.0160
+  unempdur     income    marital      mmarr      ymarr    msepdiv    ysepdiv         ls
+    0.0042     0.0376     0.0088     0.0088     0.0160     0.0038     0.0086     0.0060
+   depress      trust   trustfam trustneigh      sport   nofriend      smoke     nociga
+    0.0048     0.0026     0.0014     0.0042     0.0036     0.1566     0.0048     0.0076
+  alcabuse     alcsol     workab    wkabdur    wkabint wkabintdur       emcc    englang
+    0.0018     0.0010     0.0008     0.0040     0.0016     0.0020     0.0036     0.0072
+    height     weight
+    0.0948     0.0392
+\end{lstlisting}
+Synthpop
+\begin{lstlisting}[firstnumber=1, label=glabels, xleftmargin=10pt,frame=single]
+> df_compare$tab.utility[,4]
+       sex        age      agegr  placesize     region        edu    eduspec    socprof
+    0.0108     0.0164     0.0148     0.0122     0.0230     0.0096     0.0150     0.0172
+  unempdur     income    marital      mmarr      ymarr    msepdiv    ysepdiv         ls
+    0.0142     0.0198     0.0122     0.0112     0.0148     0.0044     0.0062     0.0020
+   depress      trust   trustfam trustneigh      sport   nofriend      smoke     nociga
+    0.0194     0.0046     0.0068     0.0102     0.0086     0.0036     0.0098     0.0146
+  alcabuse     alcsol     workab    wkabdur    wkabint wkabintdur       emcc    englang
+    0.0012     0.0010     0.0088     0.0018     0.0036     0.0050     0.0062     0.0122
+    height     weight
+    0.0110     0.0062
+\end{lstlisting}
+

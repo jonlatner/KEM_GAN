@@ -34,7 +34,11 @@ options(scipen=999)
 parents = c(0,1,2)
 privacy = c(0,.1,1)
 data <- c("adult","grid","gridr","sd2011_small","sd2011")
-data <- c("sd2011_duration_wo_missing","sd2011_duration_w_missing")
+data <- c("sd2011","sd2011_duration_wo_missing","sd2011_duration_w_missing")
+
+data <- c("sd2011")
+parents = c(1)
+privacy = c(0)
 
 # 1 copy
 c=1
@@ -67,9 +71,14 @@ for (d in data) {
   }
 }
 
+test <- compare(sds_list, df_ods, utility.stats = "SPECKS")
+test$tab.utility[1]
+
+df_comparison_single
 
 # multiple copies
 c=5
+
 df_comparison_multiple <- data.frame()
 for (d in data) {
   df_ods <- read.csv(paste0(original_data,d,".csv"))
@@ -98,8 +107,9 @@ for (d in data) {
   }
 }
 
-
-utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 3)
+# test <- compare(object = sds_list,data = df_ods,utility.stats = "SPECKS",utility.for.plot = "SPECKS")
+# test_2 <- data.frame(test$tab.utility)
+# test_2
 
 df_comparison <- rbind(df_comparison_single,df_comparison_multiple)%>% 
   arrange(data,copies,privacy)
@@ -117,10 +127,16 @@ df_comparison$copies <- factor(as.character(df_comparison$copies))
 df_comparison$parents <- factor(as.character(df_comparison$parents))
 df_comparison$privacy <- factor(as.character(df_comparison$privacy))
 
-df_graph <- ggplot(df_comparison, aes(x = privacy, y = specks, fill = parents)) +
+df_comparison <- df_comparison %>% 
+  filter(copies == 5) %>%
+  pivot_longer(!c(data,copies,privacy,parents), names_to = "utility", values_to = "values")
+
+df_comparison
+
+df_graph <- ggplot(df_comparison, aes(x = privacy, y = values, fill = parents)) +
   geom_bar(stat="identity",position = position_dodge2()) +
-  facet_nested(copies ~ data, labeller = labeller(.rows = label_both)) +
-  ylab("Kolmogorov-Smirnov (lower is better)") +
+  facet_wrap( ~ utility, labeller = labeller(.rows = label_both)) +
+  # ylab("Kolmogorov-Smirnov (lower is better)") +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",

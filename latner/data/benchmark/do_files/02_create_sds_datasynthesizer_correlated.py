@@ -26,7 +26,7 @@ pd.set_option('display.width', 1000)
 pd.set_option('display.float_format', '{:.2f}'.format)
 
 # Set the random seed
-my_seed = 1233
+my_seed = 1234
 
 '''
 LOAD DATA
@@ -52,9 +52,14 @@ Experiments were performed using XX parameters:
 data = ["grid","gridr", # Simulated data
         "sd2011_small","adult"] # Real data
 data = ["sd2011_duration_w_missing","sd2011_duration_wo_missing"] # Real data
+data = ["sd2011_bmi_large"] # Real data
 copies = [1,5]
 parents = [1,2]
 epsilon = [0,.1,1]
+
+copies = [1]
+parents = [1]
+epsilon = [0]
 
 for d in data:
 
@@ -67,7 +72,7 @@ for d in data:
                     
                     j = j + 1
         
-                    my_seed = my_seed + 1
+                    my_seed = my_seed + 2
                     np.random.seed(my_seed)
                     random.seed(my_seed)
         

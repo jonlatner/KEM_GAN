@@ -30,7 +30,9 @@ setwd(main_dir)
 
 epochs = c(25, 50, 75, 100)
 data <- c("adult","grid","gridr","sd2011_small","sd2011")
-data <- c("sd2011_duration_wo_missing","sd2011_duration_w_missing")
+data <- c("sd2011","sd2011_duration_wo_missing","sd2011_duration_w_missing")
+
+data <- c("sd2011")
 
 # 1 copy
 copies = c(1)

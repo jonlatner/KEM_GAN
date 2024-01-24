@@ -51,6 +51,12 @@ simulated_data$CategoricalVar1 <- factor(sample(letters_combinations, n, replace
 simulated_data$CategoricalVar2 <- factor(sample(letters[1:3], n, replace = TRUE))
 simulated_data$CategoricalVar3 <- factor(sample(letters[1:2], n, replace = TRUE))
 
+# Identify and drop variables starting with "X"
+simulated_data <- simulated_data[, !grepl("^X", names(simulated_data))]
+simulated_data <- simulated_data[, !grepl("*NA", names(simulated_data))]
+
+# add in missings ----
+
 # Randomly add 10 missing values to the 'CategoricalVar1' variable
 missing_indices <- sample(1:5000, 25)
 simulated_data$CategoricalVar1[missing_indices] <- NA
@@ -63,14 +69,10 @@ simulated_data$CategoricalVar2[missing_indices] <- NA
 missing_indices <- sample(1:5000, 10)
 # simulated_data$CategoricalVar3[missing_indices] <- NA
 
-# Identify and drop variables starting with "X"
-simulated_data <- simulated_data[, !grepl("^X", names(simulated_data))]
-simulated_data <- simulated_data[, !grepl("*NA", names(simulated_data))]
-
 # Create data frame
 ods <- simulated_data
 
 summary(ods)
 
-# Save
+# Save ----
 write.csv(ods, paste0(original_data,"simulated_v01.csv"), row.names = FALSE)

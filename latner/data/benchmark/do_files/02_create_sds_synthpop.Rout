@@ -43,6 +43,7 @@ Find out more at https://www.synthpop.org.uk/
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+> library(rpart)
 > 
 > # FOLDERS - ADAPT THIS PATHWAY
 > main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/data/benchmark/"
@@ -62,10 +63,12 @@ Find out more at https://www.synthpop.org.uk/
 > copies <- c(1)
 > data <- c("adult","grid","gridr","sd2011_small","sd2011")
 > data <- c("sd2011_duration_wo_missing","sd2011_duration_w_missing")
+> data <- c("sd2011_bmi_large")
 > for (d in data) {
 +   print(d)
 +   df_ods <- read.csv(paste0(original_data,d,".csv"))
 +   df_ods[df_ods == ""] <- NA
++   df_ods[df_ods < 0] <- NA
 +   df_ods <- df_ods %>%
 +     mutate_if(is.character, as.factor)
 +   
@@ -96,85 +99,42 @@ Find out more at https://www.synthpop.org.uk/
 +     }
 +   }
 + }
-[1] "sd2011_duration_wo_missing"
+[1] "sd2011_bmi_large"
 
 Synthesis
 -----------
- age eduspec sex alcabuse
-[1] "sd2011_duration_w_missing"
-
-Synthesis
------------
- age eduspec sex alcabuse
+ sex age agegr placesize region edu eduspec socprof unempdur income
+ marital mmarr ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh
+ sport nofriend smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur
+ emcc englang height weight
 > 
 > # Create fake synthetic data with m copies ----
-> 
-> copies <- c(5)
-> for (d in data) {
-+   print(d)
-+   df_ods <- read.csv(paste0(original_data,d,".csv"))
-+   df_ods[df_ods == ""] <- NA
-+   df_ods <- df_ods %>%
-+     mutate_if(is.character, as.factor)
-+   
-+   for (c in copies) {
-+     
-+     df_synds <- syn(df_ods, m = c)
-+ 
-+     # save RDS file for future use with synthpop package (i.e. utility measures)
-+     saveRDS(df_synds, paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
-+     
-+     # save csv file
-+     for (j in 1:c) {
-+       synthpop_df <- df_synds$syn[j]
-+       write.csv(synthpop_df, file = paste0(synthetic_data,"sds_synthpop_",d,"_m_",c,"_n_",j,".csv"), row.names = FALSE)
-+     }
-+   }
-+ }
-[1] "sd2011_duration_wo_missing"
-
-Synthesis number 1
---------------------
- age eduspec sex alcabuse
-
-Synthesis number 2
---------------------
- age eduspec sex alcabuse
-
-Synthesis number 3
---------------------
- age eduspec sex alcabuse
-
-Synthesis number 4
---------------------
- age eduspec sex alcabuse
-
-Synthesis number 5
---------------------
- age eduspec sex alcabuse
-[1] "sd2011_duration_w_missing"
-
-Synthesis number 1
---------------------
- age eduspec sex alcabuse
-
-Synthesis number 2
---------------------
- age eduspec sex alcabuse
-
-Synthesis number 3
---------------------
- age eduspec sex alcabuse
-
-Synthesis number 4
---------------------
- age eduspec sex alcabuse
-
-Synthesis number 5
---------------------
- age eduspec sex alcabuse
+> # 
+> # copies <- c(5)
+> # for (d in data) {
+> #   print(d)
+> #   df_ods <- read.csv(paste0(original_data,d,".csv"))
+> #   df_ods[df_ods == ""] <- NA
+> #   df_ods[df_ods < 0] <- NA
+> #   df_ods <- df_ods %>%
+> #     mutate_if(is.character, as.factor)
+> #   
+> #   for (c in copies) {
+> #     
+> #     df_synds <- syn(df_ods, m = c)
+> # 
+> #     # save RDS file for future use with synthpop package (i.e. utility measures)
+> #     saveRDS(df_synds, paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
+> #     
+> #     # save csv file
+> #     for (j in 1:c) {
+> #       synthpop_df <- df_synds$syn[j]
+> #       write.csv(synthpop_df, file = paste0(synthetic_data,"sds_synthpop_",d,"_m_",c,"_n_",j,".csv"), row.names = FALSE)
+> #     }
+> #   }
+> # }
 > 
 > 
 > proc.time()
        User      System verstrichen 
-    362.179       0.206     364.496 
+   1685.697       0.540    1696.287 

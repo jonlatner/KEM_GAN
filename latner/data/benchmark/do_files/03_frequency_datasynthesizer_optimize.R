@@ -29,7 +29,7 @@ setwd(main_dir)
 # Load original data ----
 
 data <- c("adult","grid","gridr","sd2011_small")
-data <- c("sd2011_duration_w_missing")
+data <- c("sd2011")
 for (d in data) {
   df_ods <- read.csv(paste0(original_data,d,".csv"))
 }
@@ -38,7 +38,7 @@ for (d in data) {
 
 parents = c(0, 1, 2)
 privacy = c(0, .1, 1)
-copies = c(1)
+copies = c(5)
 
 df_comparison <- data.frame()
 df_utility <- data.frame()
@@ -55,8 +55,8 @@ for (c in copies) {
           sds[sds == ""] <- NA
           sds <- sds %>%
             mutate_if(is.character, as.factor)
-          # sds_list$syn[[j]] <- sds  # use when m>1
-          sds_list$syn <- sds # use when m==1
+          sds_list$syn[[j]] <- sds  # use when m>1
+          # sds_list$syn <- sds # use when m==1
         }
         
         df_temp <- compare(sds_list, df_ods) 

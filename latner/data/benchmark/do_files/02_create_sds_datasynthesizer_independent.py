@@ -52,6 +52,7 @@ Experiments were performed using XX parameters:
 data = ["grid","gridr", # Simulated data
         "sd2011_small","adult"] # Real data
 data = ["sd2011_duration_w_missing","sd2011_duration_wo_missing"] # Real data
+data = ["sd2011"] # Real data
 copies = [1,5]
 parents = [0]
 epsilon = [0,.1,1]

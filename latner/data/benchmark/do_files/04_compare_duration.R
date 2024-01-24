@@ -29,6 +29,7 @@ setwd(main_dir)
 data <- c("adult","grid","gridr","sd2011_small","sd2011")
 data <- c("sd2011_small","sd2011")
 data <- c("sd2011_duration_wo_missing","sd2011_duration_w_missing")
+data <- c("sd2011")
 type <- c("ctgan")
 
 df_duration <- data.frame()
@@ -68,6 +69,8 @@ for (d in data) {
 df_duration$ratio
 
 # Graph data ----
+
+df_duration
 
 df_graph <- ggplot(df_duration, aes(x = type, y = duration)) +
   geom_bar(stat="identity",position = position_dodge2()) +

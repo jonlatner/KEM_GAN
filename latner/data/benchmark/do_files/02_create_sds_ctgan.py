@@ -1,9 +1,5 @@
 '''
 TOP COMMANDS
-Create data for:
-https://arxiv.org/abs/1907.00503
-Modeling Tabular Data using Conditional GAN
-Xu et al., 2019
 '''
 
 # load libraries
@@ -35,10 +31,23 @@ LOAD DATA
 
 data = ["grid","gridr", # Simulated data
         "adult","sd2011_small"] # Real data
-data = ["sd2011_duration_w_missing","sd2011_duration_wo_missing"] # Real data
+data = ["sd2011"] # Real data
 epochs = [25,50,75,100]
 copies = [1,5]
 
+# Set display options to show all columns
+pd.set_option('display.max_columns', None)
+
+# Create a unique filename based on the values
+filename_ods = "sd2011.csv"
+df_ods = pd.read_csv(os.path.join(original_data, filename_ods))
+df_ods.describe()
+
+# Describe the DataFrame and include the count of missing values
+description_with_missing = df_ods.describe().append(df_ods.isnull().sum().rename('missing'))
+
+# Print the result
+print(description_with_missing)
 
 for d in data:
     df_duration = [] # empty data frame

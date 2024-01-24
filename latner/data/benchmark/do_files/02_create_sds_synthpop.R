@@ -33,10 +33,12 @@ options(scipen=999)
 copies <- c(1)
 data <- c("adult","grid","gridr","sd2011_small","sd2011")
 data <- c("sd2011_duration_wo_missing","sd2011_duration_w_missing")
+data <- c("sd2011_bmi_large")
 for (d in data) {
   print(d)
   df_ods <- read.csv(paste0(original_data,d,".csv"))
   df_ods[df_ods == ""] <- NA
+  df_ods[df_ods < 0] <- NA
   df_ods <- df_ods %>%
     mutate_if(is.character, as.factor)
   
@@ -69,27 +71,28 @@ for (d in data) {
 }
 
 # Create fake synthetic data with m copies ----
-
-copies <- c(5)
-for (d in data) {
-  print(d)
-  df_ods <- read.csv(paste0(original_data,d,".csv"))
-  df_ods[df_ods == ""] <- NA
-  df_ods <- df_ods %>%
-    mutate_if(is.character, as.factor)
-  
-  for (c in copies) {
-    
-    df_synds <- syn(df_ods, m = c)
-
-    # save RDS file for future use with synthpop package (i.e. utility measures)
-    saveRDS(df_synds, paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
-    
-    # save csv file
-    for (j in 1:c) {
-      synthpop_df <- df_synds$syn[j]
-      write.csv(synthpop_df, file = paste0(synthetic_data,"sds_synthpop_",d,"_m_",c,"_n_",j,".csv"), row.names = FALSE)
-    }
-  }
-}
+# 
+# copies <- c(5)
+# for (d in data) {
+#   print(d)
+#   df_ods <- read.csv(paste0(original_data,d,".csv"))
+#   df_ods[df_ods == ""] <- NA
+#   df_ods[df_ods < 0] <- NA
+#   df_ods <- df_ods %>%
+#     mutate_if(is.character, as.factor)
+#   
+#   for (c in copies) {
+#     
+#     df_synds <- syn(df_ods, m = c)
+# 
+#     # save RDS file for future use with synthpop package (i.e. utility measures)
+#     saveRDS(df_synds, paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
+#     
+#     # save csv file
+#     for (j in 1:c) {
+#       synthpop_df <- df_synds$syn[j]
+#       write.csv(synthpop_df, file = paste0(synthetic_data,"sds_synthpop_",d,"_m_",c,"_n_",j,".csv"), row.names = FALSE)
+#     }
+#   }
+# }
 

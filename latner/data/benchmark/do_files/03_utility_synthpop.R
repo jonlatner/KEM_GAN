@@ -33,7 +33,7 @@ options(scipen=999)
 
 copies <- c(1,5)
 data <- c("adult","grid","gridr","sd2011_small","sd2011")
-data <- c("sd2011_duration_wo_missing","sd2011_duration_w_missing")
+data <- c("sd2011")
 
 df_comparison <- data.frame()
 
@@ -51,6 +51,8 @@ for (c in copies) {
     df_comparison <- rbind(df_comparison,output)
   }
 }
+
+compare(sds_list,df_ods,stat = "SPECKS",utility.for.plot = "SPECKS")
 
 write.csv(df_comparison, paste0(tables,"utility_output.csv"), row.names=FALSE)
 
