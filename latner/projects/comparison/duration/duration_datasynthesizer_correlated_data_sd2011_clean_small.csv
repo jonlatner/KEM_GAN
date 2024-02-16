@@ -1,0 +1,7 @@
+type,data,parents,epsilon,copies,j,duration
+datasynthesizer,sd2011_clean_small,3,0,1,1,1528.2237219810486
+datasynthesizer,sd2011_clean_small,3,0,5,1,1549.5501959323883
+datasynthesizer,sd2011_clean_small,3,0,5,2,1507.129994392395
+datasynthesizer,sd2011_clean_small,3,0,5,3,1531.439876794815
+datasynthesizer,sd2011_clean_small,3,0,5,4,1590.9504339694977
+datasynthesizer,sd2011_clean_small,3,0,5,5,1646.0041270256042

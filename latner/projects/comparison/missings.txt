@@ -1,0 +1,2 @@
+how do you want to deal with missings in synthetic data?  should synthetic data contain missings that look like original data?  or do you want to create synthetic data where the missings have already been imputed?  or do you want to just generate synthetic data for completely observed data without any missings?
+

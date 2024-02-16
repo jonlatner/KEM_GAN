@@ -1,0 +1,5 @@
+"cio","model","dv","type","sdg"
+-0.555055764136813,"glm","smoke","little","datasynthesizer"
+-0.39399148056236,"glm","smoke","synthpop","datasynthesizer"
+-1.17623648074055,"lm","LN income","little","datasynthesizer"
+-1.34434016671154,"lm","LN income","synthpop","datasynthesizer"

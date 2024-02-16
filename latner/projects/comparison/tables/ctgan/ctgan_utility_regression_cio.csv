@@ -1,0 +1,5 @@
+"cio","model","dv","type","sdg"
+-0.420218464307147,"glm","smoke","little","ctgan"
+-0.400310601204897,"glm","smoke","synthpop","ctgan"
+-1.47914359742352,"lm","LN income","little","ctgan"
+-1.14251397223687,"lm","LN income","synthpop","ctgan"
