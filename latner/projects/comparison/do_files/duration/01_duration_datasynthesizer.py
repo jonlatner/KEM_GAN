@@ -50,7 +50,11 @@ Experiments were performed using XX parameters:
 """
 
 data = ["sd2011_v00","sd2011_v01","sd2011_v02","sd2011_v03","sd2011_v04","sd2011_v05","sd2011_v06","sd2011_v07_35","sd2011_v07_40"] # Real data
-data = ["sd2011_v08"] # Real data
+data = ["sd2011_v08_1_20","sd2011_v08_2_20","sd2011_v08_3_20",
+          "sd2011_v08_1_25","sd2011_v08_2_25","sd2011_v08_3_25",
+          "sd2011_v08_1_30","sd2011_v08_2_30","sd2011_v08_3_30"]
+data = ["sd2011_v08_1_20","sd2011_v08_2_20","sd2011_v08_3_20",
+          "sd2011_v08_1_25","sd2011_v08_2_25","sd2011_v08_3_25"]
 copies = [1]
 parents = [2]
 epsilon = [0]
@@ -128,16 +132,18 @@ for d in data:
                     # full_path_sds = os.path.join(synthetic_data, filename_sds)
                     # generator.save_synthetic_data(full_path_sds)
                         
+                    # Calculate the execution time for this iteration
+                    time_duration = time_end - time_start
+                    df_duration.append(["datasynthesizer",d,time_duration])
+
+                        
                     print("")
                     print("data:",d)
                     print("parents:",p)
                     print("epsilon:",e)
                     print("copes:",m)
                     print("number:",j)
-                        
-                    # Calculate the execution time for this iteration
-                    time_duration = time_end - time_start
-                    df_duration.append(["datasynthesizer",d,time_duration])
+                    print("time duration:", time_duration)
         
             # save duration by data set
             df_duration_out = pd.DataFrame(df_duration)

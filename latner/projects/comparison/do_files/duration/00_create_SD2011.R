@@ -155,3 +155,32 @@ unique_values <- sample(letters2, 25, replace = FALSE)
 df_ods$random_2 <- sample(unique_values, nrow(df_ods), replace = TRUE)
 
 write.csv(df_ods, paste0(original_data,"sd2011_v08.csv"), row.names=FALSE)
+
+# v08 - wkabdur, random ar last ----
+
+# Specify the number of additional random variables you want to add
+num_additional_variables <- c(1,2,3)  # Change this according to your needs
+num_values <- c(20, 25, 30)  # Change this according to your needs
+
+# Create new data frames with an increasing number of random variables
+for (i in num_additional_variables) {
+  for (v in num_values) {
+    
+    df_ods <- ods
+      
+    # Generate new random variable names
+    new_variable_names <- paste0("random_", 1:i)
+    
+    # Add new random variables to the original data frame
+    unique_values <- sample(letters2, v, replace = FALSE)
+    additional_variables <- replicate(i, sample(unique_values, nrow(df_ods), replace = TRUE))
+    df_ods <- cbind(df_ods, setNames(as.data.frame(additional_variables), new_variable_names))
+
+    df_ods <- df_ods %>%
+      select(-eduspec, eduspec) %>%
+      arrange(desc(eduspec))
+    
+    # save
+    write.csv(df_ods, paste0(original_data,"sd2011_v08_",i,"_",v,".csv"), row.names=FALSE)
+  }
+}

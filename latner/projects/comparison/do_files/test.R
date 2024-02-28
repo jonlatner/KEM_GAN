@@ -39,3 +39,5 @@ sds <- syn(ods,m = 1)
 compare(sds,ods,utility.stats = "SPECKS")
 utility.gen(sds$syn, ods, print.stats = "all", nperms = 3)
 
+utility.tables(sds, ods, tables = "twoway",plot.stat = "pMSE",plot.stat = "pMSE")
+

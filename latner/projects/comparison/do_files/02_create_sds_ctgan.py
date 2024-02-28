@@ -37,6 +37,10 @@ data = ["sd2011","sd2011_clean","sd2011_clean_small"] # Real data
 epochs = [1800]
 copies = [1,5]
 
+data = ["sd2011_clean_small_numeric"] # Real data
+epochs = [600]
+copies = [5]
+
 for d in data:
     df_duration = [] # empty data frame
 

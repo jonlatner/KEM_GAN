@@ -29,6 +29,7 @@ options(scipen=999)
 # Create fake synthetic data ----
 
 ods <- SD2011
+
 write.csv(ods, paste0(original_data,"sd2011.csv"), row.names = FALSE)
 
 ods <- SD2011
@@ -46,3 +47,29 @@ ods <- ods %>%
 ods$agegr <- NULL
 ods$bmi <- NULL
 write.csv(ods, paste0(original_data,"sd2011_clean_small.csv"), row.names = FALSE)
+
+ods <- SD2011
+ods[ods < 0] <- NA
+ods[ods == ""] <- NA
+ods <- ods %>%
+  mutate_if(is.character, as.factor)
+ods$agegr <- NULL
+ods$bmi <- NULL
+ods <- ods %>%
+  select(-eduspec, eduspec)  %>%
+  select(where(is.factor))
+
+write.csv(ods, paste0(original_data,"sd2011_clean_small_categorical.csv"), row.names = FALSE)
+
+ods <- SD2011
+ods[ods < 0] <- NA
+ods[ods == ""] <- NA
+ods <- ods %>%
+  mutate_if(is.character, as.factor)
+ods$agegr <- NULL
+ods$bmi <- NULL
+ods <- ods %>%
+  select(-eduspec, eduspec)  %>%
+  select(where(is.numeric))
+
+write.csv(ods, paste0(original_data,"sd2011_clean_small_numeric.csv"), row.names = FALSE)

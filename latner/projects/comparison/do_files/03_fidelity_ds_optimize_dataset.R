@@ -32,9 +32,10 @@ options(scipen=999)
 # Load utility from datasynthesizer data ----
 
 parents = c(0,1,2,3)
+parents = c(2)
 privacy = c(0)
 data <- c("sd2011","sd2011_clean","sd2011_clean_small","sd2011_clean_small_categorical")
-data <- c("sd2011_clean_small")
+data <- c("sd2011_clean_small_categorical")
 
 
 df_comparison_single <- data.frame()

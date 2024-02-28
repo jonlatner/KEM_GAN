@@ -31,12 +31,41 @@ options(scipen=999)
 # create synthetic data ----
 
 data <- c("sd2011_v00","sd2011_v01","sd2011_v02","sd2011_v03","sd2011_v04","sd2011_v05","sd2011_v06","sd2011_v07_35","sd2011_v07_40","sd2011_v08")
+data <- c("sd2011_v08_1_20","sd2011_v08_2_20","sd2011_v08_3_20")
 for (d in data) {
-
-  print(d)
+  
   ods <- read.csv(file = paste0(original_data,d,".csv"))
   
   df_ods <- ods
+  
+  time_start <- proc.time()
+  df_synds <- syn(df_ods, m = 1) 
+  time_end <- proc.time()
+  df_duration <- data.frame(
+    duration = as.numeric(time_end[1] - time_start[1]),
+    data = d,
+    type = "synthpop (csv)"
+  )
+  
+  print(d)
+  print(df_duration)
+  beep()
+  
+  write.csv(df_duration, paste0(duration,"duration_synthpop_",d,".csv"), row.names=FALSE)
+}
+
+data <- c("sd2011_v08_1_25","sd2011_v08_2_25","sd2011_v08_3_25",
+          "sd2011_v08_1_30","sd2011_v08_2_30","sd2011_v08_3_30")
+data <- c("sd2011_v08_1_25","sd2011_v08_2_25","sd2011_v08_3_25")
+for (d in data) {
+
+  ods <- read.csv(file = paste0(original_data,d,".csv"))
+  
+  df_ods <- ods
+
+    df_ods <- df_ods %>%
+      select(-matches("random"), matches("random")) 
+
   time_start <- proc.time()
   df_synds <- syn(df_ods, m = 1) 
   time_end <- proc.time()
@@ -46,9 +75,10 @@ for (d in data) {
     type = "synthpop (csv)"
   )
 
+  print(d)
   print(df_duration)
+  beep()
   
   write.csv(df_duration, paste0(duration,"duration_synthpop_",d,".csv"), row.names=FALSE)
 }
 
-beep()

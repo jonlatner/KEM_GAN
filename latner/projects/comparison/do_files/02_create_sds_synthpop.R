@@ -32,6 +32,7 @@ options(scipen=999)
 
 copies <- c(1)
 data <- c("sd2011","sd2011_clean","sd2011_clean_small","sd2011_clean_small_categorical")
+data <- c("sd2011_clean_small_numeric")
 for (d in data) {
   print(d)
   df_ods <- read.csv(paste0(original_data,d,".csv"))
@@ -71,6 +72,7 @@ for (d in data) {
 # Create fake synthetic data with m copies ----
 
 copies <- c(5)
+data <- c("sd2011_clean_small_numeric")
 for (d in data) {
   print(d)
   df_ods <- read.csv(paste0(original_data,d,".csv"))

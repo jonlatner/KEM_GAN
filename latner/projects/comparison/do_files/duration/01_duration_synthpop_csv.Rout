@@ -1,5 +1,5 @@
 
-R version 4.3.0 (2023-04-21) -- "Already Tomorrow"
+R version 4.3.2 (2023-10-31) -- "Eye Holes"
 Copyright (C) 2023 The R Foundation for Statistical Computing
 Platform: aarch64-apple-darwin20 (64-bit)
 
@@ -43,8 +43,6 @@ Find out more at https://www.synthpop.org.uk/
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-Warnmeldung:
-Paket ‘ggplot2’ wurde unter R Version 4.3.1 erstellt 
 > library(beepr)
 > 
 > # FOLDERS - ADAPT THIS PATHWAY
@@ -63,12 +61,21 @@ Paket ‘ggplot2’ wurde unter R Version 4.3.1 erstellt
 > # create synthetic data ----
 > 
 > data <- c("sd2011_v00","sd2011_v01","sd2011_v02","sd2011_v03","sd2011_v04","sd2011_v05","sd2011_v06","sd2011_v07_35","sd2011_v07_40","sd2011_v08")
+> data <- c("sd2011_v08_1_20","sd2011_v08_2_20","sd2011_v08_3_20",
++           "sd2011_v08_1_25","sd2011_v08_2_25","sd2011_v08_3_25",
++           "sd2011_v08_1_30","sd2011_v08_2_30","sd2011_v08_3_30")
+> data <- c("sd2011_v08_1_30","sd2011_v08_2_30","sd2011_v08_3_30")
 > for (d in data) {
 + 
 +   print(d)
 +   ods <- read.csv(file = paste0(original_data,d,".csv"))
 +   
 +   df_ods <- ods
++ 
++     df_ods <- df_ods %>%
++       select(-eduspec, eduspec) %>%
++       arrange(desc(eduspec))
++ 
 +   time_start <- proc.time()
 +   df_synds <- syn(df_ods, m = 1) 
 +   time_end <- proc.time()
@@ -82,129 +89,13 @@ Paket ‘ggplot2’ wurde unter R Version 4.3.1 erstellt
 +   
 +   write.csv(df_duration, paste0(duration,"duration_synthpop_",d,".csv"), row.names=FALSE)
 + }
-[1] "sd2011_v00"
+[1] "sd2011_v08_1_30"
 
-Variable(s): sex, placesize, region, edu, eduspec, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang have been changed for synthesis from character to factor.
-
-Synthesis
------------
- sex age placesize region edu eduspec socprof unempdur income marital
- mmarr ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport
- nofriend smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur emcc
- englang height weight
-  duration       data           type
-1 2132.116 sd2011_v00 synthpop (csv)
-[1] "sd2011_v01"
-
-Variable(s): sex, placesize, region, edu, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang have been changed for synthesis from character to factor.
-
-Synthesis
------------
- sex age placesize region edu socprof unempdur income marital mmarr
- ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport nofriend
- smoke nociga alcabuse alcsol workab wkabint wkabintdur emcc englang height
- weight
-  duration       data           type
-1   10.993 sd2011_v01 synthpop (csv)
-[1] "sd2011_v02"
-
-Variable(s): sex, placesize, region, edu, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang, eduspec have been changed for synthesis from character to factor.
-
-Synthesis
------------
- sex age placesize region edu socprof unempdur income marital mmarr
- ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport nofriend
- smoke nociga alcabuse alcsol workab wkabint wkabintdur emcc englang height
- weight eduspec
-  duration       data           type
-1    13.96 sd2011_v02 synthpop (csv)
-[1] "sd2011_v03"
-
-Variable(s): sex, placesize, region, edu, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang have been changed for synthesis from character to factor.
-
-Synthesis
------------
- sex age placesize region edu socprof unempdur income marital mmarr
- ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport nofriend
- smoke nociga alcabuse alcsol workab wkabint wkabintdur emcc englang height
- weight wkabdur
-  duration       data           type
-1    11.39 sd2011_v03 synthpop (csv)
-[1] "sd2011_v04"
-
-Variable(s): sex, placesize, region, edu, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang, eduspec have been changed for synthesis from character to factor.
-
-Synthesis
------------
- sex age placesize region edu socprof unempdur income marital mmarr
- ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport nofriend
- smoke nociga alcabuse alcsol workab wkabint wkabintdur emcc englang height
- weight eduspec wkabdur
-  duration       data           type
-1   14.227 sd2011_v04 synthpop (csv)
-[1] "sd2011_v05"
-
-Variable(s): sex, placesize, region, edu, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang, eduspec have been changed for synthesis from character to factor.
-
-Synthesis
------------
- sex age placesize region edu socprof unempdur income marital mmarr
- ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport nofriend
- smoke nociga alcabuse alcsol workab wkabint wkabintdur emcc englang height
- weight wkabdur eduspec
-  duration       data           type
-1   14.601 sd2011_v05 synthpop (csv)
-[1] "sd2011_v06"
-
-Variable(s): sex, placesize, region, edu, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang, eduspec have been changed for synthesis from character to factor.
+Variable(s): sex, placesize, region, edu, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang, random_1, eduspec have been changed for synthesis from character to factor.
 
 Synthesis
 -----------
  sex age placesize region edu socprof unempdur income marital mmarr
  ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport nofriend
  smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur emcc englang
- height weight eduspec
-  duration       data           type
-1   14.117 sd2011_v06 synthpop (csv)
-[1] "sd2011_v07_35"
-
-Variable(s): sex, placesize, region, edu, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang, eduspec, random have been changed for synthesis from character to factor.
-
-Synthesis
------------
- sex age placesize region edu socprof unempdur income marital mmarr
- ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport nofriend
- smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur emcc englang
- height weight eduspec random
-  duration          data           type
-1  290.586 sd2011_v07_35 synthpop (csv)
-[1] "sd2011_v07_40"
-
-Variable(s): sex, placesize, region, edu, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang, eduspec, random have been changed for synthesis from character to factor.
-
-Synthesis
------------
- sex age placesize region edu socprof unempdur income marital mmarr
- ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport nofriend
- smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur emcc englang
- height weight eduspec random
-  duration          data           type
-1  233.396 sd2011_v07_40 synthpop (csv)
-[1] "sd2011_v08"
-
-Variable(s): sex, placesize, region, edu, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang, eduspec, random_1, random_2 have been changed for synthesis from character to factor.
-
-Synthesis
------------
- sex age placesize region edu socprof unempdur income marital mmarr
- ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport nofriend
- smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur emcc englang
- height weight eduspec random_1 random_2
-  duration       data           type
-1    792.6 sd2011_v08 synthpop (csv)
-> 
-> beep()
-> 
-> proc.time()
-       User      System verstrichen 
-   3529.165       1.535    3539.556 
+ height weight random_1 eduspec

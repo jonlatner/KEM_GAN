@@ -54,9 +54,9 @@ copies = [5]
 parents = [1,2]
 epsilon = [0]
 
-data = ["sd2011_clean_small"] # Real data
-copies = [1,5]
-parents = [3]
+data = ["sd2011_clean_small_numeric"] # Real data
+copies = [5]
+parents = [2]
 epsilon = [0]
 
 for d in data:
