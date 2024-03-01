@@ -1,0 +1,4 @@
+type,data,epochs,batch_size,duration
+ctgan,sd2011_clean_small,150,250,106.6066062450409
+ctgan,sd2011_clean_small,300,500,152.16227412223816
+ctgan,sd2011_clean_small,600,1000,246.36948895454407
