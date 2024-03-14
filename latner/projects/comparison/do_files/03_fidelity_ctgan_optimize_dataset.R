@@ -33,11 +33,10 @@ data <- c("sd2011","sd2011_clean","sd2011_clean_small","sd2011_clean_small_categ
 
 epochs = c(100,300,600,900,1800)
 data <- c("sd2011","sd2011_clean","sd2011_clean_small")
-
-df_comparison_single <- data.frame()
-df_fidelity_plot <- data.frame()
 copies = c(5)
-df_comparison_multiple <- data.frame()
+
+df_fidelity_plot <- data.frame()
+df_comparison <- data.frame()
 for (c in copies) {
   for (d in data) {
     df_ods <- read.csv(paste0(original_data,d,".csv"))
@@ -52,25 +51,24 @@ for (c in copies) {
         # sds_list$syn <- sds # use when m==1
       }
       
-      utility <- utility.tables(sds_list, df_ods, tables = "twoway")
+      utility <- utility.tables(sds_list, df_ods, tables = "twoway",plot.stat = "pMSE")
       utility_plot <- data.frame(utility$utility.plot$data)
       utility_plot$copies <- c
       utility_plot$epochs <- e
       utility_plot$data <- d
       df_fidelity_plot <- rbind(df_fidelity_plot,utility_plot)
 
-      utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 3)
+      utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 0)
       output <- data.frame(data = d,
                            copies = c,
                            epochs = as.character(e),
-                           pmse = as.numeric(mean(utility_measure$pMSE)),
-                           specks = as.numeric(mean(utility_measure$SPECKS)))
-      df_comparison_multiple <- rbind(df_comparison_multiple,output)
+                           pmse = as.numeric(mean(utility_measure$pMSE)))
+      df_comparison <- rbind(df_comparison,output)
     }
   }
 }
 
-df_comparison <- rbind(df_comparison_single,df_comparison_multiple)%>% 
+df_comparison <- df_comparison %>% 
   arrange(data,copies,epochs)
 
 write.csv(df_comparison, paste0(tables,"ctgan_fidelity_optimize_dataset.csv"), row.names=FALSE)
@@ -88,8 +86,7 @@ df_comparison <- df_comparison %>%
 
 df_graph <- ggplot(df_comparison, aes(x = epochs, y = values)) +
   geom_bar(stat="identity",position = position_dodge2()) +
-  facet_wrap( ~ utility, labeller = labeller(.rows = label_both)) +
-  # ylab("Kolmogorov-Smirnov (lower is better)") +
+  ylab("pMSE") +
   theme_bw() +
   ylim(0,1.25) +
   geom_text(aes(label = round(values,2)), vjust = -.5) +

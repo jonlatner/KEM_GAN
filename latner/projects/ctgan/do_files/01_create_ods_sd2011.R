@@ -36,3 +36,20 @@ ods <- ods %>%
 ods$agegr <- NULL
 ods$bmi <- NULL
 write.csv(ods, paste0(original_data,"sd2011_clean_small.csv"), row.names = FALSE)
+
+ods <- SD2011
+ods[ods < 0] <- NA
+ods[ods == ""] <- NA
+ods <- ods %>%
+  mutate_if(is.character, as.factor) %>%
+  select(age,income,sex,region)
+write.csv(ods, paste0(original_data,"sd2011_small.csv"), row.names = FALSE)
+
+ods <- SD2011
+ods[ods < 0] <- NA
+ods[ods == ""] <- NA
+ods <- ods %>%
+  mutate_if(is.character, as.factor) %>%
+  select(age,income,sex,region)
+ods <- ods[complete.cases(ods), ]
+write.csv(ods, paste0(original_data,"sd2011_small_complete.csv"), row.names = FALSE)

@@ -1,0 +1,322 @@
+% \input{"IAB/latex/TeX-Folienformat.tex"}
+\input{"/Users/jonathanlatner/Google Drive/My Drive/IAB/latex/TeX-Folienformat.tex"}
+
+\documentclass[t,8pt,utfx8]{beamer}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\setbeamertemplate{caption}[numbered]
+\newcommand{\sprache}{\englisch}
+\renewcommand{\thesubsection}{\alph{subsection})}
+\usepackage[cal=pxtx, scr=dutchcal]{mathalpha}
+
+
+\newcommand{\btVFill}{\vskip0pt plus 1filll}
+
+\title[Its complicated: Know your data and know your generator. Comparing efficiency, utility, and privacy between synthetic data packages and methods]{Its complicated: Know your data and know your generator}
+\subtitle{Wiesbaden, \newline 21. März, 2024}
+
+\author{Jonathan Latner, PhD \newline Dr. Marcel Neuenhoeffer \newline Prof. Dr. Jörg Drechsler}
+
+\newcounter{noauthorlines}
+\setcounter{noauthorlines}{2} % Wert für 2 Autoren über 2 Zeilen. Ggf. anpassen
+
+% %%%%%%%%%%%%%%
+% Ende Anpassung
+% %%%%%%%%%%%%%%
+
+% \input{"IAB/latex/TeX-Folienformatierung_CD_2019"}
+\input{"/Users/jonathanlatner/Google Drive/My Drive/IAB/latex/TeX-Folienformatierung_CD_2019"}
+
+% Modify the section in toc template to enumerate
+\setbeamertemplate{section in toc}{%
+    \inserttocsectionnumber.~\inserttocsection\par
+}
+
+% use for subsections
+% \setbeamertemplate{subsection in toc}{}
+\setbeamertemplate{subsection in toc}{%
+    \setlength{\parskip}{1mm}
+        \hskip2mm -- \hskip1mm\inserttocsubsection\par
+}
+
+
+\usepackage{colortbl}
+\definecolor{lightgray}{gray}{0.9}
+
+
+\begin{document}
+
+
+\frame[plain]{\titlepage}
+
+\begin{spacing}{1.25}
+
+%Table of contents
+\begin{frame}
+\frametitle{Sections}
+\vskip6mm
+\setlength{\leftskip}{0.5mm}
+\setlength{\parskip}{5mm}
+\begin{NoHyper}
+    \tableofcontents
+\end{NoHyper}
+\end{frame}
+
+\section{Introduction}\label{sec:intro}
+\frame[c]{\frametitle{}
+\centering
+Section \ref{sec:intro}: Introduction
+}
+
+\frame{\frametitle{Compare 3 Synthetic Data Generator (SDG)}
+\begin{itemize}
+    \item DataSynthesizer (Bayes)
+    \item CTGAN (GAN)
+    \item Synthpop (CART)
+\end{itemize}
+}
+
+
+\section{Know your data (SD2011)}\label{sec:data}
+\frame[c]{\frametitle{}
+\centering
+Section \ref{sec:data}: Know your data (SD2011)
+}
+
+\frame{\frametitle{Real data}
+\begin{itemize}
+    \item Social Diagnosis 2011 (SD2011)
+    \item Loads with Synthpop
+    \begin{itemize}
+        \item \url{http://www.diagnoza.com/index-en.html}
+        \item Not entirely clear how original data is created or cleaned to create data in Synthpop
+    \end{itemize}
+    \item Like real data, has `quirks' or unusual values/variables
+    \begin{itemize}
+        \item Includes missings
+        \begin{itemize}
+            \item Informative (i.e. month married, but single)
+            \item Non-informative 
+        \end{itemize}
+        \item Includes `errors'
+        \begin{itemize}
+            \item \texttt{smoke} - Does not smoke is NO, but \texttt{nociga} - 20/22 cigarettes per day 
+        \end{itemize}
+        \item Includes generated variables
+        \begin{itemize}
+            \item \texttt{bmi,agegr}
+            \item Can be problematic for SDG 
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+}
+
+
+\frame{\frametitle{Data (SD2011)}
+\vskip -5mm
+\begin{table}[ht]
+    \centering
+    \vskip -2mm
+    \rowcolors{1}{white}{lightgray}
+    \resizebox{\textwidth}{!}{\input{../tables/table_sd2011_data_structure_small.tex}}
+    \label{table:sd2011_data_structure}
+\end{table}
+}
+
+\section{Know your generator}\label{sec:sdg}
+\subsection{DataSynthesizer}\label{sec:sdg_datasynthesizer}
+\frame[c]{\frametitle{}
+\centering
+Section \ref{sec:sdg}\ref{sec:sdg_datasynthesizer}: Know your generator (DataSynthesizer)
+}
+
+\frame{\frametitle{Tasks}
+\begin{itemize} 
+    \item Run default model - correlated attribute mode
+    \item Hyperparameters
+    \begin{itemize}
+        \item $\epsilon$ DP: 0 (default 0.1)
+        \item Bayesian network ($\mathcal{N}$) parents: 1, 2, or 3 (default is `greedy')
+    \end{itemize}
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=.35]{../graphs/figure_1.PNG}
+\end{figure}
+\begin{itemize}
+    \item In Fig. 1, $\mathcal{N} = 2$, but not known in reality
+\end{itemize}
+}
+
+% \frame{\frametitle{Efficiency - Duration (in seconds)}
+% \vskip -2mm
+% \begin{table}[!h]
+%     \centering
+%     \rowcolors{1}{white}{lightgray}
+%     \resizebox{\textwidth}{!}{\input{../tables/table_sd2011_duration_v2.tex}}
+%     \label{table_sd2011_duration.tex}
+% \end{table}
+% }
+
+
+\frame{\frametitle{SD2011 - pMSE}
+\vskip -2mm
+\begin{figure}
+    \resizebox{.75\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_fidelity_optimize_dataset_parents.pdf}}
+    \label{fig:datasynthesizer_fidelity_optimize_dataset_parents}
+\end{figure}
+}
+
+\frame{\frametitle{DataSynthesizer - SD2011(a)}
+\vskip -2mm
+\begin{figure}
+    \resizebox{.75\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_fidelity_twoway_sd2011_presentation.pdf}}
+    \label{fig:ds_fidelity_two_way_subfig-a}
+\end{figure}
+}
+
+\frame{\frametitle{variable: wkabdur (Work abroad duration)}
+\vskip -2mm
+\begin{figure}
+    \resizebox{.75\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_wkabdur.pdf}}
+    \label{fig:ds_variable_wkabdur}
+\end{figure}
+}
+
+\frame{\frametitle{DataSynthesizer - SD2011(b)}
+\vskip -2mm
+\begin{figure}
+    \resizebox{.75\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_fidelity_twoway_sd2011_clean_presentation.pdf}}
+    \label{fig:ds_fidelity_two_way_subfig-b}
+\end{figure}
+}
+
+\frame{\frametitle{variable: bmi}
+\vskip -2mm
+\begin{figure}
+    \caption{BMI $<$ 20 is underweight/malnourished}
+\vskip -2mm
+    \resizebox{.7\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_bmi.pdf}}
+    \label{fig:ds_variable_bmi}
+\end{figure}
+}
+
+\frame{\frametitle{DataSynthesizer - SD2011(c)}
+\vskip -2mm
+\begin{figure}
+    \resizebox{.75\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_fidelity_twoway_sd2011_clean_small_presentation.pdf}}
+    \label{fig:ds_fidelity_two_way_subfig-c}
+\end{figure}
+}
+
+\frame{\frametitle{variable: nofriend}
+\vskip -2mm
+\begin{figure}
+    \caption{Doesn't capture rounding/discontinuity}
+\vskip -2mm
+    \resizebox{.7\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_nofriend.pdf}}
+    \label{fig:ds_variable_nofriend}
+\end{figure}
+}
+
+\frame{\frametitle{SD2011 - pMSE}
+\vskip -2mm
+\begin{figure}
+    \resizebox{.75\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_fidelity_optimize_dataset_parents_compare.pdf}}
+    \label{fig:datasynthesizer_fidelity_optimize_dataset_parents_compare}
+\end{figure}
+}
+
+\frame{\frametitle{Datasynthesizer: selected variables}
+\begin{figure}
+    \caption{No missings if parents $<$ 2}
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_frequency_optimize_variables_parents.pdf}}
+    \label{subfig:tuning_ds_variables_within_synthetic}
+\end{figure}
+}
+
+
+\subsection{CTGAN}\label{sec:sdg_ctgan}
+\frame[c]{\frametitle{}
+\centering
+Section \ref{sec:sdg}\ref{sec:sdg_ctgan}: Know your generator (CTGAN)
+}
+
+\frame{\frametitle{Tuning CTGAN}
+\begin{itemize}
+    \item Batch size (constant steps)
+    \item Epochs (constant batch size)
+    \item Dimensions (2 hyperparameters)
+    \begin{itemize}
+        \item embedding\_dim (int): Size of the random sample passed to the Generator. Defaults to 128.
+        \item dimensionality - 2 hyperparameters, but same value for each
+        \begin{itemize}
+            \item discriminator\_dim (tuple or list of ints): Size of the output samples for each one of the Discriminator Layers. A Linear Layer will be created for each one of the values provided. Defaults to (256, 256).
+            \item generator\_dim (tuple or list of ints): Size of the output samples for each one of the Residuals. A Resiudal Layer will be created for each one of the values provided. Defaults to (256, 256).  
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+}
+
+\frame{\frametitle{Batch size, epochs, and steps}
+\begin{table}[!h]
+    \rowcolors{1}{white}{lightgray}
+    \caption{}
+    \centering
+    \begin{tabular}{cllll}
+    \toprule
+    N & Batch size & Steps per Epoch & Epochs & Actual Steps \\
+    \midrule
+    5.000 & 100 & 50 & 60 & 3,000 \\
+    5.000 & 250 & 20 & 150 & 3,000 \\
+    5.000 & 500 & 10 & 300 & 3,000 \\
+    5.000 & 1.000 & 5 & 600 & 3,000 \\ \hline
+    5.000 & 500 & 10 & 100 & 1,000 \\
+    5.000 & 500 & 10 & 300 & 3,000 \\
+    5.000 & 500 & 10 & 600 & 6,000 \\
+    5.000 & 500 & 10 & 900 & 9,000 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+}
+
+% \section{Results}\label{sec:results}
+\frame{\frametitle{CTGAN: Effect of batch size (constant steps)}
+\begin{figure}
+    \resizebox{.75\textwidth}{!}{\includegraphics{../../ctgan/graphs/ctgan/ctgan_fidelity_optimize_batch_size.pdf}}
+    \label{ctgan_fidelity_optimize_batch_size}
+\end{figure}
+}
+
+\frame{\frametitle{CTGAN: Effect of epochs (constant batch size)}
+\begin{figure}
+    \resizebox{.75\textwidth}{!}{\includegraphics{../../ctgan/graphs/ctgan/ctgan_fidelity_optimize_epochs.pdf}}
+    \label{ctgan_fidelity_optimize_epochs}
+\end{figure}
+}
+
+\frame{\frametitle{CTGAN: Effect of dimensions}
+\begin{figure}
+    \resizebox{.7\textwidth}{!}{\includegraphics{../../ctgan/graphs/ctgan/ctgan_fidelity_optimize_dimensions.pdf}}
+    \label{ctgan_fidelity_optimize_dimensions}
+\end{figure}
+}
+
+\subsection{Synthpop}\label{sec:sdg_synthpop}
+\frame[c]{\frametitle{}
+\centering
+Section \ref{sec:sdg}\ref{sec:sdg_ctgan}: Know your generator (Synthpop)
+}
+
+\section{Conclusion}\label{sec:conclusion}
+\frame[c]{\frametitle{}
+\centering
+Section \ref{sec:conclusion}: Conclusion
+}
+
+
+\end{spacing}
+\end{document}
+

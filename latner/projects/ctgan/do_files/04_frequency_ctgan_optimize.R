@@ -35,7 +35,6 @@ copies = c(1)
 
 df_comparison <- data.frame()
 
-
 for (c in copies) {
   for (d in data) {
     df_ods <- read.csv(paste0(original_data,d,".csv"))

@@ -79,15 +79,15 @@ df_wide$description <- c("Raw (SD2011)",
                          "Last variables: eduspec-wkabdur",
                          "Last variables: wkabdur-eduspec",
                          "as.numeric(wkabdur) and last variable: eduspec",
-                         "+ 1 variable (20 values)",
-                         "+ 1 variable (25 values)",
-                         "+ 1 variable (30 values)",
-                         "+ 2 variable (20 values)",
-                         "+ 2 variable (25 values)",
-                         "+ 2 variable (30 values)",
-                         "+ 3 variable (20 values)",
-                         "+ 3 variable (25 values)",
-                         "+ 3 variable (30 values)"
+                         "+ 1 factor variable (20 values)",
+                         "+ 1 factor variable (25 values)",
+                         "+ 1 factor variable (30 values)",
+                         "+ 2 factor variable (20 values)",
+                         "+ 2 factor variable (25 values)",
+                         "+ 2 factor variable (30 values)",
+                         "+ 3 factor variable (20 values)",
+                         "+ 3 factor variable (25 values)",
+                         "+ 3 factor variable (30 values)"
 ) 
 
 

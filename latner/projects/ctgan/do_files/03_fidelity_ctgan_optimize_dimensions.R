@@ -64,13 +64,12 @@ for (c in copies) {
         # sds_list$syn[[j]] <- sds  # use when m>1
         sds_list$syn <- sds # use when m==1
         
-        utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 3)
+        utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 0)
         output <- data.frame(data = df,
                              copies = c,
                              embeddings = as.character(e),
                              dimensions = as.character(d),
-                             pmse = as.numeric(mean(utility_measure$pMSE)),
-                             specks = as.numeric(mean(utility_measure$SPECKS)))
+                             pmse = as.numeric(mean(utility_measure$pMSE)))
         df_fidelity <- rbind(df_fidelity,output)
       }
     }
@@ -82,24 +81,32 @@ write.csv(df_fidelity, paste0(tables,"ctgan_fidelity_dimensions.csv"), row.names
 # Graph ----
 
 df_fidelity <- read.csv(paste0(tables,"ctgan_fidelity_dimensions.csv"))
+df_fidelity$embeddings <- factor(as.character(df_fidelity$embeddings), levels = str_sort(unique(df_fidelity$embeddings), numeric = TRUE))
+
 
 df_fidelity_long <- df_fidelity %>%
   pivot_longer(!c(data,copies,dimensions,embeddings), names_to = "utility", values_to = "values")
 
-df_fidelity$embeddings <- factor(as.character(df_fidelity$embeddings), levels = str_sort(unique(df_fidelity$embeddings), numeric = TRUE))
+df_fidelity_long$dimensions = factor(as.factor(df_fidelity_long$dimensions),
+                                levels = c("[128]","[256]","[512]",
+                                           "[128, 128]","[256, 256]","[512, 512]",
+                                           "[128, 128, 128]","[256, 256, 256]","[512, 512, 512]")
+)
 
-df_graph <- ggplot(df_fidelity_long, aes(x = dimensions, y = values)) +
+
+df_graph <- ggplot(df_fidelity_long, aes(x = values, y = dimensions)) +
   geom_bar(stat="identity",position = position_dodge2()) +
-  facet_grid(embeddings ~ utility) +
-  # ylab("Kolmogorov-Smirnov (lower is better)") +
+  facet_wrap( ~ embeddings, labeller = label_both) +
   theme_bw() +
-  ylim(0,1.25) +
-  geom_text(aes(label = round(values,2)), vjust = -.5, size = 2) +
+  scale_y_discrete(limits = rev(levels(df_fidelity_long$dimensions))) +
+  xlim(0,1) +
+  xlab("pMSE") +
+  geom_text(aes(label = round(values,2)), hjust = -.5, size = 2.5) +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.title = element_blank(),
         legend.key.width=unit(1, "cm"),
-        axis.text.x = element_text(angle = 90, hjust = 1),
+        # axis.text.x = element_text(angle = 90, hjust = 1),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )

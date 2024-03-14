@@ -46,12 +46,11 @@ for (c in copies) {
         # sds_list$syn[[j]] <- sds  # use when m>1
         sds_list$syn <- sds # use when m==1
       
-      utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 3)
+      utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 0)
       output <- data.frame(data = d,
                            copies = c,
                            epochs = as.character(e),
-                           pmse = as.numeric(mean(utility_measure$pMSE)),
-                           specks = as.numeric(mean(utility_measure$SPECKS)))
+                           pmse = as.numeric(mean(utility_measure$pMSE)))
       df_fidelity <- rbind(df_fidelity,output)
       }
     }
@@ -70,8 +69,7 @@ df_fidelity_long <- df_fidelity %>%
 
 df_graph <- ggplot(df_fidelity_long, aes(x = epochs, y = values)) +
   geom_bar(stat="identity",position = position_dodge2()) +
-  facet_wrap( ~ utility, labeller = labeller(.rows = label_both)) +
-  # ylab("Kolmogorov-Smirnov (lower is better)") +
+  ylab("pMSE") +
   theme_bw() +
   ylim(0,1.25) +
   geom_text(aes(label = round(values,2)), vjust = -.5) +

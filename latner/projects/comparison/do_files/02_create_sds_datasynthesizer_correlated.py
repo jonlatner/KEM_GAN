@@ -50,13 +50,9 @@ Experiments were performed using XX parameters:
 """
 
 data = ["sd2011","sd2011_clean","sd2011_clean_small"] # Real data
+data = ["sd2011"] # Real data
 copies = [5]
-parents = [1,2]
-epsilon = [0]
-
-data = ["sd2011_clean_small_numeric"] # Real data
-copies = [5]
-parents = [2]
+parents = [3]
 epsilon = [0]
 
 for d in data:
@@ -70,7 +66,7 @@ for d in data:
                     
                     j = j + 1
         
-                    my_seed = my_seed + 3
+                    my_seed = my_seed + 1
                     np.random.seed(my_seed)
                     random.seed(my_seed)
         
@@ -146,6 +142,7 @@ for d in data:
             # save duration by data set
             df_duration_out = pd.DataFrame(df_duration)
             df_duration_out.columns = ['type', 'data', 'parents','epsilon', "copies", "j", "duration"]    
-            filename_duration = f"duration_datasynthesizer_correlated_data_{d}.csv"
+            filename_duration = f"duration_datasynthesizer_correlated_data_{d}_parents_3.csv"
             df_duration_out.to_csv(os.path.join(duration, filename_duration), index=False)
-
+            
+            
