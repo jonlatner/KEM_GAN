@@ -11,6 +11,7 @@ rm *.toc
 rm *.upa
 rm *.aux
 rm *.out
+rm *.vrb
 
 
 

@@ -29,12 +29,12 @@ tables = "tables/datasynthesizer/"
 #functions
 options(scipen=999) 
 
+
 # Load utility from datasynthesizer data ----
 
-parents = c(0,1,2,3)
+parents = c(1,2,3,4)
 privacy = c(0)
-# data <- c("sd2011","sd2011_clean","sd2011_clean_small","sd2011_clean_small_categorical")
-data <- c("sd2011","sd2011_clean","sd2011_clean_small")
+data <- c("sd2011")
 c=1 # multiple copies
 
 df_comparison <- data.frame()
@@ -60,6 +60,37 @@ for (d in data) {
                            parents = as.character(k),
                            pmse = mean(as.numeric(utility_measure$pMSE)))
       df_comparison <- rbind(df_comparison,output)
+    }
+  }
+}
+
+
+parents = c(1,2,3)
+privacy = c(0)
+data <- c("sd2011","sd2011_clean","sd2011_clean_small")
+c=5 # multiple copies
+
+for (d in data) {
+  df_ods <- read.csv(paste0(original_data,d,".csv"))
+  sds_list <- readRDS(paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
+  for (e in privacy) {
+    for (k in parents) {
+      for (j in 1:c) {
+        sds <- read.csv(paste0(synthetic_data,"sds_datasynthesizer_",d,"_k_",k,"_e_",e,"_m_",c,"_n_",j,".csv"))
+        sds[sds == ""] <- NA
+        sds <- sds %>%
+          mutate_if(is.character, as.factor)
+        sds_list$syn[[j]] <- sds  # use when m>1
+        # sds_list$syn <- sds # use when m==1
+      }
+      
+      utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 0)
+      output <- data.frame(data = d,
+                           copies = c,
+                           privacy = as.character(e),
+                           parents = as.character(k),
+                           pmse = mean(as.numeric(utility_measure$pMSE)))
+      df_comparison <- rbind(df_comparison,output)
       
       utility <- utility.tables(sds_list, df_ods, tables = "twoway", plot.stat = "pMSE")
       utility_plot <- data.frame(utility$utility.plot$data)
@@ -68,7 +99,7 @@ for (d in data) {
       utility_plot$parents <- k
       utility_plot$data <- d
       df_fidelity_plot <- rbind(df_fidelity_plot,utility_plot)
-
+      
     }
   }
 }
@@ -79,15 +110,12 @@ df_comparison <- df_comparison %>%
 write.csv(df_comparison, paste0(tables,"datasynthesizer_fidelity_optimize_dataset.csv"), row.names=FALSE)
 write.csv(df_fidelity_plot, paste0(tables,"datasynthesizer_fidelity_twoway_dataset.csv"), row.names=FALSE)
 
-# Graph ----
+# Graph (sd2011) ----
 
 df_comparison <- read.csv(paste0(tables,"datasynthesizer_fidelity_optimize_dataset.csv"))
 
-df_comparison$copies <- factor(as.character(df_comparison$copies))
-df_comparison$parents <- factor(as.character(df_comparison$parents))
-
 df_comparison_long <- df_comparison %>%
-  filter(data == "sd2011" & parents != "0") %>%
+  filter(data=="sd2011" & copies == "1") %>%
   pivot_longer(!c(data,copies,privacy,parents), names_to = "utility", values_to = "values")
 
 df_graph <- ggplot(df_comparison_long, aes(x = parents, y = values)) +
@@ -107,11 +135,14 @@ df_graph <- ggplot(df_comparison_long, aes(x = parents, y = values)) +
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_fidelity_optimize_dataset_parents_compare.pdf"), height = 4, width = 6)
+ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_fidelity_optimize_dataset_parents.pdf"), height = 4, width = 6)
 
+# Graph (different data) ----
+
+df_comparison <- read.csv(paste0(tables,"datasynthesizer_fidelity_optimize_dataset.csv"))
 
 df_comparison_long <- df_comparison %>%
-  filter(parents != "0") %>%
+  filter(copies == "5") %>%
   pivot_longer(!c(data,copies,privacy,parents), names_to = "utility", values_to = "values") %>%
   mutate(data = ifelse(data == "sd2011", yes = "sd2011(a)",
                        ifelse(data == "sd2011_clean", yes = "sd2011(b)",
@@ -136,35 +167,9 @@ df_graph
 
 ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_fidelity_optimize_dataset_parents_compare.pdf"), height = 4, width = 6)
 
-# Graph (two-way) ----
 
-df_fidelity_plot <- read.csv(paste0(tables,"datasynthesizer_fidelity_twoway_dataset.csv"))
 
-data <- c("sd2011","sd2011_clean","sd2011_clean_small")
-for (d in data) {
-  df_plot_graph <- df_fidelity_plot %>%
-    filter(data == d & privacy == 0 & parents == 2)
-  
-  df_graph <- ggplot(df_plot_graph, aes(x = X2, y = X1, fill = val)) + 
-    geom_tile() +
-    scale_fill_gradient(low = "gray95", high = "red") +
-    xlab("") +
-    ylab("") +
-    theme_minimal() + 
-    theme(axis.text.x = element_text(size = 10, angle = 90, hjust = 0.9, vjust = 0.2), 
-          axis.text.y = element_text(size = 10, margin = margin(r = 0)),
-          title = element_text(size = 11),
-          legend.title = element_blank(),
-          panel.grid.major = element_blank(), 
-          panel.grid.minor = element_blank())
-  
-  ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_fidelity_twoway_",d,".pdf"), height = 4, width = 6)
-}
-
-df_graph
-
-# Presentation graph (two-way) ----
-
+# Graph (two-way presentation) ----
 
 df_fidelity_plot <- read.csv(paste0(tables,"datasynthesizer_fidelity_twoway_dataset.csv"))
 

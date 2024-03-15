@@ -50,7 +50,7 @@ Experiments were performed using XX parameters:
 """
 
 data = ["sd2011","sd2011_clean","sd2011_clean_small"] # Real data
-data = ["sd2011"] # Real data
+data = ["sd2011_clean"] # Real data
 copies = [5]
 parents = [3]
 epsilon = [0]

@@ -13,6 +13,37 @@
 \usepackage[cal=pxtx, scr=dutchcal]{mathalpha}
 
 
+\usepackage{listings} %include R code
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\tiny,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                 
+    columns=fullflexible,
+    frame=single,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
 \newcommand{\btVFill}{\vskip0pt plus 1filll}
 
 \title[Its complicated: Know your data and know your generator. Comparing efficiency, utility, and privacy between synthetic data packages and methods]{Its complicated: Know your data and know your generator}
@@ -70,6 +101,67 @@
 \centering
 Section \ref{sec:intro}: Introduction
 }
+
+\frame{\frametitle{Synthetic data: Whats the goal?}
+
+\begin{itemize}
+    \item According to Rubin (1993), there are multiple goals for generating synthetic data
+    \begin{itemize}
+        \item For the survey participants, they could be confident that their data would never be released, which could increase the likelihood not only of more survey respondents, but also more truthful answers.  
+        \item For the `snooper' or illegitimate user, the value of the data would be eliminated because they could not discover actual, confidential information.  
+        \item For the legitimate user, the value of the data would increase not only because the data are easier to access, but also more accurate than the actual data. 
+        \item For the researcher, synthetic data can be used to develop code before they have access to the original data.  As a result, high quality synthetic data can increase knowledge creation by allowing more people to use better data.  
+    \end{itemize}
+    \item Synthetic data can accelerate development. Good quality synthetic data can significantly accelerate data science projects and reduce the cost of development...it contributes to data democratisation (Jordan et al., 2022).
+\end{itemize}
+}
+
+
+\frame{\frametitle{Synthetic data: Whats the problem?}
+
+\begin{itemize}
+    \item For the survey participants, it is not known whether their participation is affected by the public, protected release of their data
+    \item For the snooper, without denying the importance of so-called `intruder' studies that evaluate risk, reports of malicious re-identifications are rare to non-existent (Francis and Wagner, XXXX)
+    \item For the legitimate user, more accurate data can only be true in the context that Rubin originally considered: if you had design variables available for the entire frame and you condition on them when generating new data. This almost never applies in practice.
+    \item For the researcher, the theoretical and realistic goal are the same: synthetic data can make time with original data more efficient and effective.  
+    \item As a result, even if synthetic data cannot be a replacement for real data, high quality synthetic data can be a valuable tool to accelerate knowledge creation.  
+\end{itemize}
+}
+
+\frame{\frametitle{The good news - making synthetic data is easy}
+
+\begin{itemize}
+    \item \url{Gretel.ai}: The synthetic data platform for developers. Generate artificial datasets with the same characteristics as real data, so you can develop and test AI models without compromising privacy.
+    \item \url{Mostly.ai}: Synthetic Data. Better than real. Still struggling with real data? Use existing data for synthetic data generation. Synthetic data is more accessible, more flexible, and simply...smarter.
+    \item \url{Statice.ai}: Generating synthetic data comes down to learning the joint probability distribution in an original, real dataset to generate a new dataset with the same distribution.  The more complex the real dataset, the more difficult it is to map dependencies correctly. Deep learning models such as generative adversarial networks (GAN) and variational autoencoders (VAE) are well suited for synthetic data generation.
+    \item \url{hazy.com}: Synthetic data does not contain any real data points so can be shared freely. Say goodbye to lengthy governance processes associated with real data.  Specifically, Hazy data is designed to preserve all the patterns, statistical properties and correlations in the source data, so that it can be used as a drop-in replacement for it.
+    \item DataSynthesizer: The distinguishing feature of DataSynthesizer is its usability — the data owner does not have to specify any parameters to start generating and sharing data safely and effectively.
+\end{itemize}
+}
+
+\frame{\frametitle{The bad news - making synthetic data is hard}
+
+\begin{itemize}
+    \item According to the Alan Turing Institute (Jordan et al., 2022)
+    \begin{itemize}
+        \item Synthetic data is not automatically private. 
+        \item Evaluating the privacy can be problematic.
+        \begin{itemize}
+            \item Privacy is a function of the mechanism that generated a synthetic dataset.
+            \item Can privacy be evaluated by comparing synthetic and real data? 
+        \end{itemize}
+    \end{itemize}
+    \item There is no one measure for utility, fidelity, or privacy
+    \begin{itemize}
+        \item Utility and fidelity are sometimes called general/broad and specific/narrow measures within the single concept of utility (Snoke et al., 2018; Drechsler and Reiter, 2009)
+        \item One example of utility is propensity score mean-squared error (pMSE)
+        \item One example of fidelity is confidence interval overlap (CIO)
+    \end{itemize}
+    \item Efficiency (duration in time) is important and often ignored.  The algorithm should scale well with the dimension of the data space in a relational way, not exponential way
+\end{itemize}
+}
+
+
 
 \frame{\frametitle{Compare 3 Synthetic Data Generator (SDG)}
 \begin{itemize}
@@ -307,8 +399,73 @@ Section \ref{sec:sdg}\ref{sec:sdg_ctgan}: Know your generator (CTGAN)
 \subsection{Synthpop}\label{sec:sdg_synthpop}
 \frame[c]{\frametitle{}
 \centering
-Section \ref{sec:sdg}\ref{sec:sdg_ctgan}: Know your generator (Synthpop)
+Section \ref{sec:sdg}\ref{sec:sdg_synthpop}: Know your generator (Synthpop)
 }
+
+\frame{\frametitle{Methodology}
+According to the online description, Synthpop follows the two-stage process described by Rubin.  
+
+However, if one actually looks at the code, there is an important difference.  
+
+Instead of replacing $y$ with $y^*$ generated by the model, Synthpop replaces $y$ with the leaf number from the regression tree (line 523-523).  
+
+Then, Synthpop predicts the leaf number (line 527) for $y$.  
+
+Finally, Synthpop replaces the predicted leaf number with sampled values of $y$ from the actual data in that leaf (line 549).  
+
+The point: the second-stage replaces values in the synthetic data ($D^*)$ with values in the actual data ($D$).
+
+}
+
+
+
+% We are not suggesting that we are revealing some sort of hidden secret.  Even if many users may not be aware, not only is the implementation used in Synthpop based on Reiter \cite{reiter2005using}, it is also well documented in the code with comments.  We do note that the code does not necessarily match with the methodological description, which more generally follows Rubin \cite{rubin1993statistical}.  However, we also believe that one reason why Synthpop has such high levels of utility is because the SDG used in Synthpop samples from the actual data and, related, this implementation does not strictly follow Rubin \cite{rubin1993statistical}.   Therefore, our point is that Synthpop will by definition produce synthetic data sets with higher levels of utility than SDGs that more strictly follow Rubin and only sample from predicted values.\jd{You could make a similar argument for Datasynthesizer if you wanted to. For the categorical variables it also only samples original values. Of course it is true that the low quality of DataSynthesizer partly stems from the fact that it uses a very naive approach to deal with continuous variables, which indeed does not sample original values.}  While Synthpop is a more extreme example, where original observations can theoretically be included in the synthetic data as a result of the mechanism, CART models more generally do not meet definition of Differential Privacy.\jd{I think you can tweak them to be DP. GANs and Bayesian hierarchical models themselves also do not satisfy DP without further tweaking.}
+
+
+\begin{frame}[fragile]
+    \frametitle{Synthpop (syn.cart)}
+    \url{https://rdrr.io/cran/synthpop/src/R/functions.syn.r}
+    \begin{lstlisting}[language=R]
+syn.cart <- function(y, x, xp, smoothing = "", proper = FALSE, 
+                     minbucket = 5, cp = 1e-08, ...)
+fit <- rpart(y ~ ., data = as.data.frame(cbind(y, x)), method = "anova",
+                 minbucket = minbucket, cp = cp, ...)
+# get leaf number for observed data
+leafnr  <- floor(as.numeric(row.names(fit$frame[fit$where,])))
+# replace yval with leaf number in order to predict later node number 
+# rather than yval (mean y for observations classified to a leaf) 
+fit$frame$yval <- as.numeric(row.names(fit$frame))
+# predict leaf number
+nodes       <- predict(object = fit, newdata = xp)
+
+...
+
+uniquenodes <- unique(nodes)
+new  <- vector("numeric",nrow(xp))
+    for (j in uniquenodes) {
+      donors <- y[leafnr == j] # values of y in a leaf
+      new[nodes == j] <- resample(donors, size = sum(nodes == j), replace = TRUE)
+    }
+
+    \end{lstlisting}
+\end{frame}
+
+\frame{\frametitle{Method and code may not be the same}
+
+The code appears to indicate that the synthetic sample is drawn from the observed data in a predicted leaf, rather than the predicted y value.
+
+Is this different than the methodological description?
+
+Does this violate the definition of synthetic data, described above?
+
+{\bf The point (and question): High levels of utility in synthpop may be the result of code that implements the method in a way that is not consistent with the definition of synthetic data}
+
+If true, then utility in Synthpop may be artificially high (which lowers the relative advantage to other data synthesizers)
+
+More research is needed 
+}
+
+
 
 \section{Conclusion}\label{sec:conclusion}
 \frame[c]{\frametitle{}
