@@ -29,11 +29,10 @@ setwd(main_dir)
 
 # Load original data ----
 
-data <- c("sd2011","sd2011_clean","sd2011_clean_small")
+data <- c("sd2011_clean_small")
 copies = c(5)
 
 df_comparison <- data.frame()
-
 
 for (c in copies) {
   for (d in data) {
@@ -84,22 +83,13 @@ round2 = function(x, digits) {
 }
 
 df_graph_data <- df_comparison %>%
-  filter(variables %in% c("age","income","height","weight","wkabdur","mmarital","mmarr","msepdiv")) %>%
-  mutate(drop = ifelse((variables == "mmarr" | variables == "msepdiv") & pct == 0, yes = 1, no = 0)) %>%
-  filter(drop == 0) %>%
-  mutate(value2 = ifelse((variables == "mmarr" | variables == "msepdiv"), yes = round2(as.numeric(as.character(value)),0), no = NA)) %>%
-  mutate(value = ifelse(!is.na(value2), yes = as.character(value2), no = as.character(value))) %>%
-  filter(dataset == "sd2011_clean_small") 
+  filter(variables %in% c("income","height","edu","sex"))
 
-df_graph_data %>% filter(variables %in% c("mmarr","msepdiv")) %>% print(n=15)
 df_graph_data$value <- factor(as.character(df_graph_data$value), levels = str_sort(unique(df_graph_data$value), numeric = TRUE))
 df_graph_data$value <- fct_relevel(df_graph_data$value, "NA", after = Inf)
 
 
 df_graph <- ggplot(df_graph_data, aes(x = value, y = pct, fill = data, color = data, group = data)) +
-  # geom_bar(data = subset(df_compare, data=="observed"), position = position_dodge(width = .9), stat = "identity") +
-  # geom_line(data = subset(df_compare, data!="observed")) +
-  # geom_line() +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_grid( ~ variables, scales = "free", labeller = labeller(.rows = label_both)) +
   xlab("") +
@@ -108,11 +98,12 @@ df_graph <- ggplot(df_graph_data, aes(x = value, y = pct, fill = data, color = d
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.key.width=unit(1, "cm"),
-        axis.text.x = element_text(angle = 90,vjust=.5),
+        legend.margin = margin(t = -75),
+        axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"synthpop_frequency_optimize_variables.pdf"), height = 4, width = 6)
+ggsave(plot = df_graph, paste0(graphs,"synthpop_frequency_optimize_variables.pdf"), height = 4, width = 10)

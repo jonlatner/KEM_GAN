@@ -33,6 +33,7 @@ options(scipen=999)
 
 data <- c("sd2011_clean_small","sd2011_clean_small_categorical")
 data <- c("sd2011_clean_small","sd2011_clean_small_numeric","sd2011_clean_small_categorical")
+data <- c("sd2011_clean_small")
 df_compare <- data.frame()
 df_fidelity <- data.frame()
 c=5 # multiple copies
@@ -57,11 +58,10 @@ for (d in data) {
         # sds_list$syn <- sds # use when m==1
       }
       
-      utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 3)
+      utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 0)
       output <- data.frame(data = d,
                            sdg = "DataSynthesizer",
-                           pmse = mean(as.numeric(utility_measure$pMSE)),
-                           specks = mean(as.numeric(utility_measure$SPECKS)))
+                           pmse = mean(as.numeric(utility_measure$pMSE)))
       df_compare <- rbind(df_compare,output)
       
       utility <- utility.tables(sds_list, df_ods, tables = "twoway")
@@ -96,11 +96,10 @@ for (d in data) {
     utility_plot$sdg <- "CTGAN"
     df_fidelity <- rbind(df_fidelity,utility_plot)
     
-    utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 3)
+    utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 0)
     output <- data.frame(data = d,
                          sdg = "CTGAN",
-                         pmse = as.numeric(mean(utility_measure$pMSE)),
-                         specks = as.numeric(mean(utility_measure$SPECKS)))
+                         pmse = as.numeric(mean(utility_measure$pMSE)))
     df_compare <- rbind(df_compare,output)
   }
   
@@ -112,11 +111,10 @@ for (d in data) {
   df_ods <- read.csv(paste0(original_data,d,".csv"))
   sds_list <- readRDS(paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
   
-  utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 3)
+  utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 0)
   output <- data.frame(data = d,
                        sdg = "Synthpop",
-                       pmse = mean(as.numeric(utility_measure$pMSE)),
-                       specks = mean(as.numeric(utility_measure$SPECKS)))
+                       pmse = mean(as.numeric(utility_measure$pMSE)))
   df_compare <- rbind(df_compare,output)
   
   utility <- utility.tables(sds_list, df_ods, tables = "twoway")
@@ -129,17 +127,18 @@ for (d in data) {
 # Graph ----
 
 df_compare_graph <- df_compare %>%
+  filter(data == "sd2011_clean_small") %>%
   pivot_longer(!c(data,sdg), names_to = "utility", values_to = "values")
 
-df_compare_graph$data <- factor(df_compare_graph$data, 
-                                levels = c("sd2011_clean_small", "sd2011_clean_small_numeric", "sd2011_clean_small_categorical"),
-                                labels = c("SD2011","SD2011 (numeric)","SD2011 (categorical)"))
+# df_compare_graph$data <- factor(df_compare_graph$data, 
+#                                 levels = c("sd2011_clean_small", "sd2011_clean_small_numeric", "sd2011_clean_small_categorical"),
+#                                 labels = c("SD2011","SD2011 (numeric)","SD2011 (categorical)"))
 
-df_graph <- ggplot(df_compare_graph, aes(x = sdg, y = values, fill = data)) +
+df_graph <- ggplot(df_compare_graph, aes(x = sdg, y = values)) +
   geom_bar(stat="identity",position = position_dodge2()) +
-  facet_wrap( ~ utility, labeller = labeller(.rows = label_both)) +
-  # ylab("Kolmogorov-Smirnov (lower is better)") +
   theme_bw() +
+  xlab("") +
+  ylab("sPMSE") +
   ylim(0,1.25)+
   geom_text(aes(label = round(values,2)), vjust = -.5, position =  position_dodge2(.9)) +
   theme(panel.grid.minor = element_blank(), 
@@ -158,16 +157,16 @@ ggsave(plot = df_graph, paste0(graphs,"graph_fidelity_compare_dataset.pdf"), hei
 # Graph (two-way) ----
 
 df_fidelity_graph <- df_fidelity %>%
-  filter(sdg!="CTGAN") %>%
-  filter(data == "sd2011_clean_small_categorical")
+  # filter(sdg!="CTGAN") %>%
+  filter(data == "sd2011_clean_small")
   
-df_fidelity_graph$data <- factor(df_fidelity_graph$data, 
-                                levels = c("sd2011_clean_small", "sd2011_clean_small_numeric"),
-                                labels = c("SD2011","SD2011 (numeric)"))
+# df_fidelity_graph$data <- factor(df_fidelity_graph$data, 
+#                                 levels = c("sd2011_clean_small", "sd2011_clean_small_numeric"),
+#                                 labels = c("SD2011","SD2011 (numeric)"))
 
 df_graph <- ggplot(df_fidelity_graph, aes(x = X2, y = X1, fill = val)) + 
   geom_tile() +
-  facet_wrap( ~ sdg,ncol = 1) +
+  facet_wrap( ~ sdg,nrow = 1) +
   scale_fill_gradient(low = "gray95", high = "red") +
   xlab("") +
   ylab("") +
@@ -180,4 +179,4 @@ df_graph <- ggplot(df_fidelity_graph, aes(x = X2, y = X1, fill = val)) +
         panel.grid.minor = element_blank())
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"graph_fidelity_compare_categorical_variables.pdf"), height = 6, width = 8)
+ggsave(plot = df_graph, paste0(graphs,"graph_fidelity_twoway_compare.pdf"), height = 4, width = 10)
