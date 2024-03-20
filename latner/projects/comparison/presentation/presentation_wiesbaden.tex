@@ -148,23 +148,18 @@ Section \ref{sec:intro}: Introduction
 
 \frame{\frametitle{Our goal is to illustrate the challenges}
 \begin{itemize}
-    \item Evaluate 3 synthetic data generators (SDG)
-    \begin{itemize}
-        \item DataSynthesizer 
-        \item CTGAN 
-        \item Synthpop
-    \end{itemize}
-    \item Know your data
-    \begin{itemize}
-        \item Cleaning/pre-processing
-        \item Utility: Propensity score mean-squared error (pMSE) - the mean-squared difference between the estimated probabilities and the true proportion of the synthetic data in the combined records (0.5).  Lower values indicate better performance.
-        % \item Fidelity: Confidence interval overlap (CIO) - estimate the same regression using synthetic and original data.  Compare the \% overlap in the confidence interval.  Higher values are better.
-    \end{itemize}
     \item Know your generator
     \begin{itemize}
-        \item How does it actually create data?
-        \item How efficient is it with respect to data dimensionality?
-        \item Thinking about what this means for privacy
+        \item Evaluate 3 synthetic data generators (SDG): DataSynthesizer, CTGAN, Synthpop
+        \item How do they actually create data?
+        \item How efficient are they with respect to data dimensionality?
+        \item Thinking about what this means for privacy (not today)
+    \end{itemize}
+    \item Know your data (1 dataset, 2 utility measures)
+    \begin{itemize}
+        \item Cleaning/pre-processing
+        \item Utility: Propensity score mean-squared error (pMSE) - Append the original and synthetic datasets. Creating an indicator variable for original/synthetic datasets.  For each record in the combined dataset ($n$) the probability of being in the synthetic dataset is computed via logistic regression; this is the propensity score ($p$).  Lower scores are better.  ($pMSE = \frac{1}{N}\sum_{i=1}^{N}[\hat{p}_i - c]^2$)
+        \item Ratio of counts/estimates (ROC/ROE) - Calculate the ratio of each value in a given variable for both synthetic/original datasets.  Then, calculate the ratio of each value for each dataset, and divide the smaller of these two estimates by the larger one.  Higher scores are better.  ($ROE = \frac{min(y_orig^1,y_synth^1)}{max(y_orig^1,y_synth^1)}$)
     \end{itemize}
 \end{itemize}
 }
@@ -196,10 +191,9 @@ Section \ref{sec:data}: Know your data (SD2011)
             \item \texttt{smoke} - Does not smoke is NO, but \texttt{nociga} - 20/22 cigarettes per day 
             \item \texttt{bmi} = 451, but \texttt{height} = 149 and \texttt{weight} = NA (999)
         \end{itemize}
-        \item Includes generated variables
+        \item Includes generated variables (Can be problematic for SDGs)
         \begin{itemize}
             \item \texttt{bmi,agegr}
-            \item Can be problematic for SDG 
         \end{itemize}
     \end{itemize}
 \end{itemize}
@@ -248,16 +242,6 @@ Variable type: The Bayesian network only works with discrete variables. One way 
 \includegraphics[scale=.35]{../graphs/figure_1.PNG}
 \end{figure}
 }
-
-% \frame{\frametitle{Efficiency - Duration (in seconds)}
-% \vskip -2mm
-% \begin{table}[!h]
-%     \centering
-%     \rowcolors{1}{white}{lightgray}
-%     \resizebox{\textwidth}{!}{\input{../tables/table_sd2011_duration_v2.tex}}
-%     \label{table_sd2011_duration.tex}
-% \end{table}
-% }
 
 
 \frame{\frametitle{SD2011 - pMSE by number of parents}

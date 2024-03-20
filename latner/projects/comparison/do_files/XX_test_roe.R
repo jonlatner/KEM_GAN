@@ -67,191 +67,7 @@ roc_univariate <- function(original, synthetic, var_num) {
   return(mean(combined$roc))
 }
 
-data <- c("sd2011_clean_small")
-
-# Load synthetic data from CTGAN (based on optimized parameterization) ----
-
-copies = c(5)
-e = c(600)
-
-df_ctgan <- data.frame()
-
-for (c in copies) {
-  for (d in data) {
-    df_ods <- read.csv(paste0(original_data,d,".csv"))
-    sds_list <- readRDS(paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
-      for (j in 1:c) {
-        sds <- read.csv(paste0(synthetic_data,"ctgan/sds_ctgan_data_",d,"_epochs_",e,"_m_",c,"_n_",j,".csv"))
-        sds[sds == ""] <- NA
-        sds <- sds %>%
-          mutate_if(is.character, as.factor)
-        sds_list$syn[[j]] <- sds  # use when m>1
-        # sds_list$syn <- sds # use when m==1
-      }
-      
-      df_temp <- compare(sds_list, df_ods) 
-      df_compare <- data.frame(df_temp$tables) %>%
-        rownames_to_column(var = "data") %>%
-        pivot_longer(cols = starts_with(names(df_ods))) %>%
-        rename(pct = value) %>%
-        # separate(name, into = c("variables", "value"), sep = "\\.\\.|\\.", remove = FALSE)
-        separate(name, into = c("variables", "value"), sep = "\\.\\.|\\.", remove = FALSE, extra = "merge") %>%
-        mutate(contains_double_dot = if_else(str_detect(name, fixed("..")), 1, 0),
-               value_new = as.numeric(value),
-               value_new = as.character(if_else(contains_double_dot == 1, -1*value_new, value_new)),
-               value_new = if_else(is.na(value_new), value, value_new),
-               value_new = if_else(value_new == "miss", NA, value_new),
-        ) %>%
-        select(-name,-contains_double_dot,-value) %>%
-        rename(value=value_new) %>%
-        mutate(value = ifelse(value=="miss.NA", yes = "NA", no = value))
-      
-      # Splitting the string
-      # split_string <- strsplit(as.character(df_compare$Variable), ": S_pMSE")
-      # df_compare$Variable <- sapply(split_string, `[`, 1)
-
-      df_compare$type <- df_compare$data
-      df_compare$data <- d
-      df_ctgan <- rbind(df_ctgan,df_compare) %>%
-        mutate(type = ifelse(type == "synthetic", yes = "CTGAN", no = type))
-  }
-}
-
-# Load synthetic data from DataSynthesizer (based on optimized parameterization) ----
-
-e = 0
-k = 2
-
-df_datasynthesizer <- data.frame()
-
-for (c in copies) {
-  for (d in data) {
-    df_ods <- read.csv(paste0(original_data,d,".csv"))
-    sds_list <- readRDS(paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
-      for (j in 1:c) {
-        sds <- read.csv(paste0(synthetic_data,"datasynthesizer/sds_datasynthesizer_",d,"_k_",k,"_e_",e,"_m_",c,"_n_",j,".csv"))
-        sds[sds == ""] <- NA
-        sds <- sds %>%
-          mutate_if(is.character, as.factor)
-        sds_list$syn[[j]] <- sds  # use when m>1
-        # sds_list$syn <- sds # use when m==1
-      }
-      
-      df_temp <- compare(sds_list, df_ods) 
-      df_compare <- data.frame(df_temp$tables) %>%
-        rownames_to_column(var = "data") %>%
-        pivot_longer(cols = starts_with(names(df_ods))) %>%
-        rename(pct = value) %>%
-        # separate(name, into = c("variables", "value"), sep = "\\.\\.|\\.", remove = FALSE)
-        separate(name, into = c("variables", "value"), sep = "\\.\\.|\\.", remove = FALSE, extra = "merge") %>%
-        mutate(contains_double_dot = if_else(str_detect(name, fixed("..")), 1, 0),
-               value_new = as.numeric(value),
-               value_new = as.character(if_else(contains_double_dot == 1, -1*value_new, value_new)),
-               value_new = if_else(is.na(value_new), value, value_new),
-               value_new = if_else(value_new == "miss", NA, value_new),
-        ) %>%
-        select(-name,-contains_double_dot,-value) %>%
-        rename(value=value_new) %>%
-        mutate(value = ifelse(value=="miss.NA", yes = "NA", no = value))
-
-      # Splitting the string
-      # split_string <- strsplit(as.character(df_compare$Variable), ": S_pMSE")
-      # df_compare$Variable <- sapply(split_string, `[`, 1)
-      
-      df_compare$type <- df_compare$data
-      df_compare$data <- d
-      df_datasynthesizer <- rbind(df_datasynthesizer,df_compare) %>%
-        mutate(type = ifelse(type == "synthetic", yes = "DataSynthesizer", no = type))
-
-  }
-}
-
-# Load synthetic data from other data synthesizers ----
-
-df_synthpop <- data.frame()
-
-for (c in copies) {
-  for (d in data) {
-    df_ods <- read.csv(paste0(original_data,d,".csv"))
-    sds_list <- readRDS(paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
-    for (j in 1:c) {
-      sds <- read.csv(paste0(synthetic_data,"synthpop/sds_synthpop_",d,"_m_",c,"_n_",j,".csv"))
-      sds[sds == ""] <- NA
-      sds <- sds %>%
-        mutate_if(is.character, as.factor)
-      sds_list$syn[[j]] <- sds  # use when m>1
-      # sds_list$syn <- sds # use when m==1
-    }
-    
-    df_temp <- compare(sds_list, df_ods) 
-    df_compare <- data.frame(df_temp$tables) %>%
-      rownames_to_column(var = "data") %>%
-      pivot_longer(cols = starts_with(names(df_ods))) %>%
-      rename(pct = value) %>%
-      separate(name, into = c("variables", "value"), sep = "\\.\\.|\\.", remove = FALSE, extra = "merge") %>%
-      mutate(contains_double_dot = if_else(str_detect(name, fixed("..")), 1, 0),
-             value_new = as.numeric(value),
-             value_new = as.character(if_else(contains_double_dot == 1, -1*value_new, value_new)),
-             value_new = if_else(is.na(value_new), value, value_new),
-             value_new = if_else(value_new == "miss", NA, value_new),
-      ) %>%
-      select(-name,-contains_double_dot,-value) %>%
-      rename(value=value_new) %>%
-      mutate(value = ifelse(value=="miss.NA", yes = "NA", no = value))
-    
-    df_compare$type <- df_compare$data
-    df_compare$data <- d
-    df_synthpop <- rbind(df_synthpop,df_compare) %>%
-      mutate(type = ifelse(type == "synthetic", yes = "Synthpop", no = type))
-    
-  }
-}
-
-df_synthpop
-
-# Graph ----
-
-df_comparison <- rbind(df_ctgan, df_datasynthesizer, df_synthpop)
-names(df_comparison) <- tolower(names(df_comparison))
-
-df_comparison_ods <- filter(df_comparison,type == "observed") %>%
-  select(-type)
-
-df_comparison_ods <- unique(df_comparison_ods)
-df_comparison_ods$type = "observed"
-
-df_comparison_sds <- filter(df_comparison,type != "observed")
-df_comparison <- rbind(df_comparison_ods, df_comparison_sds)
-
-df_graph_data <- df_comparison %>%
-  filter(type != "Synthpop") %>%
-  filter(variables %in% c("edu","income","sex","height")) 
-
-df_graph_data$value <- factor(as.character(df_graph_data$value), levels = str_sort(unique(df_graph_data$value), numeric = TRUE))
-df_graph_data$value <- fct_relevel(df_graph_data$value, "NA", after = Inf)
-
-df_graph <- ggplot(df_graph_data, aes(x = value, y = pct, fill = type)) +
-  geom_bar(stat = "identity", position = position_dodge(width = .9)) +
-  facet_wrap( ~ variables, scales = "free",nrow = 1) +
-  xlab("") +
-  ylab("") +
-  theme_bw() +
-  theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",         axis.title.x=element_blank(),
-        legend.key.width=unit(1, "cm"),
-        legend.margin = margin(t = -75),
-        axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1),
-        axis.line.y = element_line(color="black", linewidth=.5),
-        axis.line.x = element_line(color="black", linewidth=.5)
-  )
-
-df_graph
-
-ggsave(plot = df_graph, paste0(graphs,"frequency_optimize_variables_ds_ctgan.pdf"), height = 4, width = 10)
-
-
-# Graph (nofriend) ----
-
+# Load synthetic data ----
 
 data <- c("sd2011_clean_small")
 epochs = c(600)
@@ -314,9 +130,34 @@ for (c in copies) {
 
 df_synthpop <- df_sds
 
+# ROE (nofriend) ---- 
 ods <- data.frame(with(df_ods,table(nofriend,useNA = "ifany")))
 names(ods)[1:2] <- c("value", "freq")
 ods$data <- "observed"
+
+var_num=21
+original = df_ods
+synthetic = df_ctgan
+# create frequency tables for the original and synthetic data, on the variable
+orig_table <- as.data.frame(ftable(original[,var_num]))
+syn_table <- as.data.frame(ftable(synthetic[,var_num]))
+# calculate the proportions by dividing by the number of records in each dataset
+orig_table$prop <- orig_table$Freq/nrow(original)
+syn_table$prop <- syn_table$Freq/nrow(synthetic)
+# merge the two tables, by the variable
+combined<- merge(orig_table, syn_table, by= c('Var1'), all = TRUE) 
+# merging will induce NAs where there is a category mismatch - i.e. the category exists in one dataset but not the other
+# to deal with this set the NA values to zero:
+combined[is.na(combined)] <- 0
+# get the maximum proportion for each category level:
+combined$max <- pmax(combined$prop.x, combined$prop.y)
+# get the minimum proportion for each category level:
+combined$min <- pmin(combined$prop.x, combined$prop.y)
+# roc is min divided by max (a zero value for min results in a zero for ROC, as expected)
+combined$roc <- combined$min/combined$max 
+combined$roc[is.na(combined$roc)] <- 1
+mean(combined$roc)
+
 
 sds_ctgan <- data.frame(with(df_ctgan,table(nofriend,useNA = "ifany")))
 names(sds_ctgan)[1:2] <- c("value", "freq")
