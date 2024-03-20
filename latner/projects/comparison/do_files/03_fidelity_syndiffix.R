@@ -21,17 +21,17 @@ setwd(main_dir)
 
 data_files = "data_files/"
 original_data = "data_files/original/"
-synthetic_data = "data_files/synthetic/synthpop/"
-graphs = "graphs/synthpop/"
-tables = "tables/synthpop/"
+synthetic_data = "data_files/synthetic/syndiffix/"
+graphs = "graphs/syndiffix/"
+tables = "tables/syndiffix/"
 
 #functions
 options(scipen=999) 
 
-# Load utility from synthpop data ----
+# Load utility from syndiffix data ----
 
 copies <- c(5)
-data <- c("sd2011","sd2011_clean","sd2011_clean_small")
+data <- c("sd2011_clean_small")
 
 df_comparison <- data.frame()
 df_fidelity_plot <- data.frame()
@@ -41,7 +41,7 @@ for (c in copies) {
     df_ods <- read.csv(paste0(original_data,d,".csv"))
     sds_list <- readRDS(paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
     for (j in 1:c) {
-      sds <- read.csv(paste0(synthetic_data,"sds_synthpop_",d,"_m_",c,"_n_",j,".csv"))
+      sds <- read.csv(paste0(synthetic_data,"sds_syndiffix_data_",d,"_m_",c,"_n_",j,".csv"))
       sds[sds == ""] <- NA
       sds <- sds %>%
         mutate_if(is.character, as.factor)
@@ -63,17 +63,15 @@ for (c in copies) {
   }
 }
 
-write.csv(df_comparison, paste0(tables,"synthpop_fidelity_optimize_dataset.csv"), row.names=FALSE)
-write.csv(df_fidelity_plot, paste0(tables,"synthpop_fidelity_twoway_dataset.csv"), row.names=FALSE)
+write.csv(df_comparison, paste0(tables,"syndiffix_fidelity_optimize_dataset.csv"), row.names=FALSE)
+write.csv(df_fidelity_plot, paste0(tables,"syndiffix_fidelity_twoway_dataset.csv"), row.names=FALSE)
 
 
 # Graph ----
 
-df_comparison <- read.csv(paste0(tables,"synthpop_fidelity_optimize_dataset.csv"))
+df_comparison <- read.csv(paste0(tables,"syndiffix_fidelity_optimize_dataset.csv"))
 
 df_comparison <- df_comparison %>%
-  filter(copies == 5) %>%
-  filter(data == "sd2011_clean_small") %>%
   pivot_longer(!c(data,copies), names_to = "utility", values_to = "values")
 
 df_graph <- ggplot(df_comparison, aes(x = data, y = values)) +
@@ -93,13 +91,13 @@ df_graph <- ggplot(df_comparison, aes(x = data, y = values)) +
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"synthpop_fidelity_optimize_dataset.pdf"), height = 4, width = 6)
+ggsave(plot = df_graph, paste0(graphs,"syndiffix_fidelity_optimize_dataset.pdf"), height = 4, width = 6)
 
 # Graph ----
 
-df_plot <- read.csv(paste0(tables,"synthpop_fidelity_twoway_dataset.csv"))
+df_plot <- read.csv(paste0(tables,"syndiffix_fidelity_twoway_dataset.csv"))
+data <- c("sd2011_clean_small")
 
-data <- c("sd2011","sd2011_clean","sd2011_clean_small")
 for (d in data) {
   df_plot_graph <- df_plot %>%
     filter(data == d) %>%
@@ -118,7 +116,7 @@ for (d in data) {
           panel.grid.major = element_blank(), 
           panel.grid.minor = element_blank())
   
-  ggsave(plot = df_graph, paste0(graphs,"synthpop_fidelity_twoway_",d,".pdf"), height = 4, width = 6)
+  ggsave(plot = df_graph, paste0(graphs,"syndiffix_fidelity_twoway_",d,".pdf"), height = 4, width = 6)
 }
 
 df_graph

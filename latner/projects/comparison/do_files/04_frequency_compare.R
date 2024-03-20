@@ -14,6 +14,7 @@ rm(list=ls(all=TRUE))
 library(tidyverse)
 library(synthpop)
 library(ggh4x) # facet_nested
+library(xtable)
 
 # FOLDERS - ADAPT THIS PATHWAY
 main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/comparison/"
@@ -22,6 +23,7 @@ data_files = "data_files/"
 original_data = "data_files/original/"
 synthetic_data = "data_files/synthetic/"
 graphs = "graphs/"
+tables = "tables/"
 
 setwd(main_dir)
 
@@ -806,24 +808,100 @@ ggsave(plot = df_graph, paste0(graphs,"compare_wkabdur_1.pdf"), height = 4, widt
 
 # ROE ----
 
-df_nofriend_1 <- data.frame(Measure = "ROE",
-                            ctgan = roc_univariate(df_ods,df_ctgan,21),
-                            datasynthesizer = roc_univariate(df_ods,df_datasynthesizer,21))
-
-df_nofriend_1
-
 #nofriend
 roc_univariate(df_ods,df_ctgan,21)
 roc_univariate(df_ods,df_synthpop,21)
 roc_univariate(df_ods,df_datasynthesizer,21)
+
+df_nofriend_1 <- data.frame(Measure = "ROE",
+                            ctgan = roc_univariate(df_ods,df_ctgan,21),
+                            datasynthesizer = roc_univariate(df_ods,df_datasynthesizer,21))
+
+df_nofriend_2 <- data.frame(Measure = "ROE",
+                            ctgan = roc_univariate(df_ods,df_ctgan,21),
+                            datasynthesizer = roc_univariate(df_ods,df_datasynthesizer,21),
+                            synthpop = roc_univariate(df_ods,df_synthpop,21))
+
+# Print the data frame as a LaTeX table using xtable
+latex_table <- xtable(df_nofriend_1)
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             sanitize.text.function = identity,
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_compare_sd_ctgan_nofriend.tex"))
+
+# Print the data frame as a LaTeX table using xtable
+latex_table <- xtable(df_nofriend_2)
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             sanitize.text.function = identity,
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_compare_nofriend.tex"))
 
 #bmi
 roc_univariate(df_ods,df_ctgan,34)
 roc_univariate(df_ods,df_synthpop,34)
 roc_univariate(df_ods,df_datasynthesizer,34)
 
+
+df_bmi_1 <- data.frame(Measure = "ROE",
+                       ctgan = roc_univariate(df_ods,df_ctgan,34),
+                       datasynthesizer = roc_univariate(df_ods,df_datasynthesizer,34))
+
+df_bmi_2 <- data.frame(Measure = "ROE",
+                       ctgan = roc_univariate(df_ods,df_ctgan,34),
+                       datasynthesizer = roc_univariate(df_ods,df_datasynthesizer,34),
+                       synthpop = roc_univariate(df_ods,df_synthpop,34))
+
+# Print the data frame as a LaTeX table using xtable
+latex_table <- xtable(df_bmi_1)
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             sanitize.text.function = identity,
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_compare_sd_ctgan_bmi.tex"))
+
+# Print the data frame as a LaTeX table using xtable
+latex_table <- xtable(df_bmi_2)
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             sanitize.text.function = identity,
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_compare_bmi.tex"))
+
 #wkabdur
 roc_univariate(df_ods,df_ctgan,27)
 roc_univariate(df_ods,df_synthpop,27)
 roc_univariate(df_ods,df_datasynthesizer,27)
 
+
+df_wkabdur_1 <- data.frame(Measure = "ROE",
+                           ctgan = roc_univariate(df_ods,df_ctgan,27),
+                           datasynthesizer = roc_univariate(df_ods,df_datasynthesizer,27))
+
+df_wkabdur_2 <- data.frame(Measure = "ROE",
+                           ctgan = roc_univariate(df_ods,df_ctgan,27),
+                           datasynthesizer = roc_univariate(df_ods,df_datasynthesizer,27),
+                           synthpop = roc_univariate(df_ods,df_synthpop,27))
+
+# Print the data frame as a LaTeX table using xtable
+latex_table <- xtable(df_wkabdur_1)
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             sanitize.text.function = identity,
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_compare_sd_ctgan_wkabdur.tex"))
+
+# Print the data frame as a LaTeX table using xtable
+latex_table <- xtable(df_wkabdur_2)
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             sanitize.text.function = identity,
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_compare_wkabdur.tex"))

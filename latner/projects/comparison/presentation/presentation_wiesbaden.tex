@@ -159,7 +159,7 @@ Section \ref{sec:intro}: Introduction
     \begin{itemize}
         \item Cleaning/pre-processing
         \item Utility: Propensity score mean-squared error (pMSE) - Append the original and synthetic datasets. Creating an indicator variable for original/synthetic datasets.  For each record in the combined dataset ($n$) the probability of being in the synthetic dataset is computed via logistic regression; this is the propensity score ($p$).  Lower scores are better.  ($pMSE = \frac{1}{N}\sum_{i=1}^{N}[\hat{p}_i - c]^2$)
-        \item Ratio of counts/estimates (ROC/ROE) - Calculate the ratio of each value in a given variable for both synthetic/original datasets.  Then, calculate the ratio of each value for each dataset, and divide the smaller of these two estimates by the larger one.  Higher scores are better.  ($ROE = \frac{min(y_orig^1,y_synth^1)}{max(y_orig^1,y_synth^1)}$)
+        \item Ratio of counts/estimates (ROC/ROE) - Calculate the ratio of each value in a given variable for both synthetic/original datasets.  Then, calculate the ratio of each value for each dataset, and divide the smaller of these two estimates by the larger one.  Higher scores are better.  ($ROE = \frac{min(y_{orig}^1,y_{synth}^1)}{max(y_{orig}^1,y_{synth}^1)}$)
     \end{itemize}
 \end{itemize}
 }
@@ -422,11 +422,16 @@ Unlike DataSynthesizer, GANs were created to deal with continuous variables.
 \begin{figure}
     \caption{CTGAN is better than DataSynthesizer below 30, but both are bad above 30}
     \vskip -2mm
-    % \resizebox{\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_nofriend_1.pdf}}
-    % \resizebox{\textwidth}{!}{\includegraphics{../graphs/ctgan/ctgan_nofriend_1.pdf}}
     \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_ds_ctgan_nofriend_1.pdf}}
     \label{fig:ctgan_variable_nofriend}
 \end{figure}
+\vskip -10mm
+\begin{table}[ht]
+    \tiny
+    \raggedright
+    \input{../tables/table_compare_sd_ctgan_nofriend.tex}
+    \label{table:table_compare_sd_ctgan_nofriend}
+\end{table}
 }
 
 \frame{\frametitle{variable: bmi}
@@ -436,6 +441,13 @@ Unlike DataSynthesizer, GANs were created to deal with continuous variables.
     \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_ds_ctgan_bmi_1.pdf}}
     \label{fig:ctgan_variable_bmi}
 \end{figure}
+\vskip -10mm
+\begin{table}[ht]
+    \tiny
+    \raggedright
+    \input{../tables/table_compare_sd_ctgan_bmi.tex}
+    \label{table:table_compare_sd_ctgan_bmi}
+\end{table}
 }
 
 
@@ -446,6 +458,13 @@ Unlike DataSynthesizer, GANs were created to deal with continuous variables.
     \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_ds_ctgan_wkabdur_1.pdf}}
     \label{fig:ctgan_variable_wkabdur}
 \end{figure}
+\vskip -10mm
+\begin{table}[ht]
+    \tiny
+    \raggedright
+    \input{../tables/table_compare_sd_ctgan_wkabdur.tex}
+    \label{table:table_compare_sd_ctgan_wkabdur}
+\end{table}
 }
 
 \frame{\frametitle{Summary}
@@ -490,6 +509,13 @@ Synthpop, R package, uses methods based on classification and regression trees (
     % \resizebox{\textwidth}{!}{\includegraphics{../graphs/ctgan/ctgan_nofriend_1.pdf}}
     \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_nofriend_1.pdf}}
 \end{figure}
+\vskip -5mm
+\begin{table}[ht]
+    \tiny
+    \raggedright
+    \input{../tables/table_compare_nofriend.tex}
+    \label{table:table_compare_nofriend}
+\end{table}
 }
 
 \frame{\frametitle{variable: bmi}
@@ -498,15 +524,29 @@ Synthpop, R package, uses methods based on classification and regression trees (
     \vskip -2mm
     \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_bmi_1.pdf}}
 \end{figure}
+\vskip -5mm
+\begin{table}[ht]
+    \tiny
+    \raggedright
+    \input{../tables/table_compare_bmi.tex}
+    \label{table:table_compare_bmi}
+\end{table}
 }
 
 
 \frame{\frametitle{variable: wkabdur (Work abroad duration)}
 \begin{figure}
-    \caption{Like CTGAN, Synthpop is higher than median (10), but is better with the distribution than CTGAN}
+    \caption{Like CTGAN, Synthpop is higher than median (10), but is better with the distribution than CTGAN/DataSynthesizer}
     \vskip -2mm
     \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_wkabdur_1.pdf}}
 \end{figure}
+\vskip -5mm
+\begin{table}[ht]
+    \tiny
+    \raggedright
+    \input{../tables/table_compare_wkabdur.tex}
+    \label{table:table_compare_wkabdur}
+\end{table}
 }
 
 \frame{\frametitle{Efficiency - duration in seconds}

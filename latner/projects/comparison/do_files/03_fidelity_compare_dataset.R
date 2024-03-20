@@ -64,7 +64,7 @@ for (d in data) {
                            pmse = mean(as.numeric(utility_measure$pMSE)))
       df_compare <- rbind(df_compare,output)
       
-      utility <- utility.tables(sds_list, df_ods, tables = "twoway")
+      utility <- utility.tables(sds_list, df_ods, tables = "twoway",plot.stat = "pMSE")
       utility_plot <- data.frame(utility$utility.plot$data)
       utility_plot$data <- d
       utility_plot$sdg <- "DataSynthesizer"
@@ -90,7 +90,7 @@ for (d in data) {
       # sds_list$syn <- sds # use when m==1
     }
     
-    utility <- utility.tables(sds_list, df_ods, tables = "twoway")
+    utility <- utility.tables(sds_list, df_ods, tables = "twoway",plot.stat = "pMSE")
     utility_plot <- data.frame(utility$utility.plot$data)
     utility_plot$data <- d
     utility_plot$sdg <- "CTGAN"
@@ -117,17 +117,50 @@ for (d in data) {
                        pmse = mean(as.numeric(utility_measure$pMSE)))
   df_compare <- rbind(df_compare,output)
   
-  utility <- utility.tables(sds_list, df_ods, tables = "twoway")
+  utility <- utility.tables(sds_list, df_ods, tables = "twoway",plot.stat = "pMSE")
   utility_plot <- data.frame(utility$utility.plot$data)
   utility_plot$data <- d
   utility_plot$sdg <- "Synthpop"
   df_fidelity <- rbind(df_fidelity,utility_plot)
+  
+  # Load synthetic data from syndiffix ----
+  
+  sds_list <- readRDS(paste0(data_files,"synthetic/synds_",d,"_m_",c,".rds"))
+  for (e in epochs) {
+    for (j in 1:c) {
+      sds <- read.csv(paste0(synthetic_data,"syndiffix/sds_syndiffix_data_",d,"_m_",c,"_n_",j,".csv"))
+      sds[sds == ""] <- NA
+      sds <- sds %>%
+        mutate_if(is.character, as.factor)
+      sds_list$syn[[j]] <- sds  # use when m>1
+      # sds_list$syn <- sds # use when m==1
+    }
+    
+    utility <- utility.tables(sds_list, df_ods, tables = "twoway",plot.stat = "pMSE")
+    utility_plot <- data.frame(utility$utility.plot$data)
+    utility_plot$data <- d
+    utility_plot$sdg <- "SynDiffix"
+    df_fidelity <- rbind(df_fidelity,utility_plot)
+    
+    utility_measure <- utility.gen(sds_list$syn, df_ods, print.stats = "all", nperms = 0)
+    output <- data.frame(data = d,
+                         sdg = "SynDiffix",
+                         pmse = as.numeric(mean(utility_measure$pMSE)))
+    df_compare <- rbind(df_compare,output)
+  }
+  
 }
+
+write.csv(df_compare, paste0(tables,"fidelity_optimize_dataset.csv"), row.names=FALSE)
+write.csv(df_fidelity, paste0(tables,"fidelity_twoway_dataset.csv"), row.names=FALSE)
 
 # Graph ----
 
+df_comparison <- read.csv(paste0(tables,"fidelity_optimize_dataset.csv"))
+
 df_compare_graph <- df_compare %>%
   filter(data == "sd2011_clean_small") %>%
+  filter(sdg!="SynDiffix") %>%
   pivot_longer(!c(data,sdg), names_to = "utility", values_to = "values")
 
 # df_compare_graph$data <- factor(df_compare_graph$data, 
@@ -156,8 +189,10 @@ ggsave(plot = df_graph, paste0(graphs,"graph_fidelity_compare_dataset.pdf"), hei
 
 # Graph (two-way) ----
 
+df_fidelity <- read.csv(paste0(tables,"fidelity_twoway_dataset.csv"))
+
 df_fidelity_graph <- df_fidelity %>%
-  # filter(sdg!="CTGAN") %>%
+  filter(sdg!="SynDiffix") %>%
   filter(data == "sd2011_clean_small")
   
 # df_fidelity_graph$data <- factor(df_fidelity_graph$data, 
