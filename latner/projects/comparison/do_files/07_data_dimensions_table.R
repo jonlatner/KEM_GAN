@@ -97,7 +97,8 @@ df_data_structure$Description = c(
   "Knowledge of English language", 
   "Height of person",
   "Weight of person", 
-  "Body mass index (weight/(height$^2$)*10000")
+  "Body mass index (weight - kg/(height - cm$^2$)*10000)"
+  )
 
 df_data_structure <- df_data_structure %>%
   mutate(Number = row_number()) %>%

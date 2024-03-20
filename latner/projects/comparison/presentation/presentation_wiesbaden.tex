@@ -94,7 +94,7 @@ Section \ref{sec:intro}: Introduction
 
 \begin{itemize}
     \item Common perception that making synthetic data is easy
-    \item We want to show that its complicated
+    \item We to show that its complicated
     \begin{itemize}
         \item You need to know your data
         \begin{itemize}
@@ -103,8 +103,8 @@ Section \ref{sec:intro}: Introduction
         \item You need to know your generator
         \begin{itemize}
             \item How does it deal with missing values?
-            \item How efficient is it (data dimensionality)?
-            \item How does it meet privacy standards?
+            \item How computationally efficient is it (in terms of duration in time)?
+            \item How does it meet privacy standards (but not today)?
         \end{itemize}
     \end{itemize}
     \item Conclusion
@@ -135,7 +135,7 @@ Section \ref{sec:intro}: Introduction
     \begin{itemize}
         \item Utility and fidelity are sometimes called general/broad and specific/narrow measures within the single concept of utility (Snoke et al., 2018; Drechsler and Reiter, 2009). 
     \end{itemize}
-    \item Efficiency (i.e. duration in time) is important and often ignored.  The algorithm should scale well with the dimension of the data space in a relational way, not exponential way.
+    \item Computationally efficiency (i.e. duration in time) is important and often ignored.  The algorithm should scale well with the dimension of the data space in a relational way, not exponential way.
     \item How do we evaluate privacy?
     \begin{itemize}
         \item Is privacy a function of the generator? 
@@ -152,13 +152,13 @@ Section \ref{sec:intro}: Introduction
     \begin{itemize}
         \item Evaluate 3 synthetic data generators (SDG): DataSynthesizer, CTGAN, Synthpop
         \item How do they actually create data?
-        \item How efficient are they with respect to data dimensionality?
+        \item How computationally efficient are they with respect to data dimensionality?
         \item Thinking about what this means for privacy (not today)
     \end{itemize}
     \item Know your data (1 dataset, 2 utility measures)
     \begin{itemize}
         \item Cleaning/pre-processing
-        \item Utility: Propensity score mean-squared error (pMSE) - Append the original and synthetic datasets. Creating an indicator variable for original/synthetic datasets.  For each record in the combined dataset ($n$) the probability of being in the synthetic dataset is computed via logistic regression; this is the propensity score ($p$).  Lower scores are better.  ($pMSE = \frac{1}{N}\sum_{i=1}^{N}[\hat{p}_i - c]^2$)
+        \item Utility: Propensity score mean-squared error (pMSE) - Append the original and synthetic datasets. Creating an indicator variable for original/synthetic datasets.  For each record in the combined dataset ($n$) the probability of being in the synthetic dataset is computed; this is the propensity score ($p$).  Lower scores are better.  ($pMSE = \frac{1}{N}\sum_{i=1}^{N}[\hat{p}_i - c]^2$)
         \item Ratio of counts/estimates (ROC/ROE) - Calculate the ratio of each value in a given variable for both synthetic/original datasets.  Then, calculate the ratio of each value for each dataset, and divide the smaller of these two estimates by the larger one.  Higher scores are better.  ($ROE = \frac{min(y_{orig}^1,y_{synth}^1)}{max(y_{orig}^1,y_{synth}^1)}$)
     \end{itemize}
 \end{itemize}
@@ -183,12 +183,12 @@ Section \ref{sec:data}: Know your data (SD2011)
     \begin{itemize}
         \item Includes missings
         \begin{itemize}
-            \item Informative (i.e. month married, but single)
+            \item Informative (i.e. for single individuals, month married is missing)
             \item Non-informative 
         \end{itemize}
         \item Includes `errors'
         \begin{itemize}
-            \item \texttt{smoke} - Does not smoke is NO, but \texttt{nociga} - 20/22 cigarettes per day 
+            \item \texttt{smoke} - Does smoke is NO, but \texttt{nociga} - 20/22 cigarettes per day 
             \item \texttt{bmi} = 451, but \texttt{height} = 149 and \texttt{weight} = NA (999)
         \end{itemize}
         \item Includes generated variables (Can be problematic for SDGs)
@@ -217,15 +217,9 @@ Section \ref{sec:data}: Know your data (SD2011)
 
 Section \ref{sec:sdg}\ref{sec:sdg_datasynthesizer}: Know your generator (DataSynthesizer)
 
-DataSynthesizer, a Python package, implements a version of the PrivBayes (Zhang et al., 2017) algorithm. DataSynthesizer learns a differentially private Bayesian Network which captures the correlation structure between attributes and then draws samples (Little et al., 2021). 
+``DataSynthesizer, a Python package, implements a version of the PrivBayes (Zhang et al., 2017) algorithm. DataSynthesizer learns a differentially private Bayesian Network which captures the correlation structure between attributes and then draws samples.'' (Little et al., 2021). 
 
 Variable type: The Bayesian network only works with discrete variables. One way to discretize continuous variables is by binning them.
-
-    % \item All variables are treated as categorical
-    % \begin{itemize}
-    %     \item Categorical: Binary or `gray'
-    %     \item Continuous: Hierarchical or `vanilla'
-    % \end{itemize}
 
 }
 
@@ -233,7 +227,7 @@ Variable type: The Bayesian network only works with discrete variables. One way 
 \begin{itemize} 
     \item Hyperparameters
     \begin{itemize}
-        \item $\epsilon$ DP: 0 (default 0.1)
+        \item $\epsilon$ Differential Privacy (DP): we turn it off (default 0.1)
         \item $k$-degree Bayesian network (parents): 1 (independent), 2, 3, or 4 (default is `greedy')
         \item In Fig. 1, $k = 2$, but not known in reality
     \end{itemize}
@@ -334,7 +328,7 @@ Variable type: The Bayesian network only works with discrete variables. One way 
     \end{itemize}
     \item DataSynthesizer lessons for SD2011
     \begin{itemize}
-        \item Will only capture missing values if parents ($k$) $>=2$
+        \item Will only capture missing values if parents ($k$) $>=2$ (is this a bug?)
         \item Better at capturing distribution of categorical variables than continuous variables
     \end{itemize}
     \item Its the only SDG that incorporates $\epsilon$ DP as a setable hyperparameter
@@ -356,7 +350,7 @@ Unlike DataSynthesizer, GANs were created to deal with continuous variables.
 
 \frame{\frametitle{Tuning CTGAN: `Primary' hyperparameters}
 \begin{itemize}
-    \item epochs = Number of times to train the GAN. Each new epoch can improve the model (default is 300).
+    \item epochs = Number of times the GAN gets to see the full dataset (default is 300).
     \item batch size = Number of samples to process in each step (default is 500)
 \end{itemize}
 \begin{table}[!h]
@@ -385,14 +379,14 @@ Unlike DataSynthesizer, GANs were created to deal with continuous variables.
 \begin{itemize}
     \item dimensionality - The number of layers in the generator/discriminator networks
     \begin{itemize}
-        \item 2 hyperparameters, but same value for each
-        \item discriminator\_dim (tuple or list of ints): Size of the output samples for each one of the Discriminator Layers. A Linear Layer will be created for each one of the values provided. Defaults to (256, 256).
+        \item discriminator\_dim (tuple or list of ints): Size of the output samples for each one of the Discriminator Layers. A fully connected layer will be created for each one of the values provided. Defaults to (256, 256).
         \item generator\_dim (tuple or list of ints): Size of the output samples for each one of the Residuals. A Residual Layer will be created for each one of the values provided. Defaults to (256, 256).  
         \end{itemize}
     \item embedding\_dim (int): Size of the random sample passed to the Generator. Defaults to 128.
     \begin{itemize}
         \item The embedding dimension essentially influences how much the information in the original data set is compressed
     \end{itemize}
+    \item There are others (i.e. learning rate, weight decay, etc.)
 \end{itemize}
 }
 
@@ -453,7 +447,7 @@ Unlike DataSynthesizer, GANs were created to deal with continuous variables.
 
 \frame{\frametitle{variable: wkabdur (Work abroad duration)}
 \begin{figure}
-    \caption{CTGAN does not correctly estimate the distribution, DataSynthesizer gets the median (10), but not the rounding}
+    \caption{CTGAN does not correctly estimate the distribution, DataSynthesizer gets the median (10)}
     \vskip -2mm
     \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_ds_ctgan_wkabdur_1.pdf}}
     \label{fig:ctgan_variable_wkabdur}
@@ -469,10 +463,16 @@ Unlike DataSynthesizer, GANs were created to deal with continuous variables.
 
 \frame{\frametitle{Summary}
 \begin{itemize}
-    \item CTGAN is not a good SDG
-    \item But, CTGAN is not the only GAN
+    \item CTGAN is not a good SDG, but \dots
+    \begin{itemize}
+         \item For this particular dataset
+         \item We could still alter hyperparameter
+    \end{itemize}
     \item Distinguish between the package and the synthesizer
-    \item Can we make a better GAN?  Yes, we can \dots
+    \begin{itemize}
+        \item CTGAN is not the only GAN
+        \item Can we make a better GAN?  Yes, we can \dots
+    \end{itemize}
 \end{itemize}
 }
 
@@ -549,7 +549,7 @@ Synthpop, R package, uses methods based on classification and regression trees (
 \end{table}
 }
 
-\frame{\frametitle{Efficiency - duration in seconds}
+\frame{\frametitle{Computational efficiency - duration in seconds}
 \vskip -5mm
 \begin{table}[ht]
     \centering
@@ -564,7 +564,7 @@ Synthpop, R package, uses methods based on classification and regression trees (
 \begin{itemize}
     \item Advantages
     \begin{itemize}
-        \item Synthpop is an excellent SDG
+        \item Synthpop is an excellent SDG for this particular data set
         \item Much better than CTGAN/DataSynthesizer
     \end{itemize}
     \item Disadvantages
@@ -587,18 +587,35 @@ Section \ref{sec:conclusion}: Conclusion
     \item Know the data
     \begin{itemize}
         \item Cleaning/preprocessing are important
-        \item 
+        \begin{itemize}
+            \item Errors
+            \item Uninformed/informed missings
+            \item Generated variables
+        \end{itemize}
+        \item Unlikely that you can just give your data to someone else and they do it for you
+        \begin{itemize}
+            \item but they may know the genator well
+            \item problem is that people who know the data are separated from people who know the generator (which is best, how to use/tune, etc.)
+        \end{itemize}
     \end{itemize}
     \item Know your synthesizer
     \begin{itemize}
-        \item Synthpop is the best SDG, but struggles with high dimensional data
-        \item DataSynthesizer is the only one to offer a hyperparameter for privacy
-        \item CTGAN is bad, but maybe there is a better GAN
+        \item Its hard
+        \item There is no one size fits all
+        \item Each of the three generators has their own things that you need to know
+        \item We have focused on utility, privacy is its own separate, complicated issue
     \end{itemize}
 \end{itemize}
 }
 
 
+% What are the two axis?  The trade-off is not utility vs. privacy.  Its privacy and something else, and utility is what you get out of the combination of the two.  It could be that you only protect privacy by not releasing any data.  
+
+% Do synthesize complete data, but do not synthesize unnecessary variables that are often included in data.  However, if your goal is also to synthesize errors as they were in the original dataset, then you should synthesize it.
+
+% Slide 13.  Get description from Jörg.
+
+% Slide 14, 16, 18.  Labels
 \end{spacing}
 \end{document}
 
