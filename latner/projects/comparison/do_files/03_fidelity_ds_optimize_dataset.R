@@ -152,7 +152,8 @@ df_graph <- ggplot(df_comparison_long, aes(x = parents, y = values)) +
   geom_bar(stat="identity",position = position_dodge2()) +
   facet_wrap( ~ data, labeller = labeller(.rows = label_value)) +
   theme_bw() +
-  ylim(0,1.25)+
+  ylab("pMSE") +
+  ylim(0,.3)+
   geom_text(aes(label = round(values,2)), vjust = -.5) +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",

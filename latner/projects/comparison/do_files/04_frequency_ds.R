@@ -151,8 +151,6 @@ df_compare <- rbind(sds,ods) %>%
 
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data, color = data, group = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
-  xlab("") +
-  ylab("") +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
@@ -165,6 +163,42 @@ df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data, color = data
 df_graph
 
 ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_wkabdur.pdf"), height = 4, width = 10)
+
+df_compare_1 <- rbind(sds,ods) %>%
+  group_by(data) %>%
+  mutate(total = sum(freq),
+         pct = freq/total) %>%
+  ungroup() %>%
+  filter(as.numeric(as.character(value)) < 0) %>%
+  mutate(type = "< 0")
+
+df_compare_2 <- rbind(sds,ods) %>%
+  group_by(data) %>%
+  mutate(total = sum(freq),
+         pct = freq/total) %>%
+  ungroup() %>%
+  filter(as.numeric(as.character(value)) >= 0) %>%
+  mutate(type = ">= 0")
+
+df_compare <- rbind(df_compare_1,df_compare_2)
+
+df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data, color = data, group = data)) +
+  geom_bar(position = position_dodge(width = .9), stat = "identity") +
+  facet_wrap(~type, scales = "free") +
+  theme_bw() +
+  scale_x_discrete(breaks = c(NA,"-8","-6","-1",
+                              "0","10","20","30","40","50","60")) +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        legend.key.width=unit(1, "cm"),
+        # axis.text.x = element_text(angle = 90, vjust = .5),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+df_graph
+
+ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_wkabdur_1.pdf"), height = 4, width = 10)
 
 # Graph (frequency - bmi) ----
 
@@ -231,15 +265,13 @@ df_compare <- rbind(df_compare_1, df_compare_2)
 
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data, color = data, group = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
-  xlab("") +
   facet_wrap(~type,scales = "free") + 
   scale_x_discrete(breaks = c("13","20","40","70",NA, "141", "351","446")) +
-  ylab("") +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.key.width=unit(1, "cm"),
-        axis.text.x = element_text(angle = 90, vjust = .5),
+        # axis.text.x = element_text(angle = 90, vjust = .5),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
@@ -316,8 +348,6 @@ df_compare <- rbind(df_compare_1, df_compare_2)
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_wrap(~type,scales = "free") + 
-  xlab("") +
-  ylab("") +
   theme_bw() +
   scale_x_discrete(breaks = c("0","10","20","30","31","40","50","74","99",NA)) +
   theme(panel.grid.minor = element_blank(), 
@@ -336,8 +366,6 @@ ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_nofriend.pdf"), height = 
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_nested_wrap(~sdg + type,scales = "free") + 
-  xlab("") +
-  ylab("") +
   theme_bw() +
   scale_x_discrete(breaks = c("0","10","20","30","31","40","50","74","99",NA)) +
   theme(panel.grid.minor = element_blank(), 

@@ -360,16 +360,14 @@ df_compare <- rbind(df_compare_1, df_compare_2)
 
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
-  # facet_wrap(~type,scales = "free") +
   facet_nested_wrap(~type, scales = "free") +
-  xlab("") +
-  ylab("") +
   theme_bw() +
   scale_x_discrete(breaks = c("0","10","20","30","31","40","50","75","99",NA)) +
   theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",         axis.title.x=element_blank(),
+        legend.position = "bottom",         
+        # axis.title.x=element_blank(),
         legend.key.width=unit(1, "cm"),
-        axis.text.x = element_text(angle = 90, vjust = .5),
+        # axis.text.x = element_text(angle = 90, vjust = .5),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
@@ -439,14 +437,13 @@ df_compare <- rbind(df_compare_1_ds, df_compare_2_ds,df_compare_1_ctgan,df_compa
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_nested_wrap(~type+sdg, scales = "free") +
-  xlab("") +
-  ylab("") +
   theme_bw() +
   scale_x_discrete(breaks = c("0","10","20","30","31","40","50","74","99",NA)) +
   theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",         axis.title.x=element_blank(),
+        legend.position = "bottom",         
+        # axis.title.x=element_blank(),
         legend.key.width=unit(1, "cm"),
-        axis.text.x = element_text(angle = 90, vjust = .5),
+        # axis.text.x = element_text(angle = 90, vjust = .5),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
@@ -544,14 +541,13 @@ df_compare <- rbind(df_compare_1_synthpop, df_compare_2_synthpop,df_compare_1_ds
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_nested_wrap(~type+sdg, scales = "free") +
-  xlab("") +
-  ylab("") +
   theme_bw() +
   scale_x_discrete(breaks = c("0","10","20","30","31","40","50","74","99",NA)) +
   theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",         axis.title.x=element_blank(),
+        legend.position = "bottom",         
+        # axis.title.x=element_blank(),
         legend.key.width=unit(1, "cm"),
-        axis.text.x = element_text(angle = 90, vjust = .5),
+        # axis.text.x = element_text(angle = 90, vjust = .5),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
@@ -620,14 +616,13 @@ df_compare <- rbind(df_compare_1_ds, df_compare_1_ctgan)
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_nested_wrap(~sdg) +
-  xlab("") +
-  ylab("") +
   theme_bw() +
   scale_x_discrete(breaks = c("13","20","25","30","40","50","75",NA)) +
   theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",         axis.title.x=element_blank(),
+        legend.position = "bottom",         
+        # axis.title.x=element_blank(),
         legend.key.width=unit(1, "cm"),
-        axis.text.x = element_text(angle = 90, vjust = .5),
+        # axis.text.x = element_text(angle = 90, vjust = .5),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
@@ -642,14 +637,13 @@ df_compare <- rbind(df_compare_1_ds, df_compare_1_ctgan, df_compare_1_synthpop)
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_nested_wrap(~sdg) +
-  xlab("") +
-  ylab("") +
   theme_bw() +
   scale_x_discrete(breaks = c("13","20","25","30","40","50","75",NA)) +
   theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",         axis.title.x=element_blank(),
+        legend.position = "bottom",         
+        # axis.title.x=element_blank(),
         legend.key.width=unit(1, "cm"),
-        axis.text.x = element_text(angle = 90, vjust = .5),
+        # axis.text.x = element_text(angle = 90, vjust = .5),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
@@ -768,12 +762,11 @@ df_compare <- rbind(df_compare_1_ds, df_compare_1_ctgan, df_compare_2_ds, df_com
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_nested_wrap(~type+sdg,scales = "free") +
-  xlab("") +
-  ylab("") +
   theme_bw() +
   scale_x_discrete(breaks = c("0","10","20","30","40","50","60", NA)) +
   theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",         axis.title.x=element_blank(),
+        legend.position = "bottom",         
+        # axis.title.x=element_blank(),
         legend.key.width=unit(1, "cm"),
         # axis.text.x = element_text(angle = 90, vjust = .5),
         axis.line.y = element_line(color="black", linewidth=.5),
@@ -790,12 +783,11 @@ df_compare <- rbind(df_compare_1_ds, df_compare_2_ds, df_compare_1_ctgan, df_com
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_nested_wrap(~type+sdg,scales = "free") +
-  xlab("") +
-  ylab("") +
   theme_bw() +
   scale_x_discrete(breaks = c("0","10","20","30","40","50","60", NA)) +
   theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",         axis.title.x=element_blank(),
+        legend.position = "bottom",         
+        # axis.title.x=element_blank(),
         legend.key.width=unit(1, "cm"),
         # axis.text.x = element_text(angle = 90, vjust = .5),
         axis.line.y = element_line(color="black", linewidth=.5),

@@ -38,10 +38,13 @@ df_ctgan_regression_cio <- read.csv(paste0(tables,"ctgan/ctgan_utility_regressio
 df_datasynthesizer_regression_data <- read.csv(paste0(tables,"datasynthesizer/datasynthesizer_utility_regression_plot.csv"))
 df_datasynthesizer_regression_cio <- read.csv(paste0(tables,"datasynthesizer/datasynthesizer_utility_regression_cio.csv"))
 
-df_regression_data <- rbind(df_synthpop_regression_data,df_ctgan_regression_data,df_datasynthesizer_regression_data)
-df_regression_data_cio <- rbind(df_synthpop_regression_cio,df_ctgan_regression_cio,df_datasynthesizer_regression_cio)
+df_syndiffix_regression_data <- read.csv(paste0(tables,"syndiffix/syndiffix_utility_regression_plot.csv"))
+df_syndiffix_regression_cio <- read.csv(paste0(tables,"syndiffix/syndiffix_utility_regression_cio.csv"))
 
-head(df_regression_data)
+df_regression_data <- rbind(df_synthpop_regression_data,df_ctgan_regression_data,df_datasynthesizer_regression_data,df_syndiffix_regression_data)
+df_regression_data_cio <- rbind(df_synthpop_regression_cio,df_ctgan_regression_cio,df_datasynthesizer_regression_cio,df_syndiffix_regression_cio)
+
+table(df_regression_data$sdg)
 
 # Graph regression ----
 
@@ -153,7 +156,7 @@ df_regression_data_2
 table(df_regression_data_2$type)
 
 df_regression_data_2$type <- factor(df_regression_data_2$type, 
-                                    levels = c("synthpop", "datasynthesizer", "ctgan", "observed"))
+                                    levels = c("synthpop", "syndiffix", "datasynthesizer", "ctgan", "observed"))
 
 
 df_graph <- ggplot(df_regression_data_2, aes(x = estimate, y = term, color = type)) +
@@ -177,6 +180,7 @@ df_graph
 
 
 df_regression_data_cio_2 <- df_regression_data_cio %>%
+  # facet_nested_wrap(~columns+dv) +
   filter(type == "little")%>%
   mutate(columns = "Dependent variable") %>%
   select(sdg,cio, dv) %>%

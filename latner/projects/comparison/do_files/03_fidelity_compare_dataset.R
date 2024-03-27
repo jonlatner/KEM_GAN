@@ -156,7 +156,7 @@ write.csv(df_fidelity, paste0(tables,"fidelity_twoway_dataset.csv"), row.names=F
 
 # Graph ----
 
-df_comparison <- read.csv(paste0(tables,"fidelity_optimize_dataset.csv"))
+df_compare <- read.csv(paste0(tables,"fidelity_optimize_dataset.csv"))
 
 df_compare_graph <- df_compare %>%
   filter(data == "sd2011_clean_small") %>%
@@ -170,14 +170,14 @@ df_compare_graph <- df_compare %>%
 df_graph <- ggplot(df_compare_graph, aes(x = sdg, y = values)) +
   geom_bar(stat="identity",position = position_dodge2()) +
   theme_bw() +
-  xlab("") +
-  ylab("sPMSE") +
+  ylab("pMSE") +
   ylim(0,1.25)+
   geom_text(aes(label = round(values,2)), vjust = -.5, position =  position_dodge2(.9)) +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.title = element_blank(),
         legend.key.width=unit(1, "cm"),
+        axis.title.x = element_blank(),
         # axis.text.x = element_text(angle = 90, hjust = 1),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)

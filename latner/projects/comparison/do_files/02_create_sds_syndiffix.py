@@ -59,7 +59,7 @@ for d in data:
             time_duration = time_end - time_start
                 
             # Store duration values
-            df_duration.append(["syndiffix",m,j,time_duration])
+            df_duration.append(["syndiffix",d,m,j,time_duration])
 
             # Create a unique filename based on the values
             filename_sds = f"sds_syndiffix_data_{d}_m_{m}_n_{j}.csv"
