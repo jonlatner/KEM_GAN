@@ -206,10 +206,11 @@ df_graph <- ggplot(df_fidelity_graph, aes(x = X2, y = X1, fill = val)) +
   xlab("") +
   ylab("") +
   theme_minimal() + 
+  labs(fill='pMSE') +
   theme(axis.text.x = element_text(angle = 90, hjust = 0.9, vjust = 0.2), 
         axis.text.y = element_text(margin = margin(r = 0)),
-        title = element_text(size = 11),
-        legend.title = element_blank(),
+        legend.key.width = unit(1, "in"),
+        legend.position = "bottom",
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank())
 df_graph

@@ -38,11 +38,14 @@ df_ctgan_regression_cio <- read.csv(paste0(tables,"ctgan/ctgan_utility_regressio
 df_datasynthesizer_regression_data <- read.csv(paste0(tables,"datasynthesizer/datasynthesizer_utility_regression_plot.csv"))
 df_datasynthesizer_regression_cio <- read.csv(paste0(tables,"datasynthesizer/datasynthesizer_utility_regression_cio.csv"))
 
-df_syndiffix_regression_data <- read.csv(paste0(tables,"syndiffix/syndiffix_utility_regression_plot.csv"))
-df_syndiffix_regression_cio <- read.csv(paste0(tables,"syndiffix/syndiffix_utility_regression_cio.csv"))
+# df_syndiffix_regression_data <- read.csv(paste0(tables,"syndiffix/syndiffix_utility_regression_plot.csv"))
+# df_syndiffix_regression_cio <- read.csv(paste0(tables,"syndiffix/syndiffix_utility_regression_cio.csv"))
 
-df_regression_data <- rbind(df_synthpop_regression_data,df_ctgan_regression_data,df_datasynthesizer_regression_data,df_syndiffix_regression_data)
-df_regression_data_cio <- rbind(df_synthpop_regression_cio,df_ctgan_regression_cio,df_datasynthesizer_regression_cio,df_syndiffix_regression_cio)
+# df_regression_data <- rbind(df_synthpop_regression_data,df_ctgan_regression_data,df_datasynthesizer_regression_data,df_syndiffix_regression_data)
+# df_regression_data_cio <- rbind(df_synthpop_regression_cio,df_ctgan_regression_cio,df_datasynthesizer_regression_cio,df_syndiffix_regression_cio)
+
+df_regression_data <- rbind(df_synthpop_regression_data,df_ctgan_regression_data,df_datasynthesizer_regression_data)
+df_regression_data_cio <- rbind(df_synthpop_regression_cio,df_ctgan_regression_cio,df_datasynthesizer_regression_cio)
 
 table(df_regression_data$sdg)
 
@@ -147,23 +150,12 @@ ggsave(plot = df_graph, paste0(graphs,"graph_utility_regression_cio.pdf"), heigh
 
 # Graph cio ----
 
-df_regression_data_2 <- df_regression_data %>%
-  select(term, estimate, std.error, type, model, dv, sdg) %>%
-  mutate(type = ifelse(type == "synthetic", yes = sdg, no = type))
-df_regression_data_2 <- unique(df_regression_data_2)
-df_regression_data_2
 
-table(df_regression_data_2$type)
-
-df_regression_data_2$type <- factor(df_regression_data_2$type, 
-                                    levels = c("synthpop", "syndiffix", "datasynthesizer", "ctgan", "observed"))
-
-
-df_graph <- ggplot(df_regression_data_2, aes(x = estimate, y = term, color = type)) +
+df_graph <- ggplot(df_regression_data, aes(x = estimate, y = term, color = type)) +
   geom_point(position = position_dodge(width = 0.9)) +
   geom_errorbarh(aes(xmin = estimate - 1.96*std.error, xmax = estimate + 1.96*std.error), height = 0, position = position_dodge(width = 0.9)) +
   labs(x = "Estimated Coefficients", y = "Independent Variables") +
-  facet_wrap(~ dv) +
+  facet_nested(rows + sdg~columns+dv) +
   scale_y_discrete(limits = rev(unique(df_regression_data$term))) +
   theme_bw() +
   geom_vline(xintercept = 0, linetype = "solid", color = "red") +
@@ -175,8 +167,6 @@ df_graph <- ggplot(df_regression_data_2, aes(x = estimate, y = term, color = typ
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
-
-df_graph
 
 
 df_regression_data_cio_2 <- df_regression_data_cio %>%
@@ -190,12 +180,12 @@ df_regression_data_cio_2 <- df_regression_data_cio %>%
 df_text <- ggtexttable(df_regression_data_cio_2, rows = NULL)
 # Arrange the plots on the same page
 df_graph <- ggarrange(df_graph, df_text, 
-          ncol = 1, nrow = 3,
-          heights = c(1, 0.5, 0.3))
+          ncol = 1, nrow = 2,
+          heights = c(1, 0.3))
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"graph_utility_regression_cio_both.pdf"), height = 4, width = 8)
+ggsave(plot = df_graph, paste0(graphs,"graph_utility_regression_cio_both.pdf"), height = 8, width = 6)
 
 
 

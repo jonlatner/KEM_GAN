@@ -32,7 +32,7 @@ options(scipen=999)
 
 # Load utility from datasynthesizer data ----
 
-parents = c(1,2,3,4)
+parents = c(0,1,2,3,4)
 privacy = c(0)
 data <- c("sd2011")
 c=1 # multiple copies
@@ -65,7 +65,7 @@ for (d in data) {
 }
 
 
-parents = c(1,2,3)
+parents = c(0,1,2,3)
 privacy = c(0)
 data <- c("sd2011","sd2011_clean","sd2011_clean_small")
 c=5 # multiple copies
@@ -115,7 +115,7 @@ write.csv(df_fidelity_plot, paste0(tables,"datasynthesizer_fidelity_twoway_datas
 df_comparison <- read.csv(paste0(tables,"datasynthesizer_fidelity_optimize_dataset.csv"))
 
 df_comparison_long <- df_comparison %>%
-  filter(data=="sd2011" & copies == "1") %>%
+  filter(data=="sd2011" & copies == "5") %>%
   pivot_longer(!c(data,copies,privacy,parents), names_to = "utility", values_to = "values")
 
 df_graph <- ggplot(df_comparison_long, aes(x = parents, y = values)) +
@@ -137,7 +137,7 @@ df_graph
 
 ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_fidelity_optimize_dataset_parents.pdf"), height = 4, width = 6)
 
-# Graph (different data) ----
+# Graph (optimize dataset and parents) ----
 
 df_comparison <- read.csv(paste0(tables,"datasynthesizer_fidelity_optimize_dataset.csv"))
 
@@ -167,6 +167,38 @@ df_graph <- ggplot(df_comparison_long, aes(x = parents, y = values)) +
 df_graph
 
 ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_fidelity_optimize_dataset_parents_compare.pdf"), height = 4, width = 6)
+
+# Graph (dataset) ----
+
+df_comparison <- read.csv(paste0(tables,"datasynthesizer_fidelity_optimize_dataset.csv"))
+
+df_comparison_long <- df_comparison %>%
+  filter(copies == "5" & parents == 2) %>%
+  pivot_longer(!c(data,copies,privacy,parents), names_to = "utility", values_to = "values") %>%
+  mutate(data = ifelse(data == "sd2011", yes = "sd2011(a)",
+                       ifelse(data == "sd2011_clean", yes = "sd2011(b)",
+                              ifelse(data == "sd2011_clean_small", yes = "sd2011(c)", no = data))))
+
+df_graph <- ggplot(df_comparison_long, aes(x = data, y = values)) +
+  geom_bar(stat="identity",position = position_dodge2()) +
+  # facet_wrap( ~ data, labeller = labeller(.rows = label_value)) +
+  theme_bw() +
+  ylab("pMSE") +
+  ylim(0,.3)+
+  geom_text(aes(label = round(values,2)), vjust = -.5) +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        legend.title = element_blank(),
+        legend.key.width=unit(1, "cm"),
+        axis.title.x = element_blank(),
+        # axis.text.x = element_text(angle = 90, hjust = 1),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+df_graph
+
+ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_fidelity_optimize_dataset_compare.pdf"), height = 4, width = 6)
 
 
 

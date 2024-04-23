@@ -1,0 +1,63 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Appendix}\label{sec:appendix}
+\setcounter{figure}{0}    
+\setcounter{table}{0}    
+\renewcommand*\thetable{\Alph{section}.\arabic{table}}
+\renewcommand*\thefigure{\Alph{section}.\arabic{figure}}
+\renewcommand{\theHfigure}{\Alph{section}.\arabic{table}}
+\renewcommand{\theHtable}{\Alph{section}.\arabic{figure}}
+
+\begin{table}[ht]
+    \caption{Duration (in seconds)}
+    \centering
+    \rowcolors{1}{white}{lightgray}
+    \resizebox{\textwidth}{!}{\input{../tables/table_sd2011_duration_v2.tex}}
+    \label{table:table_sd2011_duration_v2}
+\end{table}
+
+
+\begin{figure}[ht]
+  \caption{Privacy (TCAP) using SD2011(c)}
+  \label{fig:privacy}
+  \centering
+  \includegraphics[width=\linewidth]{../graphs/graph_privacy.pdf}
+  \raggedright{\footnotesize{
+  3 keys: \texttt{sex}, \texttt{edu}, \texttt{age} \\
+  4 keys: \texttt{sex}, \texttt{edu}, \texttt{age}, \texttt{marital} \\
+  5 keys: \texttt{sex}, \texttt{edu}, \texttt{age}, \texttt{marital}, \texttt{region} \\
+  }
+}
+
+\end{figure}
+
+\begin{figure}[ht]
+  \caption{Compare fidelity across variable types using categorical variables}
+  \label{fig:fidelity_compare_data}
+  \centering
+    \includegraphics[width=\linewidth]{../graphs/graph_fidelity_compare_dataset.pdf}
+\end{figure}
+
+\begin{figure}[ht]
+  \caption{Compare fidelity across variable types using categorical variables}
+  \label{fig:fidelity_compare_data_variables}
+  \centering
+    \includegraphics[width=\linewidth]{../graphs/graph_fidelity_compare_categorical_variables.pdf}
+\end{figure}
+
+
+\begin{figure}[ht]
+  \caption{Compare utility across variable types (CIO)}
+  \label{fig:utility_compare_cio}
+  \centering
+    \includegraphics[width=\linewidth]{../graphs/graph_utility_compare_dataset_regression_cio.pdf}
+\end{figure}
+
+\begin{figure}[ht]
+  \caption{Compare utility across variable types (parameter estimates)}
+  \label{fig:utility_compare_regression}
+  \centering
+    \includegraphics[width=\linewidth]{../graphs/graph_utility_compare_dataset.pdf}
+\end{figure}

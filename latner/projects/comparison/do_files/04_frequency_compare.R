@@ -362,7 +362,7 @@ df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_nested_wrap(~type, scales = "free") +
   theme_bw() +
-  scale_x_discrete(breaks = c("0","10","20","30","31","40","50","75","99",NA)) +
+  scale_x_discrete(breaks = c("0","10","20","30","31","40","50","60","70","80","90","100","110",NA)) +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",         
         # axis.title.x=element_blank(),
@@ -438,7 +438,7 @@ df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_nested_wrap(~type+sdg, scales = "free") +
   theme_bw() +
-  scale_x_discrete(breaks = c("0","10","20","30","31","40","50","74","99",NA)) +
+  scale_x_discrete(breaks = c("0","10","20","30","31","40","50","60","70","80","90","100","110",NA)) +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",         
         # axis.title.x=element_blank(),
@@ -538,11 +538,13 @@ df_compare_2_synthpop <- rbind(sds_synthpop,ods)%>%
 
 df_compare <- rbind(df_compare_1_synthpop, df_compare_2_synthpop,df_compare_1_ds, df_compare_2_ds,df_compare_1_ctgan,df_compare_2_ctgan)
 
-df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
+# df_compare <- rbind(df_compare_1_ds, df_compare_2_ds)
+
+df_graph <- ggplot(df_compare, aes(x = as.numeric(value), y = pct, fill = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_nested_wrap(~type+sdg, scales = "free") +
   theme_bw() +
-  scale_x_discrete(breaks = c("0","10","20","30","31","40","50","74","99",NA)) +
+  # scale_x_discrete(breaks = c("0","10","20","30","31","40","50","60","70","80","99","100",NA)) +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",         
         # axis.title.x=element_blank(),
@@ -897,3 +899,38 @@ print.xtable(latex_table,
              floating = FALSE,
              booktabs = TRUE, 
              file = paste0(tables,"table_compare_wkabdur.tex"))
+
+# Compare all variables
+
+df_frequency <- rbind(df_nofriend_2,df_bmi_2,df_wkabdur_2)
+df_frequency$variable <- c("Number of friends", "BMI", "Work abroad duration")
+df_frequency$Measure <- NULL
+
+latex_table <- xtable(df_frequency)
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             sanitize.text.function = identity,
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_compare_frequency.tex"))
+
+df_frequency_long <- df_frequency %>%
+  pivot_longer(!c("variable"))
+
+df_frequency_long
+
+df_graph <- ggplot(df_frequency_long, aes(x = name, y = value)) +
+  geom_bar(position = position_dodge(width = .9), stat = "identity") +
+  facet_nested_wrap(~variable) +
+  ylab("Ratio of estimates (ROE)") +
+  theme_bw() +
+  geom_text(aes(label = round(value,3)), vjust = -.5) + # vjust adjusts vertical position of the text
+  theme(panel.grid.minor = element_blank(), 
+        axis.title.x = element_blank(),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+df_graph
+
+ggsave(plot = df_graph, paste0(graphs,"graph_compare_roe.pdf"), height = 4, width = 10)

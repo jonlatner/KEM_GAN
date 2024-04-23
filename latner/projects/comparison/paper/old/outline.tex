@@ -1,0 +1,136 @@
+
+\documentclass[10pt]{article} % For LaTeX2e
+\usepackage[preprint]{tmlr}
+% If accepted, instead use the following line for the camera-ready submission:
+%\usepackage[accepted]{tmlr}
+% To de-anonymize and remove mentions to TMLR (for example for posting to preprint servers), instead use the following:
+%\usepackage[preprint]{tmlr}
+
+% Optional math commands from https://github.com/goodfeli/dlbook_notation.
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+
+
+\title{Comparing efficiency, utility, and privacy between synthetic data packages and methods}
+
+% Authors must not appear in the submitted version. They should be hidden
+% as long as the tmlr package is used without the [accepted] or [preprint] options.
+% Non-anonymous submissions will be rejected without review.
+
+\author{\name Jörg Drechsler \email joerg.drechsler@iab.de \\
+      \addr Institute for Employment Research\\
+      Nuremberg, Germany
+      \AND
+      \name Jonathan Latner \email jonathan.latner@iab.de \\
+      \addr Institute for Employment Research\\
+      Nuremberg, Germany
+      \AND
+      \name Marcel Neunhoeffer \email marcel.neunhoeffer@iab.de\\
+      \addr Institute for Employment Research\\
+      Nuremberg, Germany}
+
+% The \author macro works with any number of authors. Use \AND 
+% to separate the names and addresses of multiple authors.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+%\def\month{MM}  % Insert correct month for camera-ready version
+%\def\year{YYYY} % Insert correct year for camera-ready version
+\def\openreview{\url{https://openreview.net/forum?id=XXXX}} % Insert correct link to OpenReview for camera-ready version
+
+
+\begin{document}
+
+
+\maketitle
+\today
+\tableofcontents
+\begin{abstract}
+
+something here
+
+\end{abstract}
+
+\section{Background}
+
+This paper seeks to explore the relationship between computational efficiency (duration in time) and measures for utility/privacy between different packages that create synthetic data and the methods they use.  The starting point for this paper are as follows:
+
+\begin{itemize}
+    \item Working paper by Little et al., 2022
+    \item Synthpop is the `winner' among datasynthesizers
+    \begin{itemize}
+        \item Highest level of utility
+        \item Highest level of privacy
+        \item Highest level of efficiency
+    \end{itemize}
+    \item How is Synthpop so good?
+    \item What is the difference between CART and Synthpop?
+\end{itemize}
+
+\section{Goals}
+
+The key points this paper seeks to make are as follows:
+
+\begin{itemize}
+    \item Synthpop 
+    \begin{itemize}
+        \item Performs well in low-dimensional data
+        \item Note: Its not clear how exactly to define dimensionality
+    \end{itemize}
+    \item CTGAN
+    \begin{itemize}
+        \item Efficiency
+        \begin{itemize}
+            \item In high-dimensional data, CTGAN can be much faster than Synthpop
+            \item One reason CTGAN/GANs are slow is epochs
+            \item We may not need so many epochs to synthesize single table, maybe as low as 10
+        \end{itemize}
+        \item Utility
+        \begin{itemize}
+            \item Regardless of dimensionality, utility is still low in CTGAN
+            \item Can we build a better GAN?
+        \end{itemize}
+    \end{itemize}
+    \item Datasynthesizer
+    \begin{itemize}
+        \item In low-dimensional data, performs similar to Synthpop
+        \item In high-dimensional data, performs better than Synthpop/CTGAN
+    \end{itemize}
+    \item Method vs. Package
+    \begin{itemize}
+        \item Synthpop is not CART and CART is not Synthpop
+        \item CTGAN is not the only GAN
+    \end{itemize}
+    \item Privacy
+    \begin{itemize}
+        \item How do we measure privacy in a universal way?
+        \item What is privacy?
+    \end{itemize}
+\end{itemize}
+
+\section{Preliminaries}
+\label{sec:preliminaries}
+
+\subsection{Efficiency}
+
+\subsection{Utility}
+
+\subsection{Privacy}
+
+
+\subsubsection*{Acknowledgments}
+Use unnumbered third level headings for the acknowledgments. All
+acknowledgments, including those to funding agencies, go at the end of the paper.
+Only add this information once your submission is accepted and deanonymized. 
+
+\bibliography{references}
+\bibliographystyle{tmlr}
+
+\appendix
+\section{Appendix}
+You may include other additional sections here.
+
+\end{document}

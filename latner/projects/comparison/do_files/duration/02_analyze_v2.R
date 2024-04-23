@@ -70,7 +70,10 @@ df_wide <- df_duration %>%
   arrange(version)
 
 df_wide$version <- gsub("sd2011_", "", df_wide$version)
+df_wide$version <- gsub("v08", "v07", df_wide$version)
 df_wide
+
+
 
 df_wide$description <- c("Raw (SD2011)",
                          "Without eduspec or wkabdur",

@@ -152,6 +152,8 @@ df_compare <- rbind(sds,ods) %>%
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data, color = data, group = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   theme_bw() +
+  scale_x_discrete(breaks = c(NA,"-8","-4",
+                              "0","10","20","30","40","50","60")) +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.key.width=unit(1, "cm"),
@@ -230,12 +232,31 @@ for (c in copies) {
 ods <- data.frame(with(df_ods,table(bmi, useNA = "ifany")))
 names(ods)[1:2] <- c("value", "freq")
 ods$data <- "observed"
-ods
 
 sds <- data.frame(with(df_sds,table(bmi, useNA = "ifany")))
 names(sds)[1:2] <- c("value", "freq")
 sds$data <- "synthetic"
-sds
+
+df_compare <- rbind(sds,ods) %>%
+  mutate(value = round(as.numeric(as.character(value))),0) %>%
+  group_by(data) %>%
+  mutate(total = sum(freq),
+         pct = freq/total) %>%
+  ungroup() 
+
+df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data, color = data, group = data)) +
+  geom_bar(position = position_dodge(width = .9), stat = "identity") +
+  theme_bw() +
+  # scale_x_discrete(breaks = c(10,20,50,100,455)) +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        legend.key.width=unit(1, "cm"),
+        # axis.text.x = element_text(angle = 90, vjust = .5),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+df_graph
 
 df_compare_1 <- rbind(sds,ods)%>%
   mutate(value = round(as.numeric(as.character(value))),0) %>%

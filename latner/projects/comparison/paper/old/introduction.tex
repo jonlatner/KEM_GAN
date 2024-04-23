@@ -1,0 +1,49 @@
+\documentclass[runningheads]{llncs}
+\usepackage[T1]{fontenc}
+
+% define lightgray
+\usepackage[table]{xcolor}
+
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[pdfstartview=XYZ,
+bookmarks=true,
+colorlinks=true,
+linkcolor=blue,
+urlcolor=blue,
+citecolor=blue,
+pdftex,
+bookmarks=true,
+linktocpage=true, % makes the page number as hyperlink in table of content
+hyperindex=true
+]{hyperref}
+
+
+\begin{document}
+\section{Introduction}
+
+It is a simple fact that analyzing data in order to make a conclusion is a time consuming and error prone process.  Even in the best of circumstances, it is common for modern methods to show that conclusions derived from older methods are at best biased and at worst false.  The nature of science is very much a two-steps forward, one-step back process.  One way to increase confidence is to make more data available and the number of individuals who can access the data.  The problem is that most data contain sensitive information on observations (individuals, firms, etc.) that should not be made public.  Given that, the question is how do we make more data publicly available while at the same time protecting the privacy of a given observational unit.
+
+The solution to this problem depends on the owner of the data.  For statistical agencies, the solution was to release small samples of the data along with other forms of statistical disclosure control (such as top-coding).  However, 
+
+with sample fractions under 10% and with other forms of statistical disclosure control (SDC) [14] applied. However,
+
+
+
+The number of results increase the more individuals analyze the data.  As the number of results increase, 
+
+In this paper, we evaluate synthetic data generators (SDGs) along three dimensions: utility, privacy, and efficiency.  
+
+The utility of synthetic data is a critical consideration in evaluating the effectiveness of SDGs. Researchers and practitioners increasingly rely on data-driven approaches to develop and enhance models across various domains, from healthcare to finance. Consequently, assessing the extent to which synthetic data can faithfully represent the characteristics of real-world datasets becomes paramount. Our evaluation framework scrutinizes the utility of synthetic data by exploring its applicability in diverse use cases and measuring its effectiveness in supporting robust model training and testing.
+
+Privacy concerns are another pivotal aspect of our evaluation, given the rising importance of data protection in today's digital landscape. As the ethical and legal dimensions of data usage come under heightened scrutiny, SDGs must demonstrate their ability to generate data that is not only useful but also privacy-preserving. We delve into the privacy mechanisms employed by different SDGs, evaluating their efficacy in safeguarding sensitive information while maintaining the utility of the generated datasets.
+
+Efficiency is the third dimension through which we assess SDGs, recognizing the computational demands inherent in data synthesis. As researchers explore large-scale applications and industries increasingly embrace data-driven decision-making, the efficiency of SDGs becomes a critical factor. Our evaluation framework scrutinizes the computational efficiency of synthetic data generation, considering factors such as processing speed, resource utilization, and scalability to ensure the practical viability of these generators in real-world scenarios.
+
+In summary, this paper provides a comprehensive evaluation of synthetic data generators, considering their utility, privacy preservation capabilities, and computational efficiency. By addressing these dimensions, we aim to contribute to the ongoing discourse on the role of synthetic data in advancing research and development while navigating the intricate landscape of privacy and computational constraints.
+
+\clearpage
+\bibliographystyle{splncs04}
+\bibliography{references}
+
+
+\end{document}
