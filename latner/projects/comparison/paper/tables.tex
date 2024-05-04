@@ -1,30 +1,40 @@
 \section{Tables}
 
-\begin{table}[ht]
+\vskip -5mm
+\begin{table}[!htb]
+\minipage{\textwidth}
+% \begin{table}
     \caption{Social Diagnosis 2011 (SD2011)}
     \centering
     \rowcolors{1}{white}{lightgray}
-    \resizebox{.85\textwidth}{!}{\input{../tables/table_sd2011_data_structure.tex}}
+    \resizebox{\textwidth}{!}{\input{../tables/table_sd2011_data_structure.tex}}
     % \input{../tables/table_sd2011_data_structure.tex}
     \label{table:sd2011_data_structure}
-\end{table}
-% \jd{Did you look for other constraints in the data: for example placesize and region or marital and age, or marital and ymarr etc?}
-
-% \begin{table}[ht]
-%     \caption{Duration (in seconds)}
-%     \centering
-%     \rowcolors{1}{white}{lightgray}
-%     \resizebox{\textwidth}{!}{\input{../tables/table_sd2011_duration.tex}}
-%     \label{table:table_sd2011_duration}
 % \end{table}
+\endminipage
 
-\begin{table}[ht]
+\vskip 5mm
+\minipage{\textwidth}
+% \begin{table}
+    \caption{Ratio of estimates (ROE)}
+    \centering
+    \rowcolors{1}{white}{lightgray}
+    \resizebox{.5\textwidth}{!}{\input{../tables/table_compare_roe.tex}}
+    \label{table:table_compare_roe}
+% \end{table}
+\endminipage
+
+\vskip 5mm
+\minipage{\textwidth}
+% \begin{table}
     \centering
     \caption{Duration (in seconds)}
     \rowcolors{1}{white}{lightgray}
-    \resizebox{.85\textwidth}{!}{\input{../tables/table_sd2011_duration_v2.tex}}
+    \resizebox{\textwidth}{!}{\input{../tables/table_sd2011_duration_v2.tex}}
     \label{table:table_sd2011_duration}
     \\
     \raggedright
     \tiny{Notes: Synthpop (csv) indicates that SD2011 was loaded into R from a csv file.  Synthpop (package) indicates that SD2011 was loaded into R from the Synthpop package.}
+% \end{table}
+\endminipage
 \end{table}

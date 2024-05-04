@@ -226,15 +226,14 @@ df_comparison_sds <- filter(df_comparison,type != "observed")
 df_comparison <- rbind(df_comparison_ods, df_comparison_sds)
 
 df_graph_data <- df_comparison %>%
-  filter(type != "Synthpop") %>%
-  filter(variables %in% c("edu","income","sex","height")) 
+  filter(variables %in% c("edu")) 
 
 df_graph_data$value <- factor(as.character(df_graph_data$value), levels = str_sort(unique(df_graph_data$value), numeric = TRUE))
 df_graph_data$value <- fct_relevel(df_graph_data$value, "NA", after = Inf)
 
-df_graph <- ggplot(df_graph_data, aes(x = value, y = pct, fill = type)) +
+df_graph <- ggplot(df_graph_data, aes(x = value, y = pct)) +
   geom_bar(stat = "identity", position = position_dodge(width = .9)) +
-  facet_wrap( ~ variables, scales = "free",nrow = 1) +
+  facet_grid(variables ~ type, scales = "free") +
   xlab("") +
   ylab("") +
   theme_bw() +
@@ -800,6 +799,74 @@ df_graph
 
 ggsave(plot = df_graph, paste0(graphs,"compare_wkabdur_1.pdf"), height = 4, width = 10)
 
+# Graph (education) ----
+
+ods <- data.frame(with(df_ods,table(edu,useNA = "ifany")))
+names(ods)[1:2] <- c("value", "freq")
+ods$data <- "observed"
+
+sds_ctgan <- data.frame(with(df_ctgan,table(edu,useNA = "ifany")))
+names(sds_ctgan)[1:2] <- c("value", "freq")
+sds_ctgan$data <- "ctgan"
+
+sds_datasynthesizer <- data.frame(with(df_datasynthesizer,table(edu,useNA = "ifany")))
+names(sds_datasynthesizer)[1:2] <- c("value", "freq")
+sds_datasynthesizer$data <- "datasynthesizer"
+
+sds_synthpop <- data.frame(with(df_synthpop,table(edu,useNA = "ifany")))
+names(sds_synthpop)[1:2] <- c("value", "freq")
+sds_synthpop$data <- "synthpop"
+
+df_compare_ds <- rbind(sds_datasynthesizer,ods)%>%
+  group_by(data) %>%
+  mutate(total_1 = sum(freq)) %>%
+  ungroup() %>%
+  mutate(pct = freq/total_1) %>%
+  mutate(sdg = "datasynthesizer",
+         data = ifelse(data!="observed",yes = "synthetic", no = data)
+  )
+
+
+df_compare_ctgan <- rbind(sds_ctgan,ods)%>%
+  group_by(data) %>%
+  mutate(total_1 = sum(freq)) %>%
+  ungroup() %>%
+  mutate(pct = freq/total_1) %>%
+  mutate(value = as.factor(value),
+         sdg = "ctgan",
+         data = ifelse(data!="observed",yes = "synthetic", no = data)
+  )
+
+df_compare_synthpop <- rbind(sds_synthpop,ods)%>%
+  group_by(data) %>%
+  mutate(total_1 = sum(freq)) %>%
+  ungroup() %>%
+  mutate(pct = freq/total_1) %>%
+  mutate(value = as.factor(value),
+         sdg = "synthpop",
+         data = ifelse(data!="observed",yes = "synthetic", no = data)
+  )
+
+
+df_compare <- rbind(df_compare_ds, df_compare_ctgan, df_compare_synthpop)
+
+df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
+  geom_bar(position = position_dodge(width = .9), stat = "identity") +
+  facet_wrap(~sdg,scales = "free") +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",         
+        # axis.title.x=element_blank(),
+        legend.key.width=unit(1, "cm"),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+df_graph
+
+ggsave(plot = df_graph, paste0(graphs,"graph_frequency_compare_edu.pdf"), height = 4, width = 10)
+
 # ROE ----
 
 #nofriend
@@ -900,11 +967,23 @@ print.xtable(latex_table,
              booktabs = TRUE, 
              file = paste0(tables,"table_compare_wkabdur.tex"))
 
+#edu
+roc_univariate(df_ods,df_ctgan,5)
+roc_univariate(df_ods,df_synthpop,5)
+roc_univariate(df_ods,df_datasynthesizer,5)
+
+df_edu <- data.frame(Measure = "ROE",
+                           ctgan = roc_univariate(df_ods,df_ctgan,5),
+                           datasynthesizer = roc_univariate(df_ods,df_datasynthesizer,5),
+                           synthpop = roc_univariate(df_ods,df_synthpop,5))
+
 # Compare all variables
 
-df_frequency <- rbind(df_nofriend_2,df_bmi_2,df_wkabdur_2)
-df_frequency$variable <- c("Number of friends", "BMI", "Work abroad duration")
+df_frequency <- rbind(df_bmi_2,df_edu,df_nofriend_2,df_wkabdur_2)
+df_frequency$variable <- c("BMI","Education", "Number of friends", "Work abroad duration")
 df_frequency$Measure <- NULL
+df_frequency <- df_frequency %>%
+  select(variable,everything())
 
 latex_table <- xtable(df_frequency)
 print.xtable(latex_table, 
@@ -912,7 +991,7 @@ print.xtable(latex_table,
              sanitize.text.function = identity,
              floating = FALSE,
              booktabs = TRUE, 
-             file = paste0(tables,"table_compare_frequency.tex"))
+             file = paste0(tables,"table_compare_roe.tex"))
 
 df_frequency_long <- df_frequency %>%
   pivot_longer(!c("variable"))
@@ -923,6 +1002,7 @@ df_graph <- ggplot(df_frequency_long, aes(x = name, y = value)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_nested_wrap(~variable) +
   ylab("Ratio of estimates (ROE)") +
+  scale_y_continuous(limits = c(0,1.1), breaks = seq(0,1,.25)) +
   theme_bw() +
   geom_text(aes(label = round(value,3)), vjust = -.5) + # vjust adjusts vertical position of the text
   theme(panel.grid.minor = element_blank(), 
