@@ -45,7 +45,11 @@ df_datasynthesizer_regression_cio <- read.csv(paste0(tables,"datasynthesizer/dat
 # df_regression_data_cio <- rbind(df_synthpop_regression_cio,df_ctgan_regression_cio,df_datasynthesizer_regression_cio,df_syndiffix_regression_cio)
 
 df_regression_data <- rbind(df_synthpop_regression_data,df_ctgan_regression_data,df_datasynthesizer_regression_data)
+df_regression_data <- df_regression_data %>%
+  filter(model != "glm")
 df_regression_data_cio <- rbind(df_synthpop_regression_cio,df_ctgan_regression_cio,df_datasynthesizer_regression_cio)
+df_regression_data_cio <- df_regression_data_cio %>%
+  filter(model != "glm")
 
 table(df_regression_data$sdg)
 
@@ -176,6 +180,19 @@ df_regression_data_cio_2 <- df_regression_data_cio %>%
   select(sdg,cio, dv) %>%
   pivot_wider(names_from = dv, values_from = cio) %>%
   select(sdg, "LN income", smoke)
+
+df_regression_data_cio_2
+
+# Create a new row with a merged cell
+new_row <- tibble(
+  sdg = "Spanning three Columns",
+  "LN income" = NA,
+  smoke = NA
+)
+
+# Bind the new row at the top
+df_regression_data_cio_2 <- bind_rows(new_row, df_regression_data_cio_2, .before = 1, !!!new_row)
+df_regression_data_cio_2
 
 df_text <- ggtexttable(df_regression_data_cio_2, rows = NULL)
 # Arrange the plots on the same page

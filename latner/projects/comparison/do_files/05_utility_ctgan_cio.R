@@ -100,6 +100,60 @@ for (c in copies) {
   }
 }
 
+
+# LPM regression ----
+
+# model 1
+## ods
+lpm_model_ods <- lm(smoke ~ sex + age + edu + bmi, data = df_ods)
+output <- as.data.frame(summary(lpm_model_ods)$coef)
+orig_tibble = as_tibble(output) %>% 
+  mutate('names' = rownames(output)) %>%
+  select("names", "Estimate", "Std. Error") %>%
+  mutate(type = "observed")
+
+## sds
+lpm_model_sds <- lm.synds(smoke ~ sex + age + edu + bmi, data = sds_list)
+output <- as.data.frame(summary(lpm_model_sds)$coef) 
+syn_tibble = as_tibble(output) %>% mutate('names' = rownames(output)) %>%
+  rename("Estimate" = "xpct(Beta)",
+         "Std. Error" = "xpct(se.Beta)",
+         "z value" = "xpct(z)",
+         "Pr(>|xpct(z)|)" = "Pr(>|xpct(z)|)") %>%
+  select("names", "Estimate", "Std. Error") %>%
+  mutate(type = "synthetic")
+
+## CIO overlap function (Little)
+output_cio <- CIO_function(orig_tibble,syn_tibble)
+df_compare_mean_cio_little <- data.frame(output_cio$mean_ci_overlap)
+colnames(df_compare_mean_cio_little) <- "cio"
+df_compare_mean_cio_little$model <- "lpm"
+df_compare_mean_cio_little$dv <- "smoke"
+df_compare_mean_cio_little$type <- "little"
+df_compare_mean_cio_little$sdg <- "ctgan"
+
+## CIO overlap function (Synthpop)
+model <- lm.synds(smoke ~ sex + age + edu + bmi, data = sds_list, family = "binomial")
+df_compare <- compare(model, df_ods)
+# df_compare_plot <- df_compare$ci.plot$data
+df_compare_mean_cio_synthpop <- data.frame(df_compare$mean.ci.overlap)
+colnames(df_compare_mean_cio_synthpop) <- "cio"
+df_compare_mean_cio_synthpop$model <- "lpm"
+df_compare_mean_cio_synthpop$dv <- "smoke"
+df_compare_mean_cio_synthpop$type <- "synthpop"
+df_compare_mean_cio_synthpop$sdg <- "ctgan"
+
+df_regression_data_lpm <- rbind(orig_tibble,syn_tibble) %>%
+  rename("term"="names", 
+         "estimate"="Estimate",
+         "std.error"="Std. Error") 
+
+df_regression_data_lpm$model <- "lpm"
+df_regression_data_lpm$dv <- "smoke"
+df_regression_data_lpm$sdg <- "ctgan"
+
+df_regression_lpm_cio <- rbind(df_compare_mean_cio_little,df_compare_mean_cio_synthpop)
+
 # Logit regression ----
 
 # model 1
@@ -207,8 +261,8 @@ df_regression_data_lm$sdg <- "ctgan"
 df_regression_lm_cio <- rbind(df_compare_mean_cio_little,df_compare_mean_cio_synthpop)
 
 # Combine and save ----
-df_regression_cio <- rbind(df_regression_glm_cio,df_regression_lm_cio)
-df_regression_data <- rbind(df_regression_data_glm,df_regression_data_lm)
+df_regression_cio <- rbind(df_regression_glm_cio,df_regression_lm_cio,df_regression_lpm_cio)
+df_regression_data <- rbind(df_regression_data_glm,df_regression_data_lm,df_regression_data_lpm)
 
 # Save output 
 write.csv(df_regression_data, paste0(tables,"ctgan_utility_regression_plot.csv"), row.names=FALSE)

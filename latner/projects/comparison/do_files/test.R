@@ -1,45 +1,56 @@
 
+roc_univariate <- function(original, synthetic, var_num) {
+  # create frequency tables for the original and synthetic data, on the variable
+  orig_table <- as.data.frame(ftable(original[,var_num]))
+  syn_table <- as.data.frame(ftable(synthetic[,var_num]))
+  # calculate the proportions by dividing by the number of records in each dataset
+  orig_table$prop <- orig_table$Freq/nrow(original)
+  syn_table$prop <- syn_table$Freq/nrow(synthetic)
+  # merge the two tables, by the variable
+  combined<- merge(orig_table, syn_table, by= c('Var1'), all = TRUE) 
+  # merging will induce NAs where there is a category mismatch - i.e. the category exists in one dataset but not the other
+  # to deal with this set the NA values to zero:
+  combined[is.na(combined)] <- 0
+  # get the maximum proportion for each category level:
+  combined$max <- pmax(combined$prop.x, combined$prop.y)
+  # get the minimum proportion for each category level:
+  combined$min <- pmin(combined$prop.x, combined$prop.y)
+  # roc is min divided by max (a zero value for min results in a zero for ROC, as expected)
+  combined$roc <- combined$min/combined$max 
+  combined$roc[is.na(combined$roc)] <- 1
+  return(mean(combined$roc))
+}
 
-# df_compare_2 <- rbind(df_compare_2_ds, df_compare_2_ctgan, df_compare_2_synthpop)
-# 
-# 
-# df_graph <- ggplot(df_compare_2, aes(x = value, y = pct, fill = data)) +
-#   geom_bar(position = position_dodge(width = .9), stat = "identity") +
-#   facet_nested_wrap(~type+sdg,scales = "free") +
-#   xlab("") +
-#   ylab("") +
-#   theme_bw() +
-#   scale_x_discrete(breaks = c("0","10","20","30","40","60", NA)) +
-#   theme(panel.grid.minor = element_blank(), 
-#         legend.position = "none",         
-#         axis.title.x=element_blank(),
-#         legend.key.width=unit(1, "cm"),
-#         # axis.text.x = element_text(angle = 90, vjust = .5),
-#         axis.line.y = element_line(color="black", linewidth=.5),
-#         axis.line.x = element_line(color="black", linewidth=.5)
-#   )
-# 
-# df_graph
-# 
-# ggsave(plot = df_graph, paste0(graphs,"compare_wkabdur_2.pdf"), height = 2, width = 10)
-# 
-# df_compare_1 <- rbind(df_compare_1_ds, df_compare_1_ctgan, df_compare_1_synthpop)
-# 
-# df_graph <- ggplot(df_compare_1, aes(x = value, y = pct, fill = data)) +
-#   geom_bar(position = position_dodge(width = .9), stat = "identity") +
-#   facet_nested_wrap(~type+sdg) +
-#   xlab("") +
-#   ylab("") +
-#   theme_bw() +
-#   scale_x_discrete(breaks = c("0","10","20","30","40","60", NA)) +
-#   theme(panel.grid.minor = element_blank(), 
-#         legend.position = "bottom",         axis.title.x=element_blank(),
-#         legend.key.width=unit(1, "cm"),
-#         # axis.text.x = element_text(angle = 90, vjust = .5),
-#         axis.line.y = element_line(color="black", linewidth=.5),
-#         axis.line.x = element_line(color="black", linewidth=.5)
-#   )
-# 
-# df_graph
-# 
-# ggsave(plot = df_graph, paste0(graphs,"compare_wkabdur_1.pdf"), height = 2, width = 10)
+
+#bmi
+roc_univariate(df_ods,df_ctgan,34)
+roc_univariate(df_ods,df_synthpop,34)
+roc_univariate(df_ods,df_datasynthesizer,34)
+
+
+df_bmi_1 <- data.frame(Measure = "ROE",
+                       ctgan = roc_univariate(df_ods,df_ctgan,34),
+                       datasynthesizer = roc_univariate(df_ods,df_datasynthesizer,34))
+
+df_bmi_2 <- data.frame(Measure = "ROE",
+                       ctgan = roc_univariate(df_ods,df_ctgan,34),
+                       datasynthesizer = roc_univariate(df_ods,df_datasynthesizer,34),
+                       synthpop = roc_univariate(df_ods,df_synthpop,34))
+
+# Print the data frame as a LaTeX table using xtable
+latex_table <- xtable(df_bmi_1)
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             sanitize.text.function = identity,
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_compare_sd_ctgan_bmi.tex"))
+
+# Print the data frame as a LaTeX table using xtable
+latex_table <- xtable(df_bmi_2)
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             sanitize.text.function = identity,
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_compare_bmi.tex"))
