@@ -157,7 +157,7 @@ df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data, color = data
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.key.width=unit(1, "cm"),
-        axis.text.x = element_text(angle = 90, vjust = .5),
+        text = element_text(size=14),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
@@ -201,6 +201,118 @@ df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data, color = data
 df_graph
 
 ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_wkabdur_1.pdf"), height = 4, width = 10)
+
+
+# Graph (frequency - agegroup missing) 
+
+ods <- data.frame(with(df_ods,table(agegr,age, useNA = "ifany")))
+names(ods)[1:2] <- c("value", "freq")
+ods$data <- "observed"
+
+sds <- data.frame(with(df_sds,table(agegr,age, useNA = "ifany")))
+names(sds)[1:2] <- c("value", "freq")
+sds$data <- "synthetic"
+
+df_compare <- rbind(sds,ods) %>% 
+  filter(is.na(value), Freq>0) %>%
+  group_by(data,value) %>%
+  mutate(total = sum(Freq),
+         pct = Freq/total) %>%
+  ungroup() %>%
+  filter(Freq>0) 
+df_compare
+
+df_graph <- ggplot(df_compare, aes(x = freq, y = Freq, fill = data, color = data, group = data)) +
+  geom_bar(position = position_dodge(width = .9), stat = "identity") +
+  theme_bw() +
+  xlab("Age") +
+  ylab("Number of missing values for agegr") +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        legend.key.width=unit(1, "cm"),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+df_graph
+
+ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_agegr_missing.pdf"), height = 4, width = 10)
+
+
+# Graph (frequency - agegroup errors) ----
+
+ods <- data.frame(with(df_ods,table(agegr,age, useNA = "ifany")))
+names(ods)[1:2] <- c("value", "freq")
+ods$data <- "observed"
+
+sds <- data.frame(with(df_sds,table(agegr,age, useNA = "ifany")))
+names(sds)[1:2] <- c("value", "freq")
+sds$data <- "synthetic"
+
+df_combine <- rbind(ods,sds) %>%
+  filter(Freq>0) %>%
+  rename(age=freq,
+         agegr=value)
+
+
+df_combine$agegr_2 <- recode(df_combine$age, 
+                             "16:24='16-24';
+                      25:34='25-34';
+                      35:44='35-44';
+                      45:59='45-59';
+                      60:64='60-64';
+                      65:hi='65+'")
+
+with(subset(df_combine,data=="observed"),table(agegr,agegr_2,useNA = "ifany"))
+with(subset(df_combine,data=="synthetic"),table(agegr,agegr_2,useNA = "ifany"))
+
+
+df_graph <- ggplot(df_combine, aes(x = agegr, y = Freq, fill = agegr_2)) +
+  geom_bar(position = position_dodge(width = .9), stat = "identity") +
+  facet_nested( ~ data, scales = "free", labeller = labeller(.rows = label_both)) +
+  # xlab("") +
+  # ylab("Percent frequency (x 100)") +
+  theme_bw() +
+  geom_text(aes(label = Freq), position = position_dodge(width = .9)) +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        legend.key.width=unit(2, "cm"),
+        # text = element_text(size = 6),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+df_graph
+
+
+df_combine_2 <- df_combine %>%
+  group_by(data,agegr,agegr_2) %>%
+  summarise(n = sum(Freq)) %>%
+  group_by(data) %>%
+  mutate(total = sum(n),
+         pct = round(n/total,2)) %>%
+  ungroup() %>%
+  filter(agegr!=agegr_2)
+df_combine_2
+
+df_graph <- ggplot(df_combine_2, aes(x = agegr, y = n, fill = agegr_2)) +
+  geom_bar(position = position_dodge(width = .9), stat = "identity") +
+  ylab("Frequency") +
+  xlab("Age group (synthetic group)") +
+  theme_bw() +
+  labs(fill = "Age group (synthetic values)") +
+  geom_text(aes(label = n), position = position_dodge(width = .8), vjust=-0.5) +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        legend.key.width=unit(2, "cm"),
+        text = element_text(size=14),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+df_graph
+
+ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_frequency_agegr_errors.pdf"), height = 4, width = 10)
 
 # Graph (frequency - bmi) ----
 
@@ -251,7 +363,7 @@ df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data, color = data
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.key.width=unit(1, "cm"),
-        # axis.text.x = element_text(angle = 90, vjust = .5),
+        text = element_text(size=14),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
@@ -287,12 +399,12 @@ df_compare <- rbind(df_compare_1, df_compare_2)
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data, color = data, group = data)) +
   geom_bar(position = position_dodge(width = .9), stat = "identity") +
   facet_wrap(~type,scales = "free") + 
-  scale_x_discrete(breaks = c("13","20","40","70",NA, "141", "351","446")) +
+  scale_x_discrete(breaks = c("13","20","40","70",NA, "141", "351","450")) +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.key.width=unit(1, "cm"),
-        # axis.text.x = element_text(angle = 90, vjust = .5),
+        text = element_text(size=14),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
@@ -374,7 +486,7 @@ df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.key.width=unit(1, "cm"),
-        # axis.text.x = element_text(angle = 90, vjust = .5),
+        text = element_text(size=14),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )

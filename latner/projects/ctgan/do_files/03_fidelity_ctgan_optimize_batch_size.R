@@ -131,16 +131,16 @@ df_graph <- ggplot(df_fidelity_long, aes(x = batch, y = values)) +
   ylab("pMSE") +
   theme_bw() +
   ylim(0,1.25) +
-  geom_text(aes(label = round(values,2)), vjust = -.5) +
+  geom_text(aes(label = round(values,2)), vjust = -.5, size = 5) +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.title = element_blank(),
         legend.key.width=unit(1, "cm"),
-        # axis.text.x = element_text(angle = 90, hjust = 1),
+        axis.text = element_text(size=14),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"ctgan_fidelity_optimize_batch_size.pdf"), height = 4, width = 6)
+ggsave(plot = df_graph, paste0(graphs,"ctgan_fidelity_optimize_batch_size.pdf"), height = 4, width = 10)

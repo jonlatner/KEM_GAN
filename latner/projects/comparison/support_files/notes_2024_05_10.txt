@@ -1,0 +1,53 @@
+whats new
+
+whats interesting
+
+what makes generating high quality synthetic data hard?
+
+one, you need to know your generator
+two, you need to know your data
+three, there is an interaction
+
+quality measures can just go to the appendix
+
+know your synthesizer reads like a technical description, but doesn't answer the question
+
+what do we want to say in the know your synthesizer?
+
+right now, its just comparing
+
+its more about things where you would say, if you know how your synthesizer works, these things will work and these things will not
+
+no subjective quality assessments.  we are not comparing these methods.  apples to apples is difficult.  all these synthesizers were developed with particular data sets or particular problems in mind.  we are showing what happens if you apply them to actual data.  and all of them have shortcomings.  
+
+for synthpop, when you use cart models you cannot have too many categorical variables because it just takes forever.  you need to know how CART models works, with categorical models, this becomes more challenging as you have more and more categories.  if you don't pay attention to this stuff then it creates more issues. 
+
+for datasynthesizer, the problem is this binning stuff.  its really just uniform sampling within the bins.  what is the default number of bins.  you need to know that datasynthesier does this and this with datasynthesizer.  in datasynthesizer would have the same problem with computational efficiency, it would have a similar problem if you increased the number of bins.
+
+for ctgan, with gans, training and tuning hyperparameters is central in terms of what you get.  but thats not true here
+1) ctgan is not a good gan
+2) our data are too low dimensional
+3) there is lots of stuff happening before the GAN is trained
+
+ctgan needs a way to deal with categorical variables
+
+datasynthesizer needs a way to deal with continuous variables
+
+depending on what you want
+
+its really easy to get something that looks like synthetic data.  you can throw those packages at anything and they will give you back synthetic data.
+
+generating synthetic data is that easy, but its not what you would want as a serious statistical agency.
+
+in synthpop with cart.  three categories, a and b, c goes right. the more categories you have, the more options you have.  you compute the possible splits you need to consider.  with 10 categories you have a lot of options to try out.
+
+if you put the order early, then this has to be done each time this variable is used as a predictor.  or think of a way to stratefy the data.  there are ways to deal with the problem, but you need to be aware.
+
+describe the problem, and then illustrate it.  here is the problem, here is what happens if you don't solve it.
+
+this is not about key points.  this is one example.  
+
+in the synthpop for the naive user, what is an ordered and unordered categorical variable is not really specified.  cart would then treat the problem as unordered.
+
+don't beleive its point and click.  we show that you need to know your data.  we show that there are more things you need to consider.  if you want to compare utiltiy across synthesizers, its really hard to compare apples to applies.  don't trust that somebody says my synthesizer is the best one.
+

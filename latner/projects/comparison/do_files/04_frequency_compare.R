@@ -633,6 +633,24 @@ df_compare_1_synthpop <- rbind(sds_synthpop,ods)%>%
          sdg = "synthpop",
          data = ifelse(data!="observed",yes = "synthetic", no = data))
 
+df_compare <- rbind(df_compare_1_ds)
+
+df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +
+  geom_bar(position = position_dodge(width = .9), stat = "identity") +
+  theme_bw() +
+  scale_x_discrete(breaks = c("13","20","25","30","40","50","76",NA)) +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",         
+        text = element_text(size=14),
+        legend.key.width=unit(1, "cm"),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+df_graph
+
+ggsave(plot = df_graph, paste0(graphs,"compare_ds_bmi.pdf"), height = 4, width = 10)
+
 df_compare <- rbind(df_compare_1_ds, df_compare_1_ctgan)
 
 df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data)) +

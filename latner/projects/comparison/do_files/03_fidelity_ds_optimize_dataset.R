@@ -143,30 +143,32 @@ df_comparison <- read.csv(paste0(tables,"datasynthesizer_fidelity_optimize_datas
 
 df_comparison_long <- df_comparison %>%
   filter(copies == "5") %>%
+  filter(parents>0) %>%
   pivot_longer(!c(data,copies,privacy,parents), names_to = "utility", values_to = "values") %>%
   mutate(data = ifelse(data == "sd2011", yes = "sd2011(a)",
                        ifelse(data == "sd2011_clean", yes = "sd2011(b)",
                               ifelse(data == "sd2011_clean_small", yes = "sd2011(c)", no = data))))
 
-df_graph <- ggplot(df_comparison_long, aes(x = parents, y = values)) +
+df_graph <- ggplot(df_comparison_long, aes(x = data, y = values)) +
   geom_bar(stat="identity",position = position_dodge2()) +
-  facet_wrap( ~ data, labeller = labeller(.rows = label_value)) +
+  facet_wrap( ~ parents, labeller = labeller(.rows = label_both)) +
   theme_bw() +
   ylab("pMSE") +
   ylim(0,.3)+
-  geom_text(aes(label = round(values,2)), vjust = -.5) +
+  geom_text(aes(label = round(values,2)), vjust = -.5, size = 5) +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.title = element_blank(),
         legend.key.width=unit(1, "cm"),
-        # axis.text.x = element_text(angle = 90, hjust = 1),
+        axis.text = element_text(size = 14),
+        axis.title.x = element_blank(),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_fidelity_optimize_dataset_parents_compare.pdf"), height = 4, width = 6)
+ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_fidelity_optimize_dataset_parents_compare.pdf"), height = 4, width = 10)
 
 # Graph (dataset) ----
 

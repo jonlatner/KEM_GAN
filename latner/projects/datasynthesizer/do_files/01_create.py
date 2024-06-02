@@ -8,6 +8,7 @@ import pandas as pd
 import random
 
 
+
 # file paths - adapt main_dir pathway
 main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/datasynthesizer/"
 data_files = "data_files/"

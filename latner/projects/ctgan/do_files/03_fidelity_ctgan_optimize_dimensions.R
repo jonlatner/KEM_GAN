@@ -101,16 +101,17 @@ df_graph <- ggplot(df_fidelity_long, aes(x = values, y = dimensions)) +
   scale_y_discrete(limits = rev(levels(df_fidelity_long$dimensions))) +
   xlim(0,1) +
   xlab("pMSE") +
-  geom_text(aes(label = round(values,2)), hjust = -.5, size = 2.5) +
+  geom_text(aes(label = round(values,2)), hjust = -.5, size = 5) +
   theme(panel.grid.minor = element_blank(), 
+        strip.text = element_text(size = 14),
         legend.position = "bottom",
         legend.title = element_blank(),
         legend.key.width=unit(1, "cm"),
-        # axis.text.x = element_text(angle = 90, hjust = 1),
+        axis.text = element_text(size=14),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"ctgan_fidelity_optimize_dimensions.pdf"), height = 4, width = 6)
+ggsave(plot = df_graph, paste0(graphs,"ctgan_fidelity_optimize_dimensions.pdf"), height = 4, width = 10)
