@@ -36,22 +36,21 @@ ods <- ods %>%
   mutate_if(is.character, as.factor)
 ods$agegr <- NULL
 ods$bmi <- NULL
+
+ods <- ods %>%
+  select(age, edu)
+
 write.csv(ods, paste0(original_data,"sd2011.csv"), row.names = FALSE)
 
 
 # Create fake synthetic data with m copies ----
 
-copies <- c(5)
+copies <- c(2)
 data <- c("sd2011")
 for (d in data) {
   print(d)
   df_ods <- read.csv(paste0(original_data,d,".csv"))
-  df_ods <- df_ods %>%
-    select(-eduspec, eduspec) %>%
-    arrange(desc(eduspec))
-  
-  df_ods$wkabdur <- as.numeric(df_ods$wkabdur)
-  
+
   for (c in copies) {
     
     df_synds <- syn(df_ods, m = c)
