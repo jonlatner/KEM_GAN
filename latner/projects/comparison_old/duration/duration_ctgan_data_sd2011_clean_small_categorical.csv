@@ -1,0 +1,6 @@
+type,data,epochs,copies,j,duration
+ctgan,sd2011_clean_small_categorical,600,5,1,217.27489066123962
+ctgan,sd2011_clean_small_categorical,600,5,2,213.81990718841553
+ctgan,sd2011_clean_small_categorical,600,5,3,213.19031405448914
+ctgan,sd2011_clean_small_categorical,600,5,4,217.30370092391968
+ctgan,sd2011_clean_small_categorical,600,5,5,213.49443006515503

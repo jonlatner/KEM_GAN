@@ -1,0 +1,116 @@
+
+R version 4.3.2 (2023-10-31) -- "Eye Holes"
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20 (64-bit)
+
+R ist freie Software und kommt OHNE JEGLICHE GARANTIE.
+Sie sind eingeladen, es unter bestimmten Bedingungen weiter zu verbreiten.
+Tippen Sie 'license()' or 'licence()' für Details dazu.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Tippen Sie 'demo()' für einige Demos, 'help()' für on-line Hilfe, oder
+'help.start()' für eine HTML Browserschnittstelle zur Hilfe.
+Tippen Sie 'q()', um R zu verlassen.
+
+> # Top commands ----
+> 
+> # Create empty R application (no figures, data frames, packages, etc.)
+> # Get a list of all loaded packages
+> packages <- search()[grepl("package:", search())]
+> # Unload each package
+> for (package in packages) {
++   unloadNamespace(package)
++ }
+> 
+> rm(list=ls(all=TRUE))
+> 
+> # load library
+> library(synthpop)
+Find out more at https://www.synthpop.org.uk/
+> library(tidyverse)
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+> library(beepr)
+> 
+> # FOLDERS - ADAPT THIS PATHWAY
+> main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/comparison/"
+> 
+> data_files = "data_files/"
+> original_data = "data_files/original/"
+> synthetic_data = "data_files/synthetic/synthpop/"
+> duration = "duration/analyze/"
+> 
+> setwd(main_dir)
+> 
+> #functions
+> options(scipen=999) 
+> 
+> # create synthetic data ----
+> 
+> data <- c("sd2011_v08_3_25","sd2011_v08_3_30")
+> for (d in data) {
++   
++   ods <- read.csv(file = paste0(original_data,d,".csv"))
++   
++   df_ods <- ods
++   
++   df_ods <- df_ods %>%
++     select(-matches("random"), matches("random")) 
++   
++   time_start <- proc.time()
++   df_synds <- syn(df_ods, m = 1) 
++   time_end <- proc.time()
++   df_duration <- data.frame(
++     duration = as.numeric(time_end[1] - time_start[1]),
++     data = d,
++     type = "synthpop (csv)"
++   )
++   
++   print(d)
++   print(df_duration)
++   beep()
++   
++   write.csv(df_duration, paste0(duration,"duration_synthpop_",d,".csv"), row.names=FALSE)
++ }
+
+Variable(s): sex, placesize, region, edu, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang, eduspec, random_1, random_2, random_3 have been changed for synthesis from character to factor.
+
+Synthesis
+-----------
+ sex age placesize region edu socprof unempdur income marital mmarr
+ ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport nofriend
+ smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur emcc englang
+ height weight eduspec random_1 random_2 random_3
+[1] "sd2011_v08_3_25"
+  duration            data           type
+1  881.535 sd2011_v08_3_25 synthpop (csv)
+
+Variable(s): sex, placesize, region, edu, socprof, marital, ls, trust, trustfam, trustneigh, sport, smoke, alcabuse, alcsol, workab, wkabint, wkabintdur, emcc, englang, eduspec, random_1, random_2, random_3 have been changed for synthesis from character to factor.
+
+Synthesis
+-----------
+ sex age placesize region edu socprof unempdur income marital mmarr
+ ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport nofriend
+ smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur emcc englang
+ height weight eduspec random_1 random_2 random_3
+[1] "sd2011_v08_3_30"
+  duration            data           type
+1 3654.594 sd2011_v08_3_30 synthpop (csv)
+> 
+> 
+> proc.time()
+       User      System verstrichen 
+   4537.128       0.708    4544.067 

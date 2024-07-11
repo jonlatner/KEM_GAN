@@ -1,0 +1,201 @@
+
+R version 4.3.0 (2023-04-21) -- "Already Tomorrow"
+Copyright (C) 2023 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20 (64-bit)
+
+R ist freie Software und kommt OHNE JEGLICHE GARANTIE.
+Sie sind eingeladen, es unter bestimmten Bedingungen weiter zu verbreiten.
+Tippen Sie 'license()' or 'licence()' für Details dazu.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Tippen Sie 'demo()' für einige Demos, 'help()' für on-line Hilfe, oder
+'help.start()' für eine HTML Browserschnittstelle zur Hilfe.
+Tippen Sie 'q()', um R zu verlassen.
+
+> # Top commands ----
+> 
+> # Create empty R application (no figures, data frames, packages, etc.)
+> # Get a list of all loaded packages
+> packages <- search()[grepl("package:", search())]
+> # Unload each package
+> for (package in packages) {
++   unloadNamespace(package)
++ }
+> 
+> rm(list=ls(all=TRUE))
+> 
+> # load library
+> library(synthpop)
+Find out more at https://www.synthpop.org.uk/
+> library(tidyverse)
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+> library(beepr)
+> 
+> # FOLDERS - ADAPT THIS PATHWAY
+> main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/comparison/"
+> 
+> data_files = "data_files/"
+> original_data = "data_files/original/"
+> synthetic_data = "data_files/synthetic/synthpop/"
+> duration = "duration/"
+> 
+> setwd(main_dir)
+> 
+> #functions
+> options(scipen=999) 
+> 
+> # Generate all combinations for a vector of letters from A to Z
+> letters_vector <- LETTERS
+> combinations <- expand.grid(letters_vector, letters_vector)
+> letters2 <- apply(combinations, 1, paste, collapse = "")
+> 
+> # create synthetic data from package ----
+> 
+> library(synthpop)
+> ods <- SD2011
+> df_ods <- ods
+> 
+> df_ods <- df_ods %>%
++   select(-eduspec, eduspec) %>%
++   arrange(desc(eduspec))
+> 
+> df_ods$wkabdur <- as.numeric(df_ods$wkabdur)
+> 
+> # Set seed for reproducibility (optional)
+> set.seed(123)
+> 
+> # Create a random variable with 5000 case that containing XX unique character values
+> unique_values <- sample(letters2, 25, replace = FALSE)
+> df_ods$random <- sample(unique_values, nrow(df_ods), replace = TRUE)
+> 
+> table(df_ods$random, useNA = "ifany")
+
+ CI  DX  EX  FU  JJ  JN  JO  JQ  JZ  MD  MH  ML  NA  NE  OZ  QN  RW  UI  UR  UW 
+200 186 208 196 190 197 204 188 187 193 196 207 223 189 209 225 183 221 210 199 
+ WG  YP  YT  YY  ZA 
+200 197 193 208 191 
+> 
+> time_start <- proc.time()
+> df_synds <- syn(df_ods, m = 1) 
+
+Variable(s): random have been changed for synthesis from character to factor.
+
+Synthesis
+-----------
+ sex age agegr placesize region edu socprof unempdur income marital
+ mmarr ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport
+ nofriend smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur emcc
+ englang height weight bmi eduspec random
+> time_end <- proc.time()
+> time_duration <- as.numeric(time_end[1] - time_start[1])
+> df_time_duration_pkg_25 <- time_duration
+> beep()
+> 
+> # Create a random variable with 5000 case that containing XX unique character values
+> unique_values <- sample(letters2, 30, replace = FALSE)
+> df_ods$random <- sample(unique_values, nrow(df_ods), replace = TRUE)
+> 
+> table(df_ods$random, useNA = "ifany")
+
+ AD  AX  BZ  CL  CW  DG  HI  HO  HZ  JI  JV  KA  KY  OK  OR  QN  QZ  RC  RS  SZ 
+153 148 162 166 167 186 157 160 161 148 157 171 156 171 172 183 183 162 172 146 
+ TU  UF  UQ  VZ  WH  WL  WQ  WY  YI  ZX 
+196 156 172 165 172 176 182 164 164 172 
+> 
+> time_start <- proc.time()
+> df_synds <- syn(df_ods, m = 1) 
+
+Variable(s): random have been changed for synthesis from character to factor.
+
+Synthesis
+-----------
+ sex age agegr placesize region edu socprof unempdur income marital
+ mmarr ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport
+ nofriend smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur emcc
+ englang height weight bmi eduspec random
+> time_end <- proc.time()
+> time_duration <- as.numeric(time_end[1] - time_start[1])
+> df_time_duration_pkg_30 <- time_duration
+> beep()
+> 
+> # Create a random variable with 5000 case that containing XX unique character values
+> unique_values <- sample(letters2, 35, replace = FALSE)
+> df_ods$random <- sample(unique_values, nrow(df_ods), replace = TRUE)
+> 
+> table(df_ods$random, useNA = "ifany")
+
+ AP  BL  BY  CY  DF  DL  EF  FK  GB  GW  GZ  HS  HU  IC  IH  IU  IX  KL  LI  MJ 
+130 128 157 140 153 135 157 132 139 140 158 141 131 171 127 151 156 162 137 143 
+ OA  OQ  OR  OS  PU  QH  RG  UA  UH  WI  WY  XJ  XL  YV  ZJ 
+149 131 124 150 132 142 119 147 163 130 143 157 148 137 140 
+> 
+> time_start <- proc.time()
+> df_synds <- syn(df_ods, m = 1) 
+
+Variable(s): random have been changed for synthesis from character to factor.
+
+Synthesis
+-----------
+ sex age agegr placesize region edu socprof unempdur income marital
+ mmarr ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport
+ nofriend smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur emcc
+ englang height weight bmi eduspec random
+> time_end <- proc.time()
+> time_duration <- as.numeric(time_end[1] - time_start[1])
+> df_time_duration_pkg_35 <- time_duration
+> beep()
+> 
+> # Create a random variable with 5000 case that containing XX unique character values
+> unique_values <- sample(letters2, 40, replace = FALSE)
+> df_ods$random <- sample(unique_values, nrow(df_ods), replace = TRUE)
+> 
+> table(df_ods$random, useNA = "ifany")
+
+ AZ  BM  BU  CB  CF  CJ  CS  CV  DK  DN  DR  GG  GS  HF  IA  IR  IX  JE  JM  JU 
+121 129 142 133 116 109 132 119 121 115 126 128 115 118 105 137 130 104 128 124 
+ LC  LL  MF  MI  MT  NZ  OC  OZ  PE  PI  RI  RT  SC  UM  UR  UZ  VN  WO  YR  ZI 
+130 121 154 124 122 115 111 141 135 125 138 118 118 118 132 127 129 110 137 143 
+> 
+> time_start <- proc.time()
+> df_synds <- syn(df_ods, m = 1) 
+
+Variable(s): random have been changed for synthesis from character to factor.
+
+Synthesis
+-----------
+ sex age agegr placesize region edu socprof unempdur income marital
+ mmarr ymarr msepdiv ysepdiv ls depress trust trustfam trustneigh sport
+ nofriend smoke nociga alcabuse alcsol workab wkabdur wkabint wkabintdur emcc
+ englang height weight bmi eduspec random
+> time_end <- proc.time()
+> time_duration <- as.numeric(time_end[1] - time_start[1])
+> df_time_duration_pkg_40 <- time_duration
+> beep()
+> 
+> df_time_duration_pkg_25
+[1] 122.309
+> df_time_duration_pkg_30
+[1] 145.861
+> df_time_duration_pkg_35
+[1] 196.078
+> df_time_duration_pkg_40
+[1] 415.039
+> 
+> 
+> proc.time()
+       User      System verstrichen 
+    880.278       0.778    1226.211 
