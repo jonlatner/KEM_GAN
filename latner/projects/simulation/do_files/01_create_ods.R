@@ -59,5 +59,48 @@ D[1000,] <- c_16
 df <- as.data.frame(D)
 head(df)
 
-
+# Save
 write.csv(df, paste0(original_data,"simulated.csv"), row.names = FALSE)
+
+sds <- syn(df, m=1)
+sds <- sds$syn
+# Create a frequency table
+sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
+sds <- sds %>%
+  select(-matches("var"))
+frequency <- as.data.frame(table(sds))
+
+ggplot(frequency, aes(x = combine, y = Freq)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        legend.title = element_blank(),
+        legend.key.width=unit(1, "cm"),
+        axis.title.x = element_blank(),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+
+
+sds <- syn(df, m=1)
+sds <- sds$syn
+# Create a frequency table
+sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
+sds <- sds %>%
+  select(-matches("var"))
+frequency <- as.data.frame(table(sds))
+
+ggplot(frequency, aes(x = combine, y = Freq)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        legend.title = element_blank(),
+        legend.key.width=unit(1, "cm"),
+        axis.title.x = element_blank(),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+

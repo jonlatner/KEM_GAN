@@ -1,8 +1,36 @@
-# Load necessary library
-library(dplyr)
+# Top commands ----
+
+# Create empty R application (no figures, data frames, packages, etc.)
+# Get a list of all loaded packages
+packages <- search()[grepl("package:", search())]
+# Unload each package
+for (package in packages) {
+  unloadNamespace(package)
+}
+
+rm(list=ls(all=TRUE))
+
+# load library
+library(synthpop)
+library(tidyverse)
+library(ggh4x) # facet_nested
+
+# FOLDERS - ADAPT THIS PATHWAY
+main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/simulation/"
+
+data_files = "data_files/"
+original_data = "data_files/original/"
+
+setwd(main_dir)
+
+#functions
+options(scipen=999) 
 
 # Set seed for reproducibility
-set.seed(123)
+my.seed = 1234
+set.seed(my.seed)
+
+# Create simulated data ----
 
 # Define the number of samples
 n <- 1000
@@ -29,9 +57,11 @@ y[n, ] <- as.numeric(c16)
 
 # Convert the matrix to a data frame
 y_df <- as.data.frame(y)
+colnames(y_df) <- c("var1", "var2", "var3", "var4")
 
-# Display the first few rows of the dataset
-head(y_df)
+# Calculate the correlation matrix
+cor_matrix <- cor(y_df)
 
-# Display the last row to verify y1000 is c16
-tail(y_df, 1)
+# Print the correlation matrix
+print(cor_matrix)
+
