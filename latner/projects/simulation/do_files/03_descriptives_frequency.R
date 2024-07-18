@@ -67,6 +67,9 @@ df_frequency <- df_frequency %>%
   select(-matches("var"))
 
 df_frequency <- as.data.frame(table(df_frequency))
+
+as.vector(df_frequency$combine)
+
 df_frequency$pct <- (df_frequency$Freq / nrow(df_ods)) * 100
 
 

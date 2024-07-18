@@ -11,8 +11,8 @@ urlcolor: blue
 ```{r setup, warning=FALSE, message=FALSE}
 
  # Set the global seed here
-# knitr::opts_chunk$set(echo = TRUE)
-set.seed(12345)
+knitr::opts_chunk$set(echo = TRUE)
+set.seed(123456)
 
 # load libraries
 library(tidyverse)
@@ -62,6 +62,7 @@ print(frequency)
 
 ggplot(frequency, aes(x = combine, y = Freq)) +
   geom_bar(stat = "identity", position = position_dodge()) +
+  scale_x_discrete(limits = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
@@ -87,6 +88,7 @@ frequency <- as.data.frame(table(sds))
 
 ggplot(frequency, aes(x = combine, y = Freq)) +
   geom_bar(stat = "identity", position = position_dodge()) +
+  scale_x_discrete(breaks = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
@@ -111,6 +113,57 @@ frequency <- as.data.frame(table(sds))
 
 ggplot(frequency, aes(x = combine, y = Freq)) +
   geom_bar(stat = "identity", position = position_dodge()) +
+  scale_x_discrete(breaks = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        legend.title = element_blank(),
+        legend.key.width=unit(1, "cm"),
+        axis.title.x = element_blank(),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+```
+
+# Generate synthetic data with cart and cp = 0.1 (default is 1e-8)
+```{r, echo=FALSE}
+sds <- syn(df_ods, m=1, cart.cp = .1)
+sds <- sds$syn
+
+# Create a frequency table
+sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
+sds <- sds %>%
+  select(-matches("var"))
+frequency <- as.data.frame(table(sds))
+
+ggplot(frequency, aes(x = combine, y = Freq)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  scale_x_discrete(breaks = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
+  theme_bw() +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        legend.title = element_blank(),
+        legend.key.width=unit(1, "cm"),
+        axis.title.x = element_blank(),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+```
+
+# Generate synthetic data with cart and cp = 0.01 (default is 1e-8)
+```{r, echo=FALSE}
+sds <- syn(df_ods, m=1, cart.cp = .01)
+sds <- sds$syn
+
+# Create a frequency table
+sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
+sds <- sds %>%
+  select(-matches("var"))
+frequency <- as.data.frame(table(sds))
+
+ggplot(frequency, aes(x = combine, y = Freq)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  scale_x_discrete(breaks = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
@@ -136,6 +189,7 @@ frequency <- as.data.frame(table(sds))
 
 ggplot(frequency, aes(x = combine, y = Freq)) +
   geom_bar(stat = "identity", position = position_dodge()) +
+  scale_x_discrete(breaks = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
@@ -160,6 +214,7 @@ frequency <- as.data.frame(table(sds))
 
 ggplot(frequency, aes(x = combine, y = Freq)) +
   geom_bar(stat = "identity", position = position_dodge()) +
+  scale_x_discrete(breaks = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
