@@ -1,0 +1,165 @@
+{
+    "meta": {
+        "num_tuples": 1000,
+        "num_attributes": 4,
+        "num_attributes_in_BN": 4,
+        "all_attributes": [
+            "var1",
+            "var2",
+            "var3",
+            "var4"
+        ],
+        "candidate_keys": [],
+        "non_categorical_string_attributes": [],
+        "attributes_in_BN": [
+            "var1",
+            "var2",
+            "var3",
+            "var4"
+        ]
+    },
+    "attribute_description": {
+        "var1": {
+            "name": "var1",
+            "data_type": "Integer",
+            "is_categorical": true,
+            "is_candidate_key": false,
+            "min": 0,
+            "max": 1,
+            "missing_rate": 0.0,
+            "distribution_bins": [
+                0,
+                1
+            ],
+            "distribution_probabilities": [
+                0.5499121439354727,
+                0.4500878560645273
+            ]
+        },
+        "var2": {
+            "name": "var2",
+            "data_type": "Integer",
+            "is_categorical": true,
+            "is_candidate_key": false,
+            "min": 0,
+            "max": 1,
+            "missing_rate": 0.0,
+            "distribution_bins": [
+                0,
+                1
+            ],
+            "distribution_probabilities": [
+                0.5232425112385699,
+                0.47675748876143004
+            ]
+        },
+        "var3": {
+            "name": "var3",
+            "data_type": "Integer",
+            "is_categorical": true,
+            "is_candidate_key": false,
+            "min": 0,
+            "max": 1,
+            "missing_rate": 0.0,
+            "distribution_bins": [
+                0,
+                1
+            ],
+            "distribution_probabilities": [
+                0.5217216174619953,
+                0.4782783825380047
+            ]
+        },
+        "var4": {
+            "name": "var4",
+            "data_type": "Integer",
+            "is_categorical": true,
+            "is_candidate_key": false,
+            "min": 0,
+            "max": 1,
+            "missing_rate": 0.0,
+            "distribution_bins": [
+                0,
+                1
+            ],
+            "distribution_probabilities": [
+                0.5500864556621274,
+                0.44991354433787256
+            ]
+        }
+    },
+    "bayesian_network": [
+        [
+            "var3",
+            [
+                "var4"
+            ]
+        ],
+        [
+            "var1",
+            [
+                "var3",
+                "var4"
+            ]
+        ],
+        [
+            "var2",
+            [
+                "var1",
+                "var3"
+            ]
+        ]
+    ],
+    "conditional_probabilities": {
+        "var4": [
+            0.549449080288598,
+            0.45055091971140204
+        ],
+        "var3": {
+            "[0]": [
+                0.48223510467541075,
+                0.5177648953245892
+            ],
+            "[1]": [
+                0.5677621370193078,
+                0.4322378629806922
+            ]
+        },
+        "var1": {
+            "[0, 0]": [
+                0.5549958409992725,
+                0.4450041590007276
+            ],
+            "[0, 1]": [
+                0.5282192348805301,
+                0.4717807651194698
+            ],
+            "[1, 0]": [
+                0.4684227789105445,
+                0.5315772210894554
+            ],
+            "[1, 1]": [
+                0.6859454655809465,
+                0.31405453441905357
+            ]
+        },
+        "var2": {
+            "[0, 0]": [
+                0.46319584485158766,
+                0.5368041551484124
+            ],
+            "[0, 1]": [
+                0.44995296761919445,
+                0.5500470323808055
+            ],
+            "[1, 0]": [
+                0.4997288171853657,
+                0.5002711828146343
+            ],
+            "[1, 1]": [
+                0.7223890745282198,
+                0.2776109254717802
+            ]
+        }
+    }
+}

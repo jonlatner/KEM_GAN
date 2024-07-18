@@ -14,9 +14,10 @@ rm(list=ls(all=TRUE))
 library(tidyverse)
 library(synthpop)
 library(ggh4x) # facet_nested
+library(car)
 
 # FOLDERS - ADAPT THIS PATHWAY
-main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/comparison/"
+main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/comparison_old/"
 
 data_files = "data_files/"
 original_data = "data_files/original/"
