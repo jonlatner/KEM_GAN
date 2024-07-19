@@ -1,9 +1,10 @@
 ---
-title: "problems with cart"
+title: "Problems with Synthpop"
+author: "Jonathan P. Latner"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
 date: "2024-07-18"
 urlcolor: blue
 ---
@@ -12,7 +13,9 @@ urlcolor: blue
 
  # Set the global seed here
 knitr::opts_chunk$set(echo = TRUE)
-set.seed(123456)
+knitr::opts_chunk$set(tidy = TRUE, tidy.opts = list(width.cutoff = 80))
+options(max.print = 80) # Adjust the limit as needed
+set.seed(123)
 
 # load libraries
 library(tidyverse)
@@ -20,6 +23,13 @@ library(synthpop)
 ```
 
 # Generate simulated data
+
+Following Reiter et al., 2014 (pg. 20):
+
+``We use a simple simulation scenario that illustrates many of the main issues: pro- tecting a 24 binary table with fully synthetic data. For $i = 1, \dots , 1000 = n$, let $y_i = (y_{1i}, y_{2i}, y_{3i}, y_{4i})$ comprise four binary variables. Let each of the K = 16 possible combinations be denoted ck, where $k = 1,\dots,16$. Let $c_{16} = (0,0,0,0)$, and let $C_{-16} = (c_1,\dots,c_{15})$. We generate an observed dataset D as follows. For $i = 1,\dots,n_1 = 999$, sample yi from a multinomial distribution such that $p(y_i = c_k) = 1/15$ for all $c_k \in C_{-16}$. Set $y_{1000} = c_{16}$. Since we do full synthesis, $X = \emptyset$.''
+
+``With this design, we create a record that is guaranteed to be unique in the sample. Intuitively, we expect such records potentially to face higher risks, since they can offer information to the synthesis model that is not available from other records. Whether or not this is true depends on the nature of the synthesizer; to illustrate this, we examine results for different types of synthesizers, which we now describe $\dots$''
+
 ```{r,echo=FALSE}
 
 # Number of observations
@@ -53,16 +63,16 @@ rm(D,c_16,C_minus_16,combinations)
 ods <- df_ods
 
 # Create a frequency table
-ods$combine <- paste(ods$var1, ods$var2, ods$var3, ods$var4, sep = "")
+ods$combination <- paste(ods$var1, ods$var2, ods$var3, ods$var4, sep = "")
 
 ods <- ods %>%
   select(-matches("var"))
 frequency <- as.data.frame(table(ods))
 print(frequency)
 
-ggplot(frequency, aes(x = combine, y = Freq)) +
+ggplot(frequency, aes(x = combination, y = Freq)) +
   geom_bar(stat = "identity", position = position_dodge()) +
-  scale_x_discrete(limits = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
+  geom_text(aes(label = Freq), vjust=-.5)+ 
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
@@ -74,21 +84,32 @@ ggplot(frequency, aes(x = combine, y = Freq)) +
   )
 ```
 
-# Generate synthetic data (default values)
+# Generate synthetic data (default values) 
+
+First step is to estimate synthetic dat from Synthpop.  Here, we use default values.  In this case (with this seed), the synthesizer estimates values for all combinations.  Notice that Synthpop creates 2 observations with the same combination of values as the unique value in the original data.  This indicates that Synthpop provides low levels of protection for unique values in the data.  However, also notice the warning suggesting that we change our numeric variables into factors because they have 5 or fewer levels.  
+
+##### Note: we refer to graphs with similar frequency as `graph a: high risk'
 
 ```{r, echo=FALSE}
 sds <- syn(df_ods, m=1)
 sds <- sds$syn
 
 # Create a frequency table
-sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
+sds$combination <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
 sds <- sds %>%
   select(-matches("var"))
 frequency <- as.data.frame(table(sds))
 
-ggplot(frequency, aes(x = combine, y = Freq)) +
+# Create a complete data frame with all desired levels and fill missing values with 0
+# Desired levels for the x-axis
+desired_levels <- c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")
+frequency <- frequency %>%
+  mutate(combination = as.character(combination)) %>%
+  complete(combination = desired_levels, fill = list(Freq = 0))
+
+ggplot(frequency, aes(x = combination, y = Freq)) +
   geom_bar(stat = "identity", position = position_dodge()) +
-  scale_x_discrete(breaks = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
+  geom_text(aes(label = Freq), vjust=-.5)+ 
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
@@ -101,19 +122,33 @@ ggplot(frequency, aes(x = combine, y = Freq)) +
 ```
 
 # Generate synthetic data with minimum values
-```{r, echo=FALSE}
+
+We follow the suggestion of Synthpop and use the paramter minnumlevels to indicate that numeric variables with less than 5 values should be treated as factor variables (default is 1).  In this case, Synthpop creates 29 observations with the same combination as the unique value in the original data.  
+
+On the one hand, this would seem to be a good thing because it indicates a higher level of protection.  On the other hand, this also indicates that levels of protection depends on whether original data are treated as numeric or character.  
+
+##### Note: we refer to graphs with similar frequency as `graph b: low risk'
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 sds <- syn(df_ods, m=1, minnumlevels = 5)
 sds <- sds$syn
 
 # Create a frequency table
-sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
+sds$combination <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
 sds <- sds %>%
   select(-matches("var"))
 frequency <- as.data.frame(table(sds))
 
-ggplot(frequency, aes(x = combine, y = Freq)) +
+# Create a complete data frame with all desired levels and fill missing values with 0
+# Desired levels for the x-axis
+desired_levels <- c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")
+frequency <- frequency %>%
+  mutate(combination = as.character(combination)) %>%
+  complete(combination = desired_levels, fill = list(Freq = 0))
+
+ggplot(frequency, aes(x = combination, y = Freq)) +
   geom_bar(stat = "identity", position = position_dodge()) +
-  scale_x_discrete(breaks = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
+  geom_text(aes(label = Freq), vjust=-.5)+ 
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
@@ -125,20 +160,34 @@ ggplot(frequency, aes(x = combine, y = Freq)) +
   )
 ```
 
-# Generate synthetic data with cart and cp = 0.1 (default is 1e-8)
+# Generate synthetic data with cp = 0.1 (default is 1e-8)
+
+To test this, we estimate new synthetic data, but without minnumlevels.  Instead, we alter the complexity parameter to restrict the depth of the tree.  In so doing, we can replicate graph a (high risk), but using numeric values.  
+
+##### The point: there is a difference between the depth of trees for numeric and factor variables created by synthpop.
+
+
 ```{r, echo=FALSE}
 sds <- syn(df_ods, m=1, cart.cp = .1)
 sds <- sds$syn
 
 # Create a frequency table
-sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
+sds$combination <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
 sds <- sds %>%
   select(-matches("var"))
 frequency <- as.data.frame(table(sds))
 
-ggplot(frequency, aes(x = combine, y = Freq)) +
+# Create a complete data frame with all desired levels and fill missing values with 0
+# Desired levels for the x-axis
+desired_levels <- c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")
+frequency <- frequency %>%
+  mutate(combination = as.character(combination)) %>%
+  complete(combination = desired_levels, fill = list(Freq = 0))
+
+# Graph
+ggplot(frequency, aes(x = combination, y = Freq)) +
   geom_bar(stat = "identity", position = position_dodge()) +
-  scale_x_discrete(breaks = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
+  geom_text(aes(label = Freq), vjust=-.5)+ 
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
@@ -150,78 +199,11 @@ ggplot(frequency, aes(x = combine, y = Freq)) +
   )
 ```
 
-# Generate synthetic data with cart and cp = 0.01 (default is 1e-8)
-```{r, echo=FALSE}
-sds <- syn(df_ods, m=1, cart.cp = .01)
-sds <- sds$syn
+# Initial conclusions
 
-# Create a frequency table
-sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
-sds <- sds %>%
-  select(-matches("var"))
-frequency <- as.data.frame(table(sds))
+Synthpop appears to synthesize factor variables differently than numeric variables.  It seems that for numeric variables, it does not build trees that are as deep as the trees it builds for factor variables.  We do not think this is a feature of Synthpop, but rather a bug as it should build trees of similar depth regardless of the variable type.
 
-ggplot(frequency, aes(x = combine, y = Freq)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
-  scale_x_discrete(breaks = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
-  theme_bw() +
-  theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",
-        legend.title = element_blank(),
-        legend.key.width=unit(1, "cm"),
-        axis.title.x = element_blank(),
-        axis.line.y = element_line(color="black", linewidth=.5),
-        axis.line.x = element_line(color="black", linewidth=.5)
-  )
-```
+If we assume this is a feature, then Synthpop provides lower levels of protection for unique combinations of numeric variables relative to unique combinations of factor variables.  It seems unusual to think that this would be intentional.
 
+If we assume this is a bug, then (conditional on fixing it) there is a broader problem.  In our simulated data with limited number of variable combinations and 1 unique value, then Synthpop provides almost no protection for the unique value.
 
-# Generate synthetic data with minimum values with ctree
-```{r, echo=FALSE}
-sds <- syn(df_ods, m=1, minnumlevels = 5, method = "ctree")
-sds <- sds$syn
-
-# Create a frequency table
-sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
-sds <- sds %>%
-  select(-matches("var"))
-frequency <- as.data.frame(table(sds))
-
-ggplot(frequency, aes(x = combine, y = Freq)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
-  scale_x_discrete(breaks = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
-  theme_bw() +
-  theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",
-        legend.title = element_blank(),
-        legend.key.width=unit(1, "cm"),
-        axis.title.x = element_blank(),
-        axis.line.y = element_line(color="black", linewidth=.5),
-        axis.line.x = element_line(color="black", linewidth=.5)
-  )
-```
-
-# Generate synthetic data with ctree
-```{r, echo=FALSE}
-sds <- syn(df_ods, m=1, method = "ctree")
-sds <- sds$syn
-
-# Create a frequency table
-sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
-sds <- sds %>%
-  select(-matches("var"))
-frequency <- as.data.frame(table(sds))
-
-ggplot(frequency, aes(x = combine, y = Freq)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
-  scale_x_discrete(breaks = c("0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111")) +
-  theme_bw() +
-  theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",
-        legend.title = element_blank(),
-        legend.key.width=unit(1, "cm"),
-        axis.title.x = element_blank(),
-        axis.line.y = element_line(color="black", linewidth=.5),
-        axis.line.x = element_line(color="black", linewidth=.5)
-  )
-```
