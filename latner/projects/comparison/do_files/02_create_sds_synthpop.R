@@ -31,8 +31,7 @@ options(scipen=999)
 # Create fake synthetic data with 1 copy (and time duration) ----
 
 copies <- c(1)
-data <- c("sd2011","sd2011_clean","sd2011_clean_small","sd2011_clean_small_categorical")
-data <- c("sd2011_clean_small_numeric")
+data <- c("sd2011","sd2011_clean","sd2011_clean_small")
 for (d in data) {
   print(d)
   df_ods <- read.csv(paste0(original_data,d,".csv"))
@@ -72,14 +71,13 @@ for (d in data) {
 # Create fake synthetic data with m copies ----
 
 copies <- c(5)
-data <- c("sd2011_clean_small_numeric")
 for (d in data) {
   print(d)
   df_ods <- read.csv(paste0(original_data,d,".csv"))
   # df_ods[df_ods == ""] <- NA
   # df_ods[df_ods < 0] <- NA
-  # df_ods <- df_ods %>%
-  #   mutate_if(is.character, as.factor)
+  df_ods <- df_ods %>%
+    mutate_if(is.character, as.factor)
 
   for (c in copies) {
 
