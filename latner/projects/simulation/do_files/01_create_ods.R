@@ -56,21 +56,47 @@ for (i in 1:(n-1)) {
 D[1000,] <- c_16
 
 # Convert to data frame and print the first few rows
-df <- as.data.frame(D)
-head(df)
+df_ods <- as.data.frame(D)
+head(df_ods)
 
-# Save
-write.csv(df, paste0(original_data,"simulated.csv"), row.names = FALSE)
+# Save ----
+write.csv(df_ods, paste0(original_data,"simulated.csv"), row.names = FALSE)
 
-sds <- syn(df, m=1)
-sds <- sds$syn
-# Create a frequency table
-sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
-sds <- sds %>%
+# Create synthetic data ----
+sds <- syn(df_ods, m=1, seed = my.seed,minnumlevels = 5,method = "cart")
+df_sds_cart <- sds$syn
+
+sds <- syn(df_ods, m=1, seed = my.seed,minnumlevels = 5,method = "ctree")
+df_sds_ctree <- sds$syn
+
+# Compare frequency ----
+
+# Original data
+df_ods$combine <- paste(df_ods$var1, df_ods$var2, df_ods$var3, df_ods$var4, sep = "")
+df_ods <- df_ods %>%
   select(-matches("var"))
-frequency <- as.data.frame(table(sds))
+ods_frequency <- as.data.frame(table(df_ods))
+ods_frequency$type <- "original"
 
-ggplot(frequency, aes(x = combine, y = Freq)) +
+# Synthetic CART
+df_sds_cart$combine <- paste(df_sds_cart$var1, df_sds_cart$var2, df_sds_cart$var3, df_sds_cart$var4, sep = "")
+df_sds_cart <- df_sds_cart %>%
+  select(-matches("var"))
+sds_frequency_cart <- as.data.frame(table(df_sds_cart))
+sds_frequency_cart$type <- "synthetic (cart)"
+
+
+# Synthetic CTREE
+df_sds_ctree$combine <- paste(df_sds_ctree$var1, df_sds_ctree$var2, df_sds_ctree$var3, df_sds_ctree$var4, sep = "")
+df_sds_ctree <- df_sds_ctree %>%
+  select(-matches("var"))
+sds_frequency_ctree <- as.data.frame(table(df_sds_ctree))
+sds_frequency_ctree$type <- "synthetic (ctree)"
+
+# Combine
+df_frequency <- rbind(ods_frequency,sds_frequency_cart,sds_frequency_ctree)
+
+ggplot(df_frequency, aes(x = combine, y = Freq, fill = type)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
@@ -83,24 +109,4 @@ ggplot(frequency, aes(x = combine, y = Freq)) +
   )
 
 
-
-sds <- syn(df, m=1)
-sds <- sds$syn
-# Create a frequency table
-sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
-sds <- sds %>%
-  select(-matches("var"))
-frequency <- as.data.frame(table(sds))
-
-ggplot(frequency, aes(x = combine, y = Freq)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
-  theme_bw() +
-  theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",
-        legend.title = element_blank(),
-        legend.key.width=unit(1, "cm"),
-        axis.title.x = element_blank(),
-        axis.line.y = element_line(color="black", linewidth=.5),
-        axis.line.x = element_line(color="black", linewidth=.5)
-  )
 

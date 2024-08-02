@@ -1,0 +1,120 @@
+shadow model attack
+
+## Explration of risk in synthpop
+
+all of the below is based on lessons learned from our particular simulated data based on 4 categorical variables (0/1) and 1000 observations as described by Reiter et al., 2014.  crucial point is that our variable values are dichotomous 0/1, and not dichotomous "A","B", which makes a difference here.  Although the bigger question is whether 0/1 should be treated as classification.
+
+graph a (good representation of original data)
+graph b (bad representation of original data)
+
+### issues/realization/lessons learned in applying synthpop to our simulated data with limited number of value combinations
+
+in cart, difference between numeric and factor.  with numeric, deeper trees (better reprentation, higher utility, lower privacy).
+
+difference in splitting criterion (anova vs. gini)
+
+cart vs. ctree: ctree grows deeper trees (even for classification)
+
+difference in splitting criterion (gini in cart vs. conditional entropy in ctree)
+
+difference between numeric and factor, but only for cart 
+
+if we used "A" and "B", we would live in world with bad representation for this particular data set.  
+
+who ever does the synthesis needs to know what the model implies for their data.
+
+this is especially an issue for dummy variables.  data with similar structure (and same information) could be treated differently.  "A"/"B" and 0/1 are both dichotomous.  however "A"/"B" will always be treated as categorical or factor or character, while 0/1 could be treated as either numeric or categorical.  
+
+#### research choice.
+
+how does the user want to treat the variables and values?  synthpop gives the impression of no choice, but this has nothing to do with the fact that one gives a better representation or risk or whatever than the other.
+
+the warning has to with defaults if the variable were a factor.  what they are trying to detect is whether a variable is dichotomous, and therefore should be a factor.
+
+in cart, if the categorical variable is a factor, then we live in a world of bad representation (graph b).
+
+whereas in ctree, good or bad representation of the original data are independent of whether the dichotomous variables are treated as numeric or factor
+
+empirically/theoretically, even if there are particular reasons why ctree or cart or parametric are the right choice for a given data or question or outcome, the representation of the data should be the same for dichotomous values 
+
+creators of synthpop would argue that if you have 0/1 what you actually doing is classification and not regression.  with cart, the right model is the classification tree.  the ctree model is a better model if the goal is to do good prediction for that kind of data.
+
+### Bigger point
+
+What is the trade off in sequential models using CART or other tree based algorithms?  
+
+the goal is not utility vs. privacy, the goal is to control the trade-off
+
+How much are we leaking about the underlying data.  Obviously a lot less if we treat the variables as independent, than dependent.  If we treat the variables is independent, then we lose all the information we want to preserve and why we are using synthetic data in the first place.
+
+#### Table
+
+combinations    - cart (default - numeric)  - cart (factor) - ctree (default)
+original        - good r                    - bad r         - good r
+
+the better the model, the higher the risk
+
+what is a good way of quantifying risk?  what we have is a good illustration is that sometimes you can get luck or unlucky, depending on whether you are on the utility or privacy side.
+
+how do we explain the difference?  
+
+within cart, the difference between good and bad representation is gini for categorical factor and anova in numeric.  in our data, the anova leads to a more accurate tree.
+
+between cart (categorical) and ctree, the differnce good and bad representaiton is that the splitting criterion is gini in cart and conditional entropy in ctree.  
+
+
+how do we compute risk?
+
+for applied users, how can you assess risk before you run the model?  can you?  is that even feasable?
+
+loop back to differential privacy
+
+its impossible for an applied user to know ahead of time which one will give good versus bad representation without going through all the details of how the trees are built and no one does that.
+
+## Next steps
+
+use real data 
+use categorical and continuous values (gender (2), education (3), age (continuous), income (continuous))
+
+## JPL assignments
+
+### dp
+
+apply laplace noise to original data with different values of dp.  
+
+### synthpop 
+attacker has first 999 observations of synthetic data, they know cart, and they want to know the last record
+
+i begin with the original data, and create 15 new datasets with different unique combinations of the last record (1000th) except the 1111 (which is already in the 1st data, original dataset)
+
+then we apply synthpop (default) to each of those.
+
+compare 16 potential worlds with histogrom of released synthetic data (with 1111).  
+
+understand the impact of the last record
+
+### goal
+the goal is to get a score that tells us which of the 16 is the most likely.  the score should be such that the more certain we are, the higher the score.
+
+the risk of a method will always be data dependent because there could an example of data where all the variables are independent and perfectly balanced, so that the best synthesizers would sample independently and all the marginals.  in this case, you would not learn anything about the alst record
+
+one way to do that here is to leave out each of the unique combinations and calculate the risk for each of the combinations.  we iterate through each of the 999 known ones.
+
+###############
+
+1) berlin conference 
+
+this is new finding.  this is interesting.  
+measure - how can we distinguish between these worlds
+connection to differential privacy
+
+2) support: cart numeric vs. factor, why, and when does it matter
+
+3) combining Reiter et al., 2014 with shadow attack as it applies to our approach
+
+removing record combinations as a possible attack strategy
+
+different attack strategy: you know all but one, create shadow models for these different worlds.
+
+4) connection to differential privacy
+
