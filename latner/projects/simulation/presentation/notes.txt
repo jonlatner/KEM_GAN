@@ -1,0 +1,37 @@
+https://www.youtube.com/watch?v=Ai2O0xZBH8k
+
+
+Embarrassing question:
+Do you floss regularly?
+
+In the data:
+How many people floss regularly?
+How many members of Congress floss regularly?
+How many members of Congress, other than the speaker, floss regularly?
+
+Fundamental law of information recovery - overly accurate estimates of too many statistics is blatantly not private (Dinur and Nissim, 2003)
+
+Analogy: cumulative effects of radiation.  Small doses of radiation can accumulate to cancer causing amounts.  You won't feel the effect of one treatment, and the effect of different treatments are different (dental X-ray < CTSCAN).  
+
+You can't answer everything accurately, that would be bad.
+
+What does it mean to protect privacy?
+
+Data analyst should not learn anything new about subject by interacting with the data set.
+
+Privacy preserving data set should not teach you anything new about a known subject.
+
+If you can't learn anything new, then whats the point of a statistical data set?
+
+Lets say, I'm from Mars, and I think that all humans have 2 left feet.  After interacting with the data set, I learn that most people have 1 left and 1 right foot.  In this setting, I have learned something new about the subject (1 left and 1 right), but is this a threat to privacy?  The answer is no.  The reason is because the answer would be the same if the subject were in the data set or replaced by another random subject.
+
+DP - the outcome of any analysis is essentially equally likely (randomness of the alogirthm, not the choice of the dataset), independent of whether any individual joins, or refrains from joining, the dataset
+
+Even if the analyst knows the entire dataset and everything about the subject, they would not know if the subject were in the data or not.  The original data and the differentially private data would result in the same answer.
+
+Example: flip of the coin.
+
+2 coins: 1 is fair (500/1000), 1 is biased (501/1000).  Suppose i choose one coin, but don't tell you which one, and i tell you the result, can you tell me which coin i am using (the fair one or the biased one).
+
+
+

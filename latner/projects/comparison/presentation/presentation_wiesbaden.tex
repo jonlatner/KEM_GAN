@@ -1,0 +1,725 @@
+% \input{"IAB/latex/TeX-Folienformat.tex"}
+\input{"/Users/jonathanlatner/Google Drive/My Drive/IAB/latex/TeX-Folienformat.tex"}
+
+\documentclass[t,8pt,utfx8]{beamer}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\setbeamertemplate{caption}[numbered]
+\newcommand{\sprache}{\englisch}
+\renewcommand{\thesubsection}{\alph{subsection})}
+\usepackage[cal=pxtx, scr=dutchcal]{mathalpha}
+
+
+\usepackage{listings} %include R code
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\tiny,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                 
+    columns=fullflexible,
+    frame=single,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\newcommand{\btVFill}{\vskip0pt plus 1filll}
+
+\title{Generating synthetic data is complicated: Know your data and know your generator}
+\subtitle{Wiesbaden, \newline 21. März, 2024}
+
+\author{Jonathan Latner, PhD \newline Dr. Marcel Neuenhoeffer \newline Prof. Dr. Jörg Drechsler}
+
+\newcounter{noauthorlines}
+\setcounter{noauthorlines}{2} % Wert für 2 Autoren über 2 Zeilen. Ggf. anpassen
+
+% %%%%%%%%%%%%%%
+% Ende Anpassung
+% %%%%%%%%%%%%%%
+
+% \input{"IAB/latex/TeX-Folienformatierung_CD_2019"}
+\input{"/Users/jonathanlatner/Google Drive/My Drive/IAB/latex/TeX-Folienformatierung_CD_2019"}
+
+% Modify the section in toc template to enumerate
+\setbeamertemplate{section in toc}{%
+    \inserttocsectionnumber.~\inserttocsection\par
+}
+
+% use for subsections
+% \setbeamertemplate{subsection in toc}{}
+\setbeamertemplate{subsection in toc}{%
+    \setlength{\parskip}{1mm}
+        \hskip2mm -- \hskip1mm\inserttocsubsection\par
+}
+
+
+\usepackage{colortbl}
+\definecolor{lightgray}{gray}{0.9}
+
+
+\begin{document}
+
+
+\frame[plain]{\titlepage}
+
+\begin{spacing}{1.25}
+
+
+\section{Introduction}\label{sec:intro}
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:intro}: Introduction
+} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+\end{frame}
+
+\frame{\frametitle{Overview}
+
+\begin{itemize}
+    \item Common perception that making synthetic data is easy
+    \item We to show that its complicated
+    \begin{itemize}
+        \item You need to know your data
+        \begin{itemize}
+            \item Missing values, messy data, etc.
+        \end{itemize}
+        \item You need to know your synthetic data generator (SDG)
+        \begin{itemize}
+            \item Compare 3 SDGs: DataSynthesizer, CTGAN, Synthpop
+            \item How does it deal with missing values?
+            \item How computationally efficient is it (in terms of duration in time)?
+            \item How does it meet privacy standards?  (but not today)
+        \end{itemize}
+    \end{itemize}
+    \item Conclusion -  Every SDG has advantages/disadvantages (no one, correct solution)
+    \begin{itemize}
+        \item Synthpop is good, but has problem with dimensionality
+        \item DataSynthesizer is not as good, but can set $\epsilon$-DP
+        \item CTGAN is bad, but maybe the problem is CTGAN, not GANs in general
+    \end{itemize}
+\end{itemize}
+}
+
+\frame{\frametitle{The good news -- making synthetic data is easy}
+
+\begin{itemize}
+    \item \url{Gretel.ai}: The synthetic data platform for developers. Generate artificial datasets with the same characteristics as real data, so you can develop and test AI models without compromising privacy.
+    \item \url{Mostly.ai}: Synthetic Data. Better than real. Still struggling with real data? Use existing data for synthetic data generation. Synthetic data is more accessible, more flexible, and simply...smarter.
+    \item \url{Statice.ai}: Generating synthetic data comes down to learning the joint probability distribution in an original, real dataset to generate a new dataset with the same distribution.  The more complex the real dataset, the more difficult it is to map dependencies correctly. Deep learning models such as generative adversarial networks (GAN) and variational autoencoders (VAE) are well suited for synthetic data generation.
+    \item \url{hazy.com}: Synthetic data does not contain any real data points so can be shared freely. Say goodbye to lengthy governance processes associated with real data.  Specifically, Hazy data is designed to preserve all the patterns, statistical properties and correlations in the source data, so that it can be used as a drop-in replacement for it.
+    \item DataSynthesizer: The distinguishing feature of DataSynthesizer is its usability — the data owner does not have to specify any parameters to start generating and sharing data safely and effectively.
+\end{itemize}
+}
+
+\frame{\frametitle{The bad news -- making synthetic data is hard}
+
+\begin{itemize}
+    \item According to the Alan Turing Institute (Jordan et al., 2022)
+    \item Synthetic data is not a replacement for real data.  It is a distorted version of the real data.
+    \begin{itemize}
+        \item Why are we creating synthetic data?  
+        \item Agreeing on the goal will help us make decisions (synthesizer, measures, etc.)
+    \end{itemize}
+    \item How does the synthesizer work? from complete black box to complete user choice
+    \item How different should it be?  How do we measure the difference (utility and fidelity)?  
+    \begin{itemize}
+        \item Utility and fidelity are sometimes called general/broad or specific/narrow measures within the single concept of utility (Snoke et al., 2018; Drechsler and Reiter, 2009). 
+    \end{itemize}
+    \item Computationally efficiency (i.e. duration in time) is important and often ignored.  The algorithm should scale well with the dimension of the data space in a relational way, not exponential way.
+    \item How do we evaluate privacy? (not today)
+\end{itemize}
+}
+
+
+
+\frame{\frametitle{Our goal is to illustrate the challenges}
+\begin{itemize}
+    \item Know your data (1 dataset)
+    \begin{itemize}
+        \item Social Diagnosis 2011 (SD2011) - Cleaning/pre-processing (most evaluations use clean data)
+    \end{itemize}
+    \item Know your generator
+    \begin{itemize}
+        \item Evaluate 3 synthetic data generators (SDG): DataSynthesizer, CTGAN, Synthpop
+        \begin{itemize}
+            \item How do they actually work? (only briefly described here)
+        \end{itemize}
+    \end{itemize}
+    \item 4 utility measures
+    \begin{itemize}
+        \item Propensity score mean-squared error (pMSE) - Append the original and synthetic datasets. Create an indicator variable for original/synthetic datasets.  The probability of being in the synthetic dataset is computed for each record in the combined dataset ($n$); this is the propensity score ($p$).  Lower scores are better.  ($pMSE = \frac{1}{N}\sum_{i=1}^{N}[\hat{p}_i - c]^2$)
+        \item Ratio of counts/estimates (ROC/ROE) - Calculate the ratio of each value in a given variable for both synthetic/original datasets.  Then, calculate the ratio of each value for each dataset, and divide the smaller of these two estimates by the larger one.  Higher scores are better.  ($ROE = \frac{min(y_{orig}^1,y_{synth}^1)}{max(y_{orig}^1,y_{synth}^1)}$)
+        \item Confidence interval overlap from 2 regression models (OLS, GLM)
+        \item Computationally efficient with respect to duration in time
+    \end{itemize}
+\end{itemize}
+}
+
+
+\section{Know your data (SD2011)}\label{sec:data}
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:data}: Know your data (SD2011)} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+\end{frame}
+
+
+\frame{\frametitle{Real data}
+\begin{itemize}
+    \item Social Diagnosis 2011 (SD2011)
+    \item Loads with Synthpop
+    \begin{itemize}
+        \item \url{http://www.diagnoza.com/index-en.html}
+        \item Not entirely clear how original data is created or cleaned to create data in Synthpop
+        \begin{itemize}
+            \item No 
+        \end{itemize}
+    \end{itemize}
+    \item Like real data, has `quirks' or unusual values/variables
+    \begin{itemize}
+        \item Includes missings
+        \begin{itemize}
+            \item Informative (i.e. for never worked abroad, \texttt{wkabdur} is missing)
+            \item Non-informative 
+        \end{itemize}
+        \item Includes `errors'
+        \begin{itemize}
+            \item \texttt{smoke} - Does smoke is NO, but \texttt{nociga} - 20/22 cigarettes per day 
+            \item \texttt{bmi} = 451, but \texttt{height}(cm) = 149 and \texttt{weight}(kg) = NA (999)
+        \end{itemize}
+        \item Includes generated variables (Can be problematic for SDGs)
+        \begin{itemize}
+            \item \texttt{bmi,agegr}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+}
+
+
+\frame{\frametitle{Data (SD2011)}
+\vskip -5mm
+\begin{table}[ht]
+    \centering
+    \vskip -2mm
+    \rowcolors{1}{white}{lightgray}
+    \resizebox{\textwidth}{!}{\input{../tables/table_sd2011_data_structure_small.tex}}
+    \label{table:sd2011_data_structure}
+\end{table}
+}
+
+\section{Know your generator}\label{sec:sdg}
+\subsection{DataSynthesizer}\label{sec:sdg_datasynthesizer}
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:sdg}\ref{sec:sdg_datasynthesizer}: Know your generator (DataSynthesizer)} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+
+``DataSynthesizer, a Python package, implements a version of the PrivBayes (Zhang et al., 2017) algorithm. DataSynthesizer learns a differentially private Bayesian Network which captures the correlation structure between attributes and then draws samples.'' (Little et al., 2021)
+
+Variable type: The Bayesian network only works with discrete variables. One way to discretize continuous variables is by binning them.
+
+\end{frame}
+
+\frame{\frametitle{DataSynthesizer}
+\begin{itemize} 
+    \item Hyperparameters
+    \begin{itemize}
+        \item $\epsilon$ Differential Privacy (DP): we turn it off (default 0.1)
+        \item $k$-degree Bayesian network (parents): 1 (independent), 2, 3, or 4 (default is `greedy')
+        \item In Fig. 1, $k = 2$, but not known in reality
+    \end{itemize}
+\end{itemize}
+\begin{figure}
+\includegraphics[scale=.35]{../graphs/figure_1.PNG}
+\end{figure}
+}
+
+
+\frame{\frametitle{SD2011 - pMSE by number of parents}
+\begin{figure}
+    \caption{Model fit does not improve after $k=2$}
+    \vskip -2mm
+    \resizebox{.65\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_fidelity_optimize_dataset_parents.pdf}}
+    \label{fig:datasynthesizer_fidelity_optimize_dataset_parents}
+\end{figure}
+}
+
+\frame{\frametitle{Two-way pMSE for pairs of variables}
+\begin{figure}
+    \caption{SD2011(a) -- Raw data}
+    \vskip -2mm
+    \resizebox{.7\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_fidelity_twoway_sd2011_presentation.pdf}}
+    \label{fig:ds_fidelity_two_way_subfig-a}
+\end{figure}
+}
+
+\frame{\frametitle{variable: wkabdur (Work abroad duration)}
+\begin{figure}
+    \caption{Captures values $<$ 0 as continuous, not missing/categorical}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_wkabdur_1.pdf}}
+    \label{fig:ds_variable_wkabdur}
+\end{figure}
+}
+
+\frame{\frametitle{Two-way pMSE for pairs of variables}
+\begin{figure}
+    \caption{SD2011(b) -- missing are numerical values $< 0$ and `` '' categorical values}
+    \vskip -2mm
+    \resizebox{.70\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_fidelity_twoway_sd2011_clean_presentation.pdf}}
+    \label{fig:ds_fidelity_two_way_subfig-b}
+\end{figure}
+}
+
+\frame{\frametitle{variable: bmi}
+\begin{figure}
+    \caption{BMI $<$ 20 is underweight/malnourished}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_bmi.pdf}}
+    \label{fig:ds_variable_bmi}
+\end{figure}
+\vskip -5mm
+errors: \texttt{bmi} = 451, but \texttt{height} (cm) = 149 and \texttt{weight} (kg) = NA (999)
+}
+
+
+\frame{\frametitle{Two-way pMSE for pairs of variables}
+\begin{figure}
+    \caption{SD2011(c) -- drop generated variables (bmi and agegr)}
+    \vskip -2mm
+    \resizebox{.7\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_fidelity_twoway_sd2011_clean_small_presentation.pdf}}
+    \label{fig:ds_fidelity_two_way_subfig-c}
+\end{figure}
+}
+
+\frame{\frametitle{variable: nofriend}
+\begin{figure}
+    \caption{Doesn't capture rounding/discontinuity}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_nofriend.pdf}}
+    \label{fig:ds_variable_nofriend}
+\end{figure}
+}
+
+\frame{\frametitle{SD2011 - pMSE}
+\begin{figure}
+    \caption{We use SD2011(c) - cleaned missing values, dropped generated variables, and $k=2$}
+    \vskip -2mm
+    \resizebox{.65\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_fidelity_optimize_dataset_parents_compare.pdf}}
+    \label{fig:datasynthesizer_fidelity_optimize_dataset_parents_compare}
+\end{figure}
+}
+
+\frame{\frametitle{Percent frequency for selected variables by parents}
+\begin{figure}
+    \caption{No missings if parents $<$ 2, better for categorical than numeric variables}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_frequency_optimize_variables_parents.pdf}}
+    \label{subfig:tuning_ds_variables_within_synthetic}
+\end{figure}
+}
+
+\frame{\frametitle{Summary}
+\begin{itemize}
+    \item General lessons
+    \begin{itemize}
+        \item You have to `know' your data (missings, negative values, etc.)
+        \item No need to replicate generated variables
+    \end{itemize}
+    \item DataSynthesizer lessons for SD2011
+    \begin{itemize}
+        \item Will only capture missing values if parents ($k$) $>=2$ (is this a bug?  am i doing it wrong?)
+        \item Better at capturing distribution of categorical variables than continuous variables
+    \end{itemize}
+    \item Its the only SDG that incorporates $\epsilon$ DP as a setable hyperparameter
+\end{itemize}
+}
+
+
+\subsection{CTGAN}\label{sec:sdg_ctgan}
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:sdg}\ref{sec:sdg_ctgan}: Know your generator (CTGAN)} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+
+GANs (Goodfellow et al., 2014), simultaneously train two NN models: a generative model which captures the data distribution, and a discriminative model that aims to determine whether a sample is from the model distribution or the data distribution. 
+
+The generative model starts off with noise as inputs and relies on feedback from the discriminative model to generate a data sample.  This goes back and forth until the discriminator cannot distinguish between the actual data and the generated data.
+
+Unlike DataSynthesizer, GANs were created to deal with continuous variables.
+
+\end{frame}
+
+\frame{\frametitle{Experiment with `primary' hyperparameters}
+\begin{itemize}
+    \item epochs = Number of times the GAN gets to see the full dataset (default is 300).
+    \item batch size = Number of samples to process in each step (default is 500)
+\end{itemize}
+\begin{table}[!h]
+    \rowcolors{1}{white}{lightgray}
+    \caption{Batch size and epochs = actual steps}
+    \centering
+    \begin{tabular}{cllll}
+    \toprule
+    N & Batch size & Steps per Epoch & Epochs & Actual Steps \\
+    \midrule
+    5.000 & 500 & 10 & 100 & 1,000 \\
+    5.000 & 500 & 10 & 300 & 3,000 \\
+    5.000 & 500 & 10 & 600 & 6,000 \\
+    5.000 & 500 & 10 & 900 & 9,000 \\ \hline
+    5.000 & 100 & 50 & 60 & 3,000 \\
+    5.000 & 250 & 20 & 150 & 3,000 \\
+    5.000 & 500 & 10 & 300 & 3,000 \\
+    5.000 & 1.000 & 5 & 600 & 3,000 \\ 
+    \bottomrule
+    \end{tabular}
+\end{table}
+}
+
+
+\frame{\frametitle{Experiment with `advanced' hyperparameters}
+\begin{itemize}
+    \item dimensionality - The number of layers in the generator/discriminator networks
+    \begin{itemize}
+        \item discriminator\_dim (tuple or list of ints): Size of the output samples for each one of the Discriminator Layers. A fully connected layer will be created for each one of the values provided. Defaults to (256, 256).
+        \item generator\_dim (tuple or list of ints): Size of the output samples for each one of the Residuals. A Residual Layer will be created for each one of the values provided. Defaults to (256, 256).  
+        \end{itemize}
+    \item embedding\_dim (int): Size of the random sample passed to the Generator. Defaults to 128.
+    \begin{itemize}
+        \item The embedding dimension essentially influences how much the information in the original data set is compressed
+    \end{itemize}
+    \item Other hyperparameters exist that we do not experiment with (i.e. learning rate, weight decay, etc.)
+\end{itemize}
+}
+
+% \section{Results}\label{sec:results}
+\frame{\frametitle{CTGAN: Effect of batch size (constant steps)}
+\begin{figure}
+    \resizebox{.75\textwidth}{!}{\includegraphics{../../ctgan/graphs/ctgan/ctgan_fidelity_optimize_batch_size.pdf}}
+    \label{ctgan_fidelity_optimize_batch_size}
+\end{figure}
+}
+
+\frame{\frametitle{CTGAN: Effect of epochs (constant batch size)}
+\begin{figure}
+    \resizebox{.75\textwidth}{!}{\includegraphics{../../ctgan/graphs/ctgan/ctgan_fidelity_optimize_epochs.pdf}}
+    \label{ctgan_fidelity_optimize_epochs}
+\end{figure}
+}
+
+\frame{\frametitle{CTGAN: Effect of dimensions}
+\begin{figure}
+    \resizebox{.7\textwidth}{!}{\includegraphics{../../ctgan/graphs/ctgan/ctgan_fidelity_optimize_dimensions.pdf}}
+    \label{ctgan_fidelity_optimize_dimensions}
+\end{figure}
+}
+
+\frame{\frametitle{variable: nofriend}
+\begin{figure}
+    \caption{CTGAN is better than DataSynthesizer below 30, but both are bad above 30}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_ds_ctgan_nofriend_1.pdf}}
+    \label{fig:ctgan_variable_nofriend}
+\end{figure}
+\vskip -10mm
+\begin{table}[ht]
+    \tiny
+    \raggedright
+    \input{../tables/table_compare_sd_ctgan_nofriend.tex}
+    \label{table:table_compare_sd_ctgan_nofriend}
+\end{table}
+}
+
+\frame{\frametitle{variable: bmi}
+\begin{figure}
+    \caption{CTGAN/DataSynthesizer estimate the median, but CTGAN is skewed a bit more to the right}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_ds_ctgan_bmi_1.pdf}}
+    \label{fig:ctgan_variable_bmi}
+\end{figure}
+\vskip -10mm
+\begin{table}[ht]
+    \tiny
+    \raggedright
+    \input{../tables/table_compare_sd_ctgan_bmi.tex}
+    \label{table:table_compare_sd_ctgan_bmi}
+\end{table}
+}
+
+
+\frame{\frametitle{variable: wkabdur (Work abroad duration)}
+\begin{figure}
+    \caption{CTGAN does not correctly estimate the distribution, DataSynthesizer gets the median (10)}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_ds_ctgan_wkabdur_1.pdf}}
+    \label{fig:ctgan_variable_wkabdur}
+\end{figure}
+\vskip -10mm
+\begin{table}[ht]
+    \tiny
+    \raggedright
+    \input{../tables/table_compare_sd_ctgan_wkabdur.tex}
+    \label{table:table_compare_sd_ctgan_wkabdur}
+\end{table}
+}
+
+\frame{\frametitle{Summary}
+\begin{itemize}
+    \item CTGAN is not a good SDG for this particular dataset, but \dots
+    \item Role of hyperparameters
+    \begin{itemize}
+        \item Did not improve model fit in this data
+        \item We could still alter other hyperparameters
+        \item We know hyperparamters help in other data (unpublished - under review)
+    \end{itemize}
+    \item Distinguish between the package and the synthesizer
+    \begin{itemize}
+        \item CTGAN is not the only GAN
+        \item Can we make a better GAN?  Yes, we can \dots
+    \end{itemize}
+\end{itemize}
+}
+
+\subsection{Synthpop}\label{sec:sdg_synthpop}
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:sdg}\ref{sec:sdg_synthpop}: Know your generator (Synthpop)} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+
+``Synthpop, R package, uses methods based on classification and regression trees (CART, developed by Breiman et al. (1984)), which can handle mixed data types and is non-parametric. Synthpop synthesises the data sequentially, one variable at a time; the first is sampled, then the following are predicted using CART (in the default mode) with the previous variables used as predictors. ''  (Little et al., 2021)
+
+{\bf Variable order}
+
+``This means that the order of variables is important (and can be set by the user)...As suggested by Raab et al. (2017), variables with many categories may be moved to the end of the sequence, therefore the ordering was set by the least to maximum number of categories, with age first.''  (Little et al., 2021)
+
+In our opinion: Problems and recommendations about variable order are not so clear in Raab et al., 2017.
+
+\end{frame}
+
+
+\frame{\frametitle{SD2011 - pMSE}
+\begin{figure}
+    \caption{}
+    \vskip -2mm
+    \resizebox{.7\textwidth}{!}{\includegraphics{../graphs/graph_fidelity_compare_dataset.pdf}}
+    \label{fig:graph_fidelity_compare_dataset}
+\end{figure}
+}
+
+\frame{\frametitle{Two-way pMSE for pairs of variables}
+\begin{figure}
+    \caption{}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/graph_fidelity_twoway_compare.pdf}}
+    \label{fig:graph_fidelity_twoway_compare}
+\end{figure}
+}
+
+\frame{\frametitle{variable: nofriend}
+\begin{figure}
+    \caption{Synthpop captures the distribution}
+    \vskip -2mm
+    % \resizebox{\textwidth}{!}{\includegraphics{../graphs/datasynthesizer/datasynthesizer_nofriend_1.pdf}}
+    % \resizebox{\textwidth}{!}{\includegraphics{../graphs/ctgan/ctgan_nofriend_1.pdf}}
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_nofriend_1.pdf}}
+\end{figure}
+\vskip -5mm
+\begin{table}[ht]
+    \tiny
+    \raggedright
+    \input{../tables/table_compare_nofriend.tex}
+    \label{table:table_compare_nofriend}
+\end{table}
+}
+
+\frame{\frametitle{variable: bmi}
+\begin{figure}
+    \caption{DataSynthesizer is similar to Synthpop}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_bmi_1.pdf}}
+\end{figure}
+\vskip -5mm
+\begin{table}[ht]
+    \tiny
+    \raggedright
+    \input{../tables/table_compare_bmi.tex}
+    \label{table:table_compare_bmi}
+\end{table}
+}
+
+
+\frame{\frametitle{variable: wkabdur (Work abroad duration)}
+\begin{figure}
+    \caption{Like CTGAN, Synthpop is higher than median (10), but is better with the distribution than CTGAN/DataSynthesizer}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_wkabdur_1.pdf}}
+\end{figure}
+\vskip -5mm
+\begin{table}[ht]
+    \tiny
+    \raggedright
+    \input{../tables/table_compare_wkabdur.tex}
+    \label{table:table_compare_wkabdur}
+\end{table}
+}
+
+\frame{\frametitle{Computational efficiency - duration in seconds}
+\vskip -5mm
+\begin{table}[ht]
+    \centering
+    \vskip -2mm
+    \rowcolors{1}{white}{lightgray}
+    \resizebox{\textwidth}{!}{\input{../tables/table_sd2011_duration_v2.tex}}
+    \label{table:table_sd2011_duration}
+\end{table}
+}
+
+\frame{\frametitle{Confidence Interval Overlap (CIO)}
+\begin{figure}
+    \caption{Synthpop still misses role of education in smoking}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/graph_utility_regression_cio_both.pdf}}
+\end{figure}
+}
+
+
+\frame{\frametitle{Summary}
+\begin{itemize}
+    \item Advantages
+    \begin{itemize}
+        \item Synthpop is an excellent SDG for this particular data set
+        \item Much better than CTGAN/DataSynthesizer
+    \end{itemize}
+    \item Disadvantages
+    \begin{itemize}
+        \item Questions about privacy (not addressed here)
+        \item Issues with high dimensional data
+    \end{itemize}
+\end{itemize}
+}
+
+
+\section{Conclusion}\label{sec:conclusion}
+
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:conclusion}: Conclusion} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+\end{frame}
+
+\frame{\frametitle{Results: Its complicated}
+\begin{itemize}
+    \item Know the data
+    \begin{itemize}
+        \item Cleaning/preprocessing are important (errors, missing values, generated variables)
+        \item Data variables/values are not always clear or easy to learn (This takes time)
+    \end{itemize}
+    \item Know your synthesizer. Its hard - don't hope it will be just one click
+    \begin{itemize}
+        \item Each of the three synthetic data generators (SDGs) has their own set of advantages/disadvantages
+        \begin{itemize}
+            \item Synthpop is good, but has problem with dimensionality
+            \item DataSynthesizer is not as good, but can set $\epsilon$-DP
+            \item CTGAN is bad, but maybe the problem is CTGAN, not GANs in general
+        \end{itemize}
+        \item We have focused on utility, privacy is its own separate, complicated issue
+        \begin{itemize}
+            \item Is privacy a function of the generator or the data? 
+        \end{itemize}
+    \end{itemize}
+    \item Possible disconnect between knowledge of the data and knowledge of the generator
+    \begin{itemize}
+        \item Private companies may not know the data, but may know the generator(s) - which is best and for what 
+        \item Statistical agencies may know the data, but may not know the generator(s)
+    \end{itemize}
+\end{itemize}
+}
+
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Thank you} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+\end{frame}
+
+\frame{\frametitle{SynDiffix: pMSE}
+\begin{figure}
+    \caption{}
+    \vskip -2mm
+    \resizebox{.7\textwidth}{!}{\includegraphics{../graphs/graph_fidelity_compare_dataset_syndiffix.pdf}}
+\end{figure}
+}
+
+\frame{\frametitle{SynDiffix: Two-way pMSE for pairs of variables}
+\begin{figure}
+    \caption{}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/graph_fidelity_twoway_compare_syndiffix.pdf}}
+\end{figure}
+}
+
+\end{spacing}
+\end{document}
+

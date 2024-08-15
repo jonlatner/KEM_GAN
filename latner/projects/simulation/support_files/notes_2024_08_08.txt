@@ -1,0 +1,46 @@
+- begin with reiter 16 worlds
+- estimate cart (with synthpop - numeric/anova)
+- result synthpop is disclosive
+- estimate cart (with synthpop - categorical/factor)
+- result is not disclosive
+
+- explain why numeric is disclosive - tree pruning
+- explain why categorical is not disclosive
+
+nothing to do with the splitting criteria.
+
+the difference is the pruning.  cart for categorical variables prunes of leaf nodes that lead to the same prediction.  if you have a split that would lead to the same prediction, then it would just use the parent.  this is not a problem if your goal is prediction (its the same, just more efficient).  it is a problem if you are interested in the conditional probability distributions (CDFs) of the leaf nodes.  in this case, we are because we do the boot strap of the leaf nodes.
+
+for example, let us say the parent has 30% "1" and 70% "0".  there is a split to make children of parents more pure, one split is all "0" and the other is 1% "1" and you did a prediction, then both predictions would lead to "0".
+
+the conditional distributions would be different.  in one, you would always get 0, i.e. 100% of the time.  in the other, you would sometimes get 1, i.e. 1% of the time.  It still could be that for the parent, 30% are 1, but they are distributed to different positions.
+
+because rpart is designed for predicitons, there is no difference.  therefore, its not really a bug, its just how it is designed and is a reasonable choice for the goal (prediction), but from synthpop perspective, if you want to sample from the leaf it is a problem.  because you're not really interested in prediciton, but rather the conditional probability distribution.
+
+With the anova, or more disclosive, we could visually see which was the correct world.
+
+with the categorical, or less disclosive, we could visually see nothing.
+
+with dp, it depends on the epsilon.
+
+in synthpop, its not a choice, but the one that is more disclosive is less useful and the opposite.  therefore, while it may appear that synthpop is immune from this trade-off we show a way in which that is not true.
+
+it basically shows that the choice of your synthetic model influences the quality of your synthetic data and your disclosiveness.  here, the choice is hidden in how rpart works, and is not really a choice that anyone would make.  
+
+if they had the choice, people would expect rpart to treat these variables as categorical and they would expect rpart to grow the full tree.
+
+by contrast, dp users get to decide 
+
+the new thing is how different trees handle your data differently, but this is not how anyone designed to be that way.  so its not really a contribution.
+
+
+
+the connection with Reiter is that they have a numeric measure for looking at those 16 pictures.
+
+
+
+how do we explain the difference?  
+
+within cart, the difference between good and bad representation is gini for categorical factor and anova in numeric.  in our data, the anova leads to a more accurate tree.
+
+between cart (categorical) and ctree, the differnce good and bad representaiton is that the splitting criterion is gini in cart and conditional entropy in ctree.  

@@ -34,9 +34,8 @@ options(scipen=999)
 my.seed = 1234
 set.seed(my.seed)
 
-# Load data ----
+# Combinations ----
 
-ods <- read.csv(paste0(original_data,"simulated.csv"))
 
 # Define the 16 possible combinations of four binary variables
 combinations <- expand.grid(y1 = c(0, 1), y2 = c(0, 1), y3 = c(0, 1), y4 = c(0, 1))
@@ -44,14 +43,17 @@ combinations <- expand.grid(y1 = c(0, 1), y2 = c(0, 1), y3 = c(0, 1), y4 = c(0, 
 # Loop ----
 
 df_frequency <- data.frame()
-for (c in 1:100) {
+for (c in 1:1) {
   for (r in 1:16) {
 
     # create seed
     my.seed = my.seed + 1
     
+    # Load original data 
+    df_ods <- read.csv(paste0(original_data,"simulated.csv"))
+    
     # Drop the last row
-    df_ods <- head(ods, -1)
+    df_ods <- head(df_ods, -1)
     
     # Set the last observation to last_record
     last_record <- combinations[r,]
@@ -59,8 +61,9 @@ for (c in 1:100) {
     df_ods[1000,] <- last_record
 
     # Create fake synthetic data
-    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart", minnumlevels = 5)
+    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart")
     sds <- sds$syn
+    df_sds <- sds
     
     # Create a frequency table for true original data (unique = 1111)
     
@@ -75,7 +78,6 @@ for (c in 1:100) {
              unique = paste(last_record$y1, last_record$y2, last_record$y3, last_record$y4, sep = ""))
 
     # Create a frequency table for synthetic data
-
     sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
     sds <- sds %>%
       select(-matches("var"))
@@ -91,11 +93,51 @@ for (c in 1:100) {
 
 # Save data ----
 
-write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_factor.csv"), row.names = FALSE)
+# write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"), row.names = FALSE)
 
 # Compare frequency ----
 
-df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_factor.csv"))
+# df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"))
+
+df_sds$type <- "synthetic"
+df_ods$type <- "original"
+
+df_combine <- rbind(df_sds,df_ods)
+
+# Reshape the data for plotting
+df_combine_long <- df_combine %>%
+  pivot_longer(!type, names_to = "variable", values_to = "value") %>%
+  mutate(value = as.factor(value)) %>%
+  group_by(type,variable,value) %>%
+  tally() %>%
+  group_by(type,variable) %>%
+  mutate(total = sum(n),
+         pct = n/total) %>%
+  ungroup()
+
+df_combine_long
+
+# Plot using facet_wrap
+p <- ggplot(df_combine_long, aes(x = value, y=n, fill = type)) +
+  geom_bar(stat = 'identity',position = position_dodge(.9)) +
+  geom_text(aes(label = n),vjust = -0.5, size = 4,position = position_dodge(.9)) +
+  facet_wrap(~variable) +
+  theme_bw() +
+  scale_y_continuous(limits = c(0,700), breaks = seq(0,700,100)) +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        axis.title = element_blank(),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+p
+
+ggsave(p, filename = paste0(graphs,"graph_compare_frequency.pdf"), height = 4, width = 10, units = "in")
+
+# Compare histogram ----
+
+# df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"))
 
 df_graph_sds <- df_frequency %>%
   filter(type == "synthetic") 
@@ -123,4 +165,4 @@ df_graph <-
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"cart_factor.pdf"), height = 8, width = 10)
+# ggsave(plot = df_graph, paste0(graphs,"cart_numeric.pdf"), height = 8, width = 10)

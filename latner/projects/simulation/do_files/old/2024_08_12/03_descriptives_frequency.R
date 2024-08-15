@@ -18,6 +18,7 @@ library(tidyverse)
 main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/simulation/"
 
 data_files = "data_files/"
+graphs = "graphs/"
 original_data = "data_files/original/"
 synthpop_data = "data_files/synthetic/synthpop/"
 datasynthesizer_data = "data_files/synthetic/datasynthesizer/"
@@ -47,7 +48,7 @@ df_ods_long <- df_ods %>%
 df_ods_long
 
 # Plot using facet_wrap
-ggplot(df_ods_long, aes(x = value, y=n)) +
+p <- ggplot(df_ods_long, aes(x = value, y=n)) +
   geom_bar(color = "black", stat = 'identity') +
   geom_text(aes(label = n),vjust = -0.5, size = 4) +
   facet_wrap(~variable, scales = "free") +
@@ -58,6 +59,8 @@ ggplot(df_ods_long, aes(x = value, y=n)) +
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
+
+ggsave(p, filename = paste0(graphs,"graph_frequency.pdf"), height = 4, width = 10, units = "in")
 
 # Graph frequency by id ----
 
@@ -73,7 +76,7 @@ as.vector(df_frequency$combine)
 df_frequency$pct <- (df_frequency$Freq / nrow(df_ods)) * 100
 
 
-ggplot(df_frequency, aes(x = combine, y = Freq)) +
+p <- ggplot(df_frequency, aes(x = combine, y = Freq)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   ylab("Frequency") +
   theme_bw() +
@@ -87,3 +90,5 @@ ggplot(df_frequency, aes(x = combine, y = Freq)) +
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
+
+ggsave(p, filename = paste0(graphs,"graph_histogram.pdf"), height = 4, width = 10, units = "in")

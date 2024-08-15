@@ -14,7 +14,6 @@ rm(list=ls(all=TRUE))
 library(synthpop)
 library(tidyverse)
 library(ggh4x) # facet_nested
-library(readr)
 
 # FOLDERS - ADAPT THIS PATHWAY
 main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/simulation/"
@@ -61,7 +60,7 @@ for (c in 1:100) {
     df_ods[1000,] <- last_record
 
     # Create fake synthetic data
-    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart")
+    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart", minnumlevels = 5)
     sds <- sds$syn
     
     # Create a frequency table for true original data (unique = 1111)
@@ -92,11 +91,11 @@ for (c in 1:100) {
 
 # Save data ----
 
-write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"), row.names = FALSE)
+write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_factor.csv"), row.names = FALSE)
 
 # Compare frequency ----
 
-df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"))
+df_frequency$combine <- factor(df_frequency$combine, levels = sort(levels(df_frequency$combine)))
 
 df_graph_sds <- df_frequency %>%
   filter(type == "synthetic") 
@@ -124,4 +123,4 @@ df_graph <-
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"cart_numeric.pdf"), height = 8, width = 10)
+ggsave(plot = df_graph, paste0(graphs,"cart_factor.pdf"), height = 8, width = 10)

@@ -27,7 +27,7 @@ setwd(main_dir)
 options(scipen=999) 
 
 # Set seed for reproducibility
-my.seed = 1234
+my.seed = 1237
 set.seed(my.seed)
 
 # Create simulated data ----
@@ -61,52 +61,4 @@ head(df_ods)
 
 # Save ----
 write.csv(df_ods, paste0(original_data,"simulated.csv"), row.names = FALSE)
-
-# Create synthetic data ----
-sds <- syn(df_ods, m=1, seed = my.seed,minnumlevels = 5,method = "cart")
-df_sds_cart <- sds$syn
-
-sds <- syn(df_ods, m=1, seed = my.seed,minnumlevels = 5,method = "ctree")
-df_sds_ctree <- sds$syn
-
-# Compare frequency ----
-
-# Original data
-df_ods$combine <- paste(df_ods$var1, df_ods$var2, df_ods$var3, df_ods$var4, sep = "")
-df_ods <- df_ods %>%
-  select(-matches("var"))
-ods_frequency <- as.data.frame(table(df_ods))
-ods_frequency$type <- "original"
-
-# Synthetic CART
-df_sds_cart$combine <- paste(df_sds_cart$var1, df_sds_cart$var2, df_sds_cart$var3, df_sds_cart$var4, sep = "")
-df_sds_cart <- df_sds_cart %>%
-  select(-matches("var"))
-sds_frequency_cart <- as.data.frame(table(df_sds_cart))
-sds_frequency_cart$type <- "synthetic (cart)"
-
-
-# Synthetic CTREE
-df_sds_ctree$combine <- paste(df_sds_ctree$var1, df_sds_ctree$var2, df_sds_ctree$var3, df_sds_ctree$var4, sep = "")
-df_sds_ctree <- df_sds_ctree %>%
-  select(-matches("var"))
-sds_frequency_ctree <- as.data.frame(table(df_sds_ctree))
-sds_frequency_ctree$type <- "synthetic (ctree)"
-
-# Combine
-df_frequency <- rbind(ods_frequency,sds_frequency_cart,sds_frequency_ctree)
-
-ggplot(df_frequency, aes(x = combine, y = Freq, fill = type)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
-  theme_bw() +
-  theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",
-        legend.title = element_blank(),
-        legend.key.width=unit(1, "cm"),
-        axis.title.x = element_blank(),
-        axis.line.y = element_line(color="black", linewidth=.5),
-        axis.line.x = element_line(color="black", linewidth=.5)
-  )
-
-
 
