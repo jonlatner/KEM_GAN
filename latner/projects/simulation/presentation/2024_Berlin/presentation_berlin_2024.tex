@@ -102,8 +102,11 @@
 \end{frame}
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulated data}\label{sec:data}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frame{\frametitle{Data}
 From Reiter et al., 2014
 
@@ -127,7 +130,6 @@ From Reiter et al., 2014
 \end{figure}
 }
 
-\section{Synthesizing data with Synthpop (CART)}\label{sec:syn_data}
 \begin{frame}[fragile]
 \frametitle{Synthpop}
 
@@ -140,6 +142,8 @@ Synthesis
 -----------
  var1 var2 var3 var4
 \end{lstlisting}
+
+notice the "Warning".  It means that the variables are being synthesized as numerical values  (0/1), and Synthpop is suggesting they should be synthesized as categorical values  (``0''/``1'')
 \end{frame}
 
 \frame{\frametitle{Compare frequency (numerical)}
@@ -190,7 +194,28 @@ Synthesis
 \end{figure}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Measuring utility and privacy}\label{sec:measuring}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Comparing utility measures}
+\begin{figure}
+    \caption{Utility measures close to 0, i.e. high utility}
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_compare_utility.pdf}}
+    \label{fig:graph_compare_utility}
+\end{figure}
+}
+
+\frame{\frametitle{Comparing privacy measures}
+all privacy measures close to 0, i.e. low privacy risk
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{How do we explain this?}\label{sec:explain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frame{\frametitle{How do we explain this?}
 \begin{figure}
     \caption{}

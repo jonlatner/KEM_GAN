@@ -15,6 +15,8 @@ library(synthpop)
 library(tidyverse)
 library(xtable)
 
+# https://arxiv.org/pdf/2406.16826
+
 # FOLDERS - ADAPT THIS PATHWAY
 main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/simulation/"
 
@@ -28,7 +30,7 @@ setwd(main_dir)
 options(scipen=999) 
 
 # Set seed for reproducibility
-my.seed = 1234
+my.seed = 1237
 set.seed(my.seed)
 
 # Load original data ----
@@ -41,6 +43,12 @@ sds <- syn(df_ods, m = 1, seed = my.seed)
 
 # Identity disclosure measures ----
 
+t1 <- disclosure.summary(sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
+print(t1,to.print = "ident")
+
+print(t1,to.print = "attrib")
+print(t1, to.print = "allCAPs")
+print(t1,plot = TRUE)
 replicated.uniques (sds, df_ods)
                     
 # table ----

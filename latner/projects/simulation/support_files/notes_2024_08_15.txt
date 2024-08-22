@@ -1,0 +1,37 @@
+it all comes to the problem that damien described where you can choose any measure that will show anything for any synthetic data.
+
+with research choice, you could meliciously choose.
+
+
+
+practical measures are only so useful for specific data sets or cases
+
+edge cases exist where measures are not useful at all
+
+
+adding in the critique about Reiter et al., 2014
+
+making it more like a conceptual talk about how we can think about risk
+
+the synthpop discovery plays into that
+
+there is this one combination of settings that leads to less disclosive synthetic data.  whats going on there?
+
+thinking about the 16 worlds helps us to understand the vulnerabilities better.
+
+maybe no data will look like this at first sight, but if you think about it, we store data in computers as 0 or 1, then it will look like this
+
+if we figure out how to work with 0 and 1, then we can figure out everything else from there
+
+helpful thinking about in a principled way
+
+you have to choose something to learn
+
+their approach to privacy is not robust
+
+curse of dimensionality, you can calcualte this with 16 categories, but if you add 1 category of 0/1, it will be impossible soon.
+
+in statistics, they don't think about 0/1, they think about distributions
+
+and in computer science, they think about 0/1, and if you figure it out for 0/1, then you figure it out for everything else, but in practice that is not helpful
+
