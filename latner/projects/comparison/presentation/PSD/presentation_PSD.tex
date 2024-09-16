@@ -47,7 +47,7 @@
 \newcommand{\btVFill}{\vskip0pt plus 1filll}
 
 \title{Generating synthetic data is complicated: Know your data and know your generator}
-\subtitle{Wiesbaden, \newline 21. März, 2024}
+\subtitle{PSD2024: Privacy in Statistical Databases 2024, \newline 26. September, 2024}
 
 \author{Jonathan Latner, PhD \newline Dr. Marcel Neuenhoeffer \newline Prof. Dr. Jörg Drechsler}
 
@@ -238,6 +238,68 @@
     \resizebox{\textwidth}{!}{\input{../../tables/table_sd2011_data_structure_small.tex}}
     \label{table:sd2011_data_structure}
 \end{table}
+}
+
+\section{Know your generator}\label{sec:sdg}
+\subsection{DataSynthesizer}\label{sec:sdg_datasynthesizer}
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:sdg}\ref{sec:sdg_datasynthesizer}: Know your generator (DataSynthesizer)} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+
+``DataSynthesizer, a Python package, implements a version of the PrivBayes (Zhang et al., 2017) algorithm. DataSynthesizer learns a differentially private Bayesian Network which captures the correlation structure between attributes and then draws samples.'' (Little et al., 2021)
+
+Variable type: The Bayesian network only works with discrete variables. One way to discretize continuous variables is by binning them.
+
+\end{frame}
+
+\frame{\frametitle{Hyperparameters}
+\begin{itemize}
+    \item $\epsilon$ Differential Privacy (DP): we turn it off (default 0.1)
+    \item $k$-degree Bayesian network (parents): 1 (independent), 2, 3, $\dots$ (default=3)
+    \begin{itemize}
+        \item In reality, $k$ is not known, but maximum value of $k$ = number of columns - 1
+        \item in PrivBayes, $k$ is a function of tuples (rows), $\epsilon$, and attributes (columns) (Default is `greedy') 
+        \begin{itemize}
+            \item Computational Efficiency: The greedy algorithm makes the Bayesian network construction process faster by only considering the local best choice at each step, but if $k$ is too large, the algorithm might take longer because it has more potential parent nodes to evaluate.
+            \item Balancing Utility and Privacy: A greedy approach with a high $k$ could result in more complex networks that could more closely model the original data, but also reduce the privacy of the synthetic data. 
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+}
+
+
+\frame{\frametitle{Missing values}
+\begin{figure}
+    \caption{Captures values $<$ 0 as continuous, not missing/categorical}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/datasynthesizer_wkabdur.pdf}}
+    \label{fig:ds_variable_wkabdur}
+\end{figure}
+}
+
+\frame{\frametitle{Generated variables (agegr)}
+\begin{figure}
+    \caption{Number of misclassified}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/datasynthesizer_frequency_agegr_errors.pdf}}
+    \label{fig:ds_agegr_errors}
+\end{figure}
+}
+
+\frame{\frametitle{Extreme values (bmi)}
+\begin{figure}
+    \caption{Extreme values}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/datasynthesizer_bmi.pdf}}
+    \label{fig:ds_bmi}
+\end{figure}
 }
 
 

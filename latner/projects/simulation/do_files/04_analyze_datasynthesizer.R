@@ -46,11 +46,11 @@ df_ods_frequency$type <- "original"
 
 df_graph_ods <- df_ods_frequency
 
-df_graph_sds <- read_csv(paste0(datasynthesizer_data,"datasynthesizer.csv"))
+df_graph_sds <- read_csv(paste0(datasynthesizer_data,"datasynthesizer_frequency.csv"))
 df_graph_sds$type <- "datasynthesizer"
 df_graph_sds <- df_graph_sds %>%
-  filter(epsilon>0 & epsilon<=1)
-
+  filter(epsilon>0 & epsilon<=1) %>%
+  filter(parents == 4) 
 
 df_graph <- 
   ggplot() +

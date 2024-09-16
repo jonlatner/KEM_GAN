@@ -123,6 +123,7 @@ df_graph <- ggplot(df_combine_2, aes(x = agegr, y = n, fill = agegr_2)) +
   xlab("Age group (synthetic group)") +
   theme_bw() +
   labs(fill = "Age group (synthetic values)") +
+  scale_y_continuous(breaks = seq(0,600,100), limits = c(0,600)) +
   geom_text(aes(label = n), position = position_dodge(width = .8), vjust=-0.5) +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",

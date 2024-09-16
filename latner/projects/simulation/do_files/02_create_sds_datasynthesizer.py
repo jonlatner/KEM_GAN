@@ -68,7 +68,7 @@ LOAD DATA
 
 data = ["simulated"] # Real data
 copies = [10]
-parents = [2]
+parents = [1,2,4]
 epsilon = [0,0.1,0.25,0.5,0.75,1,10]
 
 df_frequency = pd.DataFrame()
@@ -83,8 +83,6 @@ for d in data:
                     j = j + 1
         
                     my_seed = my_seed + 1
-                    np.random.seed(my_seed)
-                    random.seed(my_seed)
         
                     # Create a unique filename based on the values
                     filename_ods = f"{d}.csv"
@@ -114,9 +112,9 @@ for d in data:
         
                     # 3b. Compute the statistics of the dataset.
                     describer.describe_dataset_in_correlated_attribute_mode(dataset_file=input_data,
+                                                                            seed=my_seed,   
                                                                             k=p,
-                                                                            epsilon=e,
-                                                                            seed=my_seed)  
+                                                                            epsilon=e)  
         
                     # Stop the timer
                     time_end = time.time()
@@ -161,6 +159,7 @@ for d in data:
                     frequency['epsilon'] = e
                     frequency['copies'] = m
                     frequency['number'] = j
+                    frequency['parents'] = p
 
                     # Append data
                     df_frequency = pd.concat([df_frequency, frequency], ignore_index=True)
@@ -171,12 +170,15 @@ for d in data:
                     roc_values['epsilon'] = e
                     roc_values['copies'] = m
                     roc_values['number'] = j
+                    roc_values['parents'] = p
                     df_roc_values = pd.concat([df_roc_values, roc_values], ignore_index=True)
 
                     print("parents:",p)
                     print("epsilon:",e)
                     print("copes:",m)
                     print("number:",j)
+                    print(my_seed)
+                    
 
 
 df_frequency = df_frequency.astype(str)
@@ -185,3 +187,5 @@ df_frequency.to_csv(full_path, index=False)
 
 full_path = os.path.join(synthetic_data, 'datasynthesizer_roc_values.csv')
 df_roc_values.to_csv(full_path, index=False)
+
+
