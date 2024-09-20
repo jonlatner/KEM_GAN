@@ -82,7 +82,7 @@ p <- ggplot(subset(df_combine_long,type == "original"), aes(x = value, y=n)) +
 
 p
 
-ggsave(p, filename = paste0(graphs,"graph_numeric_frequency.pdf"), height = 4, width = 10, units = "in")
+ggsave(p, filename = paste0(graphs,"graph_numeric_frequency.pdf"), height = 4, width = 6, units = "in")
 
 # Plot using facet_wrap
 p <- ggplot(df_combine_long, aes(x = value, y=n, fill = type)) +
@@ -100,7 +100,7 @@ p <- ggplot(df_combine_long, aes(x = value, y=n, fill = type)) +
 
 p
 
-ggsave(p, filename = paste0(graphs,"graph_numeric_compare_frequency.pdf"), height = 4, width = 10, units = "in")
+ggsave(p, filename = paste0(graphs,"graph_numeric_compare_frequency.pdf"), height = 4, width = 6, units = "in")
 
 # Compare histogram ----
 
@@ -138,7 +138,7 @@ p <- ggplot(subset(df_combine,type == "original"), aes(x = combine, y=Freq)) +
 
 p
 
-ggsave(p, filename = paste0(graphs,"graph_numeric_histogram.pdf"), height = 4, width = 10, units = "in")
+ggsave(p, filename = paste0(graphs,"graph_numeric_histogram.pdf"), height = 4, width = 6, units = "in")
 
 # Plot using facet_wrap
 p <- ggplot(df_combine, aes(x = combine, y=Freq, fill = type)) +
@@ -155,4 +155,4 @@ p <- ggplot(df_combine, aes(x = combine, y=Freq, fill = type)) +
 
 p
 
-ggsave(p, filename = paste0(graphs,"graph_numeric_compare_histogram.pdf"), height = 4, width = 10, units = "in")
+ggsave(p, filename = paste0(graphs,"graph_numeric_compare_histogram.pdf"), height = 4, width = 6, units = "in")

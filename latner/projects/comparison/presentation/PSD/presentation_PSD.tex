@@ -115,14 +115,14 @@
             \item Compare 3 SDGs: DataSynthesizer, CTGAN, Synthpop
             \item How does it deal with missing values?
             \item How computationally efficient is it (in terms of duration in time)?
-            \item How does it meet privacy standards?  (but not today)
         \end{itemize}
     \end{itemize}
-    \item Conclusion -  Every SDG has advantages/disadvantages (no one, correct solution)
+    \item Conclusion
     \begin{itemize}
-        \item Synthpop is good, but has problem with dimensionality
-        \item DataSynthesizer is not as good, but can set $\epsilon$-DP
-        \item CTGAN is bad, but maybe the problem is CTGAN, not GANs in general
+        \item On the one hand, generating synthetic data is easy (even I can do it!)
+        \item On the other hand, users need to be aware of challenges
+        \item Every SDG has advantages/disadvantages (no one, correct solution)
+        \item One should be skeptical about automated processes for generating synthetic data
     \end{itemize}
 \end{itemize}
 }
@@ -134,7 +134,7 @@
     \item \url{Mostly.ai}: Synthetic Data. Better than real. Still struggling with real data? Use existing data for synthetic data generation. Synthetic data is more accessible, more flexible, and simply...smarter.
     \item \url{Statice.ai}: Generating synthetic data comes down to learning the joint probability distribution in an original, real dataset to generate a new dataset with the same distribution.  The more complex the real dataset, the more difficult it is to map dependencies correctly. Deep learning models such as generative adversarial networks (GAN) and variational autoencoders (VAE) are well suited for synthetic data generation.
     \item \url{hazy.com}: Synthetic data does not contain any real data points so can be shared freely. Say goodbye to lengthy governance processes associated with real data.  Specifically, Hazy data is designed to preserve all the patterns, statistical properties and correlations in the source data, so that it can be used as a drop-in replacement for it.
-    \item DataSynthesizer: The distinguishing feature of DataSynthesizer is its usability — the data owner does not have to specify any parameters to start generating and sharing data safely and effectively.
+    \item DataSynthesizer (Ping et al., 2017): The distinguishing feature of DataSynthesizer is its usability — the data owner does not have to specify any parameters to start generating and sharing data safely and effectively.
 \end{itemize}
 }
 
@@ -143,17 +143,19 @@
 \begin{itemize}
     \item According to the Alan Turing Institute (Jordan et al., 2022)
     \item Synthetic data is not a replacement for real data.  It is a distorted version of the real data.
+    \item We must ask: 
     \begin{itemize}
         \item Why are we creating synthetic data?  
-        \item Agreeing on the goal will help us make decisions (synthesizer, measures, etc.)
+        \item How different should it be?  
+        \item How do we measure the difference?  
+        \item How does the synthesizer work? 
     \end{itemize}
-    \item How does the synthesizer work? from complete black box to complete user choice
-    \item How different should it be?  How do we measure the difference (utility and fidelity)?  
+    \item Answering these questions will help us make decisions about which synthesizer is the right choice
     \begin{itemize}
-        \item Utility and fidelity are sometimes called general/broad or specific/narrow measures within the single concept of utility (Snoke et al., 2018; Drechsler and Reiter, 2009). 
+        \item Hyperparameters: from complete black box to complete user choice
+        \item Variables: not just with categorical, dichotomous, and continuous variables, but with messy values 
+        \item Computationally efficiency (i.e. duration in time): is important and often ignored.  The algorithm should scale well with the dimension of the data space in a relational way, not exponential way.
     \end{itemize}
-    \item Computationally efficiency (i.e. duration in time) is important and often ignored.  The algorithm should scale well with the dimension of the data space in a relational way, not exponential way.
-    \item How do we evaluate privacy? (not today)
 \end{itemize}
 }
 
@@ -167,18 +169,15 @@
     \end{itemize}
     \item Know your generator
     \begin{itemize}
-        \item Evaluate 3 synthetic data generators (SDG): DataSynthesizer, CTGAN, Synthpop
-        \begin{itemize}
-            \item How do they actually work? (only briefly described here)
-        \end{itemize}
+        \item Compare 3 synthetic data generators (SDGs): DataSynthesizer, CTGAN, Synthpop
     \end{itemize}
-    \item 4 utility measures
+    \item 3 utility measures
     \begin{itemize}
+        \item Compare univariate frequency
         \item Propensity score mean-squared error (pMSE) - Append the original and synthetic datasets. Create an indicator variable for original/synthetic datasets.  The probability of being in the synthetic dataset is computed for each record in the combined dataset ($n$); this is the propensity score ($p$).  Lower scores are better.  ($pMSE = \frac{1}{N}\sum_{i=1}^{N}[\hat{p}_i - c]^2$)
-        \item Ratio of counts/estimates (ROC/ROE) - Calculate the ratio of each value in a given variable for both synthetic/original datasets.  Then, calculate the ratio of each value for each dataset, and divide the smaller of these two estimates by the larger one.  Higher scores are better.  ($ROE = \frac{min(y_{orig}^1,y_{synth}^1)}{max(y_{orig}^1,y_{synth}^1)}$)
-        \item Confidence interval overlap from 2 regression models (OLS, GLM)
         \item Computationally efficient with respect to duration in time
     \end{itemize}
+    \item In this talk, we are focusing on utility.  Relative to the challenge of achieving privacy, utility challenges receive less attention.
 \end{itemize}
 }
 
@@ -230,10 +229,11 @@
 
 
 \frame{\frametitle{Data (SD2011)}
-\vskip -5mm
 \begin{table}[ht]
+    \vskip -3mm
+    \caption{Spikey values}
     \centering
-    \vskip -2mm
+    \vskip -7mm
     \rowcolors{1}{white}{lightgray}
     \resizebox{\textwidth}{!}{\input{../../tables/table_sd2011_data_structure_small.tex}}
     \label{table:sd2011_data_structure}
@@ -253,29 +253,21 @@
 \vskip-3mm
 \pgfuseimage{rahmenlinie}
 
-``DataSynthesizer, a Python package, implements a version of the PrivBayes (Zhang et al., 2017) algorithm. DataSynthesizer learns a differentially private Bayesian Network which captures the correlation structure between attributes and then draws samples.'' (Little et al., 2021)
+DataSynthesizer is a Python package that implements the PrivBayes algorithm to address the challenges associated with a differentially private (DP) method for releasing synthetic data outputs from high-dimensional real data inputs. To do this, the package implements a Bayesian network model to estimate the joint distribution of the data.  The Bayesian network only works with discrete variables. One way to discretize continuous variables is by binning them.  This can be a problem.
 
-Variable type: The Bayesian network only works with discrete variables. One way to discretize continuous variables is by binning them.
-
+\begin{itemize}
+    \item Hyperparameters
+    \begin{itemize}
+        \item $\epsilon$ Differential Privacy (DP): we turn it off (default 0.1)
+        \item $k$-degree Bayesian network (parents): 2 (default is `greedy')
+    \end{itemize}
+    \item Utility measure - compare univariate frequency between original and synthetic data
+\end{itemize}
 \end{frame}
 
-\frame{\frametitle{Hyperparameters}
-\begin{itemize}
-    \item $\epsilon$ Differential Privacy (DP): we turn it off (default 0.1)
-    \item $k$-degree Bayesian network (parents): 1 (independent), 2, 3, $\dots$ (default=3)
-    \begin{itemize}
-        \item In reality, $k$ is not known, but maximum value of $k$ = number of columns - 1
-        \item in PrivBayes, $k$ is a function of tuples (rows), $\epsilon$, and attributes (columns) (Default is `greedy') 
-        \begin{itemize}
-            \item Computational Efficiency: The greedy algorithm makes the Bayesian network construction process faster by only considering the local best choice at each step, but if $k$ is too large, the algorithm might take longer because it has more potential parent nodes to evaluate.
-            \item Balancing Utility and Privacy: A greedy approach with a high $k$ could result in more complex networks that could more closely model the original data, but also reduce the privacy of the synthetic data. 
-        \end{itemize}
-    \end{itemize}
-\end{itemize}
-}
 
 
-\frame{\frametitle{Missing values}
+\frame{\frametitle{Preprocess missing values}
 \begin{figure}
     \caption{Captures values $<$ 0 as continuous, not missing/categorical}
     \vskip -2mm
@@ -284,22 +276,181 @@ Variable type: The Bayesian network only works with discrete variables. One way 
 \end{figure}
 }
 
-\frame{\frametitle{Generated variables (agegr)}
+\frame{\frametitle{Drop generated variables (1 of 2)}
 \begin{figure}
-    \caption{Number of misclassified}
+    \caption{Age group: Number of misclassified}
     \vskip -2mm
     \resizebox{\textwidth}{!}{\includegraphics{../../graphs/datasynthesizer_frequency_agegr_errors.pdf}}
     \label{fig:ds_agegr_errors}
 \end{figure}
 }
 
-\frame{\frametitle{Extreme values (bmi)}
+\frame{\frametitle{Drop generated variables (2 of 2)}
 \begin{figure}
-    \caption{Extreme values}
+    \caption{BMI: Preprocess extreme values}
     \vskip -2mm
     \resizebox{\textwidth}{!}{\includegraphics{../../graphs/datasynthesizer_bmi.pdf}}
     \label{fig:ds_bmi}
 \end{figure}
+}
+
+\frame{\frametitle{Regenerate generated variables from synthetic values}
+\begin{figure}
+    \caption{Body mass index}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/compare_ds_bmi.pdf}}
+    \label{fig:compare_ds_bmi.pdf}
+\end{figure}
+}
+
+
+\frame{\frametitle{Can only preprocess so much}
+\begin{figure}
+    \caption{nofriend: `Spikey' or discontinuous values}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/datasynthesizer_nofriend.pdf}}
+    \label{fig:ds_nofriend}
+\end{figure}
+}
+
+
+\subsection{CTGAN}\label{sec:sdg_ctgan}
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:sdg}\ref{sec:sdg_ctgan}: Know your generator (CTGAN)} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+
+GANs simultaneously train two neural networks: a generator and a discriminator. The goal of the generator is to create synthetic data that becomes increasingly indistinguishable from original data. The goal of the discriminator is to get better at distinguishing between original and synthetic data. This adversarial process goes back and forth until the discriminator cannot distinguish between the original data and the generated data.
+
+
+\begin{itemize}
+    \item Hyperparameters
+    \begin{itemize}
+        \item Actual steps for observations ($n$) = $f$ (batch * steps per epoch * epochs) 
+        \begin{itemize}
+            \item batch size = Number of samples to process in each step (default is 500)
+            \item epochs = Number of times the GAN gets to see the full dataset (default is 300).
+        \end{itemize}
+        \item Dimensions
+        \begin{itemize}
+            \item Discriminator/Generator - defines the architecture of the Discriminator by specifying the number of neurons in each layer. Defaults to (256, 256)
+            \item Embeddings - Size of the random sample passed to the Generator. (Default 128)
+        \end{itemize}
+    \end{itemize}
+    \item Utility - pMSE
+\end{itemize}
+
+\end{frame}
+
+\frame{\frametitle{Vary batch size, but steps are constant (3000)}
+\begin{figure}
+    \caption{DataSynthesizer (0.07) and Synthpop (0.02)}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/ctgan_fidelity_optimize_batch_size.pdf}}
+    \label{fig:ctgan_fidelity_optimize_batch_size.pdf}
+\end{figure}
+}
+
+
+\frame{\frametitle{Vary epochs, but batch size is constant (500)}
+\begin{figure}
+    \caption{DataSynthesizer (0.07) and Synthpop (0.02)}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/ctgan_fidelity_optimize_epochs.pdf}}
+    \label{fig:ctgan_fidelity_optimize_epochs}
+\end{figure}
+}
+
+\frame{\frametitle{Optimize dimensions}
+\begin{figure}
+    \caption{DataSynthesizer (0.07) and Synthpop (0.02)}
+    \vskip -2mm
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/ctgan_fidelity_optimize_dimensions.pdf}}
+    \label{fig:ctgan_fidelity_optimize_dimensions}
+\end{figure}
+}
+
+
+\subsection{Synthpop}\label{sec:sdg_synthpop}
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:sdg}\ref{sec:sdg_synthpop}: Know your generator (Synthpop)} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+
+Synthpop is an R package that implements parametric and ML based models (classification and regression trees (CART) and random forests) to generate synthetic data. Synthpop follows a sequential process, where the first variable to be synthesized is generated by drawing new values from the marginal distribution of this variable (either by drawing from a parametric distribution or by sampling from the empirical distribution), and the subsequent variables are synthesized one at a time, always conditioning on those variables that have been synthesized in earlier steps
+
+\begin{itemize}
+    \item Hyperparameters (default)
+    \item Utility measure - Computational efficiency
+\end{itemize}
+
+\end{frame}
+
+\frame{\frametitle{Computational efficiency}
+\begin{table}[ht]
+    \vskip -2mm
+    \caption{Synthpop may have lowest pMSE, but is not as efficient with high dimensional data}
+    \vskip -5mm
+    \rowcolors{1}{white}{lightgray}
+    \resizebox{\textwidth}{!}{\input{../../tables/table_sd2011_duration_v2.tex}}
+    \label{table:table_sd2011_duration_v2}
+\end{table}
+}
+
+\section{Conclusion}\label{sec:conclusion}
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:conclusion}: Conclusion} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+
+\end{frame}
+
+
+\frame{\frametitle{Summary}
+
+\begin{itemize}
+    \item You need to know your data 
+    \begin{itemize}
+        \item Missing values, Extreme values, Generated variables, `Spikey' or discontinuous values
+    \end{itemize}
+    \item You need to know your synthesizer
+    \begin{itemize}
+        \item CTGAN 
+        \begin{itemize}
+            \item Pro: high levels of computational efficiency
+            \item Con: GAN architecture may not produce synthetic data with high levels of utility, at least in low dimensional data (33 columns, 5000 rows).
+        \end{itemize}
+        \item DataSynthesizer uses a Bayesian network model.
+        \begin{itemize}
+             \item Pro: high levels of computational efficiency
+             \item Con: algorithm assumes all variables are discrete, which reduces utility of synthetic continuous variables. 
+         \end{itemize} 
+        \item Synthpop 
+        \begin{itemize}
+             \item Pro: high levels of utility (pMSE)
+             \item Con: CART struggles with computational efficiency on datasets that contain variables with many categories. 
+         \end{itemize} 
+    \end{itemize}
+    \item The people who know the data may not understand the synthesizer and vice versa
+\end{itemize}
 }
 
 
