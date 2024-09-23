@@ -54,6 +54,11 @@ copies = [5]
 parents = [2]
 epsilon = [0]
 
+data = ["sd2011"] # Real data
+copies = [5]
+parents = [2]
+epsilon = [0]
+
 for d in data:
 
     df_duration = [] # empty data frame
@@ -141,7 +146,7 @@ for d in data:
             # save duration by data set
             df_duration_out = pd.DataFrame(df_duration)
             df_duration_out.columns = ['type', 'data', 'parents','epsilon', "copies", "j", "duration"]    
-            filename_duration = f"duration_datasynthesizer_correlated_data_{d}_parents_3.csv"
+            filename_duration = f"duration_datasynthesizer_correlated_data_{d}_parents_{p}.csv"
             df_duration_out.to_csv(os.path.join(duration, filename_duration), index=False)
             
             

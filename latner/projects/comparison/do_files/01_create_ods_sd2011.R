@@ -152,7 +152,7 @@ df_data_structure <- df_data_structure %>%
   select(Number, Variable,Description,everything()) %>%
   mutate(Negative.values = ifelse(Type == "factor", yes = 0, no = Negative.values),
          Generated = ifelse((Variable == "bmi" | Variable == "agegr"), yes = "Yes", no = NA),
-         Messy = ifelse((Variable == "nociga" | Variable == "agegr" | Variable == "bmi" | Variable == "wkabdur"), yes = "Yes", no = NA)) 
+         Messy = ifelse((Variable == "nociga" | Variable == "agegr" | Variable == "bmi" | Variable == "wkabdur" | Variable == "nofriend"), yes = "Yes", no = NA)) 
 
 # Print the data frame as a LaTeX table using xtable
 latex_table <- xtable(df_data_structure)

@@ -63,6 +63,7 @@ for (d in data) {
   }
 }
 
+
 df_comparison <- df_comparison %>% 
   arrange(data,copies,privacy)
 

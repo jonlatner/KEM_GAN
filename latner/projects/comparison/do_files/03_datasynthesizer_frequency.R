@@ -84,6 +84,66 @@ df_graph
 
 ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_wkabdur.pdf"), height = 4, width = 10)
 
+
+# Graph (frequency - wkabdur) ----
+
+data <- c("sd2011_clean")
+parents = c(2)
+privacy = c(0)
+copies = c(5)
+
+df_sds <- data.frame()
+for (c in copies) {
+  for (d in data) {
+    df_ods <- read.csv(paste0(original_data,d,".csv")) # load original data
+    for (e in privacy) {
+      for (k in parents) {
+        for (j in 1:c) {
+          sds <- read.csv(paste0(synthetic_data,"sds_datasynthesizer_",d,"_k_",k,"_e_",e,"_m_",c,"_n_",j,".csv"))
+          sds[sds == ""] <- NA
+          sds <- sds %>%
+            mutate_if(is.character, as.factor)
+          df_sds <- rbind(df_sds,sds)
+        }
+      }
+    }
+  }
+}
+
+
+ods <- data.frame(with(df_ods,table(wkabdur, useNA = "ifany")))
+names(ods)[1:2] <- c("value", "freq")
+ods$data <- "observed"
+
+sds <- data.frame(with(df_sds,table(wkabdur, useNA = "ifany")))
+names(sds)[1:2] <- c("value", "freq")
+sds$data <- "synthetic"
+sds
+
+df_compare <- rbind(sds,ods) %>%
+  group_by(data) %>%
+  mutate(total = sum(freq),
+         pct = freq/total) %>%
+  ungroup() %>%
+  filter(value!="NA")
+
+df_graph <- ggplot(df_compare, aes(x = value, y = pct, fill = data, color = data, group = data)) +
+  geom_bar(position = position_dodge(width = .9), stat = "identity") +
+  theme_bw() +
+  # scale_x_discrete(breaks = c(NA,"-8","-4",
+  #                             "0","10","20","30","40","50","60")) +
+  theme(panel.grid.minor = element_blank(), 
+        legend.position = "bottom",
+        legend.key.width=unit(1, "cm"),
+        text = element_text(size=14),
+        axis.line.y = element_line(color="black", linewidth=.5),
+        axis.line.x = element_line(color="black", linewidth=.5)
+  )
+
+df_graph
+
+ggsave(plot = df_graph, paste0(graphs,"datasynthesizer_wkabdur_clean.pdf"), height = 4, width = 10)
+
 # Graph (frequency - agegroup)  ----
 
 ods <- data.frame(with(df_ods,table(agegr,age, useNA = "ifany")))
