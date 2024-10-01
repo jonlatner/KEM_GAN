@@ -393,6 +393,7 @@ as a % of original records (repU) 0%
          \item We know there is a problem (because we created it)
          \item We know that common measures do not capture the problem 
      \end{itemize} 
+     \item We are also not alone in identifying this problem (Manrique-Vallier and Hu, 2018)
 \end{itemize}
 }
 
@@ -413,9 +414,16 @@ as a % of original records (repU) 0%
 \end{beamercolorbox}
 \vskip-3mm
 \pgfuseimage{rahmenlinie}
+
+\begin{itemize}
+    \item The good news: we know how to solve the problem
+    \item The bad news: why would we solve the problem if we did not know it existed?
+\end{itemize}
+
+
 \end{frame}
 
-\frame{\frametitle{Solutions}
+\frame{\frametitle{The good news: solutions}
 \begin{itemize}
     \item minumlevels = 5: Ensures the data are treated as categorical
     \item cp = 0.05 (default = 1e$^{-8}$): prevent large trees (i.e. overfitting)
@@ -450,9 +458,15 @@ as a % of original records (repU) 0%
     \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_categorical_compare_histogram_100_v2.pdf}}
     \label{fig:graph_categorical_compare_histogram_100}
 \end{minipage}
-
 }
 
+
+\frame{\frametitle{Summary}
+\begin{itemize}
+    \item You can solve the risk of disclosure by reducing utility
+    \item The bad news: why would you reduce utility, if you did not know there was a risk of disclosure
+\end{itemize}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
