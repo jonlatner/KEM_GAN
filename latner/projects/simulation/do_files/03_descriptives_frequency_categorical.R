@@ -40,7 +40,7 @@ ods <- read.csv(paste0(original_data,"simulated.csv"))
 
 # Create fake synthetic data ----
 
-sds <- syn(ods, m = 1, seed = my.seed,minnumlevels = 5)
+sds <- syn(ods, m = 1, seed = my.seed,  cart.cp = 0.05)
 sds <- sds$syn
 
 # Compare frequency ----

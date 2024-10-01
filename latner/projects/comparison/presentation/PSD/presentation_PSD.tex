@@ -49,7 +49,7 @@
 \title{Generating synthetic data is complicated: Know your data and know your generator}
 \subtitle{PSD2024: Privacy in Statistical Databases 2024, \newline 26. September, 2024}
 
-\author{Jonathan Latner, PhD \newline Dr. Marcel Neuenhoeffer \newline Prof. Dr. Jörg Drechsler}
+\author{Jonathan Latner, PhD \newline Dr. Marcel Neunhoeffer \newline Prof. Dr. Jörg Drechsler}
 
 \newcounter{noauthorlines}
 \setcounter{noauthorlines}{2} % Wert für 2 Autoren über 2 Zeilen. Ggf. anpassen
@@ -85,44 +85,27 @@
 
 \begin{spacing}{1.25}
 
+% %%%%%%%%%%%%%%
+% Section
+% %%%%%%%%%%%%%%
 
 \section{Introduction}\label{sec:intro}
-\begin{frame}[c,plain]
-\vskip-4mm
-\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
-    \vfill%
-    \usebeamerfont{title}%
-    \leftinsert%
-    \MakeUppercase{Section \ref{sec:intro}: Introduction
-} % <- Hier die Überschrift eintragen
-\end{beamercolorbox}
-\vskip-3mm
-\pgfuseimage{rahmenlinie}
-\end{frame}
-
-\frame{\frametitle{Overview}
+\frame{\frametitle{Section \ref{sec:intro}: Overview}
 
 \begin{itemize}
     \item Common perception that making synthetic data is easy
-    \item We to show that its complicated
+    \item We want to show that its complicated
     \begin{itemize}
         \item You need to know your data
-        \begin{itemize}
-            \item Missing values, messy data, etc.
-        \end{itemize}
         \item You need to know your synthetic data generator (SDG)
-        \begin{itemize}
-            \item Compare 3 SDGs: DataSynthesizer, CTGAN, Synthpop
-            \item How does it deal with missing values?
-            \item How computationally efficient is it (in terms of duration in time)?
-        \end{itemize}
+        \item The problem: Individuals who know the data may not be the same as those who know the SDG
+    % \item Contribution: While most research examining SDGs use `clean' data to evaluate SDGs, we use `real' data
     \end{itemize}
     \item Conclusion
     \begin{itemize}
-        \item On the one hand, generating synthetic data is easy (even I can do it!)
+        \item On the one hand, generating synthetic data is easy
         \item On the other hand, users need to be aware of challenges
-        \item Every SDG has advantages/disadvantages (no one, correct solution)
-        \item One should be skeptical about automated processes for generating synthetic data
+        \item The point: One should be skeptical about automated, one-size-fits-all processes for generating synthetic data
     \end{itemize}
 \end{itemize}
 }
@@ -141,21 +124,21 @@
 \frame{\frametitle{The bad news -- making synthetic data is hard}
 
 \begin{itemize}
-    \item According to the Alan Turing Institute (Jordan et al., 2022)
-    \item Synthetic data is not a replacement for real data.  It is a distorted version of the real data.
     \item We must ask: 
     \begin{itemize}
-        \item Why are we creating synthetic data?  
-        \item How different should it be?  
-        \item How do we measure the difference?  
+        \item Why are we creating synthetic data?  (generating code, education, the public, etc.)
+        \begin{itemize}
+            \item How different should it be?  
+            \item How do we measure the difference? 
+        \end{itemize}
         \item How does the synthesizer work? 
+        \begin{itemize}
+            \item Variables types (categorical, continuous)
+            \item Variable values (missing, extreme, and `spikey' values, etc.)
+            \item How long it takes to generate synthetic data from original data (i.e. `computational efficiency')
+        \end{itemize}
     \end{itemize}
     \item Answering these questions will help us make decisions about which synthesizer is the right choice
-    \begin{itemize}
-        \item Hyperparameters: from complete black box to complete user choice
-        \item Variables: not just with categorical, dichotomous, and continuous variables, but with messy values 
-        \item Computationally efficiency (i.e. duration in time): is important and often ignored.  The algorithm should scale well with the dimension of the data space in a relational way, not exponential way.
-    \end{itemize}
 \end{itemize}
 }
 
@@ -165,64 +148,51 @@
 \begin{itemize}
     \item Know your data (1 dataset)
     \begin{itemize}
-        \item Social Diagnosis 2011 (SD2011) - Cleaning/pre-processing (most evaluations use clean data)
+        \item Social Diagnosis 2011 (SD2011)
     \end{itemize}
     \item Know your generator
     \begin{itemize}
-        \item Compare 3 synthetic data generators (SDGs): DataSynthesizer, CTGAN, Synthpop
+        \item Examine 3 synthetic data generators (SDGs): DataSynthesizer, CTGAN, Synthpop
     \end{itemize}
-    \item 3 utility measures
+    \item 3 utility measures 
     \begin{itemize}
-        \item Compare univariate frequency
-        \item Propensity score mean-squared error (pMSE) - Append the original and synthetic datasets. Create an indicator variable for original/synthetic datasets.  The probability of being in the synthetic dataset is computed for each record in the combined dataset ($n$); this is the propensity score ($p$).  Lower scores are better.  ($pMSE = \frac{1}{N}\sum_{i=1}^{N}[\hat{p}_i - c]^2$)
-        \item Computationally efficient with respect to duration in time
+        \item Compare univariate frequency -- difference/similarity in one variable 
+        \item Propensity score mean -- difference/similarity in the dataset (lower values better)
+        \item Computationally efficiency -- duration in time required to generate synthetic data (lower values better)
     \end{itemize}
-    \item In this talk, we are focusing on utility.  Relative to the challenge of achieving privacy, utility challenges receive less attention.
 \end{itemize}
 }
 
+% %%%%%%%%%%%%%%
+% Section
+% %%%%%%%%%%%%%%
 
-\section{Know your data (SD2011)}\label{sec:data}
-\begin{frame}[c,plain]
-\vskip-4mm
-\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
-    \vfill%
-    \usebeamerfont{title}%
-    \leftinsert%
-    \MakeUppercase{Section \ref{sec:data}: Know your data (SD2011)} % <- Hier die Überschrift eintragen
-\end{beamercolorbox}
-\vskip-3mm
-\pgfuseimage{rahmenlinie}
-\end{frame}
-
-
-\frame{\frametitle{Real data}
+\section{Know your data}\label{sec:data}
+\frame{\frametitle{Section \ref{sec:data}: Know your data (SD2011)}
 \begin{itemize}
     \item Social Diagnosis 2011 (SD2011)
-    \item Loads with Synthpop
     \begin{itemize}
-        \item \url{http://www.diagnoza.com/index-en.html}
-        \item Not entirely clear how original data is created or cleaned to create data in Synthpop
-        \begin{itemize}
-            \item No 
-        \end{itemize}
+        \item Loads with Synthpop
+        % \item \url{http://www.diagnoza.com/index-en.html}
+        % \item Not entirely clear how original data is created or cleaned to create data in Synthpop
     \end{itemize}
-    \item Like real data, has `quirks' or unusual values/variables
+    \item Like real data, has messy variables with unusual values
     \begin{itemize}
-        \item Includes missings
-        \begin{itemize}
-            \item Informative (i.e. for never worked abroad, \texttt{wkabdur} is missing)
-            \item Non-informative 
-        \end{itemize}
-        \item Includes `errors'
-        \begin{itemize}
-            \item \texttt{smoke} - Does smoke is NO, but \texttt{nociga} - 20/22 cigarettes per day 
-            \item \texttt{bmi} = 451, but \texttt{height}(cm) = 149 and \texttt{weight}(kg) = NA (999)
-        \end{itemize}
-        \item Includes generated variables (Can be problematic for SDGs)
-        \begin{itemize}
-            \item \texttt{bmi,agegr}
-        \end{itemize}
+        \item Missing values
+        % \begin{itemize}
+        %     \item Informative (i.e. for never worked abroad, \texttt{wkabdur} is missing)
+        %     \item Non-informative 
+        % \end{itemize}
+        \item `Errors'
+        % \begin{itemize}
+        %     \item \texttt{smoke} - Does smoke is NO, but \texttt{nociga} - 20/22 cigarettes per day 
+        %     \item \texttt{bmi} = 451, but \texttt{height}(cm) = 149 and \texttt{weight}(kg) = NA (999)
+        % \end{itemize}
+        \item Generated variables (Can be problematic for SDGs)
+        % \begin{itemize}
+        %     \item \texttt{bmi,agegr}
+        % \end{itemize}
+        \item `Spikey' or discontinuous values
     \end{itemize}
 \end{itemize}
 }
@@ -231,16 +201,54 @@
 \frame{\frametitle{Data (SD2011)}
 \begin{table}[ht]
     \vskip -3mm
-    \caption{Spikey values}
+    \caption{}
     \centering
-    \vskip -7mm
+    \vskip -3mm
     \rowcolors{1}{white}{lightgray}
-    \resizebox{\textwidth}{!}{\input{../../tables/table_sd2011_data_structure_small.tex}}
+    \resizebox{.95\textwidth}{!}{\input{../tables/table_sd2011_data_structure_small.tex}}
     \label{table:sd2011_data_structure}
 \end{table}
 }
 
+% %%%%%%%%%%%%%%
+% Section
+% %%%%%%%%%%%%%%
+
 \section{Know your generator}\label{sec:sdg}
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:sdg}: Know your generator} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+
+Use 3 SDGs to illustrate the challenges with generating synthetic data from real data
+\begin{itemize}
+    \item DataSynthesizer - Bayesian network
+    % \begin{itemize}
+    %     \item  After specifying the model and estimating its parameters from the original data, continuous variables are discretized into bins and synthetic data are generated by a random sample within a bin
+    % \end{itemize}
+    \item CTGAN - GAN
+    % \begin{itemize}
+    %     \item GAN architecture may not produce synthetic data with high levels of utility, at least in low dimensional data (33 columns, 5000 rows)
+    % \end{itemize}
+    \item Synthpop - CART
+    % \begin{itemize}
+    %     \item CART models may generate synthetic data with high levels of utility, but computational duration increases with categorical variables with lots of unique values
+    % \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+% %%%%%%%%%%%%%%
+% Sub - section
+% %%%%%%%%%%%%%%
+
 \subsection{DataSynthesizer}\label{sec:sdg_datasynthesizer}
 \begin{frame}[c,plain]
 \vskip-4mm
@@ -253,7 +261,6 @@
 \vskip-3mm
 \pgfuseimage{rahmenlinie}
 
-DataSynthesizer is a Python package that implements the PrivBayes algorithm to address the challenges associated with a differentially private (DP) method for releasing synthetic data outputs from high-dimensional real data inputs. To do this, the package implements a Bayesian network model to estimate the joint distribution of the data.  The Bayesian network only works with discrete variables. One way to discretize continuous variables is by binning them.  This can be a problem.
 
 \begin{itemize}
     \item Hyperparameters
@@ -266,53 +273,78 @@ DataSynthesizer is a Python package that implements the PrivBayes algorithm to a
 \end{frame}
 
 
-
-\frame{\frametitle{Preprocess missing values}
+\frame{\frametitle{Negative values (i.e. missing) and `spikey' values}
 \begin{figure}
-    \caption{Captures values $<$ 0 as continuous, not missing/categorical}
+    \caption{Work abroad duration - in weeks (wkabdur)}
     \vskip -2mm
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/datasynthesizer_wkabdur.pdf}}
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/datasynthesizer_wkabdur_1.pdf}}
     \label{fig:ds_variable_wkabdur}
 \end{figure}
 }
 
-\frame{\frametitle{Drop generated variables (1 of 2)}
+\frame{\frametitle{Solution: Preprocess negative values as missing}
 \begin{figure}
-    \caption{Age group: Number of misclassified}
+    \caption{Work abroad duration - in weeks (wkabdur)}
     \vskip -2mm
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/datasynthesizer_frequency_agegr_errors.pdf}}
-    \label{fig:ds_agegr_errors}
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/datasynthesizer_wkabdur_clean.pdf}}
+    \label{fig:ds_variable_wkabdur_clean}
 \end{figure}
 }
 
-\frame{\frametitle{Drop generated variables (2 of 2)}
+
+% \frame{\frametitle{Generated variables (age group)}
+% \begin{figure}
+%     \caption{Number of misclassified}
+%     \vskip -2mm
+%     \resizebox{\textwidth}{!}{\includegraphics{../graphs/datasynthesizer_frequency_agegr_errors.pdf}}
+%     \label{fig:ds_agegr_errors}
+% \end{figure}
+% }
+
+\frame{\frametitle{Generated variables and extreme values}
 \begin{figure}
-    \caption{BMI: Preprocess extreme values}
+    \caption{Body mass index (bmi)}
     \vskip -2mm
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/datasynthesizer_bmi.pdf}}
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/datasynthesizer_bmi.pdf}}
     \label{fig:ds_bmi}
 \end{figure}
 }
 
-\frame{\frametitle{Regenerate generated variables from synthetic values}
+\frame{\frametitle{Solution: Drop generated variables before sending to SDG}
 \begin{figure}
-    \caption{Body mass index}
+    \caption{Regenerate generated values from synthetic values (bmi)}
     \vskip -2mm
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/compare_ds_bmi.pdf}}
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/compare_ds_bmi.pdf}}
     \label{fig:compare_ds_bmi.pdf}
 \end{figure}
 }
 
 
-\frame{\frametitle{Can only preprocess so much}
-\begin{figure}
-    \caption{nofriend: `Spikey' or discontinuous values}
-    \vskip -2mm
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/datasynthesizer_nofriend.pdf}}
-    \label{fig:ds_nofriend}
-\end{figure}
+% \frame{\frametitle{`Spikey' or discontinuous values}
+% \begin{figure}
+%     \caption{Number of friends (nofriend)}
+%     \vskip -2mm
+%     \resizebox{\textwidth}{!}{\includegraphics{../graphs/datasynthesizer_nofriend.pdf}}
+%     \label{fig:ds_nofriend}
+% \end{figure}
+% }
+
+\frame{\frametitle{Summary}
+
+\begin{itemize}
+    \item The problem: there are consequences of generating random values within a discretized bin
+    \item The solution: clean or preprocess the data (code negative values as missing, drop generated variables, etc.)
+    \begin{itemize}
+        \item But what about `spikey' or discontinuous values?
+        \item More generally, cleaning requires knowledge of the data
+    \end{itemize}
+\end{itemize}
 }
 
+
+% %%%%%%%%%%%%%%
+% Sub - section
+% %%%%%%%%%%%%%%
 
 \subsection{CTGAN}\label{sec:sdg_ctgan}
 \begin{frame}[c,plain]
@@ -325,44 +357,38 @@ DataSynthesizer is a Python package that implements the PrivBayes algorithm to a
 \end{beamercolorbox}
 \vskip-3mm
 \pgfuseimage{rahmenlinie}
-
-GANs simultaneously train two neural networks: a generator and a discriminator. The goal of the generator is to create synthetic data that becomes increasingly indistinguishable from original data. The goal of the discriminator is to get better at distinguishing between original and synthetic data. This adversarial process goes back and forth until the discriminator cannot distinguish between the original data and the generated data.
-
+\small
 
 \begin{itemize}
     \item Hyperparameters
-    \begin{itemize}
-        \item Actual steps for observations ($n$) = $f$ (batch * steps per epoch * epochs) 
         \begin{itemize}
-            \item batch size = Number of samples to process in each step (default is 500)
-            \item epochs = Number of times the GAN gets to see the full dataset (default is 300).
+            \item Batch size: is the sample size (or rows of data) the GAN looks at at once. (default is 500)
+            \item Epochs: Number of times the GAN gets to see the full dataset (default is 300).
+            \item Discriminator/Generator dimensions: the number of layers and neurons per layer.  (Default is 2 layers, each with 256 neurons)
+            \item Embeddings dimension: the vector size of the compressed representation of the data sent to the generator.  (Default 128)
         \end{itemize}
-        \item Dimensions
-        \begin{itemize}
-            \item Discriminator/Generator - defines the architecture of the Discriminator by specifying the number of neurons in each layer. Defaults to (256, 256)
-            \item Embeddings - Size of the random sample passed to the Generator. (Default 128)
-        \end{itemize}
-    \end{itemize}
-    \item Utility - pMSE
+    \item Utility (pMSE) - similarity or difference between original and synthetic data (lower values are better)
 \end{itemize}
+
+% Embedding dimensions indicate the detail of information passed onto the generator, lower is more vague, higher is more detail.
 
 \end{frame}
 
-\frame{\frametitle{Vary batch size, but steps are constant (3000)}
+\frame{\frametitle{Vary batch size}
 \begin{figure}
     \caption{DataSynthesizer (0.07) and Synthpop (0.02)}
     \vskip -2mm
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/ctgan_fidelity_optimize_batch_size.pdf}}
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/ctgan_fidelity_optimize_batch_size.pdf}}
     \label{fig:ctgan_fidelity_optimize_batch_size.pdf}
 \end{figure}
 }
 
 
-\frame{\frametitle{Vary epochs, but batch size is constant (500)}
+\frame{\frametitle{Vary epochs}
 \begin{figure}
     \caption{DataSynthesizer (0.07) and Synthpop (0.02)}
     \vskip -2mm
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/ctgan_fidelity_optimize_epochs.pdf}}
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/ctgan_fidelity_optimize_epochs.pdf}}
     \label{fig:ctgan_fidelity_optimize_epochs}
 \end{figure}
 }
@@ -371,11 +397,27 @@ GANs simultaneously train two neural networks: a generator and a discriminator. 
 \begin{figure}
     \caption{DataSynthesizer (0.07) and Synthpop (0.02)}
     \vskip -2mm
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/ctgan_fidelity_optimize_dimensions.pdf}}
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/ctgan_fidelity_optimize_dimensions.pdf}}
     \label{fig:ctgan_fidelity_optimize_dimensions}
 \end{figure}
 }
 
+
+\frame{\frametitle{Summary}
+
+\begin{itemize}
+    \item The problem: CTGAN produces synthetic data with lower utility than DataSynthesizer or Synthpop
+    \item Possible explanations 
+    \begin{itemize}
+        \item GANs are better for high dimensional data (i.e. images).  Our data are low dimensional (33 columns, 5000 rows).
+        \item Other GANs might be better.  CTGAN is not the only GAN.  Distinguish between the package and the method.
+    \end{itemize}
+\end{itemize}
+}
+
+% %%%%%%%%%%%%%%
+% Sub - section
+% %%%%%%%%%%%%%%
 
 \subsection{Synthpop}\label{sec:sdg_synthpop}
 \begin{frame}[c,plain]
@@ -389,8 +431,6 @@ GANs simultaneously train two neural networks: a generator and a discriminator. 
 \vskip-3mm
 \pgfuseimage{rahmenlinie}
 
-Synthpop is an R package that implements parametric and ML based models (classification and regression trees (CART) and random forests) to generate synthetic data. Synthpop follows a sequential process, where the first variable to be synthesized is generated by drawing new values from the marginal distribution of this variable (either by drawing from a parametric distribution or by sampling from the empirical distribution), and the subsequent variables are synthesized one at a time, always conditioning on those variables that have been synthesized in earlier steps
-
 \begin{itemize}
     \item Hyperparameters (default)
     \item Utility measure - Computational efficiency
@@ -399,57 +439,67 @@ Synthpop is an R package that implements parametric and ML based models (classif
 \end{frame}
 
 \frame{\frametitle{Computational efficiency}
+%eduspec: Discipline of completed qualification
 \begin{table}[ht]
     \vskip -2mm
-    \caption{Synthpop may have lowest pMSE, but is not as efficient with high dimensional data}
+    \caption{}
     \vskip -5mm
     \rowcolors{1}{white}{lightgray}
-    \resizebox{\textwidth}{!}{\input{../../tables/table_sd2011_duration_v2.tex}}
+    \resizebox{\textwidth}{!}{\input{../tables/table_sd2011_duration_v2.tex}}
     \label{table:table_sd2011_duration_v2}
 \end{table}
 }
 
-\section{Conclusion}\label{sec:conclusion}
-\begin{frame}[c,plain]
-\vskip-4mm
-\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
-    \vfill%
-    \usebeamerfont{title}%
-    \leftinsert%
-    \MakeUppercase{Section \ref{sec:conclusion}: Conclusion} % <- Hier die Überschrift eintragen
-\end{beamercolorbox}
-\vskip-3mm
-\pgfuseimage{rahmenlinie}
-
-\end{frame}
-
-
 \frame{\frametitle{Summary}
 
 \begin{itemize}
-    \item You need to know your data 
+    \item The problem: categorical variables with many values increases the run-time of CART based synthesizers.
+    % \item For unordered categorical variables, the number of splits that need to be considered is 2$^{L-1}$ - 1, where L is the number of categories, i.e., the number of splits grows exponentially with the number of categories
+    % \item To illustrate, imagine one categorical variable with three values (a, b, and c). There are 3 possible options to split this variable: (1 = a; 0 = b,c), (1 = b; 0 = a,c), (1 = c; 0 = a,b). 
+    % \item With six categories, we already need to consider 31 splits, which still doesn't pose a problem computationally. 
+    % \item With 20 categories, then 524,288 splits need to be considered
+    \item The solution: move categorical variables with many values to the end
     \begin{itemize}
-        \item Missing values, Extreme values, Generated variables, `Spikey' or discontinuous values
+        \item But what about Census data with 3-digit occupation, industry, and country codes?
     \end{itemize}
-    \item You need to know your synthesizer
+\end{itemize}
+}
+
+% %%%%%%%%%%%%%%
+% Section
+% %%%%%%%%%%%%%%
+
+\section{Conclusion}\label{sec:conclusion}
+\frame{\frametitle{Section \ref{sec:conclusion}: Conclusion}
+
+\begin{itemize}
+    \item Contribution: applying SDGs to real data reveal problems not often understood when using clean data 
+    \item You need to know your data.    
     \begin{itemize}
-        \item CTGAN 
-        \begin{itemize}
-            \item Pro: high levels of computational efficiency
-            \item Con: GAN architecture may not produce synthetic data with high levels of utility, at least in low dimensional data (33 columns, 5000 rows).
-        \end{itemize}
-        \item DataSynthesizer uses a Bayesian network model.
-        \begin{itemize}
-             \item Pro: high levels of computational efficiency
-             \item Con: algorithm assumes all variables are discrete, which reduces utility of synthetic continuous variables. 
-         \end{itemize} 
-        \item Synthpop 
-        \begin{itemize}
-             \item Pro: high levels of utility (pMSE)
-             \item Con: CART struggles with computational efficiency on datasets that contain variables with many categories. 
-         \end{itemize} 
+        \item Preprocessing or cleaning data is important
+        \item This requires knowledge of the data
     \end{itemize}
-    \item The people who know the data may not understand the synthesizer and vice versa
+    \item You need to know your synthesizer 
+    \begin{itemize}
+        \item DataSynthesizer: Bayesian network model generates random values within discretized bin, but has a hyperparamter for differential privacy 
+        \item CTGAN: GAN architecture may not produce synthetic data with high levels of utility, but can synthesize data that others cannot (i.e. images)
+        \item Synthpop: CART struggles with computational efficiency on datasets that contain variables with many categories, but produces synthetic data with high utility
+    \end{itemize}
+    \item The point: 
+    \begin{itemize}
+        \item You need to match the right synthesizer with the right data problem (no one-size-fits-all solution)
+    \end{itemize}
+\end{itemize}
+}
+
+\frame{\frametitle{Contact}
+Jonathan Latner \\
+\url{jonathan.latner@iab.de} \\
+
+Reproducible code: 
+\begin{itemize}
+    \item Github: \url{https://github.com/jonlatner/KEM\_GAN/tree/main/latner/projects/comparison} 
+    \item Harvard Dataverse: coming soon
 \end{itemize}
 }
 

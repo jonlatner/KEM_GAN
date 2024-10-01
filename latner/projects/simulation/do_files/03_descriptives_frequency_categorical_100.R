@@ -63,9 +63,6 @@ for (c in 1:100) {
     df_frequency <- rbind(df_frequency,df_sds_frequency)
 }
 
-df_frequency
-
-
 # Compare frequency ----
 
 df_graph_sds <- df_frequency 
@@ -98,3 +95,5 @@ df_graph <-
 df_graph
 
 ggsave(df_graph, filename = paste0(graphs,"graph_categorical_compare_histogram_100.pdf"), height = 4, width = 10, units = "in")
+
+ggsave(df_graph, filename = paste0(graphs,"graph_categorical_compare_histogram_100_v2.pdf"), height = 6, width = 6, units = "in")

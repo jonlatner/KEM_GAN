@@ -98,3 +98,5 @@ df_graph <-
 df_graph
 
 ggsave(df_graph, filename = paste0(graphs,"graph_numeric_compare_histogram_100.pdf"), height = 4, width = 10, units = "in")
+
+ggsave(df_graph, filename = paste0(graphs,"graph_numeric_compare_histogram_100_v2.pdf"), height = 6, width = 6, units = "in")

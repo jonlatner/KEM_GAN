@@ -47,7 +47,7 @@ model_numeric <- sds$models$var4
 rpart.plot(model_numeric, type = 1,roundint = FALSE)
 
 # Define the PDF file and open the device
-pdf(paste0(graphs,"graph_tree_numeric.pdf"), height = 4, width = 10)
+pdf(paste0(graphs,"graph_tree_numeric.pdf"), height = 6, width = 6)
 
 # Generate the plot
 rpart.plot(model_numeric, type = 1)
@@ -62,7 +62,7 @@ sds <- syn(ods, m = 1, seed = my.seed,minnumlevels = 5,models = TRUE)
 model_categorical <- sds$models$var4
 
 # Define the PDF file and open the device
-pdf(paste0(graphs,"graph_tree_categorical.pdf"), height = 4, width = 10)
+pdf(paste0(graphs,"graph_tree_categorical.pdf"), height = 6, width = 6)
 
 # Generate the plot
 rpart.plot(model_categorical, type = 1,roundint = FALSE)

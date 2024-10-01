@@ -40,73 +40,58 @@ df_ods <- read.csv(paste0(original_data,"simulated.csv"))
 # Create synthetic data with numeric variables ----
 
 sds_numeric <- syn(df_ods, m = 1, seed = my.seed)
-sds_categorical <- syn(df_ods, m = 1, seed = my.seed, minnumlevels = 5)
 
-# utility numeric ----
+# create table ----
 
-df_utility <- compare(sds_numeric, df_ods, utility.stats = c("SPECKS", "pMSE"), plot = FALSE)
+df_utility <- compare(sds_numeric, df_ods, plot = FALSE, utility.stats = "all")
 
 df_table_numeric <- df_utility$tab.utility
 # Assuming df_utility$tab.utility is your data frame
-df_table_numeric <- data.frame(df_utility$tab.utility)
-df_table_numeric
+df_table_numeric <- data.frame(df_utility$tab.utility) 
 
 # Calculate the average for each column
 average_row <- colMeans(df_table_numeric)
-average_row
 
 # Add the "average" row to the data frame
 df_table_numeric["average", ] <- average_row
-df_table_numeric$type <- "numeric"
 
-df_table_numeric <- df_table_numeric %>% 
-  rownames_to_column(var = "variable")
-  
-# utility categorical ----
-
-df_utility <- compare(sds_categorical, df_ods, utility.stats = c("SPECKS", "pMSE"), plot = FALSE)
-
-df_table_categorical <- df_utility$tab.utility
-# Assuming df_utility$tab.utility is your data frame
-df_table_categorical <- data.frame(df_utility$tab.utility)
-df_table_categorical
-
-# Calculate the average for each column
-average_row <- colMeans(df_table_categorical)
-average_row
-
-# Add the "average" row to the data frame
-df_table_categorical["average", ] <- average_row
-df_table_categorical$type <- "categorical"
-
-df_table_categorical <- df_table_categorical %>% 
-  rownames_to_column(var = "variable") 
-  
-# combine ----
-
-df_table <- rbind(df_table_numeric,df_table_categorical)
-df_table
-
-df_table <- df_table %>% 
-  pivot_longer(!c("type","variable"))
-df_table
+# rotate
+df_table_numeric <- df_table_numeric %>%
+  rownames_to_column(var = "variable")  %>% 
+  pivot_longer(!"variable") %>%
+  pivot_wider(names_from = c("variable"))
 
 
-df_graph <- ggplot(data = df_table, aes(x = variable, y = value, fill = type, label = round(value,2))) +
-  facet_wrap(~ name) +
-  geom_bar(stat = "identity", position = position_dodge(0.9)) +
-  scale_y_continuous(limits = c(0,2)) +
-  theme_bw() +
-  geom_text(position = position_dodge(0.9), vjust = -.2) + 
-  theme(panel.grid.minor = element_blank(), 
-        legend.position = "bottom",
-        legend.title = element_blank(),
-        legend.key.width=unit(1, "cm"),
-        axis.title.x = element_blank(),
-        axis.line.y = element_line(color="black", linewidth=.5),
-        axis.line.x = element_line(color="black", linewidth=.5)
-  )
+# print table ----
 
-df_graph
+# print
+df_table_numeric <- df_table_numeric %>%
+  filter(name!="U") %>%
+  filter(name!="G") %>%
+  filter(name!="PO50") %>%
+  filter(name!="WMabsDD") %>%
+  filter(name!="MabsDD") %>%
+  filter(name!="df") 
 
-ggsave(df_graph, filename = paste0(graphs,"graph_compare_utility.pdf"), height = 4, width = 10, units = "in")
+df_table_numeric <- df_table_numeric[!grepl("S_", df_table_numeric$name), ]
+
+df_table_numeric
+
+df_table_numeric$name = c(
+  "Voas Williamson utility measure", 
+  "Freeman-Tukey utility measure", 
+  "Jensen-Shannaon divergence", 
+  "Kolmogorov-Smirnov statistic",
+  "propensity score mean-squared error", 
+  "Bhattacharyya distances"
+)
+
+# Print the data frame as a LaTeX table using xtable
+latex_table <- xtable(df_table_numeric)
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             sanitize.text.function = identity,
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_utility.tex"))
+
