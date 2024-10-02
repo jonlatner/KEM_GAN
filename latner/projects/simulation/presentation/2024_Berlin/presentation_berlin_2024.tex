@@ -172,6 +172,23 @@ Let me introduce a problem illustrating that CART is disclosive
 
 \end{frame}
 
+\frame{\frametitle{Setting up the attack}
+\begin{itemize}
+    \item Its a game between two entities.  
+    \begin{itemize}
+        \item The statistical agency has the data and wants to release it in a privacy preserving way.  
+        \item The attacker wants to identify someone in the data (either membership or attribute inference).  
+    \end{itemize}
+    \item We assume the attacker has the following knowledge
+    \begin{itemize}
+        \item Knows the SDG model type (i.e. sequential CART).
+        \item Knowledge of everyone in the data except one.  
+        \item The 16 possible combinations that the last one could be.
+    \end{itemize}
+    \item The question: What can the attacker learn from a released synthetic data set about that individual they do not have knowledge of?
+\end{itemize}
+}
+
 \frame{\frametitle{The original data: Simulate data with a unique record}
 
 Borrowing from Reiter et al. (2014), we set the first 999 observations to be a random sample from a multinomial distribution for all combinations of $var1(0,1), var2(0,1), var3(0,1), var4(0,1)$ except ($var1=1,var2=1,var3=1,var4=1$), which we set to be the 1000$^{th}$ observation. 
@@ -216,23 +233,6 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 \end{figure}
 }
 
-\frame{\frametitle{Setting up the attack}
-\begin{itemize}
-    \item Its a game between two entities.  
-    \begin{itemize}
-        \item The statistical agency has the data and wants to release it in a privacy preserving way.  
-        \item The attacker wants to identify someone in the data (either membership or attribute inference).  
-    \end{itemize}
-    \item We assume the attacker has the following knowledge
-    \begin{itemize}
-        \item Knows the SDG model type (i.e. sequential CART).
-        \item Knowledge of everyone in the data except one.  
-        \item The 16 possible combinations that the last one could be.
-    \end{itemize}
-    \item The question: What can the attacker learn from a released synthetic data set about that individual they do not have knowledge of?
-\end{itemize}
-}
-
 \frame{\frametitle{Describing the attack}
 \begin{itemize}
     \item The attacker sees the synthetic data
@@ -259,7 +259,6 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
     \item The problem: CART can be disclosive 
     \item The reason: If a record is not in the original data, then it can never be in the synthetic data.  Therefore, a record can only be in the synthetic data if it is also in the original data.   
     \item If you knew every record but one, and you knew every possible combination of unique values, then you could identify the missing record.
-    \item What do the privacy metrics in Synthpop tells us?
 \end{itemize}
 }
 
@@ -280,6 +279,8 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 \end{beamercolorbox}
 \vskip-3mm
 \pgfuseimage{rahmenlinie}
+
+What do the privacy metrics in Synthpop tells us?
 \end{frame}
 
 
