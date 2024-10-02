@@ -43,7 +43,7 @@ combinations <- expand.grid(y1 = c(0, 1), y2 = c(0, 1), y3 = c(0, 1), y4 = c(0, 
 # Loop ----
 
 df_frequency <- data.frame()
-for (c in 1:1) {
+for (c in 1:5) {
   for (r in 1:16) {
 
     # create seed
@@ -93,11 +93,11 @@ for (c in 1:1) {
 
 # Save data ----
 
-# write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"), row.names = FALSE)
+write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"), row.names = FALSE)
 
 # Compare frequency ----
 
-# df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"))
+df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"))
 
 df_sds$type <- "synthetic"
 df_ods$type <- "original"

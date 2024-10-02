@@ -14,6 +14,7 @@ rm(list=ls(all=TRUE))
 library(synthpop)
 library(tidyverse)
 library(ggh4x) # facet_nested
+library(readr)
 
 # FOLDERS - ADAPT THIS PATHWAY
 main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/simulation/"
@@ -60,8 +61,9 @@ for (c in 1:100) {
     df_ods[1000,] <- last_record
 
     # Create fake synthetic data
-    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart", minnumlevels = 5)
+    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart")
     sds <- sds$syn
+    df_sds <- sds
     
     # Create a frequency table for true original data (unique = 1111)
     
@@ -91,13 +93,12 @@ for (c in 1:100) {
 
 # Save data ----
 
-write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_factor.csv"), row.names = FALSE)
+write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"), row.names = FALSE)
+df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"))
 
-# Compare frequency ----
+# Compare histogram ----
 
-df_frequency <- read.csv(paste0(synthetic_data,"synthetic_frequency_cart_factor.csv"))
-
-df_frequency$combine <- factor(df_frequency$combine, levels = sort(levels(df_frequency$combine)))
+df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"))
 
 df_graph_sds <- df_frequency %>%
   filter(type == "synthetic") 
@@ -109,15 +110,15 @@ df_graph_ods <- unique(df_graph_ods)
 
 df_graph <- 
   ggplot() +
-  geom_bar(data = df_graph_ods, aes(x = combine, y = Freq, fill = type), position = position_dodge(width=0.9), stat = "identity", alpha = .05) +
-  geom_boxplot(position = position_dodge(width=0.9), aes(x = combine, y = Freq, fill = type), data = df_graph_sds, alpha = .2) +
+  geom_bar(data = df_graph_ods, aes(x = combine, y = Freq, fill = type), position = position_dodge(width=0.9), stat = "identity") +
+  geom_boxplot(position = position_dodge(width=0.9), aes(x = combine, y = Freq, fill = type), data = df_graph_sds) +
   facet_wrap(~unique, labeller = "label_both") +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.title = element_blank(),
         legend.key.width=unit(1, "cm"),
-        axis.text.x = element_text(angle = 25, hjust = 1, vjust = .5),
+        axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
         axis.title.x = element_blank(),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
@@ -125,4 +126,4 @@ df_graph <-
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"cart_factor.pdf"), height = 8, width = 10)
+ggsave(plot = df_graph, paste0(graphs,"graph_attacker.pdf"), height = 5, width = 10)

@@ -105,7 +105,6 @@ ggplot(df_compare, aes(x = synthesizer, y = Freq)) +
   )
 
 df_compare <- df_compare %>%
-  mutate(Freq = ifelse(combine == 1111, yes = round(Freq,1), no = NA))
-+
+  mutate(Freq = ifelse(combine == 1111, yes = round(Freq,1), no = NA))+
   geom_text(aes(label = label2), hjust = -0.5, size = 3, position = position_dodge(width=.9), angle = 90) +
   

@@ -151,9 +151,64 @@
 \end{itemize}
 }
 
+\frame{\frametitle{Whats the goal of synthetic data?}
+\begin{itemize}
+    \item Synthetic data can accelerate development by replacing sensitive values with synthetic ones with minimal distortion of the statistical information contained in the original data set. (Jordan et al., 2022; Nowak et al., 2016)
+    \item Low disclosure risk (R)
+    \item High data utility (U)
+    \item Visualize the trade-off using the R-U confidentiality map (Duncan et al., 2004)
+\end{itemize}
+}
+
+\frame{\frametitle{Whats the problem?}
+\begin{itemize}
+    \item High data utility -- It must be similar to and different from the original data. 
+    \begin{itemize}
+        \item At the extreme, if the goal is high utility, why not just release the original data?
+    \end{itemize}
+    \item Low disclosure risk -- Synthetic data is not automatically private. 
+    \begin{itemize}
+        \item At the extreme, if the goal is low privacy risk, why should we release any data?
+    \end{itemize}
+    \item Many measures of utility and privacy exist
+    \begin{itemize}
+        \item Therefore, its not clear if data have high utility or low risk
+        \item 2 problems
+        \begin{itemize}
+            \item More specifically, how can we map R-U trade-off if there are multiple measures of both?
+            \item More generally, how do we know if the data have high levels of utility and low levels of privacy?
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+}
+
+
+\frame{\frametitle{What do we know?}
+\begin{itemize}
+    \item SDG with CART is a good option 
+    \item Utility
+    \begin{itemize}
+        \item Drechsler and Reiter (2011) found that CART models offered the best results in terms of preserving the information from the original data.
+        \item Other comparisons also found CART is superior (Little et al., 2022; Danker and Ibrahim, 2021)
+    \end{itemize}
+    \item Privacy
+    \begin{itemize}
+        \item Some evidence also suggests CART is superior (Little et al., 2022)
+        \item However, other evidence indicates that CART-based synthesis simply replicates most of the original records (Manrique-Vallier and Hu, 2018)
+    \end{itemize}
+\end{itemize}
+}
+
+
+\frame{\frametitle{What do we not know?}
+\begin{itemize}
+    \item How are CART models so good at minimizing trade-off between risk and utility?
+\end{itemize}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Set up the attack}\label{sec:attack}
+\section{Data and methods}\label{sec:data_methods}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[c,plain]
@@ -162,19 +217,39 @@
     \vfill%
     \usebeamerfont{title}%
     \leftinsert%
-    \MakeUppercase{Section \ref{sec:attack}: Set up the attack
+    \MakeUppercase{Section \ref{sec:data_methods}: Data and methods
 } % <- Hier die Überschrift eintragen
 \end{beamercolorbox}
 \vskip-3mm
 \pgfuseimage{rahmenlinie}
-
-Let me introduce a problem illustrating that CART is disclosive
-
 \end{frame}
 
-\frame{\frametitle{The original data: Simulate data with a unique record}
 
-Borrowing from Reiter et al. (2014), we set the first 999 observations to be a random sample from a multinomial distribution for all combinations of $var1(0,1), var2(0,1), var3(0,1), var4(0,1)$ except ($var1=1,var2=1,var3=1,var4=1$), which we set to be the 1000$^{th}$ observation. 
+\frame{\frametitle{Data and methods}
+\begin{itemize}
+    \item Data - simulated data with unique record (Reiter et al., 2024)
+    \item Utility measures (synthpop - Raab et al., 2021)
+    \begin{itemize}
+        \item Voas Williamson 
+        \item Freeman-Tukey
+        \item Jensen-Shannaon divergence
+        \item Kolmogorov-Smirnov statistic
+        \item Propensity score mean-squared error
+        \item Bhattacharyya distances  
+    \end{itemize}
+    \item Privacy measures (synthpop - Raab et al., 2024)
+    \begin{itemize}
+        \item Identity disclosure measure: the ability to identify individuals in the data from a set of known characteristics (i.e. `keys').
+        \item Attribute disclosure measure: the ability to find out from the keys something, not previously known
+        \item Replicated uniques
+    \end{itemize}
+\end{itemize}
+}
+
+
+\frame{\frametitle{Simulate data with a unique record}
+
+Borrowing from Reiter et al. (2014), we set the first 999 observations to be a random sample from a multinomial distribution for all combinations of $var1(0,1), var2(0,1), var3(0,1), var4(0,1)$ except (var1=1,var2=1,var3=1,var4=1), which we set to be the 1000th observation. 
 
 \begin{minipage}{0.48\textwidth}
     \centering
@@ -189,7 +264,6 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 \end{minipage}
 
 }
-
 
 \frame{\frametitle{Generate synthetic data with CART (synthpop)}
 
@@ -207,61 +281,29 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 
 }
 
-
 \frame{\frametitle{Compare histogram x 100 synthetic datasets}
 \begin{figure}
-    \caption{Multiple synthetic data sets does not reduce privacy risk}
+    \caption{}
     \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_numeric_compare_histogram_100.pdf}}
     \label{fig:graph_numeric_compare_histogram_100}
 \end{figure}
 }
 
-\frame{\frametitle{Setting up the attack}
-\begin{itemize}
-    \item Its a game between two entities.  
-    \begin{itemize}
-        \item The statistical agency has the data and wants to release it in a privacy preserving way.  
-        \item The attacker wants to identify someone in the data (either membership or attribute inference).  
-    \end{itemize}
-    \item We assume the attacker has the following knowledge
-    \begin{itemize}
-        \item Knows the SDG model type (i.e. sequential CART).
-        \item Knowledge of everyone in the data except one.  
-        \item The 16 possible combinations that the last one could be.
-    \end{itemize}
-    \item The question: What can the attacker learn from a released synthetic data set about that individual they do not have knowledge of?
-\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Measuring utility and privacy}\label{sec:measuring}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{\frametitle{Comparing utility measures}
+\begin{table}[ht]
+    \caption{}
+    \centering
+    \rowcolors{1}{white}{lightgray}
+    \resizebox{\textwidth}{!}{\input{../../tables/table_utility.tex}}
+    \label{table:table_utility}
+\end{table}
 }
 
-\frame{\frametitle{Describing the attack}
-\begin{itemize}
-    \item The attacker sees the synthetic data
-    \item The attacker runs the same synthetic data model (SDG) for all of the 16 different possibilities.  
-    \item Then they want to update their beliefs about what the last record could be
-    \item The synthetic data contains that 16th category only in the case where the last observation is the unique one.
-\end{itemize}
-}
-
-
-\frame{\frametitle{Illustrating the attack}
-\vskip -3mm
-\begin{figure}
-    \caption{Histogram of 16 worlds x 100 synthetic datasets}
-    \vskip -4mm
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_attacker.pdf}}
-    \label{fig:graph_attacker}
-\end{figure}
-}
-
-
-\frame{\frametitle{Summary}
-\begin{itemize}
-    \item The problem: CART can be disclosive 
-    \item The reason: If a record is not in the original data, then it can never be in the synthetic data.  Therefore, a record can only be in the synthetic data if it is also in the original data.   
-    \item If you knew every record but one, and you knew every possible combination of unique values, then you could identify the missing record.
-    \item What do the privacy metrics in Synthpop tells us?
-\end{itemize}
-}
 
 \begin{frame}[fragile]
 \frametitle{Comparing privacy measures (set.seed = 1237, i.e. unique = 1)}
@@ -395,11 +437,25 @@ as a % of original records (repU) 0%
 
 \frame{\frametitle{The good news: solutions}
 \begin{itemize}
+    \item minumlevels = 5: Ensures the data are treated as categorical
     \item cp = 0.05 (default = 1e$^{-8}$): prevent large trees (i.e. overfitting)
     \item minbucket = 75 (default = 5): the minimum number of observations in any terminal node
     \item Other options also exist
 \end{itemize}
 }
+
+\frame{\frametitle{Visualizing trees (default vs. modified)}
+\begin{minipage}{0.48\textwidth}
+    \captionof{figure}{CART (default)}
+    \includegraphics[width=.9\textwidth]{../../graphs/graph_tree_numeric.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \captionof{figure}{CART (modified)}
+    \includegraphics[width=.9\textwidth]{../../graphs/graph_tree_categorical.pdf}
+\end{minipage}
+}
+
 
 \frame{\frametitle{Compare histogram x 100 synthetic datasets}
 \begin{minipage}{0.48\textwidth}
@@ -451,10 +507,19 @@ as a % of original records (repU) 0%
         \item We must sacrifice utility
         \item Common privacy metrics do not capture risk in our simulated data
     \end{itemize}
-    \item Question: If you did not know there was a problem, why would you sacrifice utility?
-
 \end{itemize}
 }
+
+\frame{\frametitle{Questions}
+\begin{itemize}
+    \item If you did not know there was a problem, why would you sacrifice utility?
+    \item What do you think?  
+    \item Should we develop this further?  
+    \item If so, how and in what direction?  
+    \item What would be the contribution?
+\end{itemize}
+}
+
 
 \frame{\frametitle{Contact}
 Jonathan Latner \\
