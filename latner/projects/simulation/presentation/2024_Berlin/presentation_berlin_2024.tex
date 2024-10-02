@@ -263,6 +263,34 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 \end{itemize}
 }
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Measuring privacy}\label{sec:privacy}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:privacy}: Measuring privacy
+} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+\end{frame}
+
+
+\frame{\frametitle{Privacy measures (synthpop - Raab et al., 2024)}
+\begin{itemize}
+    \item Identity disclosure: the ability to identify individuals in the data from a set of known characteristics (i.e. `keys').
+    \item Attribute disclosure: the ability to find out from the keys something, not previously known
+    \item Replicated uniques
+\end{itemize}
+}
+
 \begin{frame}[fragile]
 \frametitle{Comparing privacy measures (set.seed = 1237, i.e. unique = 1)}
   
@@ -363,7 +391,7 @@ as a % of original records (repU) 0%
          \item We know there is a problem (because we created it)
          \item We know that common measures do not capture the problem 
      \end{itemize} 
-     \item We are also not alone in identifying this problem (Manrique-Vallier and Hu, 2018)
+     % \item We are also not alone in identifying this problem (Manrique-Vallier and Hu, 2018)
 \end{itemize}
 }
 
