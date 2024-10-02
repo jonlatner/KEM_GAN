@@ -240,8 +240,8 @@
     \end{itemize}
     \item Privacy measures (synthpop - Raab et al., 2024)
     \begin{itemize}
-        \item Identity disclosure measure
-        \item Attribute disclosure measure
+        \item Identity disclosure measure: the ability to identify individuals in the data from a set of known characteristics (i.e. `keys').
+        \item Attribute disclosure measure: the ability to find out from the keys something, not previously known
         \item Replicated uniques
     \end{itemize}
 \end{itemize}
@@ -314,20 +314,21 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{lstlisting}
-> print(t1, plot = FALSE)
+> print(t1, plot = FALSE, to.print = "ident")
 Disclosure risk for 1000 records in the original data
 
 Identity disclosure measures
 from keys: var1 var2 var3 
 For original  ( UiO )  0 %
 For synthetic ( repU ) 0 %.
+> print(t1, plot = FALSE, to.print = "attrib")
 
 Table of attribute disclosure measures for var1 var2 var3 
 Original measure is  Dorig and synthetic measure is DiSCO 
 Variables Ordered by synthetic disclosure measure
 
        attrib.orig attrib.syn check1 Npairs check2
-1 var4           0          0             0     
+1 var4           0          0             0       
 \end{lstlisting}
 \end{minipage}%
   \hfill%
@@ -360,13 +361,14 @@ as a % of original records (repU) 0.1%
 
 \begin{minipage}[t]{0.48\textwidth}
 \begin{lstlisting}
-> print(t1, plot = FALSE)
+> print(t1, plot = FALSE, to.print = "ident")
 Disclosure risk for 1000 records in the original data
 
 Identity disclosure measures
 from keys: var1 var2 var3 
 For original  ( UiO )  0 %
 For synthetic ( repU ) 0 %.
+> print(t1, plot = FALSE, to.print = "attrib")
 
 Table of attribute disclosure measures for var1 var2 var3 
 Original measure is  Dorig and synthetic measure is DiSCO 
@@ -398,8 +400,8 @@ as a % of original records (repU) 0%
 
 \frame{\frametitle{Summary}
 \begin{itemize}
-    \item CART (synthpop) generates synthetic data with both high utility and low risk
-    \item However and this is the point:
+    \item Using common privacy and utility measures, CART generates synthetic data with both high utility and low risk
+    \item However (and this is the point):
     \begin{itemize}
          \item We know there is a problem (because we created it)
          \item We know that common measures do not capture the problem 
@@ -428,7 +430,7 @@ as a % of original records (repU) 0%
 
 \begin{itemize}
     \item The good news: we know how to solve the problem
-    \item The bad news: why would we solve the problem if we did not know it existed?
+    \item The bad news: we don't know how to identify the problem
 \end{itemize}
 
 
@@ -472,8 +474,8 @@ as a % of original records (repU) 0%
 
 \frame{\frametitle{The bad news}
 \begin{itemize}
-    \item You have to know the problem exists
-    \item We would not have understood the problem from common privacy measures
+    \item Specifically, we don't know how to identify the problem
+    \item Generally, we have to know the problem exists in order to do something about it
 \end{itemize}
 }
 
@@ -498,13 +500,14 @@ as a % of original records (repU) 0%
 \frame{\frametitle{Conclusion}
 \begin{itemize}
     \item It has long been understood that there is a trade-off between utility and risk
-    \item It seemed that CART models were less sensitive to this trade-off than other SDGs (i.e. higher utility, lower risk)
-    \item Using a simulated data set, we show that CART models do not protect unique cases
-    \item It is possible to protect unique records, 
+    \item Previous research indicated that CART models were less sensitive to this trade-off than other SDGs 
+    \item Using a simulated data set, we show that CART are sensitive to this trade-off
+    \item The good news: It is possible to reduce risk in CART with parameters
+    \item The bad news: 
     \begin{itemize}
-        \item You have to sacrifice utility
+        \item We must sacrifice utility
+        \item Common privacy metrics do not capture risk in our simulated data
     \end{itemize}
-    \item Using common privacy metrics, we show that these do not capture risk in our simulated data
 \end{itemize}
 }
 
