@@ -43,7 +43,7 @@ ods <- read.csv(paste0(original_data,"simulated.csv"))
 
 # Create fake synthetic data ----
 
-sds <- syn(ods, m = 1, seed = my.seed,models = TRUE, cart.cp = 0.01)
+sds <- syn(ods, m = 1, seed = my.seed,models = TRUE, cart.cp = 0.001)
 
 model_categorical <- sds$models$var4
 rpart.plot(model_categorical, roundint = FALSE)

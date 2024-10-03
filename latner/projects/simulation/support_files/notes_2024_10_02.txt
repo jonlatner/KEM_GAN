@@ -118,15 +118,6 @@ now i have convinced you that CART can be disclosive, what do the privacy metric
 
 
 
-the problem is that it is disclosive only because the unique record is in the synthetic data only when it is in the original data and is not when it is not
-
-But they also know the 16 possible combinations that the last one could be.
-
-The attacker sees the synthetic data
-
-Then they want to update their beliefs about what the last record was
-
-What the attacker can do is to run the same synthetic data model (SDG) for all of the 16 different possibilities.  When they do this, they will see that only in the case where the last observation is the unique one, the synthetic data contains that 16th category.
 
 the story is that let me convince you this is disclosive where the attacker knows whether the last observation is in the data
 

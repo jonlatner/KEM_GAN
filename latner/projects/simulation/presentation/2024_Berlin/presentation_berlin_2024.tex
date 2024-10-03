@@ -257,8 +257,7 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 \frame{\frametitle{Summary}
 \begin{itemize}
     \item The problem: CART can be disclosive 
-    \item The reason: If a record is not in the original data, then it can never be in the synthetic data.  Therefore, a record can only be in the synthetic data if it is also in the original data.   
-    \item If you knew every record but one, and you knew every possible combination of unique values, then you could identify the missing record.
+    \item The reason: In our data, if a record is not in the original data, then it can never be in the synthetic data.  Therefore, a record can only be in the synthetic data if it is also in the original data.   
 \end{itemize}
 }
 
@@ -386,7 +385,8 @@ as a % of original records (repU) 0%
 
 \frame{\frametitle{Summary}
 \begin{itemize}
-    \item Using common privacy and utility measures, CART generates synthetic data with both high utility and low risk
+    \item Using common privacy measures, CART generates synthetic data with low risk
+    \item 1 measure indicates there may be a problem, but all the other measures indicate there is no problem.
     \item However (and this is the point):
     \begin{itemize}
          \item We know there is a problem (because we created it)
