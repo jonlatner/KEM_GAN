@@ -75,7 +75,7 @@ for (c in 1:100) {
     df_ods_frequency <- as.data.frame(table(df_ods_frequency)) %>%
       mutate(type = "original",
              n = c,
-             unique = paste(last_record$y1, last_record$y2, last_record$y3, last_record$y4, sep = ""))
+             last_record = paste(last_record$y1, last_record$y2, last_record$y3, last_record$y4, sep = ""))
 
     # Create a frequency table for synthetic data
     sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
@@ -84,7 +84,7 @@ for (c in 1:100) {
     df_sds_frequency <- as.data.frame(table(sds))
     df_sds_frequency$type <- "synthetic"
     df_sds_frequency$n <- c
-    df_sds_frequency$unique <- paste(last_record$y1, last_record$y2, last_record$y3, last_record$y4, sep = "")
+    df_sds_frequency$last_record <- paste(last_record$y1, last_record$y2, last_record$y3, last_record$y4, sep = "")
     
     # Combine
     df_frequency <- rbind(df_frequency,df_sds_frequency,df_ods_frequency)
@@ -93,12 +93,11 @@ for (c in 1:100) {
 
 # Save data ----
 
-write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"), row.names = FALSE)
-df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"))
+write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_default.csv"), row.names = FALSE)
 
 # Compare histogram ----
 
-df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_numeric.csv"))
+df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_default.csv"))
 
 df_graph_sds <- df_frequency %>%
   filter(type == "synthetic") 
@@ -112,7 +111,7 @@ df_graph <-
   ggplot() +
   geom_bar(data = df_graph_ods, aes(x = combine, y = Freq, fill = type), position = position_dodge(width=0.9), stat = "identity") +
   geom_boxplot(position = position_dodge(width=0.9), aes(x = combine, y = Freq, fill = type), data = df_graph_sds) +
-  facet_wrap(~unique, labeller = "label_both") +
+  facet_wrap(~last_record, labeller = "label_both") +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
@@ -126,4 +125,6 @@ df_graph <-
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"graph_attacker.pdf"), height = 5, width = 10)
+ggsave(plot = df_graph, paste0(graphs,"graph_attacker_default.pdf"), height = 5, width = 10)
+
+ggsave(plot = df_graph, paste0(graphs,"graph_attacker_default_v2.pdf"), height = 5, width = 5)

@@ -128,11 +128,11 @@
 
 \frame{\frametitle{Background}
 \begin{itemize}
-    \item This is work in progress.
+    \item We don't know.
     \item We think this idea is interesting.
     \item We think others should know about it.
     \item But we are still developing it.
-    \item Comments and critiques would be helpful.
+    \item Thoughts and suggestions would be helpful.
 \end{itemize}
 }
 
@@ -143,9 +143,11 @@
     \item Utility and privacy in CART based synthesizers is high (Little et al., 2022; Danker and Ibrahim, 2021)
     \item Therefore, CART models are less sensitive to this trade-off than other SDGs (i.e. higher utility, lower risk)
     \item Using simulation data (Reiter et al., 2014), we show that synthetic data from CART models are disclosive
-    \item {\bf The problem:} Disclosive in ways that are not observable with common privacy metrics
-    \item {\bf The solution:} It is possible to increase protection (by reducing utility)
-    \item {\bf The question:} Why would we reduce utility if we did not know there was a problem? 
+    \item The problem:
+    \begin{itemize}
+        \item Disclosive in ways that are not observable with common privacy metrics
+        \item It is possible to increase protection (by reducing utility)
+    \end{itemize}
 \end{itemize}
 }
 
@@ -166,6 +168,8 @@
 \vskip-3mm
 \pgfuseimage{rahmenlinie}
 
+Let me introduce a problem illustrating that CART is disclosive
+
 \end{frame}
 
 \frame{\frametitle{Setting up the attack}
@@ -175,7 +179,13 @@
         \item The statistical agency has the data and wants to release it in a privacy preserving way.  
         \item The attacker wants to identify someone in the data (either membership or attribute inference).  
     \end{itemize}
-    \item The question: What can the attacker learn from a released synthetic data set about an individual they do not have knowledge of?
+    \item We assume the attacker has the following knowledge
+    \begin{itemize}
+        \item Knows the SDG model type (i.e. sequential CART).
+        \item Knowledge of everyone in the data except one.  
+        \item The 16 possible combinations that the last one could be.
+    \end{itemize}
+    \item The question: What can the attacker learn from a released synthetic data set about that individual they do not have knowledge of?
 \end{itemize}
 }
 
@@ -225,15 +235,10 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 
 \frame{\frametitle{Describing the attack}
 \begin{itemize}
-    \item We assume the attacker has the following knowledge
-    \begin{itemize}
-        \item Knows the SDG model type (i.e. sequential CART).
-        \item Knowledge of everyone in the data except one.  
-        \item The 16 possible combinations that the last one could be.
-    \end{itemize}
     \item The attacker sees the synthetic data
     \item The attacker runs the same synthetic data model (SDG) for all of the 16 different possibilities.  
-    \item Then they update their beliefs about what the last record could be
+    \item Then they want to update their beliefs about what the last record could be
+    \item The synthetic data contains that 16th category only in the case where the last observation is the unique one.
 \end{itemize}
 }
 
@@ -243,8 +248,8 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 \begin{figure}
     \caption{Histogram of 16 worlds x 100 synthetic datasets}
     \vskip -4mm
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_attacker_default.pdf}}
-    \label{fig:graph_attacker_default}
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_attacker.pdf}}
+    \label{fig:graph_attacker}
 \end{figure}
 }
 
@@ -252,11 +257,7 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 \frame{\frametitle{Summary}
 \begin{itemize}
     \item The problem: CART can be disclosive 
-    \item The reason (in our data): 
-    \begin{itemize}
-        \item A record can only be in the synthetic data if it is also in the original data.   
-        \item Or the opposite: if a record is not in the original data, then it can never be in the synthetic data.
-    \end{itemize}  
+    \item The reason: In our data, if a record is not in the original data, then it can never be in the synthetic data.  Therefore, a record can only be in the synthetic data if it is also in the original data.   
 \end{itemize}
 }
 
@@ -278,17 +279,15 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 \vskip-3mm
 \pgfuseimage{rahmenlinie}
 
+What do the privacy metrics in Synthpop tells us?
 \end{frame}
 
 
-\frame{\frametitle{Privacy measures}
+\frame{\frametitle{Privacy measures (synthpop - Raab et al., 2024)}
 \begin{itemize}
-    \item Synthpop (Raab et al., 2024)
-    \begin{itemize}
-        \item Identity disclosure: the ability to identify individuals in the data from a set of known characteristics (i.e. `keys').
-        \item Attribute disclosure: the ability to find out from the keys something, not previously known
-        \item Replicated uniques
-    \end{itemize}
+    \item Identity disclosure: the ability to identify individuals in the data from a set of known characteristics (i.e. `keys').
+    \item Attribute disclosure: the ability to find out from the keys something, not previously known
+    \item Replicated uniques
 \end{itemize}
 }
 
@@ -425,23 +424,24 @@ as a % of original records (repU) 0%
 
 \frame{\frametitle{The good news: solutions}
 \begin{itemize}
-    \item Reduce utility by preventing overfitting
-    \begin{itemize}
-        \item minbucket = 75 (default = 5): increase the minimum number of observations in any terminal node
-        \item cp = 0.05 (default = 1e$^{-8}$): decrease the size of the tree
-        \item Other options also exist
-    \end{itemize}
+    \item cp = 0.05 (default = 1e$^{-8}$): prevent large trees (i.e. overfitting)
+    \item minbucket = 75 (default = 5): the minimum number of observations in any terminal node
+    \item Other options also exist
 \end{itemize}
 }
 
 \frame{\frametitle{Compare histogram x 100 synthetic datasets}
-\vskip -3mm
-\begin{figure}
-    \caption{Histogram of 16 worlds x 100 synthetic datasets}
-    \vskip -4mm
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_attacker_modified.pdf}}
-    \label{fig:graph_attacker_modified}
-\end{figure}
+\begin{minipage}{0.48\textwidth}
+    \captionof{figure}{CART (default)}
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_numeric_compare_histogram_100_v2.pdf}}
+    \label{fig:graph_numeric_compare_histogram_100}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \captionof{figure}{CART (modified)}
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_categorical_compare_histogram_100_v2.pdf}}
+    \label{fig:graph_categorical_compare_histogram_100}
+\end{minipage}
 }
 
 \frame{\frametitle{The bad news}
@@ -468,62 +468,22 @@ as a % of original records (repU) 0%
 \pgfuseimage{rahmenlinie}
 \end{frame}
 
-\frame{\frametitle{Summary}
+
+\frame{\frametitle{Conclusion}
 \begin{itemize}
     \item It has long been understood that there is a trade-off between utility and risk
     \item Previous research indicated that CART models were less sensitive to this trade-off than other SDGs 
     \item Using a simulated data set, we show that CART are sensitive to this trade-off
     \item The good news: It is possible to reduce risk in CART with parameters
-    \item The bad news:
+    \item The bad news: 
     \begin{itemize}
-        \item Common privacy metrics do not capture risk in our simulated data
         \item We must sacrifice utility
+        \item Common privacy metrics do not capture risk in our simulated data
     \end{itemize}
     \item Question: If you did not know there was a problem, why would you sacrifice utility?
 
 \end{itemize}
 }
-
-
-\frame{\frametitle{Is the scenario realistic?  Is this a problem?}
-\begin{itemize}
-    \item No, this is not a problem.  It is not realistic to assume that 
-    \begin{itemize}
-        \item A synthetic dataset would be generated with only binary variables 
-        \item A scenario where an intruder would know all observations except one 
-    \end{itemize}
-    \item Yes, this is a problem
-    \begin{itemize}
-        \item Unique records 
-        \begin{itemize}
-            \item are always the records we need to protect most
-            \item It is well known that SDGs struggle to protect unique records
-        \end{itemize}
-        \item The simulation
-        \begin{itemize}
-            \item We show that disclosure happened
-            \item We show that risk measures did not capture the disclosure
-        \end{itemize}
-    \end{itemize}
-\end{itemize}
-}
-
-\frame{\frametitle{Conclusion}
-\begin{itemize}
-    \item We are not saying (more specifically)
-    \begin{itemize}
-        \item That all synthetic data are disclosive
-        \item That CART-based SDGs are bad
-    \end{itemize}
-    \item Instead, we are saying (more generally)
-    \begin{itemize}
-        \item Do not assume that risk measures will identify all problems
-        \item This simulation offers a type of `bound' on understanding disclosure risks
-    \end{itemize}
-\end{itemize}
-}
-
-
 
 \frame{\frametitle{Contact}
 Jonathan Latner \\
