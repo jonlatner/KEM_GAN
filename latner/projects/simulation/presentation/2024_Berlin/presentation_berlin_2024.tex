@@ -137,11 +137,25 @@
 }
 
 
-\frame{\frametitle{Overview}
+\frame{\frametitle{What do we know?}
 \begin{itemize}
-    \item It is well established that there is a trade-off between utility and privacy when generating synthetic data
-    \item Utility and privacy in CART based synthesizers is high (Little et al., 2022; Danker and Ibrahim, 2021)
-    \item Therefore, CART models are less sensitive to this trade-off than other SDGs (i.e. higher utility, lower risk)
+    \item It is well established that there is a trade-off between utility and privacy using a synthetic data generator (SDG)
+    \item Utility and privacy in CART based SDGs seems to be high (Little et al., 2022; Danker and Ibrahim, 2021)
+    \item Therefore, CART models seem to be less sensitive to this trade-off than other SDGs (i.e. higher utility, lower risk)
+\end{itemize}
+}
+
+\frame{\frametitle{What do we not know?}
+\begin{itemize}
+    \item How does CART seem to be able to minimize the R-U trade off?
+    \begin{itemize}
+        \item Relative to other SDGs with certain types of data (i.e. low dimensional data). 
+    \end{itemize}
+\end{itemize}
+}
+
+\frame{\frametitle{What do we do here?}
+\begin{itemize}
     \item Using simulation data (Reiter et al., 2014), we show that synthetic data from CART models are disclosive
     \item {\bf The problem:} Disclosive in ways that are not observable with common privacy metrics
     \item {\bf The solution:} It is possible to increase protection (by reducing utility)
@@ -256,7 +270,7 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 
 \frame{\frametitle{Describing the attack}
 \begin{itemize}
-    \item We assume the attacker has the following knowledge
+    \item We assume a `strong' attacker who has the following knowledge similar to the attack model in differential privacy (DP). 
     \begin{itemize}
         \item Knows the SDG model type (i.e. sequential CART).
         \item Knowledge of al observations in the data except the last one.  
@@ -321,7 +335,7 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 }
 
 \begin{frame}[fragile]
-\frametitle{Comparing privacy measures (set.seed = 1237, i.e. unique = 1)}
+\frametitle{Comparing privacy measures (seed = 1237, i.e. `last record' = 1)}
   
 % R Code block
 
@@ -368,7 +382,7 @@ as a % of original records (repU) 0.1%
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Comparing privacy measures (set.seed = 1240, i.e. unique = 3)}
+\frametitle{Comparing privacy measures (seed = 1240, i.e. `last record' = 3)}
   
 % R Code block
 
@@ -517,10 +531,14 @@ as a % of original records (repU) 0%
 
 \frame{\frametitle{Is the scenario realistic?  Is this a problem?}
 \begin{itemize}
-    \item No, this is not a problem.  It is not realistic to assume that 
+    \item No, this is not a problem.  
     \begin{itemize}
-        \item A synthetic dataset would be generated with only binary variables 
-        \item A scenario where an intruder would know all observations except one 
+        \item A `strong' attacker is unrealistic.
+        \begin{itemize}
+            \item Knows the SDG model type (i.e. sequential CART).
+            \item Knowledge of al observations in the data except the last one.  
+            \item The 16 possible combinations that the last one could be.
+        \end{itemize}
     \end{itemize}
     \item Yes, this is a problem
     \begin{itemize}
@@ -528,11 +546,12 @@ as a % of original records (repU) 0%
         \begin{itemize}
             \item are always the records we need to protect most
             \item It is well known that SDGs struggle to protect unique records while also providing utility
+            \item In this data, eliminating unique records does not solve the problem
         \end{itemize}
         \item The simulation
         \begin{itemize}
-            \item We show that disclosure happened
-            \item We show that risk measures did not capture the disclosure
+            \item We show that a disclosure happened in this data
+            \item We show that these risk measures did not capture this disclosure
         \end{itemize}
     \end{itemize}
 \end{itemize}
@@ -547,7 +566,7 @@ as a % of original records (repU) 0%
     \end{itemize}
     \item We are saying:
     \begin{itemize}
-        \item Do not assume that risk measures will identify all problems
+        \item Do not assume that all risk measures will identify all problems
         \item This simulation offers a type of `bound' on understanding disclosure risks
     \end{itemize}
 \end{itemize}
