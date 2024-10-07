@@ -151,6 +151,81 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The data}\label{sec:data}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:data}: Generate the original and synthetic data
+} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+
+\end{frame}
+
+\frame{\frametitle{Generate original data using a simulation}
+
+Borrowing from Reiter et al. (2014), we set the first 999 observations to be a random sample from a multinomial distribution for all combinations of $var1(0,1), var2(0,1), var3(0,1), var4(0,1)$ except ($var1=1,var2=1,var3=1,var4=1$), which we set to be the 1000$^{th}$ observation. 
+
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../../graphs/graph_cart_frequency.pdf}
+    \captionof{figure}{Frequency}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../../graphs/graph_cart_histogram.pdf}
+    \captionof{figure}{Histogram}
+\end{minipage}
+
+}
+
+
+\frame{\frametitle{Generate synthetic data with CART (synthpop)}
+
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../../graphs/graph_cart_frequency_compare.pdf}
+    \captionof{figure}{Frequency}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../../graphs/graph_cart_histogram_compare.pdf}
+    \captionof{figure}{Histogram}
+\end{minipage}
+
+}
+
+
+\frame{\frametitle{Compare histogram x 100 synthetic datasets}
+\begin{figure}
+    \caption{Multiple synthetic data sets does not reduce privacy risk}
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_cart_histogram_compare_100.pdf}}
+    \label{fig:graph_cart_histogram_compare_100}
+\end{figure}
+}
+
+\frame{\frametitle{Summary}
+\begin{itemize}
+    \item The problem (in our data): Synthetic data from CART models are disclosive
+    \item The reason: 
+    \begin{itemize}
+        \item A record can only be in the synthetic data if it is also in the original data.   
+        \item Or the opposite: if a record is not in the original data, then it can never be in the synthetic data.
+    \end{itemize}  
+    \item Next section: Can an attacker identify the disclosure?
+\end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Set up the attack}\label{sec:attack}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -179,56 +254,12 @@
 \end{itemize}
 }
 
-\frame{\frametitle{The original data: Simulate data with a unique record}
-
-Borrowing from Reiter et al. (2014), we set the first 999 observations to be a random sample from a multinomial distribution for all combinations of $var1(0,1), var2(0,1), var3(0,1), var4(0,1)$ except ($var1=1,var2=1,var3=1,var4=1$), which we set to be the 1000$^{th}$ observation. 
-
-\begin{minipage}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../../graphs/graph_numeric_frequency.pdf}
-    \captionof{figure}{Frequency}
-\end{minipage}
-\hfill
-\begin{minipage}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../../graphs/graph_numeric_histogram.pdf}
-    \captionof{figure}{Histogram}
-\end{minipage}
-
-}
-
-
-\frame{\frametitle{Generate synthetic data with CART (synthpop)}
-
-\begin{minipage}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../../graphs/graph_numeric_compare_frequency.pdf}
-    \captionof{figure}{Frequency}
-\end{minipage}
-\hfill
-\begin{minipage}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{../../graphs/graph_numeric_compare_histogram.pdf}
-    \captionof{figure}{Histogram}
-\end{minipage}
-
-}
-
-
-\frame{\frametitle{Compare histogram x 100 synthetic datasets}
-\begin{figure}
-    \caption{Multiple synthetic data sets does not reduce privacy risk}
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_numeric_compare_histogram_100.pdf}}
-    \label{fig:graph_numeric_compare_histogram_100}
-\end{figure}
-}
-
 \frame{\frametitle{Describing the attack}
 \begin{itemize}
     \item We assume the attacker has the following knowledge
     \begin{itemize}
         \item Knows the SDG model type (i.e. sequential CART).
-        \item Knowledge of everyone in the data except one.  
+        \item Knowledge of al observations in the data except the last one.  
         \item The 16 possible combinations that the last one could be.
     \end{itemize}
     \item The attacker sees the synthetic data
@@ -251,13 +282,10 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 
 \frame{\frametitle{Summary}
 \begin{itemize}
-    \item The problem: CART can be disclosive 
-    \item The reason (in our data): 
-    \begin{itemize}
-        \item A record can only be in the synthetic data if it is also in the original data.   
-        \item Or the opposite: if a record is not in the original data, then it can never be in the synthetic data.
-    \end{itemize}  
+    \item In our attack with our assumptions, the attacker can easily identify the last record
+    \item Next section: Can we measure this disclosure?
 \end{itemize}
+
 }
 
 
@@ -414,13 +442,6 @@ as a % of original records (repU) 0%
 \end{beamercolorbox}
 \vskip-3mm
 \pgfuseimage{rahmenlinie}
-
-\begin{itemize}
-    \item The good news: we know how to solve the problem
-    \item The bad news: we don't know how to identify the problem
-\end{itemize}
-
-
 \end{frame}
 
 \frame{\frametitle{The good news: solutions}
@@ -433,6 +454,15 @@ as a % of original records (repU) 0%
     \end{itemize}
 \end{itemize}
 }
+
+\frame{\frametitle{Generate synthetic data with CART (modified parameters)}
+\begin{figure}
+    \caption{Compare histogram x 100 synthetic datasets}
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_cart_modified_histogram_compare_100.pdf}}
+    \label{fig:graph_cart_modified_histogram_compare_100}
+\end{figure}
+}
+
 
 \frame{\frametitle{Illustrating the attack with CART (modified parameters)}
 \vskip -3mm
@@ -497,7 +527,7 @@ as a % of original records (repU) 0%
         \item Unique records 
         \begin{itemize}
             \item are always the records we need to protect most
-            \item It is well known that SDGs struggle to protect unique records
+            \item It is well known that SDGs struggle to protect unique records while also providing utility
         \end{itemize}
         \item The simulation
         \begin{itemize}
@@ -510,12 +540,12 @@ as a % of original records (repU) 0%
 
 \frame{\frametitle{Conclusion}
 \begin{itemize}
-    \item We are not saying that
+    \item We are not saying: 
     \begin{itemize}
-        \item Synthetic data are disclosive
+        \item All synthetic data are disclosive
         \item CART-based SDGs are disclosive
     \end{itemize}
-    \item Instead, we are saying
+    \item We are saying:
     \begin{itemize}
         \item Do not assume that risk measures will identify all problems
         \item This simulation offers a type of `bound' on understanding disclosure risks

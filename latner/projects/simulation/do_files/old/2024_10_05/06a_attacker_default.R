@@ -61,7 +61,7 @@ for (c in 1:100) {
     df_ods[1000,] <- last_record
 
     # Create fake synthetic data
-    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart", cart.minbucket = 75)
+    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart")
     sds <- sds$syn
     df_sds <- sds
     
@@ -93,11 +93,11 @@ for (c in 1:100) {
 
 # Save data ----
 
-write.csv(df_frequency, paste0(synthetic_data,"synthetic_attacker_modified.csv"), row.names = FALSE)
+write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_default.csv"), row.names = FALSE)
 
 # Compare histogram ----
 
-df_frequency <- read_csv(paste0(synthetic_data,"synthetic_attacker_modified.csv"))
+df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_default.csv"))
 
 df_graph_sds <- df_frequency %>%
   filter(type == "synthetic") 
@@ -112,7 +112,6 @@ df_graph <-
   geom_bar(data = df_graph_ods, aes(x = combine, y = Freq, fill = type), position = position_dodge(width=0.9), stat = "identity") +
   geom_boxplot(position = position_dodge(width=0.9), aes(x = combine, y = Freq, fill = type), data = df_graph_sds) +
   facet_wrap(~last_record, labeller = "label_both") +
-  scale_y_continuous(limits = c(0,100), breaks = seq(0,100,25)) +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
@@ -126,6 +125,6 @@ df_graph <-
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"graph_attacker_modified.pdf"), height = 5, width = 10)
+ggsave(plot = df_graph, paste0(graphs,"graph_attacker_default.pdf"), height = 5, width = 10)
 
-ggsave(plot = df_graph, paste0(graphs,"graph_attacker_modified_v2.pdf"), height = 5, width = 5)
+ggsave(plot = df_graph, paste0(graphs,"graph_attacker_default_v2.pdf"), height = 5, width = 5)

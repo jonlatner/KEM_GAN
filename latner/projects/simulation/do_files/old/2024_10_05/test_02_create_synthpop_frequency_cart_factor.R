@@ -14,7 +14,6 @@ rm(list=ls(all=TRUE))
 library(synthpop)
 library(tidyverse)
 library(ggh4x) # facet_nested
-library(readr)
 
 # FOLDERS - ADAPT THIS PATHWAY
 main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/simulation/"
@@ -61,9 +60,8 @@ for (c in 1:100) {
     df_ods[1000,] <- last_record
 
     # Create fake synthetic data
-    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart", cart.minbucket = 75)
+    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart", minnumlevels = 5)
     sds <- sds$syn
-    df_sds <- sds
     
     # Create a frequency table for true original data (unique = 1111)
     
@@ -75,7 +73,7 @@ for (c in 1:100) {
     df_ods_frequency <- as.data.frame(table(df_ods_frequency)) %>%
       mutate(type = "original",
              n = c,
-             last_record = paste(last_record$y1, last_record$y2, last_record$y3, last_record$y4, sep = ""))
+             unique = paste(last_record$y1, last_record$y2, last_record$y3, last_record$y4, sep = ""))
 
     # Create a frequency table for synthetic data
     sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
@@ -84,7 +82,7 @@ for (c in 1:100) {
     df_sds_frequency <- as.data.frame(table(sds))
     df_sds_frequency$type <- "synthetic"
     df_sds_frequency$n <- c
-    df_sds_frequency$last_record <- paste(last_record$y1, last_record$y2, last_record$y3, last_record$y4, sep = "")
+    df_sds_frequency$unique <- paste(last_record$y1, last_record$y2, last_record$y3, last_record$y4, sep = "")
     
     # Combine
     df_frequency <- rbind(df_frequency,df_sds_frequency,df_ods_frequency)
@@ -93,11 +91,11 @@ for (c in 1:100) {
 
 # Save data ----
 
-write.csv(df_frequency, paste0(synthetic_data,"synthetic_attacker_modified.csv"), row.names = FALSE)
+write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_factor.csv"), row.names = FALSE)
 
-# Compare histogram ----
+# Compare frequency ----
 
-df_frequency <- read_csv(paste0(synthetic_data,"synthetic_attacker_modified.csv"))
+df_frequency$combine <- factor(df_frequency$combine, levels = sort(levels(df_frequency$combine)))
 
 df_graph_sds <- df_frequency %>%
   filter(type == "synthetic") 
@@ -109,16 +107,15 @@ df_graph_ods <- unique(df_graph_ods)
 
 df_graph <- 
   ggplot() +
-  geom_bar(data = df_graph_ods, aes(x = combine, y = Freq, fill = type), position = position_dodge(width=0.9), stat = "identity") +
-  geom_boxplot(position = position_dodge(width=0.9), aes(x = combine, y = Freq, fill = type), data = df_graph_sds) +
-  facet_wrap(~last_record, labeller = "label_both") +
-  scale_y_continuous(limits = c(0,100), breaks = seq(0,100,25)) +
+  geom_bar(data = df_graph_ods, aes(x = combine, y = Freq, fill = type), position = position_dodge(width=0.9), stat = "identity", alpha = .05) +
+  geom_boxplot(position = position_dodge(width=0.9), aes(x = combine, y = Freq, fill = type), data = df_graph_sds, alpha = .2) +
+  facet_wrap(~unique, labeller = "label_both") +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
         legend.title = element_blank(),
         legend.key.width=unit(1, "cm"),
-        axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
+        axis.text.x = element_text(angle = 25, hjust = 1, vjust = .5),
         axis.title.x = element_blank(),
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
@@ -126,6 +123,4 @@ df_graph <-
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"graph_attacker_modified.pdf"), height = 5, width = 10)
-
-ggsave(plot = df_graph, paste0(graphs,"graph_attacker_modified_v2.pdf"), height = 5, width = 5)
+ggsave(plot = df_graph, paste0(graphs,"cart_factor.pdf"), height = 8, width = 10)

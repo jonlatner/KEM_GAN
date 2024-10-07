@@ -93,11 +93,11 @@ for (c in 1:100) {
 
 # Save data ----
 
-write.csv(df_frequency, paste0(synthetic_data,"synthetic_attacker_modified.csv"), row.names = FALSE)
+write.csv(df_frequency, paste0(synthetic_data,"synthetic_frequency_cart_modified.csv"), row.names = FALSE)
 
 # Compare histogram ----
 
-df_frequency <- read_csv(paste0(synthetic_data,"synthetic_attacker_modified.csv"))
+df_frequency <- read_csv(paste0(synthetic_data,"synthetic_frequency_cart_modified.csv"))
 
 df_graph_sds <- df_frequency %>%
   filter(type == "synthetic") 
@@ -112,7 +112,6 @@ df_graph <-
   geom_bar(data = df_graph_ods, aes(x = combine, y = Freq, fill = type), position = position_dodge(width=0.9), stat = "identity") +
   geom_boxplot(position = position_dodge(width=0.9), aes(x = combine, y = Freq, fill = type), data = df_graph_sds) +
   facet_wrap(~last_record, labeller = "label_both") +
-  scale_y_continuous(limits = c(0,100), breaks = seq(0,100,25)) +
   theme_bw() +
   theme(panel.grid.minor = element_blank(), 
         legend.position = "bottom",
