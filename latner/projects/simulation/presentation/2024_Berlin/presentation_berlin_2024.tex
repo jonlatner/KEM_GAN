@@ -128,10 +128,11 @@
 
 \frame{\frametitle{Background}
 \begin{itemize}
-    \item This is work in progress.
+    \item We had a question and we developed a way to test it.
     \item We think this idea is interesting.
     \item We think others should know about it.
-    \item But we are still developing it.
+    \item But, this is work in progress.
+    \item And, we are still developing it.
     \item Comments and critiques would be helpful.
 \end{itemize}
 }
@@ -139,15 +140,18 @@
 
 \frame{\frametitle{What do we know?}
 \begin{itemize}
-    \item It is well established that there is a trade-off between utility and privacy using a synthetic data generator (SDG)
-    \item Utility and privacy in CART based SDGs seems to be high (Little et al., 2022; Danker and Ibrahim, 2021)
-    \item Therefore, CART models seem to be less sensitive to this trade-off than other SDGs (i.e. higher utility, lower risk)
+    \item It is well established that there is a trade-off between utility and privacy when generating synthetic data using a synthetic data generator or SDG (Duncan et al., 2004)
+    \item Classification and Regression Trees (CART) models are one type of SDG (Reiter, 2005)
+    \begin{itemize}
+        \item Utility and privacy in CART based SDGs seems to be high (Little et al., 2022; Danker and Ibrahim, 2021)
+        \item Therefore, CART models seem to be less sensitive to this trade-off than other SDGs (i.e. higher utility, lower risk)
+    \end{itemize}
 \end{itemize}
 }
 
 \frame{\frametitle{What do we not know?}
 \begin{itemize}
-    \item How does CART seem to be able to minimize the R-U trade off?
+    \item The question: How do CART based SDGs seem to be able to minimize the R-U trade off?
     \begin{itemize}
         \item Relative to other SDGs with certain types of data (i.e. low dimensional data). 
     \end{itemize}
@@ -156,7 +160,7 @@
 
 \frame{\frametitle{What do we do here?}
 \begin{itemize}
-    \item Using simulation data (Reiter et al., 2014), we show that synthetic data from CART models are disclosive
+    \item Using simulation data (Reiter et al., 2014), we show that synthetic data from CART models can be disclosive
     \item {\bf The problem:} Disclosive in ways that are not observable with common privacy metrics
     \item {\bf The solution:} It is possible to increase protection (by reducing utility)
     \item {\bf The question:} Why would we reduce utility if we did not know there was a problem? 
@@ -183,19 +187,25 @@
 \end{frame}
 
 \frame{\frametitle{Generate original data using a simulation}
+\vskip -2mm
+\begin{itemize}
+    \item Borrowing from Reiter et al. (2014), we create a data set with $n=1000$ and 4 dichotomous, categorical variables. 
+    \item The first 999 observations to be a random sample from a multinomial distribution for all combinations of $var1(0,1), var2(0,1), var3(0,1), var4(0,1)$ except the last one
+    \item The last (1000$^{th}$) observation is ($var1=1,var2=1,var3=1,var4=1$). 
+\end{itemize}
 
-Borrowing from Reiter et al. (2014), we set the first 999 observations to be a random sample from a multinomial distribution for all combinations of $var1(0,1), var2(0,1), var3(0,1), var4(0,1)$ except ($var1=1,var2=1,var3=1,var4=1$), which we set to be the 1000$^{th}$ observation. 
+
 
 \begin{minipage}{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{../../graphs/graph_cart_frequency.pdf}
-    \captionof{figure}{Frequency}
+    % \captionof{figure}{Frequency}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\textwidth}
     \centering
     \includegraphics[width=\textwidth]{../../graphs/graph_cart_histogram.pdf}
-    \captionof{figure}{Histogram}
+    % \captionof{figure}{Histogram}
 \end{minipage}
 
 }
@@ -231,7 +241,7 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
     \item The problem (in our data): Synthetic data from CART models are disclosive
     \item The reason: 
     \begin{itemize}
-        \item A record can only be in the synthetic data if it is also in the original data.   
+        \item A record can only be in the synthetic data if it is also in the original data (in this simulated data).   
         \item Or the opposite: if a record is not in the original data, then it can never be in the synthetic data.
     \end{itemize}  
     \item Next section: Can an attacker identify the disclosure?
@@ -240,7 +250,7 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Set up the attack}\label{sec:attack}
+\section{The attack}\label{sec:attack}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[c,plain]
@@ -249,7 +259,7 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
     \vfill%
     \usebeamerfont{title}%
     \leftinsert%
-    \MakeUppercase{Section \ref{sec:attack}: Set up the attack
+    \MakeUppercase{Section \ref{sec:attack}: The attack
 } % <- Hier die Überschrift eintragen
 \end{beamercolorbox}
 \vskip-3mm
@@ -270,10 +280,11 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 
 \frame{\frametitle{Describing the attack}
 \begin{itemize}
-    \item We assume a `strong' attacker who has the following knowledge similar to the attack model in differential privacy (DP). 
+    \item We assume a `strong' attacker similar to the attack model in differential privacy (DP). 
+    \item An attacker has the following knowledge
     \begin{itemize}
         \item Knows the SDG model type (i.e. sequential CART).
-        \item Knowledge of al observations in the data except the last one.  
+        \item Knowledge of all observations in the data except the last one.  
         \item The 16 possible combinations that the last one could be.
     \end{itemize}
     \item The attacker sees the synthetic data
@@ -297,6 +308,11 @@ Borrowing from Reiter et al. (2014), we set the first 999 observations to be a r
 \frame{\frametitle{Summary}
 \begin{itemize}
     \item In our attack with our assumptions, the attacker can easily identify the last record
+    \item The reason (to repeat): 
+    \begin{itemize}
+        \item A record can only be in the synthetic data if it is also in the original data (in this simulated data).   
+        \item Or the opposite: if a record is not in the original data, then it can never be in the synthetic data.
+    \end{itemize}  
     \item Next section: Can we measure this disclosure?
 \end{itemize}
 
