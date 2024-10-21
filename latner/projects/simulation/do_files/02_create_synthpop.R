@@ -39,12 +39,12 @@ df_ods <- read.csv(paste0(original_data,"simulated.csv"))
 
 sds <- syn(df_ods, m = 1, seed = my.seed)
 sds <- sds$syn
-write.csv(sds,paste0(synthetic_data,"synthpop_numeric.csv"), row.names = FALSE)
+write.csv(sds,paste0(synthetic_data,"synthpop_cart.csv"), row.names = FALSE)
 
 # Create synthetic data with factor variables ----
 
 sds <- syn(df_ods, m = 1, seed = my.seed, minnumlevels = 5)
 sds <- sds$syn
-write.csv(sds,paste0(synthetic_data,"synthpop_factor.csv"), row.names = FALSE)
+write.csv(sds,paste0(synthetic_data,"synthpop_cart_modified.csv"), row.names = FALSE)
 
 
