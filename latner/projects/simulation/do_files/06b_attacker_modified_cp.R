@@ -61,7 +61,7 @@ for (c in 1:100) {
     df_ods[1000,] <- last_record
 
     # Create fake synthetic data
-    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart", cart.minbucket = 75)
+    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart", cart.cp = 0.05)
     sds <- sds$syn
     df_sds <- sds
     
@@ -93,11 +93,11 @@ for (c in 1:100) {
 
 # Save data ----
 
-write.csv(df_frequency, paste0(synthetic_data,"synthetic_attacker_modified.csv"), row.names = FALSE)
+write.csv(df_frequency, paste0(synthetic_data,"synthetic_attacker_modified_cp.csv"), row.names = FALSE)
 
 # Compare histogram ----
 
-df_frequency <- read_csv(paste0(synthetic_data,"synthetic_attacker_modified.csv"))
+df_frequency <- read_csv(paste0(synthetic_data,"synthetic_attacker_modified_cp.csv"))
 
 df_graph_sds <- df_frequency %>%
   filter(type == "synthetic") 
@@ -126,6 +126,6 @@ df_graph <-
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"graph_attacker_modified.pdf"), height = 5, width = 10)
+ggsave(plot = df_graph, paste0(graphs,"graph_attacker_modified_cp.pdf"), height = 5, width = 10)
 
-ggsave(plot = df_graph, paste0(graphs,"graph_attacker_modified_v2.pdf"), height = 5, width = 5)
+ggsave(plot = df_graph, paste0(graphs,"graph_attacker_modified_cp_v2.pdf"), height = 5, width = 5)

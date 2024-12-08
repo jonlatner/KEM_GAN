@@ -47,7 +47,7 @@ for (c in 1:100) {
     my.seed = my.seed + 1
     
     # Create fake synthetic data
-    sds <- syn(df_ods, m = 1, seed = my.seed, cart.minbucket = 75)
+    sds <- syn(df_ods, m = 1, seed = my.seed, cart.cp = 0.05)
     sds <- sds$syn
     
     # Create a frequency table for synthetic data
@@ -67,11 +67,12 @@ df_frequency
 
 # Save data ----
 
-write.csv(df_frequency, paste0(synthetic_data,"synthetic_cart_modified_100.csv"), row.names = FALSE)
+write.csv(df_frequency, paste0(synthetic_data,"synthetic_cart_modified_100_cp.csv"), row.names = FALSE)
 
 # Compare histogram ----
 
-df_frequency <- read_csv(paste0(synthetic_data,"synthetic_cart_modified_100.csv"))
+df_ods <- read.csv(paste0(original_data,"simulated.csv"))
+df_frequency <- read_csv(paste0(synthetic_data,"synthetic_cart_modified_100_cp.csv"))
 
 df_graph_sds <- df_frequency 
 
@@ -102,4 +103,4 @@ df_graph <-
 
 df_graph
 
-ggsave(df_graph, filename = paste0(graphs,"graph_cart_modified_histogram_compare_100.pdf"), height = 4, width = 10, units = "in")
+ggsave(df_graph, filename = paste0(graphs,"graph_cart_modified_cp_histogram_compare_100.pdf"), height = 4, width = 10, units = "in")

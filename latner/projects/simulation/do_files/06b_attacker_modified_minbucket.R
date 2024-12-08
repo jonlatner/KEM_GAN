@@ -51,7 +51,7 @@ for (c in 1:100) {
     
     # Load original data 
     df_ods <- read.csv(paste0(original_data,"simulated.csv"))
-
+    
     # Drop the last row
     df_ods <- head(df_ods, -1)
     
@@ -61,19 +61,19 @@ for (c in 1:100) {
     df_ods[1000,] <- last_record
 
     # Create fake synthetic data
-    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart")
+    sds <- syn(df_ods, m = 1, seed = my.seed, method = "cart", cart.minbucket = 75)
     sds <- sds$syn
     df_sds <- sds
     
-    # Create a frequency table for released synthetic data
-    df_ods <- read.csv(paste0(synthetic_data,"synthpop_cart.csv"))
+    # Create a frequency table for true original data (unique = 1111)
+    
     df_ods_frequency <- df_ods
     df_ods_frequency$combine <- paste(df_ods_frequency$var1, df_ods_frequency$var2, df_ods_frequency$var3, df_ods_frequency$var4, sep = "")
     df_ods_frequency <- df_ods_frequency %>%
       select(-matches("var"))
     
     df_ods_frequency <- as.data.frame(table(df_ods_frequency)) %>%
-      mutate(type = "released synthetic data",
+      mutate(type = "original",
              n = c,
              last_record = paste(last_record$y1, last_record$y2, last_record$y3, last_record$y4, sep = ""))
 
@@ -82,7 +82,7 @@ for (c in 1:100) {
     sds <- sds %>%
       select(-matches("var"))
     df_sds_frequency <- as.data.frame(table(sds))
-    df_sds_frequency$type <- "synthetic data from attack"
+    df_sds_frequency$type <- "synthetic"
     df_sds_frequency$n <- c
     df_sds_frequency$last_record <- paste(last_record$y1, last_record$y2, last_record$y3, last_record$y4, sep = "")
     
@@ -93,18 +93,19 @@ for (c in 1:100) {
 
 # Save data ----
 
-write.csv(df_frequency, paste0(synthetic_data,"synthetic_attacker_default.csv"), row.names = FALSE)
+write.csv(df_frequency, paste0(synthetic_data,"synthetic_attacker_modified.csv"), row.names = FALSE)
 
 # Compare histogram ----
 
-df_frequency <- read_csv(paste0(synthetic_data,"synthetic_attacker_default.csv"))
+df_frequency <- read_csv(paste0(synthetic_data,"synthetic_attacker_modified.csv"))
 
 df_graph_sds <- df_frequency %>%
-  filter(type == "synthetic data from attack")
+  filter(type == "synthetic") 
 
 df_graph_ods <- df_frequency %>%
-  filter(type == "released synthetic data") 
+  filter(type == "original") 
 
+df_graph_ods <- unique(df_graph_ods)
 
 df_graph <- 
   ggplot() +
@@ -125,6 +126,6 @@ df_graph <-
 
 df_graph
 
-ggsave(plot = df_graph, paste0(graphs,"graph_attacker_default.pdf"), height = 5, width = 10)
+ggsave(plot = df_graph, paste0(graphs,"graph_attacker_modified_mb.pdf"), height = 5, width = 10)
 
-ggsave(plot = df_graph, paste0(graphs,"graph_attacker_default_v2.pdf"), height = 5, width = 5)
+ggsave(plot = df_graph, paste0(graphs,"graph_attacker_modified_mb_v2.pdf"), height = 5, width = 5)
