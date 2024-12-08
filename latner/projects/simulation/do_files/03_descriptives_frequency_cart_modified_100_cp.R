@@ -9,6 +9,7 @@ for (package in packages) {
 }
 
 rm(list=ls(all=TRUE))
+# test
 
 # load library
 library(synthpop)

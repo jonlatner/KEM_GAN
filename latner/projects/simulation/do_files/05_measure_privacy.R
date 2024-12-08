@@ -65,12 +65,13 @@ df_sds_frequency
 my.seed = 1237
 # my.seed = 1240 # reproduces 3 observation
 sds <- syn(df_ods, m = 5, seed = my.seed)
-df_sds <- data.frame(sds$syn[4])
+df_sds <- data.frame(sds$syn[5])
 df_sds$combine <- paste(df_sds$var1, df_sds$var2, df_sds$var3, df_sds$var4, sep = "")
 df_sds <- df_sds %>%
   select(-matches("var"))
 df_sds_frequency <- as.data.frame(table(df_sds))
 df_sds_frequency
+
 t1 <- disclosure.summary(sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
 print(t1, plot = FALSE)
 print(t1, plot = FALSE, to.print = "attrib")

@@ -22,6 +22,8 @@ hyperindex=true
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{amsmath}
+\usepackage{array} % necessary for word wrap within a table
+
 
 
 \title{Buyer Beware: Understanding the trade-off between utility and risk in CART based models using simulation data}
@@ -170,11 +172,11 @@ In the first column, we display the identity disclosure risk based on the keys f
 
 In the second column, we display the attribute disclosure risk based on the ability to uniquely identify the $t$ from $q$ in the original and synthetic data.  According to this measure, there is no risk of attribute disclosure in the original or synthetic data.  This is a not correct because we know that when $q=111$, there is a unique record of $t=1$.  
 
-In the third column, we display the uniques, there are 0.1\% (1/1000) in the original and synthetic data.  This would signal a cause for concern because the synthetic data perfectly replicates the number of uniques in the original data.  On the surface, the solution would be to release 
+In the third column, we display the uniques, there are 0.1\% (1/1000) in the original and synthetic data.  This would signal a cause for concern because the synthetic data perfectly replicates the number of uniques in the original data.  At first, it might appear that the solution would be to simply reduce another synthetic data set with a different seed or even multiple synthetic data sets.  However, even if one released 100 synthetic data sets, as shown in figure \ref{fig:cart_histogram_compare_100}, one might solve the problem of replicated uniques as values of 1,1,1,1 would range from 0 to 3 (as described earlier), but this would not solve the problem of disclosure.  
 
 In summary, the only privacy measure that would indicate there is a problem with disclosure risk in the original or synthetic data is the number of unique records in both.  In short, the main issue of concern is that we know there is a disclosure problem (because we created it), but the disclosure risk measures commonly used in the literature do not capture the problem.  
 
-The good news is that we can correct the problem of disclosure risk in synthetic data generated from CART-based SDGs.  If we modify the parameters to prevent overfitting, then the disclosure problem goes away.  Multiple options exist to do this.  We use two: increase the minimum number of observations per terminal node to 75 (default is 5) and increase the complexity parameter to 0.05 (default is 1e$^{-8}$)
+The good news.  We can correct the problem of disclosure risk in synthetic data generated from CART-based SDGs.  If we modify the parameters to prevent overfitting, then the disclosure problem goes away.  Multiple options exist to do this.  We use two: increase the minimum number of observations per terminal node to 75 (default is 5) and increase the complexity parameter to 0.05 (default is 1e$^{-8}$), as shown in figure \ref{fig:compare_modified}.  These adjustments clearly reduce disclosure risks.
 
 \begin{figure}[!h]
     \centering
@@ -190,18 +192,10 @@ The good news is that we can correct the problem of disclosure risk in synthetic
         \caption{Complexity parameter is 0.05}
         \label{fig:attacker_modified_cp}
     \end{subfigure}
-    \label{fig:compare}
+    \label{fig:compare_modified}
 \end{figure}
 
-
-3.3 Modifying CART Parameters
-
-We modified CART parameters to mitigate overfitting:
-
-    •   Increased minbucket (minimum number of observations per terminal node) to 75.
-    •   Increased cp (complexity parameter) to 0.05.
-
-These adjustments reduced privacy risks, but at the cost of utility. The modified synthetic data exhibited lower fidelity to the original dataset, raising the question of whether such sacrifices are justified when risks are not apparent.
+The bad news.  First, the modified synthetic data may increase privacy, but the sacrifice is lower utility.  Even with 100 synthetic data sets, figure \ref{fig:compare_modified} is less representative of the original data set than \ref{fig:cart_histogram_compare_100}.  Second, in an important way, we are choosing to decrease utility in order to increase privacy.  Remember, as we have shown, no commonly used disclosure risk measure indicates that there is a problem.  In a real world example, this would raise the question of whether such sacrifices are justified when risks are not apparent.
 
 \section{Discussion}
 
@@ -234,7 +228,7 @@ Key Takeaways
 
 
 \begin{credits}
-\subsubsection{\ackname} This work was supported by a grant from the German Federal Ministry of Education and Research (grant number 16KISA096) with funding from the European Union—NextGenerationEU.  Reproducible files are located here: 
+\subsubsection{\ackname} This work was supported by a grant from the German Federal Ministry of Education and Research (grant number 16KISA096) with funding from the European Union—NextGenerationEU.  Reproducible files are located here: \url{https://github.com/jonlatner/KEM\_GAN/tree/main/latner/projects/simulation}
 
 \subsubsection{\discintname}
 The authors have no competing interests to declare that are relevant to the content of this article.
@@ -250,6 +244,8 @@ The authors have no competing interests to declare that are relevant to the cont
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\appendix
 \section{Appendix}\label{appendix}
 \setcounter{figure}{0}    
 \setcounter{table}{0}    
@@ -269,6 +265,53 @@ The authors have no competing interests to declare that are relevant to the cont
         \bottomrule
     \end{tabular}
     \label{table:disclosure_risk_100}
+    \vspace{0.5em} % Add some space between the table and the note
+    \noindent\parbox{0.8\textwidth}{\footnotesize  Note: In the uniques from original data, there is 1 unique observation out of 1000.  In the uniques from 100 synthetic data sets, 29 out of 100 data sets replicate 1 unique for 1,1,1,1. The other synthetic data sets have between 0 and 3 records for 1,1,1,1.}
+\end{table}
+
+\begin{table}[]
+    \centering
+    \caption{Attribute risk measures from 5 synthetic data sets}
+    \begin{tabular}{lllllll}
+        \toprule
+            m &   Dorig & Dsyn & iS & DiS & DiSCO & DiSDiO \\ \midrule
+            1 &    0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\
+            2 &     0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\
+            3 &     0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\
+            4 &     0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\ 
+            5 &     0 &  5.7 & 100 & 6.7 &   6.6 &      0 \\ 
+        \bottomrule
+    \end{tabular}
+    \label{table:attribute_disclosure_risk_5}
+    \vspace{0.5em} % Add some space between the table and the note
+    \noindent\parbox{0.8\textwidth}{\footnotesize Note: t1\$output.list\$var4\$attrib}
+\end{table}
+
+\begin{table}[]
+    \centering
+    \caption{Frequency from 5 synthetic data sets}
+    \begin{tabular}{llllll}
+        \toprule
+        combine & 1 & 2 & 3 & 4 & 5 \\ \midrule
+        0000 & 68 & 73 & 61 & 83 & 76 \\
+        0001 & 60 & 63 & 66 & 58 & 66 \\
+        0010 & 77 & 78 & 80 & 68 & 90 \\
+        0011 & 70 & 63 & 53 & 60 & 55 \\
+        0100 & 73 & 55 & 67 & 63 & 64 \\
+        0101 & 60 & 59 & 71 & 63 & 68 \\
+        0110 & 58 & 62 & 56 & 54 & 52 \\
+        0111 & 72 & 89 & 61 & 87 & 68 \\
+        1000 & 77 & 76 & 84 & 65 & 66 \\
+        1001 & 69 & 67 & 71 & 69 & 72 \\
+        1010 & 50 & 60 & 54 & 64 & 52 \\
+        1011 & 61 & 60 & 71 & 62 & 76 \\
+        1100 & 79 & 78 & 84 & 79 & 79 \\
+        1101 & 65 & 58 & 56 & 55 & 59 \\
+        1110 & 60 & 57 & 64 & 69 & 57 \\
+        1111 & 1  & 2  & 1  & 1  & 0  \\
+        \bottomrule
+    \end{tabular}
+    \label{table:frequency_5_data_sets}
 \end{table}
 
 \end{document}
