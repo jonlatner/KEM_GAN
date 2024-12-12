@@ -44,7 +44,7 @@ df_ods <- read.csv(paste0(original_data,"simulated.csv"))
 
 # Identity disclosure measures ----
 
-sds <- syn(df_ods, m = 100, seed = my.seed)
+sds <- syn(df_ods, m = 1, seed = my.seed)
 t1 <- disclosure.summary(sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
 print(t1, plot = FALSE)
 

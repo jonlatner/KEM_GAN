@@ -4,7 +4,6 @@
 \usepackage[table]{xcolor}
 
 \usepackage{booktabs}
-%\usepackage[square,sort,comma,numbers]{natbib}
 \usepackage[pdfstartview=XYZ,
 bookmarks=true,
 colorlinks=true,
@@ -269,24 +268,7 @@ The authors have no competing interests to declare that are relevant to the cont
     \noindent\parbox{0.8\textwidth}{\footnotesize  Note: In the uniques from original data, there is 1 unique observation out of 1000.  In the uniques from 100 synthetic data sets, 29 out of 100 data sets replicate 1 unique for 1,1,1,1. The other synthetic data sets have between 0 and 3 records for 1,1,1,1.}
 \end{table}
 
-\begin{table}[]
-    \centering
-    \caption{Attribute risk measures from 5 synthetic data sets}
-    \begin{tabular}{lllllll}
-        \toprule
-            m &   Dorig & Dsyn & iS & DiS & DiSCO & DiSDiO \\ \midrule
-            1 &    0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\
-            2 &     0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\
-            3 &     0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\
-            4 &     0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\ 
-            5 &     0 &  5.7 & 100 & 6.7 &   6.6 &      0 \\ 
-        \bottomrule
-    \end{tabular}
-    \label{table:attribute_disclosure_risk_5}
-    \vspace{0.5em} % Add some space between the table and the note
-    \noindent\parbox{0.8\textwidth}{\footnotesize Note: t1\$output.list\$var4\$attrib}
-\end{table}
-
+\clearpage
 \begin{table}[]
     \centering
     \caption{Frequency from 5 synthetic data sets}
@@ -312,6 +294,25 @@ The authors have no competing interests to declare that are relevant to the cont
         \bottomrule
     \end{tabular}
     \label{table:frequency_5_data_sets}
+\end{table}
+
+
+\begin{table}[]
+    \centering
+    \caption{Attribute risk measures from 5 synthetic data sets}
+    \begin{tabular}{lllllll}
+        \toprule
+            m &   Dorig & Dsyn & iS & DiS & DiSCO & DiSDiO \\ \midrule
+            1 &    0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\
+            2 &     0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\
+            3 &     0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\
+            4 &     0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\ 
+            5 &     0 &  5.7 & 100 & 6.7 &   6.6 &      0 \\ 
+        \bottomrule
+    \end{tabular}
+    \label{table:attribute_disclosure_risk_5}
+    \vspace{0.5em} % Add some space between the table and the note
+    \noindent\parbox{0.8\textwidth}{\footnotesize Note: t1\$output.list\$var4\$attrib}
 \end{table}
 
 \end{document}
