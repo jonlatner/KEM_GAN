@@ -43,7 +43,7 @@ combinations <- expand.grid(y1 = c(0, 1), y2 = c(0, 1), y3 = c(0, 1), y4 = c(0, 
 # Loop ----
 
 df_frequency <- data.frame()
-for (c in 1:100) {
+for (c in 1:10) {
   for (r in 1:16) {
 
     # create seed

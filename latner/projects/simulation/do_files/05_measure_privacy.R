@@ -31,7 +31,6 @@ options(scipen=999)
 
 # Set seed for reproducibility
 my.seed = 1237
-# my.seed = 1240 # reproduces 3 observation
 
 set.seed(my.seed)
 
@@ -39,43 +38,98 @@ set.seed(my.seed)
 
 df_ods <- read.csv(paste0(original_data,"simulated.csv"))
 
-# Create synthetic data with numeric variables ----
-
-
-# Identity disclosure measures ----
+# Disclosure measures ----
 
 sds <- syn(df_ods, m = 1, seed = my.seed)
 t1 <- disclosure.summary(sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
-print(t1, plot = FALSE)
+ident = print(t1, plot = FALSE, to.print = "ident")
+attrib = print(t1, plot = FALSE, to.print = "attrib")
+unique <- data.frame(replicated.uniques(sds, df_ods)$res_tab)
+unique
 
-print(t1, plot = FALSE, to.print = "ident")
-print(t1, plot = FALSE, to.print = "attrib")
-test <- replicated.uniques(sds, df_ods)
+# create table
+df_risk <- data.frame(
+  data = c("Original", "Synthetic"),
+  identity = c(t1$ident.orig,t1$ident.syn),
+  unique = c(unique$Number[1], unique$Number[2]),
+  attribute = c(t1$attrib.table$attrib.orig, t1$attrib.table$attrib.syn)
+)
 
-# Create 5 synthetic data sets ----
+df_risk
 
-sds <- syn(df_ods, m = 10, seed = my.seed)
-df_sds <- data.frame(sds$syn)
-df_sds$combine <- paste(df_sds$var1, df_sds$var2, df_sds$var3, df_sds$var4, sep = "")
-df_sds <- df_sds %>%
-  select(-matches("var"))
-df_sds_frequency <- as.data.frame(table(df_sds))
-df_sds_frequency
+# Create the xtable object
+latex_table <- xtable(df_risk)
 
-my.seed = 1237
-# my.seed = 1240 # reproduces 3 observation
-sds <- syn(df_ods, m = 5, seed = my.seed)
-df_sds <- data.frame(sds$syn[5])
-df_sds$combine <- paste(df_sds$var1, df_sds$var2, df_sds$var3, df_sds$var4, sep = "")
-df_sds <- df_sds %>%
-  select(-matches("var"))
-df_sds_frequency <- as.data.frame(table(df_sds))
-df_sds_frequency
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             # include.colnames = FALSE, 
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_disclosure_risk_1.tex"))
 
-t1 <- disclosure.summary(sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
-print(t1, plot = FALSE)
-print(t1, plot = FALSE, to.print = "attrib")
-t1$output.list$var4$attrib
+# Create 10 synthetic data sets ----
 
-replicated.uniques(sds, df_ods)
+df_sds <- syn(df_ods, m = 10)
 
+for (c in 1:10) {
+  print(c)
+  
+  # Create fake synthetic data
+  sds <- syn(df_ods, m = 1, seed = my.seed)
+  df_sds$syn[[c]] <- sds$syn
+
+  # create seed
+  my.seed = my.seed + 1
+}
+
+t1 <- disclosure.summary(df_sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
+ident = print(t1, plot = FALSE, to.print = "ident")
+attrib = print(t1, plot = FALSE, to.print = "attrib")
+unique <- data.frame(replicated.uniques(df_sds, df_ods)$res_tab)
+
+# create table
+df_risk <- data.frame(
+  data = c("Original", "Synthetic"),
+  identity = c(t1$ident.orig,t1$ident.syn),
+  unique = c(unique$Number[1], "see table \\ref{table:frequency_10_data_sets}"),
+  attribute = c(t1$attrib.table$attrib.orig, t1$attrib.table$attrib.syn)
+)
+
+
+# Create the xtable object
+latex_table <- xtable(df_risk,align = "llrrr")
+
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             # include.colnames = FALSE, 
+             floating = FALSE,
+             booktabs = TRUE, 
+             sanitize.text.function = function(x) {x},
+             file = paste0(tables,"table_disclosure_risk_10.tex"))
+
+# Attribute risk measures ----
+
+t1 <- disclosure.summary(df_sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
+df_attribute <- data.frame(t1$output.list$var4$attrib) %>%
+  mutate(m = as.character(row_number())) %>%
+  select(m, Dsyn, iS, DiS, DiSCO) 
+df_attribute
+
+# Calculate averages for numeric columns
+average_row <- colMeans(df_attribute[, sapply(df_attribute, is.numeric)])
+
+# Add a label for the average row
+average_row <- c(m = "Average", average_row)
+
+# Bind the average row to the original dataframe
+df_attribute <- rbind(df_attribute, average_row)
+df_attribute
+
+latex_table <- xtable(df_attribute,align = "llrrrr")
+
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             # include.colnames = FALSE, 
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_attribute_risk_10.tex"))

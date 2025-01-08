@@ -72,26 +72,26 @@ In summary, we show that synthetic data from a CART-based SDG are more sensitive
 
 \section{Data and Methods}
 
-Following Reiter et al. \cite{reiter2014bayesian}, we simulate one data set with 1.000 observations and four binary categorical variables.  This is our `original' data set.  The first 999 records were sampled from a multinomial distribution for all combinations of var1(0,1), var2(0,1), var3(0,1), var4(0,1), except the last 1000$^th$ record was a unique combination (var1 = 1, var2 = 1, var3 = 1, var4 = 1).  
+Following Reiter et al. \cite{reiter2014bayesian}, we simulate one data set with 1.000 observations and four binary categorical variables.  This is our `original' data set.  The first 999 records were sampled from a multinomial distribution for all combinations of var1(0,1), var2(0,1), var3(0,1), var4(0,1), except the last 1000$^{th}$ record was a unique combination (var1 = 1, var2 = 1, var3 = 1, var4 = 1).  
 
-Figure \ref{fig:frequency} shows the frequency distribution within each of the four variables and figure \ref{fig:histogram} the frequency histogram across all four variables.  They are not evenly distributed within or across the variables because the data are generated from one random sample.  If we were to create 100 samples, then the data would be more even within each of the variables (50\%) and across all four variables (66\%), with the exception of the 1,1,1,1 combination.  However, the critical point is that there is one observation with combination (1,1,1,1) that is not visible if we look at the distribution within each of the variables.
+Figure \ref{fig:frequency_compare} shows the frequency distribution within each of the four variables and figure \ref{fig:histogram_compare} the frequency histogram across all four variables.  They are not evenly distributed within or across the variables because the data are generated from one random sample.  If we were to create 100 samples, then the data would be more even within each of the variables (50\%) and across all four variables (66\%), with the exception of the 1,1,1,1 combination.  However, the critical point is that there is one observation with combination (1,1,1,1) that is not visible if we look at the distribution within each of the variables.
 
-\begin{figure}[!h]
-    \centering
-    \caption{Original data}
-    \begin{subfigure}{0.48\textwidth}
-        \includegraphics[width=\textwidth]{../graphs/graph_cart_frequency.pdf}
-        \caption{Frequency}
-        \label{fig:frequency}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.48\textwidth}
-        \includegraphics[width=\textwidth]{../graphs/graph_cart_histogram.pdf}
-        \caption{Histogram}
-        \label{fig:histogram}
-    \end{subfigure}
-    \label{fig:original}
-\end{figure}
+% \begin{figure}[!h]
+%     \centering
+%     \caption{Original data}
+%     \begin{subfigure}{0.48\textwidth}
+%         \includegraphics[width=\textwidth]{../graphs/graph_cart_frequency.pdf}
+%         \caption{Frequency}
+%         \label{fig:frequency}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}{0.48\textwidth}
+%         \includegraphics[width=\textwidth]{../graphs/graph_cart_histogram.pdf}
+%         \caption{Histogram}
+%         \label{fig:histogram}
+%     \end{subfigure}
+%     \label{fig:original}
+% \end{figure}
 
 Next, we generate one synthetic data from a CART-based SDG from the Synthpop package in R with default parameters (seed=1237).  Figure \ref{fig:frequency_compare} shows the frequency distribution within each of the four variables and figure \ref{fig:histogram_compare} the frequency histogram across all four variables.  Not only do the synthetic data capture the frequency of values within the four variables, but also across all four variables.  The good news is that this means that the synthetic data have high levels of utility.  The bad news is that the synthetic data perfectly replicates the single disclosive record.
 
@@ -112,13 +112,13 @@ Next, we generate one synthetic data from a CART-based SDG from the Synthpop pac
     \label{fig:compare}
 \end{figure}
 
-As a sensitivity test, we create 100 synthetic data sets from the original data, as shown in figure \ref{fig:cart_histogram_compare_100}.  Out of 100 synthetic data sets, the frequency of the disclosive record ranges from 0 (41 data sets), 1 (38 data sets), 2 (14 data sets), and 3 (7 data sets).  As a result, regardless of whether one, five, or ten synthetic data sets were released, it would be clear which record was the disclosive record.  As a result, synthetic data from CART models do not protect the unique observation in our simulated data set.  The reason is that in our data with binary categorical data, a record may not be in the synthetic data if it is in the original data, but it can only be in the synthetic data if it is also in the original data.  
+As a sensitivity test, we create 10 synthetic data sets from the original data, as shown in figure \ref{fig:cart_histogram_compare_10} and table \ref{table:frequency_10_data_sets}.  Out of 10 synthetic data sets, the frequency of the disclosive record ranges from 0 (2 data sets), 1 (5 data sets), 2 (1 data sets), and 3 (2 data sets).\footnote{For reference, if we created 100 synthetic data sets the frequency of the disclosive record would be similar, ranging from 0 (41 data sets), 1 (38 data sets), 2 (14 data sets), and 3 (7 data sets).}  As a result, regardless of whether one, five, or ten synthetic data sets were released, it would be clear which record was the disclosive record.  As a result, synthetic data from CART models do not protect the unique observation in our simulated data set.  The reason is that in our data with binary categorical data, a record may not be in the synthetic data if it is in the original data, but it can only be in the synthetic data if it is also in the original data.  
 
 \begin{figure}[!h]
     \centering
     \caption{Frequency}
-    \includegraphics[width=\textwidth]{../graphs/graph_cart_histogram_compare_100.pdf}
-    \label{fig:cart_histogram_compare_100}
+    \includegraphics[width=\textwidth]{../graphs/graph_cart_histogram_compare_10.pdf}
+    \label{fig:cart_histogram_compare_10}
 \end{figure}
 
 \section{The attack}
@@ -127,11 +127,11 @@ In this section, we describe an attack scenario.  The basic idea is that an atta
 
 In this scenario, we assume a `strong' attacker similar to the attack model in differential privacy (DP).  In so doing, we assume that the attacker knows the SDG used to generate the synthetic data.  In our case, this is sequential CART.  They know all observations except the last one.  Further, given the nature of the data, they know all 16 possible combinations that the last record could be.  In this attack, the attacker sees the synthetic data and then runs the same CART-based SDG for each of the 16 different possibilities, sequentially.  Then, they update their beliefs about what the last record could be.
 
-Figure \ref{fig:attacker_default} illustrates the results of this attack with each attack using 100 synthetic data sets.  In the top left cell, the attacker guesses that the last record in the original data is 0,0,0,0.  They then generate 100 synthetic data sets using a CART-based SDG and compare the histogram to the released synthetic data, as shown in figure \ref{fig:compare}.  Remember, the released synthetic data replicates the single unique record found in the original data (1,1,1,1).  
+Figure \ref{fig:attacker_default} illustrates the results of this attack with each attack using 10 synthetic data sets.  In the top left cell, the attacker guesses that the last record in the original data is 0,0,0,0.  They then generate 10 synthetic data sets using a CART-based SDG and compare the histogram to the released synthetic data, as shown in figure \ref{fig:compare}.  Remember, the released synthetic data replicates the single unique record found in the original data (1,1,1,1).  
 
 \begin{figure}[!h]
     \centering
-    \caption{Histogram of 16 worlds x 100 synthetic datasets}
+    \caption{Histogram of 16 worlds x 10 synthetic datasets}
     \resizebox{\textwidth}{!}{\includegraphics{../graphs/graph_attacker_default.pdf}}
     \label{fig:attacker_default}
 \end{figure}
@@ -146,55 +146,53 @@ The attacker then repeats this process for all 16 possible combinations of the l
 
 Our results show that CART can produce synthetic data that is disclosive because it replicates unique records from the original data set without adding sufficient noise.  By itself, this is not a problem.  However, this is a problem if we are not able to measure this disclosure.  The literature on privacy measures for synthetic data is well-developed \cite{wagner2018technical}.  One reason why there are so many measures of privacy is because there is no one agreed upon understanding of either what defines risk nor how one should measure it.  
 
-We use three commonly understood measures of privacy implemented by the Synthpop package in R \cite{raab2024practical,elliot_etal_2020,raab2024practical}, each with its own strengths and weaknesses. Identity disclosure refers to the ability to identify individuals in the data from a set of known characteristics, i.e. `keys'. Specifically, it measures the percent of all records in the data for which the keys identify a unique record in the synthetic data ($UiS$) and in the original data ($UiO$).  The authors of Synthpop recommend $repU$ (replicated uniques) to measure identity disclosure as the percent of unique records in original data ($UiO$) that are also unique in the synthetic data ($UiS$).  One advantage is an easy to understand measure of privacy risks.  One disadvantage is that the results are sensitive to the choice of key variables and the improper selection of keys may over or underestimate privacy risks.
-
-Attribute disclosure refers to the ability to identify a previously unknown characteristic of an individual.  Synthetic data are SD and original data are ground truth (GT).  In this approach, an attacker who wants to infer a sensitive attribute ($t$), has access to SD, and knows one or more identifiers in the GT ($q$, i.e. composite keys, as in above).  The measure is derived in the following way: (i) in synthetic ($iS$) is the proportion of all records for a given $q$ in the GT with the same $q$ in the SD; (ii) disclosive in synthetic ($DiS$) is the proportion of all $iS$ who also have the same $t$; (iii) disclosive in synthetic correct in original ($DiSCO$) is the proportion of $DiS$ that match the original value of $t$ in the GT.  $DiSCO$ is compared to disclosive in original ($Dorig$) or the proportion of all records where the keys would identify a unique value of the target in the GT.  The measure of attribute disclosure shares similar advantages and disadvantages with identity disclosure.
-
-Finally, replicated uniques ($repU$) assess privacy risk by identifying records in the dataset that are unique and thus more vulnerable to re-identification, particularly when matched with external data sources. The advantage is that it is both easy to understand and effective in highlighting records most at risk (i.e. uniques).  The disadvantage is it may oversimplify privacy risks by focusing only on uniqueness while neglecting broader contextual factors like record-linkage or attribute disclosure.  However, by considering these three measures, we aim to provide a balanced evaluation of privacy risks while acknowledging their distinct advantages and limitations.  
-
-We apply these measures to the original and synthetic data from figure \ref{fig:compare}, as shown in table \ref{table:disclosure_risk}.  The keys are the first 3 binary variables ($q$) and the target or sensitive attribute is the last binary variable ($t$).For reference, we replicated table \ref{table:disclosure_risk} with 100 synthetic copies from figure \ref{fig:cart_histogram_compare_100}, as shown in table \ref{table:disclosure_risk_100} in the Appendix.  Results are qualitatively similar.  
+We use three commonly understood measures of privacy implemented by the Synthpop package in R \cite{raab2024practical}: identity risk, uniques, and attribute risk.  In table \ref{table:disclosure_risk_1}, the columns display these three risk measures in the original and synthetic data (the rows).  For reference, we replicated table \ref{table:disclosure_risk_1} with 10 synthetic copies from figure \ref{fig:cart_histogram_compare_10}, as shown in table \ref{table:disclosure_risk_10} in the Appendix.  Results are qualitatively similar.  
 
 \begin{table}[]
     \centering
     \caption{Disclosure risk measures}
-    \begin{tabular}{llll}
-        \toprule
-        Privacy   & Identity & Attribute & Uniques \\ \midrule
-        Original  & 0\%      & 0\%       & 0.1\% (1) \\
-        Synthetic & 0\%      & 0\%       & 0.1\% (1) \\ 
-        \bottomrule
-    \end{tabular}
-    \label{table:disclosure_risk}
+    \input{../tables/table_disclosure_risk_1.tex}
+    \label{table:disclosure_risk_1}
 \end{table}
 
-In the first column, we display the identity disclosure risk based on the keys for the original and synthetic data, as shown in the first and second row, respectively.  The measure indicates that these three variables cannot identify any unique observations in either the original or synthetic data.  This is correct because we know that there are multiple combinations of var1=(0,1),var2=(0,1),var3=(0,1).  
+In the first column, we display the identity disclosure risk for the original and synthetic data, as shown in the first and second row, respectively.  This measures the ability to identify individuals in the data from a set of known characteristics, i.e. `keys'. The maximum number of keys are one less than the total number of variables in the data.  Here, the keys are the first 3 binary variables ($q$), but this choice is arbitrary as all variables are binary.  Specifically, it measures the percent of all records in the data for which the keys identify a unique record in the synthetic data ($UiS$) and in the original data ($UiO$).  
 
-In the second column, we display the attribute disclosure risk based on the ability to uniquely identify the $t$ from $q$ in the original and synthetic data.  According to this measure, there is no risk of attribute disclosure in the original or synthetic data.  This is a not correct because we know that when $q=111$, there is a unique record of $t=1$.  
+The identity risk measures are 0 for both the original and synthetic data.  The measure is correct because we know that there are multiple combinations of $var1=(0,1)$, $var2=(0,1)$, $var3=(0,1)$.  In our data, there is zero risk of identity disclosure because there is no unique combination of observations with keys that number three or less variables.
 
-In the third column, we display the uniques, there are 0.1\% (1/1000) in the original and synthetic data.  This would signal a cause for concern because the synthetic data perfectly replicates the number of uniques in the original data.  At first, it might appear that the solution would be to simply reduce another synthetic data set with a different seed or even multiple synthetic data sets.  However, even if one released 100 synthetic data sets, as shown in figure \ref{fig:cart_histogram_compare_100}, one might solve the problem of replicated uniques as values of 1,1,1,1 would range from 0 to 3 (as described earlier), but this would not solve the problem of disclosure.  
+In the second column, we display the unique records for the original and synthetic data.  This measures records in the dataset that are unique and thus more vulnerable to re-identification, particularly when matched with external data sources.  There is one record that is unique in both the original and synthetic data.  Therefore, the measure correctly captures the unique record in both data sets.
 
-In summary, the only privacy measure that would indicate there is a problem with disclosure risk in the original or synthetic data is the number of unique records in both.  In short, the main issue of concern is that we know there is a disclosure problem (because we created it), but the disclosure risk measures commonly used in the literature do not capture the problem.  
+The fact that the synthetic data replicates the unique record is a red flag and should be considered to be a problem to be solved by the owner of the original data who wishes to release a privacy protected synthetic copy.  One possible option could be to produce another synthetic data set with a different seed.  A second idea is to release multiple synthetic data sets.  However, neither solves the problem.  As described earlier, even if one released 10 synthetic data sets, as shown in figure \ref{fig:cart_histogram_compare_10}, one might solve the specific problem of replicated uniques as observations of the disclosive record in synthetic data would range from 0 to 3, but this would not solve the problem of disclosure from an attack.  
 
-The good news.  We can correct the problem of disclosure risk in synthetic data generated from CART-based SDGs.  If we modify the parameters to prevent overfitting, then the disclosure problem goes away.  Multiple options exist to do this.  We use two: increase the minimum number of observations per terminal node to 75 (default is 5) and increase the complexity parameter to 0.05 (default is 1e$^{-8}$), as shown in figure \ref{fig:compare_modified}.  These adjustments clearly reduce disclosure risks.
+There are two ways to protect the unique observation in the original data.  One is to not reproduce the unique observation in the synthetic data.  The second is to protect the unique observation by adding sufficient noise such that the frequency of 1,1,1,1 in the synthetic data were similar to the frequency of other combination of the four variables.  
+
+In the third column, we display the attribute disclosure risk.  Attribute disclosure refers to the ability to identify a previously unknown characteristic of an individual.  In this approach, an attacker who wants to infer a sensitive attribute ($t$), has access to synthetic data, and knows one or more identifiers in the original data ($q$, i.e. composite keys, as in above).  Attribute risk is a subset of the proportion of records in the original for which the keys ($q$) in the synthetic data is disclosive. $q$ is disclosive if all records in the synthetic data with the same $q$ have a constant target ($t$), i.e. no variation in $t$.  According to this measure, there is 0 risk of attribute disclosure in the original or synthetic data.  This is a not correct because we know that when $q=111$, there is a unique record if $t=1$.  
+
+How can it be that there is no attribute disclosure risk when we know there is an attribute disclosure risk?  The answer is that there is only an attribute disclosure risk when $t$ is constant.  In other words, when there is no variation within $q$.  As a result, there is only an attribute disclosure risk when there are 0 copies of the unique record in the synthetic data.  We can see this if we examine the frequency table from 10 synthetic data copies \ref{table:frequency_10_data_sets}, as shown in figure \ref{fig:cart_histogram_compare_10}.  If there is at least 1 unique record, then there is no attribute risk because there are 2 values of $t=(0,1)$ within $q$, but there is an attribute disclosure risk if a synthetic data set is released without a unique record.  This is a problem because the measure incorrectly estimates risk.
+
+In summary, none of the risk measures examined here indicate that there is a problem with disclosure risk in our data.  Unique records is the only risk measure that does indicate there is a problem, but this is an accident of the seed.  If we used another seed, with less than or greater than 1 unique record in the synthetic data, then this measure would not indicate a problem.  Therefore, the main issue of concern is that we know there is a disclosure problem (because we created it), but the disclosure risk measures commonly used in the literature do not capture the problem.  
+
+\section{Increasing privacy}
+
+The good news.  We can correct the problem of disclosure risk in synthetic data generated from CART-based SDGs.  If we modify the parameters to prevent overfitting, then the disclosure problem goes away.  Multiple options exist to do this.  We use two: increase the minimum number of observations per terminal node to 75 (default is 5) and increase the complexity parameter to 0.05 (default is 1e$^{-8}$), as shown in figure \ref{fig:compare_modified}.  We arrived at these values after doing sensitivity tests, as shown in figure \ref{fig:compare_modified_sensitivity}.  While values below these do not add enough noise to the data to reduce disclosure risks, these adjustments can reduce disclosure risks.
 
 \begin{figure}[!h]
     \centering
     \caption{Compare original and synthetic data}
     \begin{subfigure}{0.48\textwidth}
-        \includegraphics[width=\textwidth]{../graphs/graph_cart_modified_mb_histogram_compare_100.pdf}
+        \includegraphics[width=\textwidth]{../graphs/graph_cart_modified_mb_histogram_compare_10.pdf}
         \caption{Minimum bucket is 75}
         \label{fig:attacker_modified_mb}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.48\textwidth}
-        \includegraphics[width=\textwidth]{../graphs/graph_cart_modified_cp_histogram_compare_100.pdf}
+        \includegraphics[width=\textwidth]{../graphs/graph_cart_modified_cp_histogram_compare_10.pdf}
         \caption{Complexity parameter is 0.05}
         \label{fig:attacker_modified_cp}
     \end{subfigure}
     \label{fig:compare_modified}
 \end{figure}
 
-The bad news.  First, the modified synthetic data may increase privacy, but the sacrifice is lower utility.  Even with 100 synthetic data sets, figure \ref{fig:compare_modified} is less representative of the original data set than \ref{fig:cart_histogram_compare_100}.  Second, in an important way, we are choosing to decrease utility in order to increase privacy.  Remember, as we have shown, no commonly used disclosure risk measure indicates that there is a problem.  In a real world example, this would raise the question of whether such sacrifices are justified when risks are not apparent.
+The bad news.  First, the modified synthetic data may increase privacy, but the sacrifice is lower utility.  Even with 10 synthetic data sets, figure \ref{fig:compare_modified} is less representative of the original data set than \ref{fig:cart_histogram_compare_10}.  Second, in an important way, we are choosing to decrease utility in order to increase privacy.  Remember, as we have shown, no commonly used disclosure risk measure indicates that there is a problem.  In a real world example, this would raise the question of whether such sacrifices are justified when risks are not apparent.
 
 \section{Discussion}
 
@@ -255,64 +253,75 @@ The authors have no competing interests to declare that are relevant to the cont
 
 \begin{table}[]
     \centering
-    \caption{Disclosure risk measures from 100 synthetic data sets}
-    \begin{tabular}{llll}
-        \toprule
-        Privacy   & Identity & Attribute & Uniques \\ \midrule
-        Original  & 0\%      & 0\%       & 0.1\% (1/1000) \\
-        Synthetic & 0\%      & 2.51\%       & 0.29\% (29/100)  \\ 
-        \bottomrule
-    \end{tabular}
-    \label{table:disclosure_risk_100}
-    \vspace{0.5em} % Add some space between the table and the note
-    \noindent\parbox{0.8\textwidth}{\footnotesize  Note: In the uniques from original data, there is 1 unique observation out of 1000.  In the uniques from 100 synthetic data sets, 29 out of 100 data sets replicate 1 unique for 1,1,1,1. The other synthetic data sets have between 0 and 3 records for 1,1,1,1.}
+    \caption{Disclosure risk measures}
+    \input{../tables/table_disclosure_risk_10.tex}
+    \label{table:disclosure_risk_10}
 \end{table}
+
+
+\begin{table}[h!]
+    \centering
+    \caption{Attribute risk measures from 10 synthetic data sets}
+    \rowcolors{1}{white}{lightgray}
+    \input{../tables/table_attribute_risk_10.tex}
+    \label{table:attribute_risk_10}
+\end{table}
+
+\begin{table}[]
+    \centering
+    \caption{Frequency statistics for original and synthetic data}
+    \rowcolors{1}{white}{lightgray}
+    % \resizebox{.95\textwidth}{!}{\input{../tables/table_frequency.tex}}
+    \input{../tables/table_frequency.tex}
+    \label{table:frequency_10_data_sets}
+\end{table}
+
+
+\begin{figure}[!h]
+    \centering
+    \caption{Compare original and synthetic data}
+    \begin{subfigure}{0.9\textwidth}
+        \includegraphics[width=\textwidth]{../graphs/graph_cart_modified_mb_histogram_compare_10_v2.pdf}
+        \caption{Minimum bucket (default is 5)}
+        \label{fig:attacker_modified_mb_sensitivity}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.9\textwidth}
+        \includegraphics[width=\textwidth]{../graphs/graph_cart_modified_cp_histogram_compare_10_v2.pdf}
+        \caption{Complexity parameter (default is 10$^{-8}$)}
+        \label{fig:attacker_modified_cp_sensitivity}
+    \end{subfigure}
+    \label{fig:compare_modified_sensitivity}
+\end{figure}
+
+
+\begin{figure}[!h]
+    \centering
+    \caption{Datasynthesizer with DP}
+    \resizebox{\textwidth}{!}{\includegraphics{../graphs/graph_dp_datasynthesizer_compare_histogram_10.pdf}}
+    \label{fig:dp_datasynthesizer}
+\end{figure}
 
 \clearpage
-\begin{table}[]
-    \centering
-    \caption{Frequency from 5 synthetic data sets}
-    \begin{tabular}{llllll}
-        \toprule
-        combine & 1 & 2 & 3 & 4 & 5 \\ \midrule
-        0000 & 68 & 73 & 61 & 83 & 76 \\
-        0001 & 60 & 63 & 66 & 58 & 66 \\
-        0010 & 77 & 78 & 80 & 68 & 90 \\
-        0011 & 70 & 63 & 53 & 60 & 55 \\
-        0100 & 73 & 55 & 67 & 63 & 64 \\
-        0101 & 60 & 59 & 71 & 63 & 68 \\
-        0110 & 58 & 62 & 56 & 54 & 52 \\
-        0111 & 72 & 89 & 61 & 87 & 68 \\
-        1000 & 77 & 76 & 84 & 65 & 66 \\
-        1001 & 69 & 67 & 71 & 69 & 72 \\
-        1010 & 50 & 60 & 54 & 64 & 52 \\
-        1011 & 61 & 60 & 71 & 62 & 76 \\
-        1100 & 79 & 78 & 84 & 79 & 79 \\
-        1101 & 65 & 58 & 56 & 55 & 59 \\
-        1110 & 60 & 57 & 64 & 69 & 57 \\
-        1111 & 1  & 2  & 1  & 1  & 0  \\
-        \bottomrule
-    \end{tabular}
-    \label{table:frequency_5_data_sets}
-\end{table}
+\begin{table}[h!]
+    \caption{SD2011}
+    \label{tab:attribute_risk_sd2011}
 
+    \begin{subtable}[t]{\textwidth} % 45% of the main table width
+        \centering
+        \caption{Original}
+        \rowcolors{1}{white}{lightgray}
+        \input{../tables/table_attribute_risk_sd2011_original.tex}
+    \end{subtable}
+    \hspace{0.05\textwidth} % Horizontal space between subtables
 
-\begin{table}[]
-    \centering
-    \caption{Attribute risk measures from 5 synthetic data sets}
-    \begin{tabular}{lllllll}
-        \toprule
-            m &   Dorig & Dsyn & iS & DiS & DiSCO & DiSDiO \\ \midrule
-            1 &    0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\
-            2 &     0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\
-            3 &     0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\
-            4 &     0 &  0.0 & 100 & 0.0 &   0.0 &      0 \\ 
-            5 &     0 &  5.7 & 100 & 6.7 &   6.6 &      0 \\ 
-        \bottomrule
-    \end{tabular}
-    \label{table:attribute_disclosure_risk_5}
-    \vspace{0.5em} % Add some space between the table and the note
-    \noindent\parbox{0.8\textwidth}{\footnotesize Note: t1\$output.list\$var4\$attrib}
+    \begin{subtable}[t]{\textwidth} % Another 45% of the main table width
+        \centering
+        \caption{Modified (depress = 1)}
+        \rowcolors{1}{white}{lightgray}
+        \input{../tables/table_attribute_risk_sd2011_modified.tex}
+    \end{subtable}
+\raggedleft{Attribute disclosure measures for depress from keys: sex age region placesize}
 \end{table}
 
 \end{document}

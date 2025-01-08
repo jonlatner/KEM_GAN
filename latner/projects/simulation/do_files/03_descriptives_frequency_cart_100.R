@@ -15,6 +15,7 @@ library(synthpop)
 library(tidyverse)
 library(ggh4x) # facet_nested
 library(readr)
+library(xtable)
 
 # FOLDERS - ADAPT THIS PATHWAY
 main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/simulation/"
@@ -23,6 +24,7 @@ data_files = "data_files/"
 original_data = "data_files/original/"
 synthetic_data = "data_files/synthetic/synthpop/"
 graphs = "graphs/"
+tables = "tables/"
 
 setwd(main_dir)
 
@@ -31,7 +33,7 @@ options(scipen=999)
 
 
 # Set seed for reproducibility
-my.seed = 1234
+my.seed = 1237
 set.seed(my.seed)
 
 # Load data ----
@@ -41,14 +43,14 @@ df_ods <- read.csv(paste0(original_data,"simulated.csv"))
 # Loop ----
 
 df_frequency <- data.frame()
-for (c in 1:100) {
+for (c in 1:10) {
 
-    # create seed
-    my.seed = my.seed + 1
-    
     # Create fake synthetic data
     sds <- syn(df_ods, m = 1, seed = my.seed)
     sds <- sds$syn
+
+    # create seed
+    my.seed = my.seed + 1
     
     # Create a frequency table for synthetic data
     
@@ -67,12 +69,12 @@ df_frequency
 
 # Save data ----
 
-write.csv(df_frequency, paste0(synthetic_data,"synthetic_cart_100.csv"), row.names = FALSE)
+write.csv(df_frequency, paste0(synthetic_data,"synthetic_cart_10.csv"), row.names = FALSE)
 
 # Compare histogram ----
 
 df_ods <- read.csv(paste0(original_data,"simulated.csv"))
-df_frequency <- read_csv(paste0(synthetic_data,"synthetic_cart_100.csv"))
+df_frequency <- read_csv(paste0(synthetic_data,"synthetic_cart_10.csv"))
 
 df_graph_sds <- df_frequency 
 
@@ -103,6 +105,39 @@ df_graph <-
 
 df_graph
 
-ggsave(df_graph, filename = paste0(graphs,"graph_cart_histogram_compare_100.pdf"), height = 4, width = 10, units = "in")
+ggsave(df_graph, filename = paste0(graphs,"graph_cart_histogram_compare_10.pdf"), height = 4, width = 10, units = "in")
 
-ggsave(df_graph, filename = paste0(graphs,"graph_cart_histogram_compare_100_v2.pdf"), height = 6, width = 6, units = "in")
+ggsave(df_graph, filename = paste0(graphs,"graph_cart_histogram_compare_10_v2.pdf"), height = 6, width = 6, units = "in")
+
+# Create table ----
+
+df_frequency <- df_graph_ods
+df_frequency$pct <- NULL
+df_frequency$n <- 0
+
+df_frequency <- rbind(df_frequency,df_graph_sds)
+
+df_frequency$type <- NULL
+df_frequency <- df_frequency %>%
+  pivot_wider(names_from = "n", values_from = "Freq") 
+
+# Replace all NA values with 0
+df_frequency <- df_frequency %>%
+  mutate(across(everything(), ~ replace_na(., 0)))
+
+# Create the xtable object
+latex_table <- xtable(df_frequency,digits = 0)
+
+add_to_row <- list(
+  pos = list(0,0), # Add after \toprule
+  command = c(" & \\multicolumn{1}{l}{Original} & \\multicolumn{10}{c}{Synthetic Data} \\\\ \\cmidrule(lr){3-12}\n",
+              "Combine & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\\\ \n")
+)
+
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             include.colnames = FALSE, 
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_frequency.tex"),
+             add.to.row = add_to_row)

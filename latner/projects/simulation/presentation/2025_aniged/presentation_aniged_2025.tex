@@ -1,0 +1,502 @@
+% \input{"IAB/latex/TeX-Folienformat.tex"}
+\input{"/Users/jonathanlatner/Google Drive/My Drive/IAB/latex/TeX-Folienformat.tex"}
+
+\documentclass[t,8pt,utfx8]{beamer}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\setbeamertemplate{caption}[numbered]
+\newcommand{\sprache}{\englisch}
+\renewcommand{\thesubsection}{\alph{subsection})}
+\usepackage[cal=pxtx, scr=dutchcal]{mathalpha}
+\usepackage{forest}
+
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+
+\usepackage{listings}
+
+% Define style for R code
+\lstset{
+  language=R,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  stringstyle=\color{red},
+  commentstyle=\color{green},
+  showstringspaces=false,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  numbersep=5pt,
+  breaklines=true,
+  frame=single
+}
+
+\newcommand{\btVFill}{\vskip0pt plus 1filll}
+
+
+\title{Buyer Beware: Understanding the trade-off between utility and risk in CART based models using simulation data}
+
+\author{Jonathan Latner, PhD \newline Dr. Marcel Neunhoeffer \newline Prof. Dr. Jörg Drechsler}
+
+\newcounter{noauthorlines}
+\setcounter{noauthorlines}{2} % Wert für 2 Autoren über 2 Zeilen. Ggf. anpassen
+
+% %%%%%%%%%%%%%%
+% Ende Anpassung
+% %%%%%%%%%%%%%%
+
+% \input{"IAB/latex/TeX-Folienformatierung_CD_2019"}
+\input{"/Users/jonathanlatner/Google Drive/My Drive/IAB/latex/TeX-Folienformatierung_CD_2019"}
+
+% Modify the section in toc template to enumerate
+\setbeamertemplate{section in toc}{%
+    \inserttocsectionnumber.~\inserttocsection\par
+}
+
+% use for subsections
+% \setbeamertemplate{subsection in toc}{}
+\setbeamertemplate{subsection in toc}{%
+    \setlength{\parskip}{1mm}
+        \hskip2mm -- \hskip1mm\inserttocsubsection\par
+}
+
+
+\usepackage{colortbl}
+\definecolor{lightgray}{gray}{0.9}
+
+\usepackage{listings} %include R code
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\tiny,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                 
+    columns=fullflexible,
+    frame=single,
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+\begin{document}
+
+
+\frame[plain]{\titlepage}
+
+\begin{spacing}{1.25}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The data}\label{sec:data}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:data}: Generate the original and synthetic data
+} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+\begin{itemize}
+    \item Borrowing from Reiter et al. (2014), we create a data set with $n=1000$ and 4 dichotomous, categorical variables. 
+    \item The first 999 observations to be a random sample from a multinomial distribution for all combinations of $var1(0,1), var2(0,1), var3(0,1), var4(0,1)$ except the last one
+    \item The last (1000$^{th}$) observation is ($var1=1,var2=1,var3=1,var4=1$). 
+\end{itemize}
+
+\end{frame}
+
+\frame{\frametitle{Generate original data using a simulation}
+\begin{minipage}{0.48\textwidth}
+    \begin{figure}
+        \centering
+        \caption{Frequency}
+        \includegraphics[width=\textwidth]{../../graphs/graph_cart_frequency.pdf}
+    \end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \begin{figure}
+        \centering
+        \caption{Histogram}
+        \includegraphics[width=\textwidth]{../../graphs/graph_cart_histogram.pdf}
+    \end{figure}
+\end{minipage}
+
+}
+
+
+\frame{\frametitle{Generate synthetic data with CART (synthpop)}
+
+\begin{minipage}{0.48\textwidth}
+    \begin{figure}
+        \centering
+        \caption{Frequency}
+        \includegraphics[width=\textwidth]{../../graphs/graph_cart_frequency_compare.pdf}
+    \end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \begin{figure}
+        \centering
+        \caption{Histogram}
+        \includegraphics[width=\textwidth]{../../graphs/graph_cart_histogram_compare.pdf}
+    \end{figure}
+\end{minipage}
+
+}
+
+
+\frame{\frametitle{Compare histogram x 10 synthetic datasets}
+\begin{figure}
+    \caption{Multiple synthetic data sets does not reduce privacy risk}
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_cart_histogram_compare_10.pdf}}
+    \label{fig:graph_cart_histogram_compare_10}
+\end{figure}
+}
+
+\frame{\frametitle{Summary}
+\begin{itemize}
+    \item The problem (in our data): Synthetic data from CART models are disclosive
+    \item The reason: 
+    \begin{itemize}
+        \item A record can only be in the synthetic data if it is also in the original data (in this simulated data).   
+        \item Or the opposite: if a record is not in the original data, then it can never be in the synthetic data.
+    \end{itemize}  
+    \item Next section: Can an attacker identify the disclosure?
+\end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The attack}\label{sec:attack}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:attack}: The attack
+} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+
+\end{frame}
+
+\frame{\frametitle{Describing the attack}
+\begin{itemize}
+    \item We assume a `strong' attacker similar to the attack model in differential privacy (DP). 
+    \item An attacker has the following knowledge
+    \begin{itemize}
+        \item Knows the SDG model type (i.e. sequential CART).
+        \item Knowledge of all observations in the data except the last one.  
+        \item The 16 possible combinations that the last one could be.
+    \end{itemize}
+    \item The attacker sees the synthetic data
+    \item The attacker runs the same synthetic data model (SDG) for all of the 16 different possibilities.  
+    \item Then they update their beliefs about what the last record could be
+\end{itemize}
+}
+
+
+\frame{\frametitle{Illustrating the attack with CART (default parameters)}
+\vskip -3mm
+\begin{figure}
+    \caption{Histogram of 16 worlds x 100 synthetic datasets}
+    \vskip -4mm
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_attacker_default.pdf}}
+    \label{fig:graph_attacker_default}
+\end{figure}
+}
+
+
+\frame{\frametitle{Summary}
+\begin{itemize}
+    \item In our attack with our assumptions, the attacker can easily identify the last record
+    \item The reason (to repeat): 
+    \begin{itemize}
+        \item A record can only be in the synthetic data if it is also in the original data (in this simulated data).   
+        \item Or the opposite: if a record is not in the original data, then it can never be in the synthetic data.
+    \end{itemize}  
+    \item Next section: Can we measure this disclosure?
+\end{itemize}
+
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Measuring privacy}\label{sec:privacy}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:privacy}: Measuring privacy
+} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+
+\end{frame}
+
+
+\frame{\frametitle{Common privacy measures - Synthpop (Raab et al., 2024)}
+\begin{itemize}
+    \item Replicated uniques (\#)
+    \item Identity disclosure (\%): the ability to identify individuals in the data from a set of known characteristics or `keys' ($q$).  
+    \item Attribute disclosure (\%): the ability to find out from the keys something, not previously known or `target' ($t$)
+\end{itemize}
+}
+
+\frame{\frametitle{Attribute disclosure}
+\small
+% \% Disclosive in Original: is the percent of records in original where the keys ($q$) identify a unique target ($t$).  In our case, this is always 0 because there are many (1110) and 1 unique record (1111).
+
+% \begin{equation}
+% D_{orig} = 100 \sum^{q} \sum^{t} (d_{tq} \mid pd_{tq} = 1) / N_{d}
+% \end{equation}
+
+Disclosive in Synthetic: is the percent of records in SD where the keys ($q$) identify a unique target ($t$).  In our case, when there is no unique record in the SD, this equals the percent of records with 1110 in SD.
+
+\begin{equation}
+D_{syn} = 100 \sum^{q} \sum^{t} (s_{tq} \mid ps_{tq} = 1) / N_{s}
+\end{equation}
+
+Disclosive in Synthetic: is the percent of all records in OD where  $q$ in SD is disclosive (i.e.,  $t$  values for  $q$  are constant in SD).  In our case, this is the percent records with 1111 or 1110 in the OD (i.e. 67\%) when there is no unique record in SD.
+
+\begin{equation}
+DiS = 100 \sum^{q} \sum^{i=1,\dots,T} \sum^{j=1,\dots,T} (d_{iq} \mid ps_{jq} = 1) / N_{d}
+\end{equation}
+
+\% Disclosive in Synthetic Correct in Original: percent of all records in OD where  $q$ in SD is disclosive and the disclosed  $t$  value matches the true  $t$  value in OD.  In our case, this is the percent records with 1110 in the OD (i.e. 66\%) when there is no unique record in SD.
+
+\begin{equation}
+DiSCO = 100 \sum^{q} \sum^{t} (d_{tq} \mid ps_{tq} = 1) / N_{s}
+\end{equation}
+
+}
+
+\begin{frame}[fragile]
+\frametitle{Comparing disclosure risk measures}
+
+\begin{minipage}[t]{0.48\textwidth}
+    \begin{table}[]
+        \centering
+        \caption{x 1 synthetic data set (seed = 1237)}
+        \input{../../tables/table_disclosure_risk_1.tex}
+        \label{table:disclosure_risk_1}
+    \end{table}
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{0.48\textwidth}
+    \begin{table}[]
+        \centering
+        \caption{x 10 synthetic data sets}
+        \input{../../tables/table_disclosure_risk_10.tex}
+        \label{table:disclosure_risk_10}
+    \end{table}
+\end{minipage}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Underlying information}
+
+\begin{minipage}[t]{0.48\textwidth}
+    \begin{table}[]
+        \centering
+        \caption{Frequency statistics}
+        \rowcolors{1}{white}{lightgray}
+        \resizebox{.9\textwidth}{!}{\input{../../tables/table_frequency.tex}}
+        % \input{../../tables/table_frequency.tex}
+        \label{table:frequency_10_data_sets}
+    \end{table}
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{0.48\textwidth}
+    \begin{table}[h!]
+        \centering
+        \caption{Attribute risk measures from 10 synthetic data sets}
+        \rowcolors{1}{white}{lightgray}
+        \input{../../tables/table_attribute_risk_10.tex}
+        \label{table:attribute_risk_10}
+    \end{table}
+\end{minipage}
+
+
+\end{frame}
+
+\frame{\frametitle{Summary}
+\begin{itemize}
+    \item Using common privacy measures, CART generates synthetic data with low risk
+    \item 1 measure indicates there may be a problem, but all the other measures indicate there is no problem.
+    \item However (and this is the point):
+    \begin{itemize}
+         \item We know there is a problem (because we created it)
+         \item We know that common measures do not capture the problem 
+    \end{itemize} 
+    \item We are also not alone in identifying this problem (Manrique-Vallier and Hu, 2018)
+\end{itemize}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Solution}\label{sec:solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:solution}: Solution
+} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+\end{frame}
+
+\frame{\frametitle{The good news: solutions}
+\begin{itemize}
+    \item Reduce utility by preventing overfitting
+    \begin{itemize}
+        \item minbucket = 75 (default = 5): increase the minimum number of observations in any terminal node
+        \item complexity parameter (cp) = 0.05 (default = 1e$^{-8}$): decrease the size of the tree
+        \item Other options also exist
+        \begin{itemize}
+            \item Comparison to differential privacy ($\epsilon$-DP)
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+}
+
+\frame{\frametitle{Generate synthetic data with CART (modified parameters)}
+\begin{minipage}{0.48\textwidth}
+    \begin{figure}
+        \centering
+        \caption{minbucket}
+        \includegraphics[width=\textwidth]{../../graphs/graph_cart_modified_mb_histogram_compare_10_v2.pdf}
+    \end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \begin{figure}
+        \centering
+        \caption{cp}
+        \includegraphics[width=\textwidth]{../../graphs/graph_cart_modified_cp_histogram_compare_10_v2.pdf}
+    \end{figure}
+\end{minipage}
+}
+
+\frame{\frametitle{Other options: generate noise with $\epsilon$-DP}
+\begin{figure}[!h]
+    \centering
+    \caption{Datasynthesizer with DP}
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_dp_datasynthesizer_compare_histogram_10_v2.pdf}}
+    \label{fig:dp_datasynthesizer}
+\end{figure}
+}
+
+
+\frame{\frametitle{Illustrating the attack with CART (modified parameters)}
+\vskip -4mm
+\begin{minipage}{0.48\textwidth}
+    \begin{figure}
+        \centering
+        \caption{mb = 75}
+        \includegraphics[width=\textwidth]{../../graphs/graph_attacker_modified_mb_v2.pdf}
+    \end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \begin{figure}
+        \centering
+        \caption{cp = 0.05}
+        \includegraphics[width=\textwidth]{../../graphs/graph_attacker_modified_cp_v2.pdf}
+    \end{figure}
+\end{minipage}
+}
+
+\frame{\frametitle{The bad news}
+\begin{itemize}
+    \item We don't know how to identify the privacy risk
+    \item We have to know a problem exists before we would do something about it
+\end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}\label{sec:conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:conclusion}: Conclusion} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+\end{frame}
+
+\frame{\frametitle{Summary}
+\begin{itemize}
+    \item It has long been understood that there is a trade-off between utility and risk
+    \item Previous research indicated that CART models were less sensitive to this trade-off than other SDGs 
+    \item Using a simulated data set, we show that CART are sensitive to this trade-off
+    \item The good news: It is possible to reduce risk in CART with parameters
+    \item The bad news:
+    \begin{itemize}
+        \item Common privacy metrics do not capture risk in our simulated data
+        \item We must sacrifice utility
+    \end{itemize}
+    \item Question: If you did not know there was a problem, why would you sacrifice utility?
+
+\end{itemize}
+}
+
+\frame{\frametitle{Thank you}
+
+Jonathan Latner: \url{jonathan.latner@iab.de} \\
+
+Reproducible code: \url{https://github.com/jonlatner/KEM\_GAN/tree/main/latner/projects/simulation} 
+
+}
+
+
+
+\end{spacing}
+\end{document}
+

@@ -9,7 +9,6 @@ for (package in packages) {
 }
 
 rm(list=ls(all=TRUE))
-# test d
 
 # load library
 library(synthpop)
@@ -42,7 +41,7 @@ df_ods <- read.csv(paste0(original_data,"simulated.csv"))
 # Loop ----
 
 df_frequency <- data.frame()
-for (c in 1:100) {
+for (c in 1:10) {
 
     # create seed
     my.seed = my.seed + 1
@@ -68,12 +67,12 @@ df_frequency
 
 # Save data ----
 
-write.csv(df_frequency, paste0(synthetic_data,"synthetic_cart_modified_100_cp.csv"), row.names = FALSE)
+write.csv(df_frequency, paste0(synthetic_data,"synthetic_cart_modified_10_cp.csv"), row.names = FALSE)
 
 # Compare histogram ----
 
 df_ods <- read.csv(paste0(original_data,"simulated.csv"))
-df_frequency <- read_csv(paste0(synthetic_data,"synthetic_cart_modified_100_cp.csv"))
+df_frequency <- read_csv(paste0(synthetic_data,"synthetic_cart_modified_10_cp.csv"))
 
 df_graph_sds <- df_frequency 
 
@@ -104,4 +103,4 @@ df_graph <-
 
 df_graph
 
-ggsave(df_graph, filename = paste0(graphs,"graph_cart_modified_cp_histogram_compare_100.pdf"), height = 4, width = 10, units = "in")
+ggsave(df_graph, filename = paste0(graphs,"graph_cart_modified_cp_histogram_compare_10.pdf"), height = 4, width = 6, units = "in")

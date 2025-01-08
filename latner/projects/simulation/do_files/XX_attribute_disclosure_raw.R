@@ -30,9 +30,9 @@ setwd(main_dir)
 options(scipen=999) 
 
 # Set seed for reproducibility
-# my.seed = 1237 # reproduces 1 observation
+my.seed = 1237 # reproduces 1 observation
 # my.seed = 1238 # reproduces 0 unique observations
-my.seed = 1235 # reproduces 0 unique observations
+# my.seed = 1235 # reproduces 0 unique observations
 
 # my.seed = 1240 # reproduces 3 unique observations
 
@@ -57,6 +57,7 @@ df_sds <- sds$syn
 
 # Identity disclosure measures ----
 
+sds <- syn(df_ods, m = 5, seed = my.seed)
 t1 <- disclosure.summary(sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
 print(t1, plot = FALSE)
 t1$output.list$var4$attrib
