@@ -265,44 +265,52 @@
 \vskip-3mm
 \pgfuseimage{rahmenlinie}
 
-\end{frame}
+The literature on privacy measures for synthetic data is well-developed (Wagner and Eckhoff, 2018).  
 
+Common privacy measures - Synthpop (Raab et al., 2024)
 
-\frame{\frametitle{Common privacy measures - Synthpop (Raab et al., 2024)}
 \begin{itemize}
-    \item Replicated uniques (\#)
     \item Identity disclosure (\%): the ability to identify individuals in the data from a set of known characteristics or `keys' ($q$).  
     \item Attribute disclosure (\%): the ability to find out from the keys something, not previously known or `target' ($t$)
 \end{itemize}
+
+\end{frame}
+
+\frame{\frametitle{Identity disclosure}
+
+$repU$ (replicated uniques) are unique records in the original data that are also unique in synthetic data and is the measure of identity risk.  Formally, $repU$ is defined by equation \ref{eq:repU}:
+
+\begin{equation}
+repU = 100 \sum (s_{.q}|d_{.q} = 1 \land s_{.q} = 1 )/N_{d}
+\label{eq:repU}
+\end{equation}
+
+where $d_{.q}$ is the count of records in the original data with the keys corresponding to a given value of $q$ and $s_{.q}$ is the equivalent count for the synthetic data.  
+
+In a given value of $q$, $s_{.q}|d_{.q} = 1$ is a unique record in the original data conditional on also existing in the synthetic data.  
+
+AND
+
+$s_{.q} = 1$ is the unique record in the synthetic data.  
+
+This is summed over unique values of $q$ and divided by the total number of records in the data ($N_{d}$) and multiplied by 100 to transform the count into a percentage.
+
 }
 
 \frame{\frametitle{Attribute disclosure}
-\small
-% \% Disclosive in Original: is the percent of records in original where the keys ($q$) identify a unique target ($t$).  In our case, this is always 0 because there are many (1110) and 1 unique record (1111).
 
-% \begin{equation}
-% D_{orig} = 100 \sum^{q} \sum^{t} (d_{tq} \mid pd_{tq} = 1) / N_{d}
-% \end{equation}
-
-Disclosive in Synthetic: is the percent of records in SD where the keys ($q$) identify a unique target ($t$).  In our case, when there is no unique record in the SD, this equals the percent of records with 1110 in SD.
+$DiSCO$ (Disclosive in Synthetic Correct in Original) is the subset of records in the original data for which the keys ($q$) in the synthetic data is disclosive. $q$ is disclosive if all records in the synthetic data with the same $q$ have a constant target ($t$), i.e. no variation in $t$, as defined by the following equation \ref{eq:DiSCO}:
 
 \begin{equation}
-D_{syn} = 100 \sum^{q} \sum^{t} (s_{tq} \mid ps_{tq} = 1) / N_{s}
+DiSCO = 100 \sum^{q} \sum^{t} (d_{tq} | ps_{tq} = 1) / N_{d}
+\label{eq:DiSCO}
 \end{equation}
 
-Disclosive in Synthetic: is the percent of all records in OD where  $q$ in SD is disclosive (i.e.,  $t$  values for  $q$  are constant in SD).  In our case, this is the percent records with 1111 or 1110 in the OD (i.e. 67\%) when there is no unique record in SD.
+where $d_{tq} | s_{tq} = 1$ indicates whether the synthetic data matches the original data for the combination of $t$ and $q$ given the condition that the synthetic data for the combination of $t$ and $q$ is disclosive (i.e., target $t$ is uniquely determined by the keys $q$).  
 
-\begin{equation}
-DiS = 100 \sum^{q} \sum^{i=1,\dots,T} \sum^{j=1,\dots,T} (d_{iq} \mid ps_{jq} = 1) / N_{d}
-\end{equation}
-
-\% Disclosive in Synthetic Correct in Original: percent of all records in OD where  $q$ in SD is disclosive and the disclosed  $t$  value matches the true  $t$  value in OD.  In our case, this is the percent records with 1110 in the OD (i.e. 66\%) when there is no unique record in SD.
-
-\begin{equation}
-DiSCO = 100 \sum^{q} \sum^{t} (d_{tq} \mid ps_{tq} = 1) / N_{s}
-\end{equation}
-
+This is summed over unique values of $t$ and unique values of $q$ and divided by the total number of records in the data ($N_{d}$) and multiplied by 100 to transform the count into a percentage.
 }
+
 
 \begin{frame}[fragile]
 \frametitle{Comparing disclosure risk measures}
@@ -320,7 +328,7 @@ DiSCO = 100 \sum^{q} \sum^{t} (d_{tq} \mid ps_{tq} = 1) / N_{s}
     \begin{table}[]
         \centering
         \caption{x 10 synthetic data sets}
-        \input{../../tables/table_disclosure_risk_10.tex}
+        \input{../../tables/table_disclosure_risk_10_summary.tex}
         \label{table:disclosure_risk_10}
     \end{table}
 \end{minipage}
@@ -329,13 +337,14 @@ DiSCO = 100 \sum^{q} \sum^{t} (d_{tq} \mid ps_{tq} = 1) / N_{s}
 
 \begin{frame}[fragile]
 \frametitle{Underlying information}
+\vskip -3mm
 
 \begin{minipage}[t]{0.48\textwidth}
     \begin{table}[]
         \centering
         \caption{Frequency statistics}
         \rowcolors{1}{white}{lightgray}
-        \resizebox{.9\textwidth}{!}{\input{../../tables/table_frequency.tex}}
+        \resizebox{\textwidth}{!}{\input{../../tables/table_frequency.tex}}
         % \input{../../tables/table_frequency.tex}
         \label{table:frequency_10_data_sets}
     \end{table}
@@ -344,9 +353,9 @@ DiSCO = 100 \sum^{q} \sum^{t} (d_{tq} \mid ps_{tq} = 1) / N_{s}
 \begin{minipage}[t]{0.48\textwidth}
     \begin{table}[h!]
         \centering
-        \caption{Attribute risk measures from 10 synthetic data sets}
+        \caption{Disclosure risk measures from 10 synthetic data sets}
         \rowcolors{1}{white}{lightgray}
-        \input{../../tables/table_attribute_risk_10.tex}
+        \input{../../tables/table_disclosure_risk_10.tex}
         \label{table:attribute_risk_10}
     \end{table}
 \end{minipage}
@@ -394,7 +403,8 @@ DiSCO = 100 \sum^{q} \sum^{t} (d_{tq} \mid ps_{tq} = 1) / N_{s}
         \item complexity parameter (cp) = 0.05 (default = 1e$^{-8}$): decrease the size of the tree
         \item Other options also exist
         \begin{itemize}
-            \item Comparison to differential privacy ($\epsilon$-DP)
+            \item Comparison to noise with differential privacy ($\epsilon$-DP)
+            \item CTREE vs. CART (variables as factors - bug, not a feature)
         \end{itemize}
     \end{itemize}
 \end{itemize}
@@ -418,16 +428,6 @@ DiSCO = 100 \sum^{q} \sum^{t} (d_{tq} \mid ps_{tq} = 1) / N_{s}
 \end{minipage}
 }
 
-\frame{\frametitle{Other options: generate noise with $\epsilon$-DP}
-\begin{figure}[!h]
-    \centering
-    \caption{Datasynthesizer with DP}
-    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_dp_datasynthesizer_compare_histogram_10_v2.pdf}}
-    \label{fig:dp_datasynthesizer}
-\end{figure}
-}
-
-
 \frame{\frametitle{Illustrating the attack with CART (modified parameters)}
 \vskip -4mm
 \begin{minipage}{0.48\textwidth}
@@ -447,12 +447,101 @@ DiSCO = 100 \sum^{q} \sum^{t} (d_{tq} \mid ps_{tq} = 1) / N_{s}
 \end{minipage}
 }
 
+
+\frame{\frametitle{Other options: generate noise with $\epsilon$-DP}
+\begin{figure}[!h]
+    \centering
+    \caption{Datasynthesizer with DP}
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_dp_datasynthesizer_compare_histogram_10_v2.pdf}}
+    \label{fig:dp_datasynthesizer}
+\end{figure}
+}
+
+\frame{\frametitle{Other options: CART (factor) vs. CTREE}
+\begin{figure}[!h]
+    \centering
+    \caption{}
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_ctree_cart_factor_histogram_compare_10.pdf}}
+    \label{fig:ctree_cart_factor}
+\end{figure}
+}
+
+\frame{\frametitle{Explaining difference between CART (factor) vs. CTREE}
+\begin{figure}[!h]
+    \centering
+    \caption{}
+    \resizebox{\textwidth}{!}{\includegraphics{../../graphs/graph_tree_combined.pdf}}
+    \label{fig:tree_combined}
+\end{figure}
+}
+
 \frame{\frametitle{The bad news}
 \begin{itemize}
     \item We don't know how to identify the privacy risk
     \item We have to know a problem exists before we would do something about it
 \end{itemize}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Is this scenario realistic?}\label{sec:reality}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[c,plain]
+\vskip-4mm
+\begin{beamercolorbox}[wd=\boxwidth,ht=22.11mm]{transparent}%
+    \vfill%
+    \usebeamerfont{title}%
+    \leftinsert%
+    \MakeUppercase{Section \ref{sec:reality}: Is this scenario realistic?
+} % <- Hier die Überschrift eintragen
+\end{beamercolorbox}
+\vskip-3mm
+\pgfuseimage{rahmenlinie}
+
+\end{frame}
+
+\frame{\frametitle{Real world data (SD2011)}
+
+Following the authors of Synthpop (Raab, 2024; Raab et al., 2024), we rely on data from Social Diagnosis 2011 (SD2011).  
+
+In their paper, they generate 5 synthetic data sets to illustrate their method for measuring attribute disclosure by identifying values in the target variable \texttt{depress} from keys: \texttt{sex} \texttt{age} \texttt{region} \texttt{placesize}.  
+
+To illustrate why it is a problem to measure attribute disclosure as the set of records with constant $t$ within $q$, we set $t$ as constant for all observations in all 5 synthetic data sets.  0 was chosen because it is the most frequent value in the variable \texttt{depress} (22\% of all records).  By definition, this reduces attribute disclosure risk.  
+
+In their example, attribute risk is about 9\% (as shown in the appendix).  
+However, when we modify \texttt{depress}, the risk \emph{increased} to around 15\%.
+
+}
+
+
+\frame{\frametitle{Results}
+\begin{table}[]
+    \caption{SD2011}
+    \label{tab:attribute_risk_sd2011}
+    \centering
+    \caption{Attribute disclosure measures for \texttt{depress} from keys: \texttt{sex} \texttt{age} \texttt{region} \texttt{placesize}}
+    % \rowcolors{1}{white}{lightgray}
+    \input{../../tables/table_disclosure_risk_sd2011.tex}
+\end{table}
+
+}
+
+\frame{\frametitle{Identifying disclosure from 1-way}
+
+The package authors are aware that the $DiSCO$ measure of attribute disclosure risk can indicate a high level of risk for a target variable where a high proportion of records have one level (Raab et al., 2024).
+
+The package includes a flag to allow the user to identify values within a variable that explain most of the disclosures (\texttt{check\_1way}).
+
+The authors give an example where the target variable is \texttt{workab}, where 89\% of the observations never worked abroad.  
+
+The authors suggest that this level of $t$ for a group with the same $q$ would not be disclosive.
+
+We agree, but our example illustrates that the disclosure measure increases, when it should decrease.
+
+
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

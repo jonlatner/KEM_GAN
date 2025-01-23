@@ -41,17 +41,16 @@ df_ods <- read.csv(paste0(original_data,"simulated.csv"))
 # Disclosure measures ----
 
 sds <- syn(df_ods, m = 1, seed = my.seed)
+
+# create summary table
 t1 <- disclosure.summary(sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
+
 ident = print(t1, plot = FALSE, to.print = "ident")
 attrib = print(t1, plot = FALSE, to.print = "attrib")
-unique <- data.frame(replicated.uniques(sds, df_ods)$res_tab)
-unique
 
-# create table
 df_risk <- data.frame(
   data = c("Original", "Synthetic"),
   identity = c(t1$ident.orig,t1$ident.syn),
-  unique = c(unique$Number[1], unique$Number[2]),
   attribute = c(t1$attrib.table$attrib.orig, t1$attrib.table$attrib.syn)
 )
 
@@ -82,22 +81,50 @@ for (c in 1:10) {
   my.seed = my.seed + 1
 }
 
+# create summary table
 t1 <- disclosure.summary(df_sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
-ident = print(t1, plot = FALSE, to.print = "ident")
-attrib = print(t1, plot = FALSE, to.print = "attrib")
-unique <- data.frame(replicated.uniques(df_sds, df_ods)$res_tab)
 
-# create table
 df_risk <- data.frame(
   data = c("Original", "Synthetic"),
   identity = c(t1$ident.orig,t1$ident.syn),
-  unique = c(unique$Number[1], "see table \\ref{table:frequency_10_data_sets}"),
   attribute = c(t1$attrib.table$attrib.orig, t1$attrib.table$attrib.syn)
+)
+
+df_risk
+
+# Create the xtable object
+latex_table <- xtable(df_risk)
+
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             # include.colnames = FALSE, 
+             floating = FALSE,
+             booktabs = TRUE, 
+             file = paste0(tables,"table_disclosure_risk_10_summary.tex"))
+
+# create detailed table
+
+t1 <- disclosure(df_sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
+
+
+repU <- t1$ident$repU
+average_row <- mean(repU) # calculate average row across 10 synthetic data sets
+repU <- c(0, repU, average_row)
+
+DiSCO <- t1$attrib$DiSCO
+average_row <- mean(DiSCO) # calculate average row across 10 synthetic data sets
+DiSCO <- c(0, DiSCO, average_row)
+
+# create table
+df_risk <- data.frame(
+  data = c("Original", "Synthetic 1", "Synthetic 2", "Synthetic 3", "Synthetic 4", "Synthetic 5", "Synthetic 6", "Synthetic 7", "Synthetic 8", "Synthetic 9", "Synthetic 10", "Average"),
+  identity = c(repU),
+  attribute = c(DiSCO)
 )
 
 
 # Create the xtable object
-latex_table <- xtable(df_risk,align = "llrrr")
+latex_table <- xtable(df_risk,align = "llrr")
 
 print.xtable(latex_table, 
              include.rownames = FALSE, 
@@ -106,30 +133,3 @@ print.xtable(latex_table,
              booktabs = TRUE, 
              sanitize.text.function = function(x) {x},
              file = paste0(tables,"table_disclosure_risk_10.tex"))
-
-# Attribute risk measures ----
-
-t1 <- disclosure.summary(df_sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
-df_attribute <- data.frame(t1$output.list$var4$attrib) %>%
-  mutate(m = as.character(row_number())) %>%
-  select(m, Dsyn, iS, DiS, DiSCO) 
-df_attribute
-
-# Calculate averages for numeric columns
-average_row <- colMeans(df_attribute[, sapply(df_attribute, is.numeric)])
-
-# Add a label for the average row
-average_row <- c(m = "Average", average_row)
-
-# Bind the average row to the original dataframe
-df_attribute <- rbind(df_attribute, average_row)
-df_attribute
-
-latex_table <- xtable(df_attribute,align = "llrrrr")
-
-print.xtable(latex_table, 
-             include.rownames = FALSE, 
-             # include.colnames = FALSE, 
-             floating = FALSE,
-             booktabs = TRUE, 
-             file = paste0(tables,"table_attribute_risk_10.tex"))

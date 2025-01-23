@@ -22,50 +22,12 @@ data_files = "data_files/"
 original_data = "data_files/original/"
 synthetic_data = "data_files/synthetic/synthpop/"
 graphs = "graphs/"
-
-setwd(main_dir)
-
-#functions
-options(scipen=999) 
-
-
-# Set seed for reproducibility
-my.seed = 1237
-set.seed(my.seed)
-
-# Load data ----
-
-# Top commands ----
-
-# Create empty R application (no figures, data frames, packages, etc.)
-# Get a list of all loaded packages
-packages <- search()[grepl("package:", search())]
-# Unload each package
-for (package in packages) {
-  unloadNamespace(package)
-}
-
-rm(list=ls(all=TRUE))
-
-# load library
-library(synthpop)
-library(tidyverse)
-library(xtable)
-
-# FOLDERS - ADAPT THIS PATHWAY
-main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/simulation/"
-
-data_files = "data_files/"
-original_data = "data_files/original/"
-synthetic_data = "data_files/synthetic/synthpop/"
 tables = "tables/"
 
 setwd(main_dir)
 
 #functions
 options(scipen=999) 
-
-
 
 # Load data ----
 
@@ -74,33 +36,32 @@ ods <- SD2011[, c("sex", "age", "region","placesize","depress")]
 # original ----
 s5 <- syn(ods, seed = 8564, m = 5, print.flag = FALSE)
 t5 <- disclosure( s5, ods, keys = c("sex", "age", "region", "placesize"), target = "depress", print.flag = FALSE)
-print(t5, to.print = c("ident"))
-print(t5, to.print = c("attrib"))
 
-df_attribute <- data.frame(t5$attrib) %>%
-  mutate(m = as.character(row_number())) %>%
-  select(m, Dsyn, iS, DiS, DiSCO) 
+repU <- t5$ident$repU
+average_row <- mean(repU) # calculate average row across 10 synthetic data sets
+repU <- c(0, repU, average_row)
 
-df_attribute
+DiSCO <- t5$attrib$DiSCO
+average_row <- mean(DiSCO) # calculate average row across 10 synthetic data sets
+DiSCO <- c(0, DiSCO, average_row)
 
-# Calculate averages for numeric columns
-average_row <- colMeans(df_attribute[, sapply(df_attribute, is.numeric)])
+# create table
+df_risk_1 <- data.frame(
+  data = c("Original", "Synthetic 1", "Synthetic 2", "Synthetic 3", "Synthetic 4", "Synthetic 5", "Average"),
+  identity = c(repU),
+  attribute = c(DiSCO)
+)
 
-# Add a label for the average row
-average_row <- c(m = "Average", average_row)
-
-# Bind the average row to the original dataframe
-df_attribute <- rbind(df_attribute, average_row)
-df_attribute
-
-latex_table <- xtable(df_attribute,align = "llrrrr")
+# Create the xtable object
+latex_table <- xtable(df_risk_1,align = "llrr")
 
 print.xtable(latex_table, 
              include.rownames = FALSE, 
              # include.colnames = FALSE, 
              floating = FALSE,
              booktabs = TRUE, 
-             file = paste0(tables,"table_attribute_risk_sd2011_original.tex"))
+             file = paste0(tables,"table_disclosure_risk_sd2011_original.tex"))
+
 
 
 # modified ----
@@ -108,37 +69,79 @@ print.xtable(latex_table,
 s6 <- s5
 for (c in 1:5) {
   sds <- data.frame(s5$syn[c])
-  sds$depress <- 1
+  sds$depress <- 0
   s6$syn[[c]] <- sds
 }
 
 t6 <- disclosure( s6, ods, keys = c("sex", "age", "region", "placesize"), target = "depress", print.flag = FALSE)
 
+repU <- t6$ident$repU
+average_row <- mean(repU) # calculate average row across 10 synthetic data sets
+repU <- c(0, repU, average_row)
 
-df_attribute <- data.frame(t6$attrib) %>%
-  mutate(m = as.character(row_number())) %>%
-  select(m, Dsyn, iS, DiS, DiSCO) 
+DiSCO <- t6$attrib$DiSCO
+average_row <- mean(DiSCO) # calculate average row across 10 synthetic data sets
+DiSCO <- c(0, DiSCO, average_row)
 
-df_attribute
+# create table
+df_risk_2 <- data.frame(
+  data = c("Original", "Synthetic 1", "Synthetic 2", "Synthetic 3", "Synthetic 4", "Synthetic 5", "Average"),
+  identity = c(repU),
+  attribute = c(DiSCO)
+)
 
-# Calculate averages for numeric columns
-average_row <- colMeans(df_attribute[, sapply(df_attribute, is.numeric)])
-
-# Add a label for the average row
-average_row <- c(m = "Average", average_row)
-
-# Bind the average row to the original dataframe
-df_attribute <- rbind(df_attribute, average_row)
-df_attribute
-
-latex_table <- xtable(df_attribute,align = "llrrrr")
+# Create the xtable object
+latex_table <- xtable(df_risk_2,align = "llrr")
 
 print.xtable(latex_table, 
              include.rownames = FALSE, 
              # include.colnames = FALSE, 
              floating = FALSE,
              booktabs = TRUE, 
-             file = paste0(tables,"table_attribute_risk_sd2011_modified.tex"))
+             file = paste0(tables,"table_disclosure_risk_sd2011_modified.tex"))
 
-print(t5, to.print = c("attrib"))
-print(t6, to.print = c("attrib"))
+# combine ----
+
+df_risk_1$type <- "Original"
+df_risk_2$type <- "Modified"
+
+df_risk <- rbind(df_risk_1,df_risk_2) %>%
+  pivot_longer(!c(data,type)) %>%
+  pivot_wider(names_from = c(name, type), values_from = c(value)) %>%
+  select(data, identity_Original, identity_Modified, attribute_Original, attribute_Modified)
+df_risk
+
+columns_header_top <- c("
+\\toprule & 
+\\multicolumn{2}{l}{Identity risk} &
+\\multicolumn{2}{l}{Attribute risk}
+\\\\  \n 
+\\cmidrule(lr){2-3}
+\\cmidrule(lr){4-5}
+")
+
+
+columns_header_mid <- c("
+Data & Original & Modified & Original & Modified
+\\\\ \n
+\\midrule
+")
+
+notes <- c("\\bottomrule \\\\[-1.8ex] \\multicolumn{5}{p{2.5in}}{Note: Modified indicates that values of \\texttt{depress}=1  in synthetic data} \n")
+
+
+# Create the xtable object
+latex_table <- xtable(df_risk,align = "llrrrr")
+
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             include.colnames = FALSE,
+             floating = FALSE,
+             booktabs = TRUE, 
+             hline.after = NULL,
+             add.to.row = list(
+               pos = list(0,0,7),
+               command = c(columns_header_top,
+                           columns_header_mid,
+                           notes)),
+             file = paste0(tables,"table_disclosure_risk_sd2011.tex"))
