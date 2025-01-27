@@ -127,7 +127,7 @@ Data & Original & Modified & Original & Modified
 \\midrule
 ")
 
-notes <- c("\\bottomrule \\\\[-1.8ex] \\multicolumn{5}{p{2.5in}}{Note: Modified indicates that values of \\texttt{depress}=1  in synthetic data} \n")
+notes <- c("\\bottomrule \\\\[-1.8ex] \\multicolumn{5}{p{2.5in}}{Note: Modified indicates that values of \\texttt{depress}=0  in synthetic data} \n")
 
 
 # Create the xtable object

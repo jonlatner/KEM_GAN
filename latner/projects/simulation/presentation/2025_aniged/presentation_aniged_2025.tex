@@ -274,6 +274,8 @@ Common privacy measures - Synthpop (Raab et al., 2024)
     \item Attribute disclosure (\%): the ability to find out from the keys something, not previously known or `target' ($t$)
 \end{itemize}
 
+We will show that attribute disclosure risk only indicates risk when there is no risk
+
 \end{frame}
 
 \frame{\frametitle{Identity disclosure}
@@ -312,8 +314,7 @@ This is summed over unique values of $t$ and unique values of $q$ and divided by
 }
 
 
-\begin{frame}[fragile]
-\frametitle{Comparing disclosure risk measures}
+\frame{\frametitle{Comparing disclosure risk measures}
 
 \begin{minipage}[t]{0.48\textwidth}
     \begin{table}[]
@@ -332,11 +333,10 @@ This is summed over unique values of $t$ and unique values of $q$ and divided by
         \label{table:disclosure_risk_10}
     \end{table}
 \end{minipage}
-\end{frame}
+}
 
 
-\begin{frame}[fragile]
-\frametitle{Underlying information}
+\frame{\frametitle{Underlying information}
 \vskip -3mm
 
 \begin{minipage}[t]{0.48\textwidth}
@@ -359,20 +359,17 @@ This is summed over unique values of $t$ and unique values of $q$ and divided by
         \label{table:attribute_risk_10}
     \end{table}
 \end{minipage}
-
-
-\end{frame}
+}
 
 \frame{\frametitle{Summary}
 \begin{itemize}
     \item Using common privacy measures, CART generates synthetic data with low risk
-    \item 1 measure indicates there may be a problem, but all the other measures indicate there is no problem.
     \item However (and this is the point):
     \begin{itemize}
          \item We know there is a problem (because we created it)
          \item We know that common measures do not capture the problem 
     \end{itemize} 
-    \item We are also not alone in identifying this problem (Manrique-Vallier and Hu, 2018)
+    \item Further, $DiSCO$ only captures attribute risk when there is no attribute risk (i.e. no unique observation) 
 \end{itemize}
 }
 
@@ -475,10 +472,9 @@ This is summed over unique values of $t$ and unique values of $q$ and divided by
 \end{figure}
 }
 
-\frame{\frametitle{The bad news}
+\frame{\frametitle{Summary}
 \begin{itemize}
-    \item We don't know how to identify the privacy risk
-    \item We have to know a problem exists before we would do something about it
+    \item If we are willing to sacrifice utility, then we can reduce disclosure risk in CART-based SDG
 \end{itemize}
 }
 
@@ -509,8 +505,9 @@ In their paper, they generate 5 synthetic data sets to illustrate their method f
 
 To illustrate why it is a problem to measure attribute disclosure as the set of records with constant $t$ within $q$, we set $t$ as constant for all observations in all 5 synthetic data sets.  0 was chosen because it is the most frequent value in the variable \texttt{depress} (22\% of all records).  By definition, this reduces attribute disclosure risk.  
 
-In their example, attribute risk is about 9\% (as shown in the appendix).  
-However, when we modify \texttt{depress}, the risk \emph{increased} to around 15\%.
+In their example, attribute risk is about 9\%. However, when we modify \texttt{depress} so that it is constant (0), the risk \emph{increased} to around 15\%.
+
+Therefore, even though we know risk declined (because we reduced it), $DiSCO$ increases.
 
 }
 
@@ -542,6 +539,13 @@ We agree, but our example illustrates that the disclosure measure increases, whe
 
 }
 
+\frame{\frametitle{Summary}
+\begin{itemize}
+    \item When we create synthetic data to reduces attribute disclosure risk, $DiSCO$ measure increases
+    \item The key point is that we show that $DiSCO$ mismeasures risk using real world data
+\end{itemize}
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -566,13 +570,11 @@ We agree, but our example illustrates that the disclosure measure increases, whe
     \item Previous research indicated that CART models were less sensitive to this trade-off than other SDGs 
     \item Using a simulated data set, we show that CART are sensitive to this trade-off
     \item The good news: It is possible to reduce risk in CART with parameters
-    \item The bad news:
+    \item The bad news: Common privacy metrics do not capture risk
     \begin{itemize}
-        \item Common privacy metrics do not capture risk in our simulated data
-        \item We must sacrifice utility
+        \item $DiSCO$ indicates risk when there is no risk (simulation)
+        \item $DiSCO$ indicates risk increases when we know it decreased (SD2011)
     \end{itemize}
-    \item Question: If you did not know there was a problem, why would you sacrifice utility?
-
 \end{itemize}
 }
 
