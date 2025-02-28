@@ -1,7 +1,0 @@
-type,data,epochs,copies,j,duration
-ctgan,sd2011_clean_small,1800,1,1,1017.3161342144012
-ctgan,sd2011_clean_small,1800,5,1,1010.6672530174255
-ctgan,sd2011_clean_small,1800,5,2,1201.9924159049988
-ctgan,sd2011_clean_small,1800,5,3,1181.9835250377655
-ctgan,sd2011_clean_small,1800,5,4,1174.7151069641113
-ctgan,sd2011_clean_small,1800,5,5,1167.2543606758118
