@@ -86,6 +86,36 @@ for (c in 1:10) {
 df_frequency_cart_factor <- df_frequency
 df_frequency_cart_factor$type <- "CART (factor)"
 
+
+# Loop (CART - factor) ----
+
+df_frequency <- data.frame()
+for (c in 1:10) {
+  
+  # Create fake synthetic data
+  df_ods_factor <- data.frame(lapply(df_ods, as.factor))
+  sds <- syn(df_ods_factor, m = 1, seed = my.seed, method = "cart", cart.cp = 0.05)
+  sds <- sds$syn
+  
+  # create seed
+  my.seed = my.seed + 1
+  
+  # Create a frequency table for synthetic data
+  
+  sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
+  sds <- sds %>%
+    select(-matches("var"))
+  df_sds_frequency <- as.data.frame(table(sds))
+  df_sds_frequency$type <- "synthetic"
+  df_sds_frequency$n <- c
+  
+  # Combine
+  df_frequency <- rbind(df_frequency,df_sds_frequency)
+}
+
+df_frequency_cart_factor_cp <- df_frequency
+df_frequency_cart_factor_cp$type <- "CART (factor, cp = 0.05)"
+
 # Loop (CTREE) ----
 
 df_frequency <- data.frame()
@@ -125,7 +155,7 @@ df_ods_frequency$pct <- (df_ods_frequency$Freq / nrow(df_ods)) * 100
 df_ods_frequency$type <- "original"
 df_graph_ods <- df_ods_frequency
 
-df_graph_sds <- rbind(df_frequency_ctree,df_frequency_cart_factor)
+df_graph_sds <- rbind(df_frequency_ctree,df_frequency_cart_factor,df_frequency_cart_factor_cp)
 
 
 df_graph <- 

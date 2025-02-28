@@ -46,12 +46,14 @@ df_frequency <- df_frequency %>%
 df_frequency_ods <- as.data.frame(table(df_frequency)) %>%
   rename(value=Freq) 
 
+df_frequency_ods
+
 # Generate laplace noise ---- 
 
 epsilon <- c(.01,.1,.25,.5)
 df_frequency_sds <- data.frame()
 
-for (c in 1:100) {
+for (c in 1:10) {
   for (e in epsilon) {
     ods <- df_frequency_ods %>%
       mutate(epsilon = e)

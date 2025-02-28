@@ -37,17 +37,19 @@ ods <- SD2011[, c("sex", "age", "region","placesize","depress")]
 s5 <- syn(ods, seed = 8564, m = 5, print.flag = FALSE)
 t5 <- disclosure( s5, ods, keys = c("sex", "age", "region", "placesize"), target = "depress", print.flag = FALSE)
 
+t5
+
 repU <- t5$ident$repU
 average_row <- mean(repU) # calculate average row across 10 synthetic data sets
-repU <- c(0, repU, average_row)
+repU <- c(t5$ident$UiO[1], repU, average_row)
 
 DiSCO <- t5$attrib$DiSCO
 average_row <- mean(DiSCO) # calculate average row across 10 synthetic data sets
-DiSCO <- c(0, DiSCO, average_row)
+DiSCO <- c(t5$attrib$Dorig[1], DiSCO, average_row)
 
 # create table
 df_risk_1 <- data.frame(
-  data = c("Original", "Synthetic 1", "Synthetic 2", "Synthetic 3", "Synthetic 4", "Synthetic 5", "Average"),
+  data = c("Original data", "Synthetic 1", "Synthetic 2", "Synthetic 3", "Synthetic 4", "Synthetic 5", "Average"),
   identity = c(repU),
   attribute = c(DiSCO)
 )
@@ -77,15 +79,15 @@ t6 <- disclosure( s6, ods, keys = c("sex", "age", "region", "placesize"), target
 
 repU <- t6$ident$repU
 average_row <- mean(repU) # calculate average row across 10 synthetic data sets
-repU <- c(0, repU, average_row)
+repU <- c(t6$ident$UiO[1], repU, average_row)
 
 DiSCO <- t6$attrib$DiSCO
 average_row <- mean(DiSCO) # calculate average row across 10 synthetic data sets
-DiSCO <- c(0, DiSCO, average_row)
+DiSCO <- c(t6$attrib$Dorig[1], DiSCO, average_row)
 
 # create table
 df_risk_2 <- data.frame(
-  data = c("Original", "Synthetic 1", "Synthetic 2", "Synthetic 3", "Synthetic 4", "Synthetic 5", "Average"),
+  data = c("Original data", "Synthetic 1", "Synthetic 2", "Synthetic 3", "Synthetic 4", "Synthetic 5", "Average"),
   identity = c(repU),
   attribute = c(DiSCO)
 )
@@ -122,12 +124,12 @@ columns_header_top <- c("
 
 
 columns_header_mid <- c("
-Data & Original & Modified & Original & Modified
+Data & Raab et al., 2024 & Modified & Raab et al., 2024 & Modified
 \\\\ \n
 \\midrule
 ")
 
-notes <- c("\\bottomrule \\\\[-1.8ex] \\multicolumn{5}{p{2.5in}}{Note: Modified indicates that values of \\texttt{depress}=0  in synthetic data} \n")
+notes <- c("\\bottomrule \\\\[-1.8ex] \\multicolumn{5}{p{4in}}{Note: Modified indicates that values of \\texttt{depress}=0  in synthetic data} \n")
 
 
 # Create the xtable object
