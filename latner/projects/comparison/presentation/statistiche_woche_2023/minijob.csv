@@ -1,0 +1,5 @@
+﻿firm;period;mini;dv;within_diff;btwn_diff
+1;1;1;10;;
+1;2;2;11;0,5;
+2;1;2;10;;
+2;2;1;13;1,5;-1

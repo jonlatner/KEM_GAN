@@ -57,7 +57,7 @@ df_risk
 # Create the xtable object
 latex_table <- xtable(df_risk)
 
-colnames(latex_table) <- c("Data", "Identity Risk ($repU$)", "Attribute Risk ($DiSCO$)")
+colnames(latex_table) <- c("", "Identity Risk ($repU$)", "Attribute Risk ($DiSCO$)")
 
 print.xtable(latex_table, 
              include.rownames = FALSE, 
@@ -82,7 +82,7 @@ for (c in 1:10) {
 }
 
 # create summary table
-t1 <- multi.disclosure(df_sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
+t1 <- disclosure.summary(df_sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
 
 df_risk <- data.frame(
   data = c("Original", "Synthetic"),
@@ -114,8 +114,6 @@ df_risk <- data.frame(
 
 # Create the xtable object
 latex_table <- xtable(df_risk,align = "llrr")
-
-colnames(latex_table) <- c("Data", "Identity Risk ($repU$)", "Attribute Risk ($DiSCO$)")
 
 print.xtable(latex_table, 
              include.rownames = FALSE, 

@@ -100,7 +100,6 @@ print.xtable(latex_table,
              # include.colnames = FALSE, 
              floating = FALSE,
              booktabs = TRUE, 
-             sanitize.text.function = identity,
              file = paste0(tables,"table_disclosure_risk_sd2011_modified.tex"))
 
 # combine ----
@@ -116,8 +115,8 @@ df_risk
 
 columns_header_top <- c("
 \\toprule & 
-\\multicolumn{2}{l}{Identity risk ($repU$)} &
-\\multicolumn{2}{l}{Attribute risk ($DiSCO$)}
+\\multicolumn{2}{l}{Identity risk} &
+\\multicolumn{2}{l}{Attribute risk}
 \\\\  \n 
 \\cmidrule(lr){2-3}
 \\cmidrule(lr){4-5}
@@ -130,7 +129,7 @@ Data & Raab et al., 2024 & Modified & Raab et al., 2024 & Modified
 \\midrule
 ")
 
-notes <- c("\\bottomrule \\\\[-1.8ex] \\multicolumn{5}{p{4in}}{Note: Modified indicates that values of \\texttt{depress}=0 for all records in the synthetic data} \n")
+notes <- c("\\bottomrule \\\\[-1.8ex] \\multicolumn{5}{p{4in}}{Note: Modified indicates that values of \\texttt{depress}=0  in synthetic data} \n")
 
 
 # Create the xtable object
@@ -142,7 +141,6 @@ print.xtable(latex_table,
              floating = FALSE,
              booktabs = TRUE, 
              hline.after = NULL,
-             sanitize.text.function = identity,
              add.to.row = list(
                pos = list(0,0,7),
                command = c(columns_header_top,
