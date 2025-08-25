@@ -37,7 +37,7 @@ ods <- SD2011[, c("sex", "age", "region","placesize","depress")]
 s5 <- syn(ods, seed = 8564, m = 5, print.flag = FALSE)
 t5 <- disclosure( s5, ods, keys = c("sex", "age", "region", "placesize"), target = "depress", print.flag = FALSE)
 
-t5
+ttest1 <- print(t5, to.print = "allCAPs")
 
 repU <- t5$ident$repU
 average_row <- mean(repU) # calculate average row across 10 synthetic data sets
@@ -76,6 +76,8 @@ for (c in 1:5) {
 }
 
 t6 <- disclosure( s6, ods, keys = c("sex", "age", "region", "placesize"), target = "depress", print.flag = FALSE)
+
+ttest2 <- print(t6, to.print = "allCAPs")
 
 repU <- t6$ident$repU
 average_row <- mean(repU) # calculate average row across 10 synthetic data sets
@@ -130,7 +132,7 @@ Data & Raab et al., 2024 & Modified & Raab et al., 2024 & Modified
 \\midrule
 ")
 
-notes <- c("\\bottomrule \\\\[-1.8ex] \\multicolumn{5}{p{4in}}{Note: Modified indicates that values of \\texttt{depress}=0 for all records in the synthetic data} \n")
+notes <- c("\\bottomrule \\\\[-1.8ex] \\multicolumn{5}{p{5in}}{Note: Modified indicates that values of \\texttt{depress}=0 for all records in the synthetic data} \n")
 
 
 # Create the xtable object
@@ -144,8 +146,14 @@ print.xtable(latex_table,
              hline.after = NULL,
              sanitize.text.function = identity,
              add.to.row = list(
-               pos = list(0,0,7),
+               pos = list(0,0,1,6,7),
                command = c(columns_header_top,
                            columns_header_mid,
+                           "\\midrule\n",   # midrule on line 6
+                           "\\midrule\n",   # midrule on line 6
                            notes)),
              file = paste0(tables,"table_disclosure_risk_sd2011.tex"))
+
+ttest1$allCAPs
+
+ttest2$allCAPs

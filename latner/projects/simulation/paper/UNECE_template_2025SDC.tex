@@ -1,0 +1,101 @@
+% LaTeX template for the UNECE Expert Meeting on Statistical Data Confidentiality
+% Last changed: 2025-06-26
+
+% DISCLAIMER: The UNECE document class style and the LaTeX-template
+% are provided without any warranty at all and without any commitment
+% to maintain or correct the code. In no event are UNECE or the
+% author liable for any damages arising from the use of it.
+
+% The uneceart document class style must be used for right numbering etc.
+\documentclass[a4paper,11pt]{style/uneceart}
+
+\usepackage{style/UNECE2025}
+\usepackage{enumerate}
+\usepackage{xcolor}
+
+\definecolor{unece_color}{RGB}{84, 141, 212}
+
+%%% ----------------------------------------------------------------------
+%%% ---   please fill-in your personal data:   ---------------------------
+
+%% the title of your contribution in capital letters:
+\newcommand{\TITLE}{\textbf{Title} \\}
+
+%% author:
+\newcommand{\AUTHOR}{Author(s)}
+
+%% your organisation
+\newcommand{\ORGANISATION}{(Institution, Country or Organisation)}
+\newcommand{\EMAIL}{e-mail}
+
+%% abstract
+\newcommand{\ABSTRACT}{Abstract text}
+
+
+\begin{document}
+%% Cover page with title and abstract
+\input{UNECE2025cover.tex}
+
+%% Real content of the paper
+% Introduction
+\section{Introduction}  %% The extra hspace is only to align the numbering more or less
+
+Here is one paragraph of the introduction.
+
+Here is a second paragraph of the introduction.
+
+% First section
+\section{Primary heading} 
+\subsection{Secondary heading} \label{sc:A}
+Here is a paragraph.
+
+
+\subsection{Secondary heading} \label{sc:B}
+In this paragraph, we cite this book,
+\cite{Hundepoolea2012}, but Figure~\ref{plot:1} is not taken from that book. Another paper contains some formulas \citep[see][]{Zhou2010Smoothing}. Also,
+\begin{enumerate}
+\item Xxxxxxxx
+\begin{itemize}
+\item Xxxxx
+\begin{enumerate}
+\item Yyyyy
+\end{enumerate}
+\item Xxxxx
+\end{itemize}
+\item Xxxxxxxxxxxxxxxxxx
+\item Xxxxxxxxxxxxxxxxxx
+\end{enumerate}
+
+
+\section{Primary heading}
+
+\subsection{Secondary heading}
+
+This paragraph is a pretext to include a table:
+
+\begin{tabular}{l*{6}{c}r}
+Team              & P & W & D & L & F  & A & Pts \\
+\hline
+Manchester United & 6 & 4 & 0 & 2 & 10 & 5 & 12  \\
+Celtic            & 6 & 3 & 0 & 3 &  8 & 9 &  9  \\
+Benfica           & 6 & 2 & 1 & 3 &  7 & 8 &  7  \\
+FC Copenhagen     & 6 & 2 & 1 & 2 &  5 & 8 &  7  \\
+\end{tabular}
+
+
+Another paragraph with high-flying content, maybe refering to
+Section~\ref{sc:A}. We forgot to mention that
+Figure~\ref{plot:1}  has been produced with \R .
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=0.65\textwidth]{figures/RU-5safes.png}
+\caption{\label{plot:1}The Five Safes expands the R-U trade-off frontier. For each level of utility, we can achieve lower disclosure risk.\\
+See \small{\url{https://www.abs.gov.au/statistics/research/confidentiality-abs-microdata}}}
+\end{center}
+\end{figure}
+
+\bibliographystyle{chicago}
+\bibliography{UNECE_template_2025SDC}
+
+\end{document}

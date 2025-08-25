@@ -46,6 +46,10 @@ t1 <- multi.disclosure(sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("v
 ident = print(t1, plot = FALSE, to.print = "ident")
 attrib = print(t1, plot = FALSE, to.print = "attrib")
 
+ttest <- print(t1, plot = FALSE, to.print = "allCAPs")
+ttest <- print(t1, plot = FALSE, to.print = "TCAP")
+ttest
+
 df_risk <- data.frame(
   data = c("Original", "Synthetic"),
   identity = c(t1$ident.orig,t1$ident.syn),

@@ -107,6 +107,7 @@ df_graph <-
         legend.title = element_blank(),
         legend.key.width=unit(1, "cm"),
         axis.title.x = element_blank(),
+        axis.text.x = element_text(angle = 45, hjust = 1),   # <--- rotate labels
         axis.line.y = element_line(color="black", linewidth=.5),
         axis.line.x = element_line(color="black", linewidth=.5)
   )
