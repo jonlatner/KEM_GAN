@@ -133,6 +133,7 @@ Data & Raab et al., 2024 & Modified & Raab et al., 2024 & Modified
 ")
 
 notes <- c("\\bottomrule \\\\[-1.8ex] \\multicolumn{5}{p{5in}}{Note: Modified indicates that values of \\texttt{depress}=0 for all records in the synthetic data} \n")
+notes_2 <- c("\\bottomrule \\\\[-1.8ex] \\multicolumn{5}{p{4in}}{Note: Modified indicates that values of \\texttt{depress}=0 for all records in the synthetic data} \n")
 
 
 # Create the xtable object
@@ -153,6 +154,22 @@ print.xtable(latex_table,
                            "\\midrule\n",   # midrule on line 6
                            notes)),
              file = paste0(tables,"table_disclosure_risk_sd2011.tex"))
+
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             include.colnames = FALSE,
+             floating = FALSE,
+             booktabs = TRUE, 
+             hline.after = NULL,
+             sanitize.text.function = identity,
+             add.to.row = list(
+               pos = list(0,0,1,6,7),
+               command = c(columns_header_top,
+                           columns_header_mid,
+                           "\\midrule\n",   # midrule on line 6
+                           "\\midrule\n",   # midrule on line 6
+                           notes_2)),
+             file = paste0(tables,"table_disclosure_risk_sd2011_v2.tex"))
 
 ttest1$allCAPs
 

@@ -127,4 +127,6 @@ print.xtable(latex_table,
              floating = FALSE,
              booktabs = TRUE, 
              sanitize.text.function = function(x) {x},
-             file = paste0(tables,"table_disclosure_risk_10.tex"))
+             file = paste0(tables,"table_disclosure_risk_10.tex"),
+             add.to.row = list(pos = list(nrow(latex_table) - 1),
+                               command = "\\midrule \n"))

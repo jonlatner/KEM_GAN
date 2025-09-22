@@ -1,0 +1,30 @@
+%%% by Matthias Templ, Vienna University of Technology, March 13, 2012.Updated Frederic Picard, Statistics Canada, April 2015.
+%%% Updated by Peter-Paul de Wolf for use in UNECE/Eurostat SDC meetings, 15.03.2023
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{natbib}
+\usepackage{fancyhdr}
+\usepackage{newtxtext,newtxmath} % Use Times New Roman style fonts
+% create hyperlinks in the document
+\usepackage[urlcolor=cyan,linkcolor=blue,bookmarks=true,
+            citecolor=blue,linktocpage,a4paper,colorlinks=true]{hyperref}
+\usepackage{textcomp}
+
+% some practical additional commands
+\newcommand{\proglang}[1]{\mbox{\textsf{#1}}}
+\newcommand{\R}{\proglang{R}}
+
+% These page settings could have been put in the document class style, but I preferred to mention them explicitly
+\setlength{\topmargin}{ -1.35 cm} \setlength{\oddsidemargin}{ 0 cm}
+\setlength{\evensidemargin}{ 0 cm} \setlength{\textwidth}{17 cm}
+\setlength{\textheight}{22.9 cm} \setlength{\parindent}{0 cm}
+\setlength{\headsep}{1cm}
+\fancyhf{} \fancyfoot[R]{\thepage} % page number at bottom right on all pages except title page
+\setlength{\footskip}{13.0pt}
+\renewcommand{\headrulewidth}{0pt} % no separating line between header and text
+\pagestyle{fancy}
