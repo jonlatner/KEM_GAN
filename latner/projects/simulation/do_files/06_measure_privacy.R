@@ -139,6 +139,10 @@ for (c in 1:10) {
 # create summary table
 t1 <- multi.disclosure(df_sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
 
+t10 <- disclosure(df_sds, df_ods, keys = c("var1", "var2", "var3"), target = "var4", print.flag = FALSE)
+
+ttest10 <- print(t10, to.print = "allCAPs")
+
 df_risk <- data.frame(
   data = c("Original", "Synthetic"),
   identity = c(t1$ident.orig,t1$ident.syn),
@@ -149,7 +153,6 @@ df_risk
 
 # Table ----
 t1 <- disclosure(df_sds, df_ods, print.flag = FALSE, plot = TRUE, keys = c("var1", "var2", "var3"), target = "var4")
-
 
 repU <- t1$ident$repU
 average_row <- mean(repU) # calculate average row across 10 synthetic data sets
@@ -185,3 +188,4 @@ print.xtable(latex_table,
              file = paste0(tables,"table_disclosure_risk_10.tex"),
              add.to.row = list(pos = list(nrow(latex_table) - 1),
                                command = "\\midrule \n"))
+
