@@ -446,7 +446,7 @@
 \begin{itemize}
     \item Replicate the approach the authors of Synthpop (Raab, 2024; Raab et al., 2024)  
     \item Data are from Social Diagnosis 2011 (SD2011). 
-    \item Measure disclosure risk
+    \item Measure attribute disclosure risk
     \begin{itemize}
          \item 4 keys ($q$): \texttt{sex} \texttt{age} \texttt{region} \texttt{placesize}.
          \item 1 target ($t$): \texttt{depress}
@@ -457,9 +457,10 @@
         \item Modify synthetic copies by setting $t=0$, or constant for all observations in all 5 synthetic data sets.
         \item Therefore, we know risk declined (because we reduced it).
     \end{itemize}
-    \item Do common disclosure risk measures ($repU$, $DiSCO$) capture this decline? 
+    \item Does attribute disclosure risk measures ($DiSCO$) capture this decline? 
     \begin{itemize}
         \item Why not Bayesian approach?  High-dimensional, real data is too computationally complex.  Only good for low-dimensional data
+        \item Why not identity disclosure risk ($repU$)?  We do not change the keys, so the identity risk will not change
     \end{itemize}
 
 \end{itemize}
@@ -473,8 +474,8 @@
     \centering
     \caption{Risk measures for \texttt{depress} from keys: \texttt{sex}, \texttt{age}, \texttt{region}, \texttt{placesize} (SD2011)}
     % \rowcolors{1}{white}{lightgray}
-    \input{../../tables/table_disclosure_risk_sd2011_v2.tex}
-    \label{tab:attribute_risk_sd2011}
+    \input{../../tables/table_disclosure_risk_sd2011_disco.tex}
+    \label{tab:attribute_risk_sd2011_disco}
 \end{table}
 
 
@@ -512,15 +513,15 @@
 \begin{frame}[t]\frametitle{Summary}
 
 \begin{itemize}
-    \item Key contribution: Common disclosure risk metrics may fail to detect or even misstate risk.  
+    \item Main contribution: Common attribute disclosure risk measure ($DiSCO$) may fail to detect or even misstate risk.  
     \begin{itemize}
         \item Suggests no risk, when we know there is a risk (simulation data)
         \item Suggests risk is rising, when we know it declined (real data)
-        \item Bayesian approach can be a good solution, but only in low-dimensional data
+        \item Bayesian approach could be a good solution, but only in low-dimensional data
     \end{itemize}
-    \item Key point: users must understand how disclosure risk measures operate.  
+    \item Main point: users must understand the problems with empirical disclosure risk measures and how they operate.  
     \begin{itemize}
-        \item Empirical disclosure risk measures always have problems
+        \item Cannot just assume it correctly measures disclosure risk in all settings
         \item There is no one-size-fits-all solution.  
     \end{itemize}
 \end{itemize}
@@ -538,4 +539,3 @@ Reproducible code: \url{https://github.com/jonlatner/KEM\_GAN/tree/main/latner/p
 
 \end{spacing}
 \end{document}
-

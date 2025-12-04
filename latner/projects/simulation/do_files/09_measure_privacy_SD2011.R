@@ -174,3 +174,51 @@ print.xtable(latex_table,
 ttest1$allCAPs
 
 ttest2$allCAPs
+
+# DISCO ----
+
+df_risk_1$type <- "Original"
+df_risk_2$type <- "Modified"
+
+df_risk <- rbind(df_risk_1,df_risk_2) %>%
+  pivot_longer(!c(data,type)) %>%
+  pivot_wider(names_from = c(name, type), values_from = c(value)) %>%
+  select(data, attribute_Original, attribute_Modified)
+df_risk
+
+columns_header_top <- c("
+\\toprule & 
+\\multicolumn{2}{l}{Attribute risk ($DiSCO$)}
+\\\\  \n 
+\\cmidrule(lr){2-3}
+")
+
+
+columns_header_mid <- c("
+Data & Raab et al., 2024 & Modified
+\\\\ \n
+\\midrule
+")
+
+notes_2 <- c("\\bottomrule \\\\[-1.8ex] \\multicolumn{3}{p{2in}}{Note: Modified indicates that values of \\texttt{depress}=0 for all records in the synthetic data} \n")
+
+
+# Create the xtable object
+latex_table <- xtable(df_risk,align = "llrr")
+
+print.xtable(latex_table, 
+             include.rownames = FALSE, 
+             include.colnames = FALSE,
+             floating = FALSE,
+             booktabs = TRUE, 
+             hline.after = NULL,
+             sanitize.text.function = identity,
+             add.to.row = list(
+               pos = list(0,0,1,6,7),
+               command = c(columns_header_top,
+                           columns_header_mid,
+                           "\\midrule\n",   # midrule on line 6
+                           "\\midrule\n",   # midrule on line 6
+                           notes_2)),
+             file = paste0(tables,"table_disclosure_risk_sd2011_disco.tex"))
+
