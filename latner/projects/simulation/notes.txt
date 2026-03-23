@@ -1,0 +1,117 @@
+Here are my comments on the draft:
+
+#########################
+- major critiques:
+#########################
+
+1. Framing of differential privacy
+
+DP is never directly described, but is kind of presented as the ideal. This raises an obvious question: if DP is the solution, why not just use it?  This also relates to point 2 below (strong attacker assumption)
+
+- Line 60 - The first reference to differential privacy is framed negatively ("unlike DP..."). 
+
+- Line 65 - Consider adding this between the two paragraphs:
+
+"Differential privacy is a formal framework for privacy-preserving data release \citep{Dwork2006}. The advantage of differential privacy is that it provides formal mathematical guarantees by bounding the amount of information any attacker can extract from a data release, without depending on assumptions about the attacker or the specific dataset. The disadvantage is that most synthetic data methods do not satisfy it, and even when they do, formal guarantees do not directly measure risk to specific individuals in a given release."
+
+2. The strong attacker assumption.  This is one of Gillian's (and others) main critique.  
+
+- Line 122 - The strong attacker assumption needs a sentence or two acknowledging that it is contested.  Add the following after the first sentence, then insert a paragraph break before "The measure failures we identify...":
+
+"This assumption is contested. Critics argue that assuming an attacker knows the synthesis algorithm and all but one original record is unrealistic, and that basing release decisions on such an extreme scenario leads to unnecessary restrictions on data access \citep{Hotz2022}. Proponents counter that privacy protection should be evaluated against the worst case, since the consequences of underestimating a capable attacker are more severe than the consequences of overestimating one \citep{Dwork2006}. We follow the worst-case convention here, while acknowledging that risk estimates under weaker attacker assumptions will generally be lower."
+
+3. The desiderata.  
+
+3a. I want to convey the idea that this is not really a new idea, we are not making up these principles, we are just applying standard principles of measurement in ways that have not been formally incorporated by the literature of statistical disclosure control. 
+
+- Line 130 - Add to the end of the paragraph:
+
+"These desiderata are not novel in the abstract. They build on general principles of measurement validity \citep{Krantz1971-KRAFOM}. What is novel is their application to empirical disclosure risk measures for synthetic data, where such criteria have not previously been made explicit or tested."
+
+New bib entry:
+@book{Krantz1971-KRAFOM,
+    editor = {David Krantz and Duncan Luce and Patrick Suppes and Amos Tversky},
+    publisher = {New York Academic Press},
+    title = {Foundations of Measurement, Vol. I: Additive and Polynomial Representations},
+    year = {1971}
+}
+
+3b. D3 and D4 are difficult to distinguish as currently written.  
+
+Both use "information gain" and D2/D3 both use "monotonicity." The underlying distinction is:
+
+    - D3 is about direction: if an attacker learns more, measured risk should go up
+    - D4 is about content: the measure should reflect what the attacker actually learns, not just patterns in the data
+
+Proposed relabeling:
+
+    - D3: Directional sensitivity (the measure responds correctly to changes in information gain)
+    - D4: Substantive validity (the measure tracks the right underlying quantity)
+
+Also, D4 currently lacks a concrete example. The example at line 144 would fit better in D4 than where it currently sits.
+
+4.  Conclusion (after Toward Better Disclosure Risk Measurement)
+
+Better than the previous version, but could still be improved.  
+
+- The Section 5/6 boundary is the real problem. Section 5 (Toward Better Disclosure Risk Measurement) is doing work that belongs in the conclusion, especially "practical recommendations". 
+
+	- "Approximate methods" and "hybrid strategies" also feel tacked on rather than part of a coherent argument. 
+
+- Scope and limitations should go first, not last. Acknowledge what we can't claim, then say what we can. As written, the section ends defensively, which undercuts the findings that precede it.
+
+- "Practical implications" undersells the contribution. This paper isn't only making a practical point, its also making a substantive and "theoretical" one about what valid measurement means and what "good" synthetic data actually requires (i.e. privacy protection, not statistical validity). 
+
+- Section 6 ends on the wrong note. The last thing the reader sees is a summary of Jarmin et al. (2023). 
+
+- The "so what" is actually already written in the practical implications subsection, it just needs to be moved to the end.
+
+#########################
+- medium critique (important, but easily fixable):
+#########################
+
+- Disco Paradox (line 341)
+
+This presents data that is never actually shown using the simulated data.  The idea is conveyed in table 10 in the appendix using SD2011 data, but not using the simulated data.  Did I miss it?
+
+#########################
+- minor critiques:
+#########################
+
+- Line 64 - Missing citation (Raab2024a vs. Raab)
+
+- Line 71 - Great paragraph! But it should come earlier, either as the first paragraph of this section or moved to the introduction.
+
+- Tables 3, 4, 5, 6 - Is there a way to automate these? Hand-constructed tables always worry me.  :-) 
+
+- Table 7 (\input{tables/table_disclosure_risk_sd2011_outliers.tex}) - on my home computer (not overleaf), it runs out of room, needs formatting fix..  consider creating a more universal file without the table environment and then using the following code.
+
+10_sd2011_false_negatives.R
+
+# Save to file
+latex_file_v2 <- paste0(tables_path, "table_disclosure_risk_sd2011_outliers_v2.tex")
+
+print(latex_table,
+      file = latex_file_v2,
+      floating = FALSE, # removes table environment
+      include.rownames = FALSE,
+      booktabs = TRUE,
+      caption.placement = "top",
+      sanitize.text.function = identity)
+
+
+\begin{table}[h]
+\centering
+\caption{Disclosure risk for naturally occurring unique records in SD2011.
+         repU and DiSCO show average values across all synthetic datasets;
+         Bayesian risk shows posterior probability of correct target inference
+         for each individual unique record.}
+\label{tab:sd2011_outliers}
+\resizebox{\columnwidth}{!}{\input{tables/table_disclosure_risk_sd2011_outliers_v2.tex}}
+\end{table}
+
+- Table 7.  Maybe consider adding this to the end of subsection, just to be extra clear:
+
+"In this case, the Bayesian risk happens to be low, suggesting that CART synthesis introduces sufficient noise to protect even uniquely identifiable records, but the more important point is that one would not learn that from the syntactic measures."
+
+

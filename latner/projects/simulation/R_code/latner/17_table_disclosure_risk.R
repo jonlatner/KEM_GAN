@@ -34,14 +34,66 @@ my.seed = 1237
 
 set.seed(my.seed)
 
-# Load original data ----
+# Create simulated data ----
 
-df_ods <- read.csv(paste0(original_data,"simulated.csv"))
 
-# Load synthetic data ----
+# Number of observations
+n <- 1000
 
-df_sds_10 <- read_csv(paste0(synthetic_data,"synthetic_cart_10.csv"))
-sds <- syn(df_ods, m = 1, seed = my.seed)
+# Define the 16 possible combinations of four binary variables
+combinations <- expand.grid(y1 = c(0, 1), y2 = c(0, 1), y3 = c(0, 1), y4 = c(0, 1))
+
+# Define c_16 and C_−16
+c_16 <- combinations[16,]
+C_minus_16 <- combinations[-16,]
+
+# Initialize the dataset
+D <- data.frame(matrix(ncol = 4, nrow = n))
+colnames(D) <- c("var1", "var2", "var3", "var4")
+
+# Sample the first 999 observations from C_minus_16 with equal probability
+for (i in 1:(n-1)) {
+  sampled_row <- sample(1:15, 1)
+  D[i,] <- C_minus_16[sampled_row,]
+}
+
+# Set the 1000th observation to c_16
+D[1000,] <- c_16
+
+# Convert to data frame and print the first few rows
+df_ods <- as.data.frame(D)
+head(df_ods)
+
+
+# Generate synthetic data ----
+
+df_sds_10 <- data.frame()
+for (c in 1:10) {
+  
+  # Create fake synthetic data
+  sds <- syn(df_ods, m = 1, seed = my.seed)
+  sds <- sds$syn
+  
+  # create seed
+  my.seed = my.seed + 1
+  
+  # Create a frequency table for synthetic data
+  
+  sds$combine <- paste(sds$var1, sds$var2, sds$var3, sds$var4, sep = "")
+  sds <- sds %>%
+    select(-matches("var"))
+  df_sds_frequency <- as.data.frame(table(sds))
+  df_sds_frequency$type <- "synthetic"
+  df_sds_frequency$n <- c
+  
+  # Combine
+  df_sds_10 <- rbind(df_sds_10,df_sds_frequency)
+}
+
+df_sds_10
+
+
+sds <- syn(df_ods, m = 1, seed = 1237)
 df_sds_1 <- sds$syn
 
 # Generate frequency lists ----

@@ -18,11 +18,9 @@ library(readr)
 library(xtable)
 
 # FOLDERS - ADAPT THIS PATHWAY
-main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/simulation/"
+main_dir = "/Users/jonathanlatner/Documents/GitHub/KEM_GAN/latner/projects/simulation_old/"
 
-data_files = "data_files/"
 original_data = "data_files/original/"
-synthetic_data = "data_files/synthetic/synthpop/"
 graphs = "graphs/"
 tables = "tables/"
 
@@ -40,6 +38,7 @@ set.seed(my.seed)
 
 df_ods <- read.csv(paste0(original_data,"simulated.csv"))
 
+df_ods
 # Loop ----
 
 df_frequency <- data.frame()
