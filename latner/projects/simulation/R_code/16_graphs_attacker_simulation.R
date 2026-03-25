@@ -159,6 +159,8 @@ df_graph <-
     axis.line.x = element_line(color = "black", linewidth = .5)
   )
 
+df_graph
+
 ggsave(plot = df_graph,
   filename = paste0(graphs_path, "graph_attacker_default_v1.pdf"),
   height = 5, width = 10

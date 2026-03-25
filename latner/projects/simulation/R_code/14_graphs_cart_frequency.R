@@ -198,6 +198,7 @@ p <- ggplot(df_combine, aes(x = combine, y = Freq, fill = type)) +
     axis.line.y = element_line(color = "black", linewidth = .5),
     axis.line.x = element_line(color = "black", linewidth = .5)
   )
+p
 
 ggsave(p,
   filename = paste0(graphs_path, "graph_cart_histogram_compare.pdf"),
